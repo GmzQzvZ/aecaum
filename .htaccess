@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Ajustar al nombre de la carpeta del proyecto en htdocs
+RewriteBase /aecaum/
+
+# Ignorar archivos o directorios reales
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todo lo demás a index.php
+RewriteRule ^(.*)$ index.php [QSA,L]
