@@ -34,6 +34,18 @@ CREATE TABLE IF NOT EXISTS documents (
     FOREIGN KEY (uploaded_by) REFERENCES users(id) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Tabla de índices
+CREATE TABLE IF NOT EXISTS indices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    description TEXT,
+    month VARCHAR(20) DEFAULT 'enero',
+    year INT DEFAULT 2024,
+    informe VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Tabla de permisos de documentos (roles que pueden acceder)
 CREATE TABLE IF NOT EXISTS document_permissions (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -47,7 +59,10 @@ CREATE TABLE IF NOT EXISTS document_permissions (
 
 -- Insertar roles iniciales
 INSERT INTO roles (name, label, description) VALUES 
-('Superadmin', 'SuperAdministrador', 'Acceso completo al sistema');
+('Superadmin', 'SuperAdministrador', 'Acceso completo al sistema'),
+('Admin', 'Administrador', 'Acceso sistema'),
+('Usuario', 'UsuarioFinal', 'Usuario Final');
+
 
 -- Insertar usuario admin inicial (contraseña: admin123)
 INSERT INTO users (name, email, password, role_id) VALUES 

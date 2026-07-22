@@ -1,0 +1,21 @@
+# Variables de entorno
+.env
+
+# Archivos de debug
+smtp_debug.php
+debug_forgot.php
+
+# Dependencias
+/vendor/
+
+# Logs
+*.log
+error_log
+
+# Archivos temporales
+.DS_Store
+Thumbs.db
+
+# Uploads (opcional, si no se versionan)
+/uploads/*
+!/uploads/.gitkeep

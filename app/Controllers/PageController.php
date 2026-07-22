@@ -91,6 +91,29 @@ class PageController extends BaseController {
         ]);
     }
 
+    public function indices(): void {
+        $month = $this->query('month');
+        $year = $this->query('year');
+        $indices = \Index::all();
+
+        // Filtrar por mes y año si se especifican
+        if ($month || $year) {
+            $indices = array_filter($indices, function($index) use ($month, $year) {
+                $matchMonth = !$month || strtolower($index['month'] ?? '') === strtolower($month);
+                $matchYear = !$year || (int)($index['year'] ?? 0) === (int)$year;
+                return $matchMonth && $matchYear;
+            });
+            $indices = array_values($indices); // Reindexar array
+        }
+
+        $this->render('pages/indices', [
+            'pageTitle' => 'Índices | AECAUM',
+            'indices'   => $indices,
+            'month'     => $month,
+            'year'      => $year,
+        ]);
+    }
+
     /** Página de contenido institucional (secciones del menú) */
     public function content(string $slug): void {
         $pages = require APP_PATH . '/config/content_pages.php';

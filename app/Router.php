@@ -22,15 +22,23 @@ class Router {
         $this->get('logout',                          AuthController::class, 'logout');
         $this->match('GET|POST', 'recuperar-clave',   AuthController::class, 'forgotPassword');
         $this->match('GET|POST', 'forgot-password',    AuthController::class, 'forgotPassword');
+        $this->match('GET|POST', 'reset-password',     AuthController::class, 'resetPassword');
+        $this->match('GET|POST', 'reset-clave',        AuthController::class, 'resetPassword');
 
         // --- Panel de usuario ---
         $this->get('dashboard',                       DashboardController::class, 'index');
+
+        // --- Índices públicos ---
+        $this->get('indices',                         PageController::class, 'indices');
+        $this->get('indices/imc',                     PageController::class, 'indices');
+        $this->get('indices/informes-institucionales', PageController::class, 'indices');
 
         // --- Panel de administración ---
         $this->match('GET|POST', 'admin',             AdminController::class, 'index');
         $this->match('GET|POST', 'admin/usuarios',    AdminController::class, 'users');
         $this->match('GET|POST', 'admin/roles',       AdminController::class, 'roles');
         $this->match('GET|POST', 'admin/documentos',  AdminController::class, 'documents');
+        $this->match('GET|POST', 'admin/indices',     AdminController::class, 'indices');
 
         // --- Páginas públicas ---
         $this->match('GET|POST', 'about',             PageController::class, 'about');

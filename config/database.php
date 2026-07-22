@@ -3,22 +3,44 @@
 // ACAEUM — Base de Datos y Autenticación
 // ============================================================
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'aecaum_db');
+// Cargar variables de entorno desde .env
+function loadEnv($file) {
+    if (!file_exists($file)) {
+        return;
+    }
+    $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) {
+            continue;
+        }
+        list($name, $value) = explode('=', $line, 2);
+        $name = trim($name);
+        $value = trim($value);
+        if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+            putenv(sprintf('%s=%s', $name, $value));
+            $_ENV[$name] = $value;
+            $_SERVER[$name] = $value;
+        }
+    }
+}
+loadEnv(__DIR__ . '/../.env');
+
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'aecaum_db');
 
 // Configuración de JWT
-define('JWT_SECRET', 'TZhXHN3Ox+rAo8o/Hi09NKoJ6Fb31EGfdcPM5tL2QBSU=');
+define('JWT_SECRET', getenv('JWT_SECRET') ?: 'default_secret_change_in_production');
 
 // Configuración de SMTP (PHPMailer)
-define('SMTP_HOST', 'smtp.gmail.com'); // Ej: smtp.gmail.com
-define('SMTP_USER', 'zvzgmzq@gmail.com');
-define('SMTP_PASS', 'qefx alae soqn pxuy');
-define('SMTP_PORT', 465); // 587 para TLS, 465 para SSL
-define('SMTP_SECURE', 'ssl'); // 'tls' o 'ssl'
-define('MAIL_FROM', 'no-reply@aecam.com');
-define('MAIL_FROM_NAME', 'Soporte ACAEUM');
+define('SMTP_HOST', getenv('SMTP_HOST') ?: 'smtp.gmail.com');
+define('SMTP_USER', getenv('SMTP_USER') ?: '');
+define('SMTP_PASS', getenv('SMTP_PASS') ?: '');
+define('SMTP_PORT', getenv('SMTP_PORT') ?: 465);
+define('SMTP_SECURE', getenv('SMTP_SECURE') ?: 'ssl');
+define('MAIL_FROM', getenv('MAIL_FROM') ?: SMTP_USER);
+define('MAIL_FROM_NAME', getenv('MAIL_FROM_NAME') ?: 'Soporte ACAEUM');
 
 
 // Conexión global

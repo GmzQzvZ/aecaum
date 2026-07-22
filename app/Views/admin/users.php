@@ -12,6 +12,7 @@
    </div>
 
    <?php if ($success === 'user_created'): ?><div class="alert-success"><i class="ti ti-circle-check"></i> Usuario creado exitosamente.</div><?php endif; ?>
+   <?php if ($success === 'user_updated'): ?><div class="alert-success"><i class="ti ti-circle-check"></i> Usuario actualizado correctamente.</div><?php endif; ?>
    <?php if ($success === 'user_deleted'): ?><div class="alert-success"><i class="ti ti-circle-check"></i> Usuario eliminado correctamente.</div><?php endif; ?>
    <?php if ($error): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> Ocurrió un error. Intentá nuevamente.</div><?php endif; ?>
 
@@ -35,12 +36,15 @@
                <td><span class="badge badge-blue"><?= htmlspecialchars($user['role_label']) ?></span></td>
                <td><?= date('d/m/Y', strtotime($user['created_at'])) ?></td>
                <td>
-                  <?php if ($user['id'] != $currentUser['id']): ?>
+                  <?php if (!$currentUser || $user['id'] != $currentUser['id']): ?>
+                  <button class="btn-primary-sm" onclick="editUser(<?= $user['id'] ?>, '<?= htmlspecialchars($user['name']) ?>', '<?= htmlspecialchars($user['email']) ?>', <?= $user['role_id'] ?>)" title="Editar">
+                     <i class="ti ti-pencil"></i>
+                  </button>
                   <form method="POST" action="<?= APP_URL ?>/admin/usuarios" style="display:inline;"
                      onsubmit="return confirm('¿Eliminar a <?= htmlspecialchars($user['name']) ?>?')">
                      <input type="hidden" name="action" value="delete_user">
                      <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
-                     <button type="submit" class="btn-danger-sm"><i class="ti ti-trash"></i></button>
+                     <button type="submit" class="btn-danger-sm" title="Eliminar"><i class="ti ti-trash"></i></button>
                   </form>
                   <?php else: ?>
                   <span style="font-size:11px;color:#9ca3af;">Tú</span>
@@ -92,3 +96,54 @@
       </form>
    </div>
 </div>
+
+<!-- Modal: Editar usuario -->
+<div class="modal-overlay" id="modal-edit-user" onclick="if(event.target===this)this.classList.remove('show')">
+   <div class="modal-box">
+      <h4><i class="ti ti-pencil"></i> Editar usuario</h4>
+      <form method="POST" action="<?= APP_URL ?>/admin/usuarios">
+         <input type="hidden" name="action" value="update_user">
+         <input type="hidden" name="user_id" id="edit_user_id">
+         <div class="form-row">
+            <div class="form-group">
+               <label>Nombre completo *</label>
+               <input type="text" name="name" id="edit_name" required>
+            </div>
+            <div class="form-group">
+               <label>Email *</label>
+               <input type="email" name="email" id="edit_email" required>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="form-group">
+               <label>Contraseña (dejar vacío para no cambiar)</label>
+               <input type="password" name="password" id="edit_password" minlength="6">
+            </div>
+            <div class="form-group">
+               <label>Rol *</label>
+               <select name="role_id" id="edit_role_id" required>
+                  <?php foreach ($roles as $role): ?>
+                  <option value="<?= $role['id'] ?>"><?= htmlspecialchars($role['label']) ?></option>
+                  <?php endforeach; ?>
+               </select>
+            </div>
+         </div>
+         <div style="display:flex;gap:12px;margin-top:8px;">
+            <button type="submit" class="btn-primary-sm"><i class="ti ti-check"></i> Actualizar usuario</button>
+            <button type="button" class="btn-primary-sm" style="background:#6b7280;"
+               onclick="document.getElementById('modal-edit-user').classList.remove('show')">Cancelar</button>
+         </div>
+      </form>
+   </div>
+</div>
+
+<script>
+function editUser(id, name, email, roleId) {
+   document.getElementById('edit_user_id').value = id;
+   document.getElementById('edit_name').value = name;
+   document.getElementById('edit_email').value = email;
+   document.getElementById('edit_role_id').value = roleId;
+   document.getElementById('edit_password').value = '';
+   document.getElementById('modal-edit-user').classList.add('show');
+}
+</script>

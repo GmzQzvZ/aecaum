@@ -5,6 +5,7 @@ $uri = trim(substr($_SERVER['REQUEST_URI'], strlen(BASE_PATH)), '/');
 if (str_starts_with($uri, 'admin/usuarios')) $currentSection = 'users';
 elseif (str_starts_with($uri, 'admin/roles'))    $currentSection = 'roles';
 elseif (str_starts_with($uri, 'admin/documentos')) $currentSection = 'documents';
+elseif (str_starts_with($uri, 'admin/indices'))   $currentSection = 'indices';
 elseif (str_starts_with($uri, 'admin'))           $currentSection = 'admin';
 elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
 ?>
@@ -41,6 +42,9 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
       </a>
       <a href="<?= APP_URL ?>/admin/documentos" class="<?= $currentSection === 'documents' ? 'active' : '' ?>">
          <i class="ti ti-files"></i> Documentos
+      </a>
+      <a href="<?= APP_URL ?>/admin/indices" class="<?= $currentSection === 'indices' ? 'active' : '' ?>">
+         <i class="ti ti-layout-grid"></i> Índices
       </a>
    </nav>
 
