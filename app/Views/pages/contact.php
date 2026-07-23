@@ -136,17 +136,30 @@
                         <h1 class="text-white" style="font-size: 40px; margin-bottom: 15px;">Ponete en contacto</h1>
                         <p style="color: #ccc; margin-bottom: 30px;">Comunicate con la cámara para conocer más sobre
                            nuestras membresías, solicitar información o realizar una consulta institucional.</p>
-                        <form action="#">
+                        
+                        <?php if ($sent): ?>
+                        <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+                           <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.
+                        </div>
+                        <?php endif; ?>
+                        
+                        <?php if ($error): ?>
+                        <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
+                           <strong>Error:</strong> <?= htmlspecialchars($error) ?>
+                        </div>
+                        <?php endif; ?>
+                        
+                        <form action="<?= APP_URL ?>/contacto" method="POST">
                            <div class="tv-contact-input-box mb-24">
-                              <input type="text" placeholder="Nombre *">
+                              <input type="text" name="name" placeholder="Nombre *" required>
                            </div>
                            <div class="tv-contact-input-box mb-24">
-                              <input type="email" placeholder="eMail *">
+                              <input type="email" name="email" placeholder="eMail *" required>
                            </div>
                            <div class="it-contact-textarea-box mb-24">
-                              <textarea placeholder="Escribí tu mensaje *" rows="3"></textarea>
+                              <textarea name="message" placeholder="Escribí tu mensaje *" rows="3" required></textarea>
                            </div>
-                           <button class="tv-btn-secondary p-relative">
+                           <button type="submit" class="tv-btn-secondary p-relative">
                               <span class="btn-wrap">
                                  <span class="btn-text1">Enviar mensaje</span>
                                  <span class="btn-text2">Enviar mensaje</span>

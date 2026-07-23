@@ -39,6 +39,7 @@ class Router {
         $this->match('GET|POST', 'admin/roles',       AdminController::class, 'roles');
         $this->match('GET|POST', 'admin/documentos',  AdminController::class, 'documents');
         $this->match('GET|POST', 'admin/indices',     AdminController::class, 'indices');
+        $this->match('GET|POST', 'admin/contacto',    AdminController::class, 'contactMessages');
 
         // --- Páginas públicas ---
         $this->match('GET|POST', 'about',             PageController::class, 'about');

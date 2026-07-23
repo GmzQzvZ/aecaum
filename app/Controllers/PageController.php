@@ -17,16 +17,46 @@ class PageController extends BaseController {
         $error = '';
 
         if ($this->isPost()) {
+            error_log('Formulario POST recibido en contact()');
+            error_log('Datos POST: ' . print_r($_POST, true));
+            
             $name    = $this->input('name');
             $email   = $this->input('email');
-            $subject = $this->input('subject');
             $message = $this->input('message');
+            $fromHome = $this->input('from_home') === 'true';
+
+            error_log("Nombre: $name, Email: $email, Message: " . substr($message, 0, 50));
+            error_log("From home: " . ($fromHome ? 'yes' : 'no'));
 
             if (empty($name) || empty($email) || empty($message)) {
                 $error = 'Por favor completá todos los campos requeridos.';
+                error_log('Error: campos vacíos');
             } else {
-                // TODO: Integrar envío de email real (PHPMailer o similar)
-                $sent = true;
+                try {
+                    $ok = Contact::create([
+                        'name'    => $name,
+                        'email'   => $email,
+                        'message' => $message,
+                    ]);
+                    $sent = $ok;
+                    error_log('Resultado Contact::create: ' . ($ok ? 'SUCCESS' : 'FAILED'));
+                    if (!$ok) {
+                        $error = 'Hubo un error al enviar el mensaje. Intentá nuevamente.';
+                    }
+                } catch (Exception $e) {
+                    $error = 'Error: ' . $e->getMessage();
+                    error_log('Excepción en Contact::create: ' . $e->getMessage());
+                }
+            }
+
+            // Si viene desde home, redirigir a home con el mensaje
+            if ($fromHome) {
+                if ($sent) {
+                    $this->redirect('?contact_sent=true');
+                } else {
+                    $this->redirect('?contact_error=' . urlencode($error));
+                }
+                return;
             }
         }
 

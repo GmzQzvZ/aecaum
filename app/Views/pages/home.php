@@ -664,18 +664,31 @@
                             sobre nuestras membresías, solicitar información o
                             realizar una consulta institucional.</p>
                         <div class="tv-contact-select">
-                            <form action="#">
+                            <?php if ($this->query('contact_sent') === 'true'): ?>
+                            <div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+                               <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.
+                            </div>
+                            <?php endif; ?>
+                            
+                            <?php if ($this->query('contact_error')): ?>
+                            <div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
+                               <strong>Error:</strong> <?= htmlspecialchars($this->query('contact_error')) ?>
+                            </div>
+                            <?php endif; ?>
+                            
+                            <form action="<?= APP_URL ?>/contacto" method="POST">
+                                <input type="hidden" name="from_home" value="true">
                                 <div class="it-contact-input-box mb-20">
-                                    <input type="text" placeholder="Nombre *">
+                                    <input type="text" name="name" placeholder="Nombre *" required>
                                 </div>
                                 <div class="it-contact-input-box mb-20">
-                                    <input type="email" placeholder="eMail *">
+                                    <input type="email" name="email" placeholder="eMail *" required>
                                 </div>
                                 <div class="it-contact-textarea-box ">
-                                    <textarea placeholder="Escribí tu mensaje *"></textarea>
+                                    <textarea name="message" placeholder="Escribí tu mensaje *" required></textarea>
                                 </div>
                                 <div class="it-contact-sumbit-box cta">
-                                    <button class="tv-btn-secondary p-relative">
+                                    <button type="submit" class="tv-btn-secondary p-relative">
                                         <span class="btn-wrap">
                                             <span class="btn-text1">Enviar Mensaje</span>
                                             <span class="btn-text2">Enviar Mensaje</span>

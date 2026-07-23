@@ -301,4 +301,36 @@ class AdminController extends BaseController {
             'error'       => $this->query('error'),
         ], 'panel');
     }
+
+    /** Gestión de mensajes de contacto */
+    public function contactMessages(): void {
+        requireLogin();
+        if (!hasRole('Superadmin') && !hasRole('admin')) {
+            $this->redirect('dashboard');
+            return;
+        }
+
+        if ($this->isPost()) {
+            $action = $_POST['action'] ?? '';
+
+            if ($action === 'delete_message') {
+                $id = (int) ($_POST['message_id'] ?? 0);
+                if ($id) {
+                    Contact::delete($id);
+                    $this->redirect('admin/contacto?success=message_deleted');
+                } else {
+                    $this->redirect('admin/contacto?error=delete_failed');
+                }
+                return;
+            }
+        }
+
+        $this->render('admin/contact', [
+            'pageTitle'   => 'Mensajes de Contacto | Admin AECAUM',
+            'currentUser' => getCurrentUser(),
+            'messages'    => Contact::all(),
+            'success'     => $this->query('success'),
+            'error'       => $this->query('error'),
+        ], 'panel');
+    }
 }

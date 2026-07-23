@@ -75,7 +75,7 @@
                      </ul>
                   </li>
                   <li>
-                     <a href="<?= APP_URL ?>/indices/imc">Índices</a>
+                     <a href="<?= APP_URL ?>/indices">Índices</a>
                      <ul class="submenu">
                         <li><a href="<?= APP_URL ?>/indices/imc">IMC</a></li>
                         <li><a href="<?= APP_URL ?>/indices/informes-institucionales">Informes Institucionales</a></li>

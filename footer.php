@@ -106,7 +106,7 @@
 
             <!-- Bottom copyright -->
             <div class="aecaum-footer-bottom">
-               <p>© 2025 AECAUM. Todos los derechos reservados.</p>
+               <p>© 2026 AECAUM. Todos los derechos reservados.</p>
             </div>
          </div>
       </div>
