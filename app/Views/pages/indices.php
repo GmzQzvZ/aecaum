@@ -118,10 +118,11 @@
                </div>
 
                <?php if (!empty($indices[0]['informe'])): ?>
-               <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe']) ?>" class="btn-informe-completo" target="_blank">
-                  <i class="ti ti-file-download"></i>
-                  Informe Completo
-               </a>
+               <div class="text-center mb-4">
+                  <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe']) ?>" class="btn-informe-completo" target="_blank">
+                     Informe Completo
+                  </a>
+               </div>
                <?php endif; ?>
             </div>
 
@@ -140,19 +141,31 @@
             <div class="col-lg-12">
                <div class="month-cards">
                   <a href="<?= APP_URL ?>/indices?month=marzo&year=<?= date('Y') ?>" class="month-card <?= ($month === 'marzo') ? 'active' : '' ?>">
-                     <span class="month-name">Marzo</span>
-                     <span class="month-label">Índices de Costos</span>
-                     <i class="ti ti-arrow-right"></i>
+                     <div class="month-text">
+                        <span class="month-name">Marzo</span>
+                        <span class="month-label">Índices de Costos</span>
+                     </div>
+                     <div class="month-icon">
+                        <i class="ti ti-arrow-up-right"></i>
+                     </div>
                   </a>
                   <a href="<?= APP_URL ?>/indices?month=abril&year=<?= date('Y') ?>" class="month-card <?= ($month === 'abril') ? 'active' : '' ?>">
-                     <span class="month-name">Abril</span>
-                     <span class="month-label">Índices de Costos</span>
-                     <i class="ti ti-arrow-right"></i>
+                     <div class="month-text">
+                        <span class="month-name">Abril</span>
+                        <span class="month-label">Índices de Costos</span>
+                     </div>
+                     <div class="month-icon">
+                        <i class="ti ti-arrow-up-right"></i>
+                     </div>
                   </a>
                   <a href="<?= APP_URL ?>/indices?month=mayo&year=<?= date('Y') ?>" class="month-card <?= ($month === 'mayo') ? 'active' : '' ?>">
-                     <span class="month-name">Mayo</span>
-                     <span class="month-label">Índices de Costos</span>
-                     <i class="ti ti-arrow-right"></i>
+                     <div class="month-text">
+                        <span class="month-name">Mayo</span>
+                        <span class="month-label">Índices de Costos</span>
+                     </div>
+                     <div class="month-icon">
+                        <i class="ti ti-arrow-up-right"></i>
+                     </div>
                   </a>
                </div>
             </div>
@@ -280,23 +293,22 @@
 .btn-informe-completo {
    display: inline-flex;
    align-items: center;
-   gap: 8px;
-   background: #0a3a78;
-   color: #ffffff;
-   padding: 14px 28px;
-   border-radius: 8px;
-   text-decoration: none;
-   font-weight: 600;
-   font-size: 15px;
-   transition: all 0.3s ease;
-   width: 100%;
    justify-content: center;
+   background: #00A3E0;
+   color: #ffffff;
+   padding: 12px 35px;
+   border-radius: 20px 0 20px 0;
+   text-decoration: none;
+   font-weight: 500;
+   font-size: 18px;
+   transition: all 0.3s ease;
 }
 
 .btn-informe-completo:hover {
-   background: #0b5ed8;
+   background: #008fcc;
+   color: #ffffff;
    transform: translateY(-2px);
-   box-shadow: 0 4px 12px rgba(10, 58, 120, 0.3);
+   box-shadow: 0 4px 12px rgba(0, 163, 224, 0.3);
 }
 
 /* Gráfico/Imagen container */
@@ -318,57 +330,62 @@
 
 .month-card {
    display: flex;
-   flex-direction: column;
    align-items: center;
-   padding: 25px 35px;
-   background: #ffffff;
-   border: 2px solid #e5e7eb;
-   border-radius: 12px;
+   justify-content: space-between;
+   padding: 15px 20px;
+   background: #d9eff9;
+   border-radius: 30px 0 30px 0;
    text-decoration: none;
    transition: all 0.3s ease;
-   min-width: 160px;
-   text-align: center;
+   width: calc(33.333% - 14px);
+   min-width: 250px;
 }
 
 .month-card:hover {
-   border-color: #00a3e0;
-   transform: translateY(-5px);
-   box-shadow: 0 6px 20px rgba(0, 163, 224, 0.25);
+   background: #c2e5f5;
+   transform: translateY(-3px);
 }
 
 .month-card.active {
-   border-color: #0a3a78;
-   background: linear-gradient(135deg, #0a3a78 0%, #0b5ed8 100%);
+   background: #c2e5f5;
 }
 
-.month-card.active .month-name,
-.month-card.active .month-label,
-.month-card.active i {
-   color: #ffffff;
+.month-text {
+   display: flex;
+   flex-direction: column;
+   text-align: left;
 }
 
 .month-name {
-   font-size: 20px;
-   font-weight: 700;
-   color: #0b3d91;
-   margin-bottom: 8px;
+   font-size: 22px;
+   font-weight: 600;
+   color: #00A3E0;
+   line-height: 1.1;
 }
 
 .month-label {
-   font-size: 12px;
-   color: #6b7280;
-   margin-bottom: 12px;
-   font-weight: 500;
-}
-
-.month-card i {
    font-size: 18px;
-   color: #00a3e0;
-   transition: transform 0.3s ease;
+   color: #0a3a78;
+   font-weight: 500;
+   margin-top: 4px;
 }
 
-.month-card:hover i {
-   transform: translateX(5px);
+.month-icon {
+   width: 45px;
+   height: 45px;
+   background: #00A3E0;
+   border-radius: 6px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #ffffff;
+   font-size: 20px;
+   flex-shrink: 0;
+   transition: all 0.3s ease;
+}
+
+.month-card:hover .month-icon {
+   transform: scale(1.05);
 }
 
 /* Responsive */
