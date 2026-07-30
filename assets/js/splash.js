@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Efecto parallax con movimiento opuesto al mouse
-    const parallaxElements = preloader.querySelectorAll('[data-speed]');
+    // Efecto parallax con movimiento de la imagen de fondo
+    const bgImage = preloader.querySelector('.preloader-bg img');
     
     document.addEventListener('mousemove', (e) => {
         const mouseX = e.clientX;
@@ -39,21 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const moveX = (mouseX - centerX) / centerX;
         const moveY = (mouseY - centerY) / centerY;
 
-        parallaxElements.forEach((element) => {
-            const speed = parseFloat(element.getAttribute('data-speed'));
-            
-            // Mover en dirección opuesta al movimiento del mouse
-            const translateX = -moveX * speed * 100;
-            const translateY = -moveY * speed * 100;
+        // Mover la imagen de fondo en dirección opuesta al mouse
+        const translateX = -moveX * 50;
+        const translateY = -moveY * 50;
 
-            element.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
-        });
+        bgImage.style.transform = `translate3d(${translateX}px, ${translateY}px, 0)`;
     });
 
     // Resetear cuando el mouse sale de la ventana
     document.addEventListener('mouseleave', () => {
-        parallaxElements.forEach((element) => {
-            element.style.transform = 'translate3d(0, 0, 0)';
-        });
+        bgImage.style.transform = 'translate3d(0, 0, 0)';
     });
 });

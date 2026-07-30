@@ -6,7 +6,7 @@
                <div class="col-xxl-2 col-xl-2 col-6">
                   <div class="tv-header-logo">
                      <a href="<?= APP_URL ?>/">
-                        <img src="<?= ASSETS_URL ?>/img/logo/logo.png" alt="AECAUM">
+                        <img src="<?= ASSETS_URL ?>/img/logo/logo_3D.png" alt="AECAUM">
                      </a>
                   </div>
                </div>

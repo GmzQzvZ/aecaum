@@ -4,8 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?= htmlspecialchars($pageTitle ?? 'AECAUM - Asociación de Empresas de Correo de Argentina Última Milla') ?></title>
-    <meta name="description" content="<?= htmlspecialchars($pageDescription ?? 'AECAUM representa institucionalmente al sector de correos privados de la última milla en Argentina.') ?>">
+    <title><?= htmlspecialchars($pageTitle ?? 'AECAUM - Asociación de Empresas de Correo de Argentina Última Milla') ?>
+    </title>
+    <meta name="description"
+        content="<?= htmlspecialchars($pageDescription ?? 'AECAUM representa institucionalmente al sector de correos privados de la última milla en Argentina.') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
@@ -29,32 +31,30 @@
 
     <!-- Preloader (solo en home) -->
     <?php if ($showSplash ?? false): ?>
-    <div id="preloader">
-        <div class="preloader-container">
-            <!-- Background buildings -->
-            <div class="preloader-bg">
-                <img src="<?= ASSETS_URL ?>/img/buildings2.jpg" alt="edificios">
-            </div>
-            
-            <!-- Content -->
-            <div class="preloader-content" data-speed="0.03">
-                <div class="preloader-logo">
-                    <img src="<?= ASSETS_URL ?>/img/logo/logo 2.png" alt="AECAUM">
+        <div id="preloader">
+            <div class="preloader-container">
+                <!-- Background buildings -->
+                <div class="preloader-bg">
+                    <img src="assets/img/icon/portada1.png" alt="currier">
                 </div>
-                <div class="preloader-text">
-                    <h1>Asociación de Empresas de Correo de Argentina Última Milla</h1>
-                </div>
-                <div class="preloader-btn" data-speed="0.05">
-                    <a href="<?= BASE_URL ?>/" class="tv-btn-primary">
-                        <span class="btn-wrap">
-                            <span class="btn-text1">Descubrí</span>
-                            <span class="btn-text2">Descubrí</span>
-                        </span>
-                    </a>
+
+                <!-- Content -->
+                <div class="preloader-content" data-speed="0.03">
+                    <div class="preloader-logo">
+                        <img src="assets/img/logo/AECAUM PORTADA.png" alt="AECAUM">
+
+                        <div class="preloader-btn" data-speed="0.05">
+                            <a href="<?= BASE_URL ?>/" class="tv-btn-primary">
+                                <span class="btn-wrap">
+                                    <span class="btn-text1">Descubrí</span>
+                                    <span class="btn-text2">Descubrí</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <?php endif; ?>
 
     <!-- Magic cursor -->
@@ -81,9 +81,12 @@
                             </div>
                             <div class="search__close">
                                 <button type="button" class="search__close-btn search-close-btn">
-                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 1L1 17" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M1 1L17 17" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
                             </div>
@@ -94,9 +97,14 @@
                                     <input class="search-input-field" type="text" placeholder="Buscar...">
                                     <span class="search-focus-border"></span>
                                     <button type="submit">
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9.55 18.1C14.272 18.1 18.1 14.272 18.1 9.55C18.1 4.82797 14.272 1 9.55 1C4.82797 1 1 4.82797 1 9.55C1 14.272 4.82797 18.1 9.55 18.1Z"
+                                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M19.0002 19.0002L17.2002 17.2002" stroke="currentColor"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </button>
                                 </div>
@@ -137,5 +145,18 @@
     <script src="<?= ASSETS_URL ?>/js/main.js"></script>
     <script src="<?= ASSETS_URL ?>/js/splash.js"></script>
 
+    <script>
+        // Mouse interaction for preloader background
+        document.addEventListener('mousemove', function (e) {
+            const preloaderBg = document.querySelector('.preloader-bg');
+            if (preloaderBg) {
+                const x = (window.innerWidth - e.pageX * 2) / 50;
+                const y = (window.innerHeight - e.pageY * 2) / 50;
+                preloaderBg.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            }
+        });
+    </script>
+
 </body>
+
 </html>

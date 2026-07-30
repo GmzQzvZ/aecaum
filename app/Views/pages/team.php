@@ -2,7 +2,7 @@
 
       <!-- breadcrumb-area-start -->
       <div class="tv-breadcrumb-area tv-breadcrumb-overlay tv-breadcrumb-ptb z-index-1 fix p-relative"
-         data-background="assets/img/breadcrumb/breadcrumb.jpg">
+         data-background="assets/img/breadcrumb/nosotros.png">
          <div class="container">
             <div class="row">
                <div class="col-lg-12">

@@ -1,7 +1,8 @@
 
 
       <!-- breadcrumb-area-start -->
-      <div class="tv-breadcrumb-area tv-breadcrumb-overlay tv-breadcrumb-ptb z-index-1 fix p-relative" data-background="assets/img/breadcrumb/breadcrumb.jpg">
+      <div class="tv-breadcrumb-area tv-breadcrumb-overlay tv-breadcrumb-ptb z-index-1 fix p-relative"
+         data-background="assets/img/breadcrumb/nosotros.png">
          <div class="container">
             <div class="row">
                <div class="col-lg-12">
@@ -67,7 +68,7 @@
                      <a href="<?= APP_URL ?>/project-details"> <i class="ti ti-arrow-right"></i></a>
                      </span>
                      <div class="single-project-content">
-                        <h3>HUella de Carbono</h3>
+                        <h3>Huella de Carbono</h3>
                         <div class="project-cat">
                            <span>Developement, </span>
                            <span>Marketing</span>

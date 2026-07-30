@@ -6,7 +6,7 @@
         <div class="nl-section">
             <!-- LEFT: light bg + image -->
             <div class="nl-left">
-                <img src="assets/img/footer/footer-bg-2-1.png" alt="Newsletter visual" class="nl-img">
+                <img src="assets/img/footer/newsletter.jpeg" alt="Newsletter visual" class="nl-img">
             </div>
             <!-- RIGHT: dark blue bg + form -->
             <div class="nl-right">
@@ -14,8 +14,7 @@
                 <p class="nl-text">Mantenete actualizado con la agenda de nuestro ecosistema.<br>
                     Información estratégica, inversiones y análisis clave para los líderes de<br> la logística
                     argentina.</p>
-                <form action="#" class="nl-form">
-                    <input type="email" placeholder="Tu eMail" required class="nl-input">
+                <form action="https://mailchi.mp/correos/suscribite-a-nuestro-newsletter" class="nl-form" title="link de newsletter" target="_blank">
                     <button type="submit" class="nl-btn">
                         <span class="btn-wrap">
                             <span class="btn-text1">Inscribirme</span>
@@ -96,10 +95,10 @@
                     <div class="col-lg-3 col-md-6 mb-50 aecaum-footer-services">
                         <h4>Servicios</h4>
                         <ul>
-                            <li><a href="/service">Academia</a></li>
-                            <li><a href="/service">Índice de Costos</a></li>
-                            <li><a href="/service">Networking y Alianzas</a></li>
-                            <li><a href="/service">Representación Sectorial</a></li>
+                            <li><a href="<?= APP_URL ?>/service">Academia</a></li>
+                            <li><a href="<?= APP_URL ?>/indices">Índice de Costos</a></li>
+                            <li><a href="<?= APP_URL ?>/service">Networking y Alianzas</a></li>
+                            <li><a href="<?= APP_URL ?>/service">Representación Sectorial</a></li>
                         </ul>
                     </div>
 
