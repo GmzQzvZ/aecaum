@@ -1,34 +1,39 @@
 <header class="tv-header-height">
    <div id="header-sticky" class="tv-header-area header-style-1 tv-header-ptb p-relative">
-      <div class="container container-1750">
+      <div class="container" style="max-width: 1326px;">
          <div class="p-relative">
-            <div class="row align-items-center">
-               <div class="col-xxl-2 col-xl-2 col-6">
+            <div class="row align-items-center" style="min-height: 120px;">
+               <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
                      <a href="<?= APP_URL ?>/">
-                        <img src="<?= ASSETS_URL ?>/img/logo/logo_3D.png" alt="AECAUM">
+                        <img src="<?= ASSETS_URL ?>/img/logo/Logo y fondo.png" alt="AECAUM" class="tv-header-logo-img">
                      </a>
                   </div>
-               </div>
-               <div class="col-xxl-7 col-xl-7 d-none d-xl-block">
-                  <div class="tv-header-menu tv-header-dropdown">
-                  </div>
-               </div>
-               <div class="col-xxl-3 col-xl-3 col-6">
-                  <div class="tv-header-right-action d-flex justify-content-end align-items-center">
-                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social">
+                  <div
+                     class="tv-header-right-action d-flex justify-content-end justify-content-md-center align-items-center">
+                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social"
+                        style="font-size: 26px;">
                         <i class="ti ti-brand-linkedin"></i>
                      </a>
-                     <span class="separator">|</span>
-                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social">
+                     <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
+                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social"
+                        style="font-size: 26px;">
                         <i class="ti ti-brand-instagram"></i>
                      </a>
-                     <span class="separator">|</span>
-                     <?php if (isLoggedIn()): ?>
+                     <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
+                     <?php
+                     if (isLoggedIn()):
+                        $currentUser = getCurrentUser();
+                        $userName = $currentUser['name'] ?? 'Mi panel';
+                        ?>
                         <a href="<?= APP_URL ?>/dashboard" class="tv-btn-primary d-none d-md-block">
                            <span class="btn-wrap">
-                              <span class="btn-text1">Mi panel</span>
-                              <span class="btn-text2">Mi panel</span>
+                              <span class="btn-text1">
+                                 Hola, <?= htmlspecialchars($userName) ?>
+                              </span>
+                              <span class="btn-text2">
+                                 Hola, <?= htmlspecialchars($userName) ?>
+                              </span>
                            </span>
                         </a>
                      <?php else: ?>
@@ -39,9 +44,9 @@
                            </span>
                         </a>
                      <?php endif; ?>
-                     <span class="separator">|</span>
+                     <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
                      <div class="tv-header-bar">
-                        <button class="tv-menu-bar">
+                        <button class="tv-menu-bar" style="font-size: 30px;">
                            <span><i class="ti ti-menu-2"></i></span>
                         </button>
                      </div>
@@ -70,7 +75,8 @@
                      <ul class="submenu">
                         <li><a href="<?= APP_URL ?>/legislacion/marco-regulatorio">Marco regulatorio</a></li>
                         <li><a href="<?= APP_URL ?>/legislacion/reforma-laboral">Reforma laboral</a></li>
-                        <li><a href="<?= APP_URL ?>/legislacion/convenios-colectivos">Convenios colectivos, paritarias y escalas salariales</a></li>
+                        <li><a href="<?= APP_URL ?>/legislacion/convenios-colectivos">Convenios colectivos, paritarias y
+                              escalas salariales</a></li>
                         <li><a href="<?= APP_URL ?>/legislacion/novedades-enacom">Novedades ENACOM</a></li>
                      </ul>
                   </li>

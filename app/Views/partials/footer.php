@@ -14,7 +14,8 @@
                 <p class="nl-text">Mantenete actualizado con la agenda de nuestro ecosistema.<br>
                     Información estratégica, inversiones y análisis clave para los líderes de<br> la logística
                     argentina.</p>
-                <form action="https://mailchi.mp/correos/suscribite-a-nuestro-newsletter" class="nl-form" title="link de newsletter" target="_blank">
+                <form action="https://mailchi.mp/correos/suscribite-a-nuestro-newsletter" class="nl-form"
+                    title="link de newsletter" target="_blank">
                     <button type="submit" class="nl-btn">
                         <span class="btn-wrap">
                             <span class="btn-text1">Inscribirme</span>
@@ -29,10 +30,19 @@
         <!-- aecaum-footer-main-start -->
         <div class="aecaum-footer">
             <div class="container">
-                <div class="row aecaum-footer-main align-items-start">
+                <!-- TOP: Logo -->
+                <div class="row mb-50">
+                    <div class="col-12 text-center">
+                        <div class="aecaum-footer-logo">
+                            <img src="assets/img/footer/LOGO SOLO AECAUM.png" alt="AECAUM Logo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row aecaum-footer-main align-items-start justify-content-between">
 
                     <!-- LEFT: Contact info -->
-                    <div class="col-lg-3 col-md-6 mb-50 aecaum-footer-contact">
+                    <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-contact">
                         <ul>
                             <li>
                                 <span class="footer-icon-circle"><i class="ti ti-mail"></i></span>
@@ -58,13 +68,7 @@
                         </ul>
                     </div>
 
-                    <!-- CENTER: Logo + tagline + social + address -->
-                    <div class="col-lg-6 col-md-12 mb-50 aecaum-footer-center text-center">
-                        <div class="aecaum-footer-logo mb-20">
-                            <a href="/">
-                                <img src="assets/img/footer/LOGO SOLO AECAUM.png" alt="AECAUM Logo">
-                            </a>
-                        </div>
+                    <div class="col-lg-4 col-md-12 mb-50 aecaum-footer-center text-center">
                         <p class="aecaum-footer-tagline">
                             Conectate con el futuro de la última milla. Estamos<br>
                             acá para resolver tus dudas e impulsar el crecimiento<br>
@@ -92,7 +96,7 @@
                     </div>
 
                     <!-- RIGHT: Servicios -->
-                    <div class="col-lg-3 col-md-6 mb-50 aecaum-footer-services">
+                    <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-services">
                         <h4>Servicios</h4>
                         <ul>
                             <li><a href="<?= APP_URL ?>/service">Academia</a></li>
@@ -110,7 +114,5 @@
                 </div>
             </div>
         </div>
-        <!-- aecaum-footer-main-end -->
     </div>
-    <!-- footer-area-end -->
 </footer>

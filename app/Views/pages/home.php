@@ -46,23 +46,19 @@
     <div class="tv-about-area z-index-1 p-relative pt-130 pb-130 white-bg">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Columna izquierda: texto -->
                 <div class="col-xl-6 col-lg-6 pr-40 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
                     <div class="tv-section-title-box">
                         <span class="tv-section-subtitle"
                             style="color:#00a3e0; font-weight:700; font-size:16px; margin-bottom:10px; display:block;">Acerca
                             de AECAUM</span>
-                        <h2 class="tv-section-title pb-20"
-                            style="font-size:42px; font-weight:800; color:#0b3d91; line-height:1.2;">La institucion que
+                        <h2 class="tv-section-title pb-20" style="font-size:42px; font-weight:800; color:#0b3d91; line-height:1.2;">La institucion que 
                             respalda y potencia la última milla.</h2>
-                        <p class="tv-section"
-                            style="font-size:16px; color:#6b7280; margin-bottom:15px; line-height:1.6;">
+                        <p class="tv-section" style="font-size:16px; color:#6b7280; margin-bottom:15px; line-height:1.6;">
                             <strong>AECAUM</strong> es la Asociación de Empresas de Correo de Argentina Última Milla, la
                             entidad que representa institucionalmente al sector de los correos privados especializados
                             en la última milla nacional e internacional.
                         </p>
-                        <p class="tv-section"
-                            style="font-size:16px; color:#6b7280; margin-bottom:35px; line-height:1.6;">
+                        <p class="tv-section" style="font-size:16px; color:#6b7280; margin-bottom:35px; line-height:1.6;">
                             <strong>Fundada el 15 de agosto de 2003</strong> e inscripta en la Inspección General de
                             Justicia bajo Personería Jurídica N° 213, <strong>nucleamos a las principales empresas
                                 privadas del mercado postal y logístico de la última milla de Argentina:</strong>
@@ -374,7 +370,8 @@
                             <div>
                                 <div class="it-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".7">
                                     <button>
-                                        <i class="ti ti-plus"></i>
+                                        <a href="<?= APP_URL ?>/team">
+                                            <i class="ti ti-plus"></i>
                                     </button>
                                 </div>
                             </div>

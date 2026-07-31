@@ -147,13 +147,15 @@
 
     <script>
         // Mouse interaction for preloader background
-        document.addEventListener('mousemove', function (e) {
-            const preloaderBg = document.querySelector('.preloader-bg');
-            if (preloaderBg) {
-                const x = (window.innerWidth - e.pageX * 2) / 50;
-                const y = (window.innerHeight - e.pageY * 2) / 50;
-                preloaderBg.style.transform = `translateX(${x}px) translateY(${y}px)`;
-            }
+        document.addEventListener("mousemove", (e) => {
+            const img = document.querySelector(".preloader-bg img");
+
+            if (!img) return;
+
+            const x = (window.innerWidth / 2 - e.clientX) * 0.03;
+            const y = (window.innerHeight / 2 - e.clientY) * 0.03;
+
+            img.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
         });
     </script>
 
