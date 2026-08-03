@@ -201,16 +201,18 @@ class AdminController extends BaseController {
                     $uploadDir = ROOT_PATH . '/uploads/';
                     if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
 
-                    $filename = time() . '_' . basename($_FILES['document']['name']);
-                    $filepath = $uploadDir . $filename;
+                    // Guardamos el archivo físicamente sin extensión usando un hash
+                    $physicalHash = bin2hex(random_bytes(16));
+                    $filepath = $uploadDir . $physicalHash;
+                    $originalFilename = basename($_FILES['document']['name']);
 
                     if (move_uploaded_file($_FILES['document']['tmp_name'], $filepath)) {
                         $allowedRoleIds = array_map('intval', $_POST['allowed_roles'] ?? []);
                         $payload = \App\Helpers\JwtHelper::verifyToken($_COOKIE['aecaum_token']);
                         Document::create([
                             'title'       => $this->input('title'),
-                            'filename'    => $filename,
-                            'path'        => 'uploads/' . $filename,
+                            'filename'    => $originalFilename,
+                            'path'        => 'uploads/' . $physicalHash, // Físicamente se guarda así
                             'description' => $this->input('description'),
                             'uploaded_by' => (int) ($payload['user_id'] ?? 0),
                         ], $allowedRoleIds);

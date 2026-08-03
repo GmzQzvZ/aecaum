@@ -13,12 +13,6 @@
          <div class="stat-number"><?= $stats['documents'] ?></div>
          <div class="stat-label"><i class="ti ti-files"></i> Documentos disponibles</div>
       </div>
-      <?php if ($currentUser['role_label'] !== 'Socio'): ?>
-      <div class="stat-card" style="border-top-color:#10b981;">
-         <div class="stat-number" style="color:#065f46;"><?= $stats['uploaded'] ?></div>
-         <div class="stat-label"><i class="ti ti-upload"></i> Documentos subidos por mí</div>
-      </div>
-      <?php endif; ?>
    </div>
 
    <div class="panel-card">
@@ -40,8 +34,11 @@
                </td>
                <td><i class="ti ti-file"></i> <?= htmlspecialchars($doc['filename']) ?></td>
                <td><?= date('d/m/Y', strtotime($doc['created_at'])) ?></td>
-               <td>
-                  <a href="<?= APP_URL ?>/<?= htmlspecialchars($doc['path']) ?>" class="btn-primary-sm" download style="padding:6px 12px;">
+               <td style="display:flex;gap:6px;">
+                  <a href="<?= APP_URL ?>/documento/ver?id=<?= $doc['id'] ?>" target="_blank" class="btn-primary-sm" style="padding:6px 12px; background:#6d8089;" title="Ver documento">
+                     <i class="ti ti-eye"></i> Ver
+                  </a>
+                  <a href="<?= APP_URL ?>/documento/descargar?id=<?= $doc['id'] ?>&action=download" class="btn-primary-sm" style="padding:6px 12px;" title="Descargar">
                      <i class="ti ti-download"></i> Descargar
                   </a>
                </td>

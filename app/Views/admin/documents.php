@@ -36,7 +36,10 @@
                <td><?= htmlspecialchars($doc['uploader_name'] ?? '—') ?></td>
                <td><?= date('d/m/Y', strtotime($doc['created_at'])) ?></td>
                <td style="display:flex;gap:6px;">
-                  <a href="<?= APP_URL ?>/<?= htmlspecialchars($doc['path']) ?>" class="btn-primary-sm" download style="padding:6px 12px;">
+                  <a href="<?= APP_URL ?>/documento/ver?id=<?= $doc['id'] ?>" target="_blank" class="btn-primary-sm" style="padding:6px 12px; background:#6d8089;" title="Ver documento">
+                     <i class="ti ti-eye"></i>
+                  </a>
+                  <a href="<?= APP_URL ?>/documento/descargar?id=<?= $doc['id'] ?>&action=download" class="btn-primary-sm" style="padding:6px 12px;" title="Descargar">
                      <i class="ti ti-download"></i>
                   </a>
                   <form method="POST" action="<?= APP_URL ?>/admin/documentos" onsubmit="return confirm('¿Eliminar este documento?')">

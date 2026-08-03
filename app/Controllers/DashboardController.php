@@ -20,15 +20,13 @@ class DashboardController extends BaseController {
         $roleId      = (int) ($payload['role_id'] ?? 0);
 
         $documents = Document::forUser($userId, $roleId);
-        $uploaded  = array_filter($documents, fn($d) => (int)$d['uploaded_by'] === $userId);
 
         $this->render('dashboard/index', [
             'pageTitle'   => 'Mi Panel | AECAUM',
             'currentUser' => $currentUser,
             'documents'   => $documents,
             'stats'       => [
-                'documents' => count($documents),
-                'uploaded'  => count($uploaded),
+                'documents' => count($documents)
             ],
         ], 'panel');
     }

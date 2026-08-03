@@ -21,9 +21,6 @@
       <a href="<?= APP_URL ?>/dashboard" class="active">
          <i class="ti ti-dashboard"></i> Dashboard
       </a>
-      <a href="<?= APP_URL ?>/dashboard">
-         <i class="ti ti-files"></i> Mis documentos
-      </a>
    </nav>
 
    <div class="sidebar-footer">

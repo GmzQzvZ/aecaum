@@ -14,7 +14,7 @@
       body { background: #f5f6fa; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
       .panel-layout { display: flex; min-height: 100vh; }
       .sidebar {
-         width: 280px; background: linear-gradient(180deg, #1a3acc 0%, #0d2596 100%);
+         width: 280px; background: #072868;
          color: white; padding: 0; position: fixed; height: 100vh; overflow-y: auto;
          display: flex; flex-direction: column; z-index: 100;
       }
@@ -47,7 +47,7 @@
          border-left: 3px solid transparent;
       }
       .sidebar-nav a:hover, .sidebar-nav a.active {
-         background: rgba(255,255,255,0.1); color: white; border-left-color: #60a5fa;
+         background: rgba(255,255,255,0.1); color: white; border-left-color: #00aae6;
       }
       .sidebar-nav a i { font-size: 18px; min-width: 20px; }
       .sidebar-footer {
@@ -65,25 +65,25 @@
          margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
          display: flex; justify-content: space-between; align-items: center;
       }
-      .page-header h1 { font-size: 22px; font-weight: 700; color: #1a3acc; }
-      .page-header p { color: #6b7280; font-size: 13px; margin-top: 2px; }
+      .page-header h1 { font-size: 22px; font-weight: 700; color: #072868; }
+      .page-header p { color: #6d8089; font-size: 13px; margin-top: 2px; }
       .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 28px; }
       .stat-card {
          background: white; padding: 22px 24px; border-radius: 14px;
-         box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-top: 3px solid #2B4DFF;
+         box-shadow: 0 1px 4px rgba(0,0,0,0.06); border-top: 3px solid #00aae6;
       }
-      .stat-number { font-size: 32px; font-weight: 800; color: #1a3acc; }
-      .stat-label { font-size: 13px; color: #6b7280; margin-top: 4px; }
+      .stat-number { font-size: 32px; font-weight: 800; color: #072868; }
+      .stat-label { font-size: 13px; color: #6d8089; margin-top: 4px; }
       .panel-card {
          background: white; border-radius: 14px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); padding: 24px; margin-bottom: 24px;
       }
-      .panel-card h3 { font-size: 17px; font-weight: 700; color: #1a3acc; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+      .panel-card h3 { font-size: 17px; font-weight: 700; color: #072868; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
       .btn-primary-sm {
-         background: #2B4DFF; color: white; border: none; padding: 8px 18px;
+         background: #00aae6; color: white; border: none; padding: 8px 18px;
          border-radius: 8px; font-size: 13px; cursor: pointer; text-decoration: none;
          display: inline-flex; align-items: center; gap: 6px; transition: background 0.2s;
       }
-      .btn-primary-sm:hover { background: #1a3acc; color: white; }
+      .btn-primary-sm:hover { background: #072868; color: white; }
       .btn-danger-sm {
          background: #ef4444; color: white; border: none; padding: 6px 14px;
          border-radius: 6px; font-size: 12px; cursor: pointer;
@@ -113,7 +113,7 @@
          width: 100%; padding: 10px 14px; border: 1px solid #e5e7eb;
          border-radius: 8px; font-size: 14px; outline: none; transition: border 0.2s;
       }
-      .form-group input:focus, .form-group select:focus { border-color: #2B4DFF; }
+      .form-group input:focus, .form-group select:focus { border-color: #00aae6; }
       .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
       .empty-state { text-align: center; padding: 50px 20px; color: #9ca3af; }
       .empty-state i { font-size: 48px; margin-bottom: 14px; display: block; }

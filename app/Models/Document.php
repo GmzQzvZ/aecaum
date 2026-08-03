@@ -14,7 +14,12 @@ class Document {
             LEFT JOIN users u ON d.uploaded_by = u.id
             ORDER BY d.created_at DESC
         ");
-        return $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
+        $docs = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
+        foreach ($docs as &$doc) {
+            $doc['filename'] = \App\Helpers\CryptoHelper::decrypt($doc['filename']);
+            $doc['path'] = \App\Helpers\CryptoHelper::decrypt($doc['path']);
+        }
+        return $docs;
     }
 
     /** Retorna documentos accesibles para un usuario/rol específico */
@@ -33,7 +38,12 @@ class Document {
         ");
         $stmt->bind_param('ii', $userId, $roleId);
         $stmt->execute();
-        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $docs = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        foreach ($docs as &$doc) {
+            $doc['filename'] = \App\Helpers\CryptoHelper::decrypt($doc['filename']);
+            $doc['path'] = \App\Helpers\CryptoHelper::decrypt($doc['path']);
+        }
+        return $docs;
     }
 
     /** Busca un documento por ID */
@@ -43,7 +53,12 @@ class Document {
         $stmt->bind_param('i', $id);
         $stmt->execute();
         $result = $stmt->get_result();
-        return $result->num_rows > 0 ? $result->fetch_assoc() : null;
+        $doc = $result->num_rows > 0 ? $result->fetch_assoc() : null;
+        if ($doc) {
+            $doc['filename'] = \App\Helpers\CryptoHelper::decrypt($doc['filename']);
+            $doc['path'] = \App\Helpers\CryptoHelper::decrypt($doc['path']);
+        }
+        return $doc;
     }
 
     /**
@@ -62,8 +77,8 @@ class Document {
         $stmt->bind_param(
             'ssssi',
             $data['title'],
-            $data['filename'],
-            $data['path'],
+            \App\Helpers\CryptoHelper::encrypt($data['filename']),
+            \App\Helpers\CryptoHelper::encrypt($data['path']),
             $data['description'],
             $data['uploaded_by']
         );
@@ -77,7 +92,8 @@ class Document {
             $pStmt = $conn->prepare("
                 INSERT IGNORE INTO document_permissions (document_id, role_id) VALUES (?, ?)
             ");
-            $pStmt->bind_param('ii', $docId, (int) $roleId);
+            $roleIdInt = (int) $roleId;
+            $pStmt->bind_param('ii', $docId, $roleIdInt);
             $pStmt->execute();
         }
 
