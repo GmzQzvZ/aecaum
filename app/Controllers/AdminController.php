@@ -336,4 +336,84 @@ class AdminController extends BaseController {
             'error'       => $this->query('error'),
         ], 'panel');
     }
+
+    /** Gestión de informes institucionales */
+    public function informes(): void {
+        requireLogin();
+        if (!hasRole('Superadmin') && !hasRole('admin')) {
+            $this->redirect('dashboard');
+            return;
+        }
+        if ($this->isPost()) {
+            $action = $_POST['action'] ?? '';
+            if ($action === 'create_informe') {
+                // Handle image upload
+                $imagePath = '';
+                if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+                    $uploadDir = ROOT_PATH . '/uploads/img/libros/';
+                    if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
+                    $filename = time() . '_' . basename($_FILES['image']['name']);
+                    $dest = $uploadDir . $filename;
+                    if (move_uploaded_file($_FILES['image']['tmp_name'], $dest)) {
+                        $imagePath = 'uploads/img/libros/' . $filename;
+                    }
+                }
+                // Handle PDF upload
+                $filePath = '';
+                if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
+                    $uploadDirFile = ROOT_PATH . '/uploads/docs/informes/';
+                    if (!is_dir($uploadDirFile)) mkdir($uploadDirFile, 0755, true);
+                    $filenameFile = time() . '_' . basename($_FILES['file']['name']);
+                    $destFile = $uploadDirFile . $filenameFile;
+                    if (move_uploaded_file($_FILES['file']['tmp_name'], $destFile)) {
+                        $filePath = 'uploads/docs/informes/' . $filenameFile;
+                    }
+                }
+                $ok = Informe::create([
+                    'title' => $this->input('title'),
+                    'image' => $imagePath,
+                    'year' => (int)$this->input('year'),
+                    'file_path' => $filePath,
+                ]);
+                $this->redirect('admin/informes?' . ($ok ? 'success=informe_created' : 'error=create_failed'));
+                return;
+            }
+            if ($action === 'delete_informe') {
+                $id = (int)($_POST['informe_id'] ?? 0);
+                if ($id) {
+                    // Fetch record to delete image file
+                    $all = Informe::all();
+                    foreach ($all as $inf) {
+                        if ($inf['id'] == $id) {
+                            // Delete image file if exists
+                            $img = $inf['image'];
+                            if ($img && file_exists(ROOT_PATH . '/' . $img)) {
+                                unlink(ROOT_PATH . '/' . $img);
+                            }
+                            // Delete uploaded PDF file if exists
+                            $file = $inf['file_path'] ?? '';
+                            if ($file && file_exists(ROOT_PATH . '/' . $file)) {
+                                unlink(ROOT_PATH . '/' . $file);
+                            }
+                        }
+                    }
+                    Informe::delete($id);
+                    $this->redirect('admin/informes?success=informe_deleted');
+                } else {
+                    $this->redirect('admin/informes?error=delete_failed');
+                }
+                return;
+            }
+        }
+        $this->render('admin/informes', [
+            'pageTitle'   => 'Informes | Admin AECAUM',
+            'currentUser' => getCurrentUser(),
+            'informes'    => Informe::all(),
+            'success'     => $this->query('success'),
+            'error'       => $this->query('error'),
+        ], 'panel');
+    }
+
+    /** Gestión de mensajes de contacto */
+
 }

@@ -6,6 +6,7 @@ if (str_starts_with($uri, 'admin/usuarios')) $currentSection = 'users';
 elseif (str_starts_with($uri, 'admin/roles'))    $currentSection = 'roles';
 elseif (str_starts_with($uri, 'admin/documentos')) $currentSection = 'documents';
 elseif (str_starts_with($uri, 'admin/indices'))   $currentSection = 'indices';
+elseif (str_starts_with($uri, 'admin/informes')) $currentSection = 'informes';
 elseif (str_starts_with($uri, 'admin/contacto'))  $currentSection = 'contact';
 elseif (str_starts_with($uri, 'admin'))           $currentSection = 'admin';
 elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
@@ -48,9 +49,12 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
       <a href="<?= APP_URL ?>/admin/indices" class="<?= $currentSection === 'indices' ? 'active' : '' ?>">
          <i class="ti ti-layout-grid"></i> Índices
       </a>
-      <a href="<?= APP_URL ?>/admin/contacto" class="<?= $currentSection === 'contact' ? 'active' : '' ?>">
-         <i class="ti ti-mail"></i> Mensajes de Contacto
-      </a>
+      <a href="<?= APP_URL ?>/admin/informes" class="<?= $currentSection === 'informes' ? 'active' : '' ?>">
+   <i class="ti ti-file-text"></i> Informes
+</a>
+<a href="<?= APP_URL ?>admin/contacto" class="<?= $currentSection === 'contact' ? 'active' : '' ?>">
+   <i class="ti ti-mail"></i> Mensajes de Contacto
+</a>
    </nav>
 
    <div class="sidebar-footer">

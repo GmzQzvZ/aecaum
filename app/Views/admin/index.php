@@ -31,9 +31,10 @@
    <div class="panel-card">
       <h3><i class="ti ti-zap"></i> Acciones rápidas</h3>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-         <a href="<?= APP_URL ?>/admin/usuarios" class="btn-primary-sm"><i class="ti ti-user-plus"></i> Agregar usuario</a>
-         <a href="<?= APP_URL ?>/admin/roles" class="btn-primary-sm" style="background:#10b981;"><i class="ti ti-shield-plus"></i> Agregar rol</a>
-         <a href="<?= APP_URL ?>/admin/documentos" class="btn-primary-sm" style="background:#f59e0b;"><i class="ti ti-file-upload"></i> Subir documento</a>
+         <a href="<?= APP_URL ?>admin/usuarios" class="btn-primary-sm"><i class="ti ti-user-plus"></i> Agregar usuario</a>
+         <a href="<?= APP_URL ?>admin/roles" class="btn-primary-sm" style="background:#10b981;"><i class="ti ti-shield-plus"></i> Agregar rol</a>
+         <a href="<?= APP_URL ?>admin/documentos" class="btn-primary-sm" style="background:#f59e0b;"><i class="ti ti-file-upload"></i> Subir documento</a>
+         <a href="<?= APP_URL ?>admin/informes" class="btn-primary-sm" style="background:#3b82f6;"><i class="ti ti-file-text"></i> Informes</a>
          <a href="<?= APP_URL ?>/" class="btn-primary-sm" style="background:#6b7280;"><i class="ti ti-external-link"></i> Ver sitio</a>
       </div>
    </div>

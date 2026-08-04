@@ -46,6 +46,16 @@ CREATE TABLE IF NOT EXISTS indices (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Tabla de informes institucionales
+CREATE TABLE IF NOT EXISTS informes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    year INT NOT NULL,
+    file_path VARCHAR(255) NOT NULL DEFAULT '',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 -- Tabla de permisos de documentos (roles que pueden acceder)
 CREATE TABLE IF NOT EXISTS document_permissions (
     id INT AUTO_INCREMENT PRIMARY KEY,

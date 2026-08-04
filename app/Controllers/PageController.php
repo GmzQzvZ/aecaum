@@ -144,6 +144,18 @@ class PageController extends BaseController {
         ]);
     }
 
+    public function informesInstitucionales(): void {
+        // Obtener los informes institucionales desde la tabla de informes
+        $informes = \Informe::all();
+        // Renderizar vista específica con los informes
+        $this->render('pages/informes-institucionales', [
+            'pageTitle' => 'Informes Institucionales | AECAUM',
+            'informes'   => $informes,
+            'month'     => $this->query('month'),
+            'year'      => $this->query('year'),
+        ]);
+    }
+
     /** Página de contenido institucional (secciones del menú) */
     public function content(string $slug): void {
         $pages = require APP_PATH . '/config/content_pages.php';
