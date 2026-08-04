@@ -17,7 +17,25 @@
          width: 280px; background: #072868;
          color: white; padding: 0; position: fixed; height: 100vh; overflow-y: auto;
          display: flex; flex-direction: column; z-index: 100;
+         transition: width 0.3s ease;
       }
+      .sidebar.collapsed { width: 80px; }
+      .sidebar.collapsed .sidebar-brand-text,
+      .sidebar.collapsed .user-info p,
+      .sidebar.collapsed .user-info span.user-role,
+      .sidebar.collapsed .nav-group-label,
+      .sidebar.collapsed .sidebar-footer a span { display: none; }
+      .sidebar.collapsed .sidebar-brand { justify-content: center; padding: 24px 0 20px; flex-direction: column; gap: 16px; }
+      .sidebar.collapsed .user-info { margin: 16px 8px; padding: 10px 4px; text-align: center; }
+      .sidebar.collapsed .user-info h4 { font-size: 11px; word-break: break-all; }
+      .sidebar.collapsed .sidebar-nav a { justify-content: center; padding: 14px 0; font-size: 0; }
+      .sidebar.collapsed .sidebar-nav a i { font-size: 22px; margin: 0; }
+      .sidebar.collapsed .sidebar-footer a { justify-content: center; font-size: 0; }
+      .sidebar.collapsed .sidebar-footer a i { font-size: 20px; margin: 0; }
+      
+      .toggle-btn { background: transparent; border: none; color: white; font-size: 20px; cursor: pointer; opacity: 0.7; transition: opacity 0.2s; margin-left: auto; }
+      .toggle-btn:hover { opacity: 1; }
+      .sidebar.collapsed .toggle-btn { margin-left: 0; }
       .sidebar-brand {
          padding: 24px 20px 20px; border-bottom: 1px solid rgba(255,255,255,0.12);
          display: flex; align-items: center; gap: 12px;
@@ -59,7 +77,8 @@
          padding: 8px 12px; border-radius: 8px; transition: all 0.2s;
       }
       .sidebar-footer a:hover { background: rgba(255,255,255,0.08); color: white; }
-      .main-content { flex: 1; margin-left: 280px; padding: 30px; min-height: 100vh; }
+      .main-content { flex: 1; margin-left: 280px; padding: 30px; min-height: 100vh; transition: margin-left 0.3s ease; }
+      .main-content.expanded { margin-left: 80px; }
       .page-header {
          background: white; padding: 20px 28px; border-radius: 14px;
          margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
@@ -129,5 +148,27 @@
    <?= $content ?>
 </div>
 <?php if (!empty($extraScripts)) echo $extraScripts; ?>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+   const sidebar = document.querySelector('.sidebar');
+   const mainContent = document.querySelector('.main-content');
+   
+   // Recuperar estado previo
+   if (localStorage.getItem('sidebar_collapsed') === 'true') {
+      sidebar.classList.add('collapsed');
+      mainContent.classList.add('expanded');
+   }
+
+   // Lógica del botón toggle (buscamos en todo el document por si se inyecta dinámicamente)
+   document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.toggle-btn');
+      if (btn) {
+         sidebar.classList.toggle('collapsed');
+         mainContent.classList.toggle('expanded');
+         localStorage.setItem('sidebar_collapsed', sidebar.classList.contains('collapsed'));
+      }
+   });
+});
+</script>
 </body>
 </html>

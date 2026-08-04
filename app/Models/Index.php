@@ -21,15 +21,21 @@ class Index {
 
     public static function create(array $data): bool {
         global $conn;
-        $stmt = $conn->prepare("INSERT INTO indices (title, image, description) VALUES (?, ?, ?)");
-        $stmt->bind_param('sss', $data['title'], $data['image'], $data['description']);
+        $stmt = $conn->prepare("INSERT INTO indices (title, image, description, month, year, informe) VALUES (?, ?, ?, ?, ?, ?)");
+        $month   = $data['month'] ?? 'enero';
+        $year    = (int)($data['year'] ?? date('Y'));
+        $informe = $data['informe'] ?? '';
+        $stmt->bind_param('ssssis', $data['title'], $data['image'], $data['description'], $month, $year, $informe);
         return $stmt->execute();
     }
 
     public static function update(int $id, array $data): bool {
         global $conn;
-        $stmt = $conn->prepare("UPDATE indices SET title = ?, image = ?, description = ? WHERE id = ?");
-        $stmt->bind_param('sssi', $data['title'], $data['image'], $data['description'], $id);
+        $stmt = $conn->prepare("UPDATE indices SET title = ?, image = ?, description = ?, month = ?, year = ?, informe = ? WHERE id = ?");
+        $month   = $data['month'] ?? 'enero';
+        $year    = (int)($data['year'] ?? date('Y'));
+        $informe = $data['informe'] ?? '';
+        $stmt->bind_param('ssssisi', $data['title'], $data['image'], $data['description'], $month, $year, $informe, $id);
         return $stmt->execute();
     }
 

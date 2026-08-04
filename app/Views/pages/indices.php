@@ -51,77 +51,14 @@
             </div>
 
             <!-- Contenido Principal del Índice -->
-            <div class="row align-items-start mb-50">
-               <!-- Columna Izquierda: Paneles de Servicios -->
-               <div class="col-lg-5">
-                  <div class="indice-header mb-30">
-                     <div class="d-flex align-items-center justify-content-between">
-                        <div>
-                           <h3 style="font-size: 24px; font-weight: 700; color: #0b3d91; margin: 0;">ÍNDICE DE COSTOS</h3>
-                           <p style="font-size: 14px; color: #6b7280; margin: 5px 0 0 0;">
-                              <?= strtoupper(htmlspecialchars($indices[0]['month'] ?? 'ABRIL')) ?>
-                              <?= htmlspecialchars($indices[0]['year'] ?? date('Y')) ?>
-                           </p>
-                        </div>
-                        <div class="logos d-flex align-items-center gap-3">
-                           <img src="<?= APP_URL ?>/assets/img/logo/aecaum.png" alt="AECAUM" style="height: 40px;">
-                           <img src="<?= APP_URL ?>/assets/img/logo/utn-ct.png" alt="UTN CT" style="height: 40px;"
-                              onerror="this.style.display='none'">
-                        </div>
-                     </div>
+            <div class="row mb-50">
+               <div class="col-lg-12">
+                  <div class="grafico-container">
+                     <img src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image']) ?>"
+                        alt="<?= htmlspecialchars($indices[0]['title']) ?>" style="width: 100%; border-radius: 8px;">
                   </div>
-
-                  <!-- Panel Servicio Última Milla -->
-                  <div class="service-panel mb-25">
-                     <div class="service-panel-header">
-                        <i class="ti ti-box" style="font-size: 24px; color: #0a3a78;"></i>
-                        <h4 style="font-size: 18px; font-weight: 700; color: #0b3d91; margin: 0;">Servicio Última Milla
-                        </h4>
-                     </div>
-                     <div class="service-panel-body">
-                        <div class="incidencia-badge">
-                           <span class="incidencia-label">INCIDENCIA</span>
-                           <span class="incidencia-value">4,42%</span>
-                        </div>
-                        <ul class="data-list">
-                           <li>
-                              <span>ACUMULADO ANUAL</span>
-                              <span class="data-value">17,45%</span>
-                           </li>
-                           <li>
-                              <span>ACUMULADO INTERANUAL</span>
-                              <span class="data-value">39,54%</span>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-
-                  <!-- Panel Servicios Postales -->
-                  <div class="service-panel mb-25">
-                     <div class="service-panel-header">
-                        <i class="ti ti-mail" style="font-size: 24px; color: #0a3a78;"></i>
-                        <h4 style="font-size: 18px; font-weight: 700; color: #0b3d91; margin: 0;">Servicios Postales</h4>
-                     </div>
-                     <div class="service-panel-body">
-                        <div class="incidencia-badge">
-                           <span class="incidencia-label">INCIDENCIA</span>
-                           <span class="incidencia-value">5,15%</span>
-                        </div>
-                        <ul class="data-list">
-                           <li>
-                              <span>ACUMULADO ANUAL</span>
-                              <span class="data-value">19,82%</span>
-                           </li>
-                           <li>
-                              <span>ACUMULADO INTERANUAL</span>
-                              <span class="data-value">42,31%</span>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-
                   <?php if (!empty($indices[0]['informe'])): ?>
-                     <div class="text-center mb-4">
+                     <div class="text-center mt-30">
                         <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe']) ?>" class="btn-informe-completo"
                            target="_blank">
                            Informe Completo
@@ -129,53 +66,45 @@
                      </div>
                   <?php endif; ?>
                </div>
-
-               <!-- Columna Derecha: Imagen del índice -->
-               <div class="col-lg-7">
-                  <div class="grafico-container">
-                     <img src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image']) ?>"
-                        alt="<?= htmlspecialchars($indices[0]['title']) ?>" style="width: 100%; border-radius: 8px;">
-                  </div>
-               </div>
             </div>
 
-            <!-- Tarjetas de Meses -->
+            <!-- Tarjetas de Meses agrupadas por Año -->
+            <?php if (count($indices) > 1):
+               // Agrupar los registros anteriores por año
+               $grouped = [];
+               for ($i = 1; $i < count($indices); $i++) {
+                  $yr = $indices[$i]['year'] ?? date('Y');
+                  $grouped[$yr][] = $indices[$i];
+               }
+               // Ordenar por año descendente
+               krsort($grouped);
+            ?>
+            <?php foreach ($grouped as $yearGroup => $items): ?>
             <div class="row mt-50">
                <div class="col-lg-12">
+                  <div class="year-group-title">
+                     <span class="year-line"></span>
+                     <h3><?= htmlspecialchars($yearGroup) ?></h3>
+                     <span class="year-line"></span>
+                  </div>
                   <div class="month-cards">
-                     <a href="https://correos.org.ar/newsletters/Marzo/"
-                        class="month-card <?= ($month === 'marzo') ? 'active' : '' ?>" target="_blank">
-                        <div class="month-text">
-                           <span class="month-name">Marzo</span>
-                           <span class="month-label">Índices de Costos</span>
-                        </div>
-                        <div class="month-icon">
-                           <i class="ti ti-arrow-up-right"></i>
-                        </div>
-                     </a>
-                     <a href="https://correos.org.ar/newsletters/Abril/"
-                        class="month-card <?= ($month === 'abril') ? 'active' : '' ?>" target="_blank">
-                        <div class="month-text">
-                           <span class="month-name">Abril</span>
-                           <span class="month-label">Índices de Costos</span>
-                        </div>
-                        <div class="month-icon">
-                           <i class="ti ti-arrow-up-right"></i>
-                        </div>
-                     </a>
-                     <a href="https://correos.org.ar/newsletters/Mayo/"
-                        class="month-card <?= ($month === 'mayo') ? 'active' : '' ?>" target="_blank">
-                        <div class="month-text">
-                           <span class="month-name">Mayo</span>
-                           <span class="month-label">Índices de Costos</span>
-                        </div>
-                        <div class="month-icon">
-                           <i class="ti ti-arrow-up-right"></i>
-                        </div>
-                     </a>
+                     <?php foreach ($items as $idx): ?>
+                        <a href="<?= APP_URL ?>/indices?month=<?= urlencode($idx['month'] ?? '') ?>&year=<?= urlencode($idx['year'] ?? '') ?>"
+                           class="month-card">
+                           <div class="month-text">
+                              <span class="month-name"><?= ucfirst(htmlspecialchars($idx['month'] ?? 'Mes')) ?></span>
+                              <span class="month-label"><?= htmlspecialchars($idx['title'] ?? 'Índices de Costos') ?></span>
+                           </div>
+                           <div class="month-icon">
+                              <i class="ti ti-arrow-up-right"></i>
+                           </div>
+                        </a>
+                     <?php endforeach; ?>
                   </div>
                </div>
             </div>
+            <?php endforeach; ?>
+            <?php endif; ?>
          <?php else: ?>
             <div class="row">
                <div class="col-lg-12">
@@ -209,90 +138,30 @@
 </main>
 
 <style>
-   /* Header del índice */
-   .indice-header {
-      padding-bottom: 20px;
-      border-bottom: 2px solid #e5e7eb;
-   }
-
-   .indice-header .logos img {
-      object-fit: contain;
-   }
-
-   /* Paneles de servicio */
-   .service-panel {
-      background: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-   }
-
-   .service-panel:hover {
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
-   }
-
-   .service-panel-header {
+   /* Título separador por año */
+   .year-group-title {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #f0f0f0;
+      gap: 20px;
+      margin-bottom: 30px;
    }
 
-   .service-panel-body {
-      padding: 10px 0;
-   }
-
-   .incidencia-badge {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(135deg, #0a3a78 0%, #0b5ed8 100%);
-      color: #ffffff;
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-bottom: 15px;
-   }
-
-   .incidencia-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-   }
-
-   .incidencia-value {
-      font-size: 24px;
-      font-weight: 700;
-   }
-
-   .data-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-   }
-
-   .data-list li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 14px;
-      color: #6b7280;
-   }
-
-   .data-list li:last-child {
-      border-bottom: none;
-   }
-
-   .data-value {
-      font-weight: 700;
+   .year-group-title h3 {
+      font-size: 28px;
+      font-weight: 800;
       color: #0b3d91;
-      font-size: 16px;
+      margin: 0;
+      white-space: nowrap;
+   }
+
+   .year-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #00a3e0, #e5e7eb);
+   }
+
+   .year-group-title .year-line:first-child {
+      background: linear-gradient(90deg, #e5e7eb, #00a3e0);
    }
 
    /* Botón de informe completo */

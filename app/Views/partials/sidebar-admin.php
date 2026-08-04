@@ -18,6 +18,7 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
          <h2>AECAUM</h2>
          <span>Panel de Administración</span>
       </div>
+      <button class="toggle-btn"><i class="ti ti-menu-2"></i></button>
    </div>
 
    <?php if (!empty($currentUser)): ?>
@@ -53,7 +54,7 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
    </nav>
 
    <div class="sidebar-footer">
-      <a href="<?= APP_URL ?>/"><i class="ti ti-home"></i> Ver sitio web</a>
-      <a href="<?= APP_URL ?>/logout" style="margin-top:4px;"><i class="ti ti-logout"></i> Cerrar sesión</a>
+      <a href="<?= APP_URL ?>/"><i class="ti ti-home"></i> <span>Ver sitio web</span></a>
+      <a href="<?= APP_URL ?>/logout" style="margin-top:4px;"><i class="ti ti-logout"></i> <span>Cerrar sesión</span></a>
    </div>
 </div>

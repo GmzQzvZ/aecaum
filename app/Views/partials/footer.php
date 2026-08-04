@@ -76,11 +76,13 @@
                         </p>
                         <div class="aecaum-footer-social mt-25 mb-10">
                             <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank"
-                                class="footer-social-icon">
+                                class="footer-social-icon"
+                                style="width: 50px; height: 50px; font-size: 28px; border-width: 2px; color: #fff">
                                 <i class="ti ti-brand-instagram"></i>
                             </a>
                             <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank"
-                                class="footer-social-icon">
+                                class="footer-social-icon"
+                                style="width: 50px; height: 50px; font-size: 28px; border-width: 2px;color: #fff">
                                 <i class="ti ti-brand-linkedin"></i>
                             </a>
                         </div>
@@ -96,9 +98,9 @@
                     </div>
 
                     <!-- RIGHT: Servicios -->
-                    <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-services">
+                    <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-services" style="text-align: right;">
                         <h4>Servicios</h4>
-                        <ul>
+                        <ul style="list-style: none; padding: 0;">
                             <li><a href="<?= APP_URL ?>/service">Academia</a></li>
                             <li><a href="<?= APP_URL ?>/indices">Índice de Costos</a></li>
                             <li><a href="<?= APP_URL ?>/service">Networking y Alianzas</a></li>

@@ -269,6 +269,7 @@ class AdminController extends BaseController {
                             'description' => $this->input('description'),
                             'month'       => $this->input('month') ?: 'enero',
                             'year'        => (int)($this->input('year') ?: date('Y')),
+                            'informe'     => $this->input('Informe') ?: '',
                         ]);
 
                         $this->redirect('admin/indices?' . ($ok ? 'success=index_created' : 'error=create_failed'));

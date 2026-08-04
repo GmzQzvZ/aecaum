@@ -97,7 +97,7 @@
          </div>
          <div class="form-group">
             <label>Informe Completo</label>
-            <input type="text" name="Informe" rows="4" placeholder="Informe completo"></textarea>
+            <input type="text" name="Informe" placeholder="URL del informe completo">
          </div>
          <div style="display:flex;gap:12px;margin-top:8px;">
             <button type="submit" class="btn-primary-sm"><i class="ti ti-check"></i> Crear índice</button>

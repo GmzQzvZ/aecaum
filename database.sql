@@ -57,17 +57,6 @@ CREATE TABLE IF NOT EXISTS document_permissions (
     UNIQUE KEY unique_doc_role (document_id, role_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Insertar roles iniciales
-INSERT INTO roles (name, label, description) VALUES 
-('Superadmin', 'SuperAdministrador', 'Acceso completo al sistema'),
-('Admin', 'Administrador', 'Acceso sistema'),
-('Usuario', 'UsuarioFinal', 'Usuario Final');
-
-
--- Insertar usuario admin inicial (contraseña: admin123)
-INSERT INTO users (name, email, password, role_id) VALUES 
-('Admin', 'admin@aecaum.org.ar', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1);
-
 -- Tabla de mensajes de contacto
 CREATE TABLE IF NOT EXISTS contact_messages (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -76,3 +65,13 @@ CREATE TABLE IF NOT EXISTS contact_messages (
     message TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Insertar roles iniciales
+INSERT INTO roles (name, label, description) VALUES 
+('Superadmin', 'SuperAdministrador', 'Acceso completo al sistema'),
+('Admin', 'Administrador', 'Acceso sistema'),
+('Usuario', 'UsuarioFinal', 'Usuario Final');
+
+-- Insertar usuario admin inicial (contraseña: admin123)
+INSERT INTO users (name, email, password, role_id) VALUES 
+('Admin', 'admin@aecaum.org.ar', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1);
