@@ -461,11 +461,10 @@
                         <div class="tv-team-arrow-box d-flex justify-content-md-end">
                             <div>
                                 <div class="it-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".7">
-                                    <button>
-                                        <a href="<?= APP_URL ?>/team">
-                                            <i class="ti ti-plus"></i>
-                                    </button>
-                                </div>
+                                            <a href="<?= APP_URL ?>/team" class="tv-btn-icon">
+                                                <i class="ti ti-plus"></i>
+                                            </a>
+                                        </div>
                             </div>
                         </div>
                         <div class="tv-team-pagination d-flex">
@@ -496,22 +495,23 @@
                             sobre nuestras membresías, solicitar información o
                             realizar una consulta institucional.</p>
                         <div class="tv-contact-select">
-                            <?php if ($this->query('contact_sent') === 'true'): ?>
-                                <div
-                                    style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
-                                    <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.
-                                </div>
-                            <?php endif; ?>
+                            <div id="contact-result">
+                                <?php if ($this->query('contact_sent') === 'true'): ?>
+                                    <div
+                                        style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;">
+                                        <strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.
+                                    </div>
+                                <?php endif; ?>
 
-                            <?php if ($this->query('contact_error')): ?>
-                                <div
-                                    style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
-                                    <strong>Error:</strong> <?= htmlspecialchars($this->query('contact_error')) ?>
-                                </div>
-                            <?php endif; ?>
+                                <?php if ($this->query('contact_error')): ?>
+                                    <div
+                                        style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;">
+                                        <strong>Error:</strong> <?= htmlspecialchars($this->query('contact_error')) ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-                            <form action="<?= APP_URL ?>/contacto" method="POST">
-                                <input type="hidden" name="from_home" value="true">
+                            <form id="home-contact-form" action="<?= APP_URL ?>/contact" method="POST">
                                 <div class="it-contact-input-box mb-20">
                                     <input type="text" name="name" placeholder="Nombre *" required>
                                 </div>
@@ -530,6 +530,38 @@
                                     </button>
                                 </div>
                             </form>
+
+                            <script>
+                                (function(){
+                                    var form = document.getElementById('home-contact-form');
+                                    var result = document.getElementById('contact-result');
+                                    if (!form) return;
+
+                                    form.addEventListener('submit', function(e){
+                                        e.preventDefault();
+                                        var fd = new FormData(form);
+
+                                        fetch('<?= APP_URL ?>/contact', {
+                                            method: 'POST',
+                                            body: fd,
+                                            headers: {
+                                                'X-Requested-With': 'XMLHttpRequest'
+                                            }
+                                        }).then(function(resp){
+                                            return resp.json();
+                                        }).then(function(json){
+                                            if (json.sent) {
+                                                result.innerHTML = '<div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;"><strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.</div>';
+                                                form.reset();
+                                            } else {
+                                                result.innerHTML = '<div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;"><strong>Error:</strong> ' + (json.error || 'Hubo un error') + '</div>';
+                                            }
+                                        }).catch(function(err){
+                                            result.innerHTML = '<div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;"><strong>Error:</strong> Error de conexión</div>';
+                                        });
+                                    });
+                                })();
+                            </script>
                         </div>
 
                     </div>

@@ -2,25 +2,23 @@
    <div id="header-sticky" class="tv-header-area header-style-1 tv-header-ptb p-relative">
       <div class="container" style="max-width: 1326px;">
          <div class="p-relative">
-            <div class="row align-items-center" style="min-height: 120px;">
+            <div class="row align-items-center">
                <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
                      <a href="<?= APP_URL ?>/">
-                        <img src="<?= ASSETS_URL ?>/img/logo/Logo y fondo.png" alt="AECAUM" class="tv-header-logo-img">
+                        <img src="<?= ASSETS_URL ?>/img/logo/logo_3D.png" alt="AECAUM" class="tv-header-logo-img">
                      </a>
                   </div>
                   <div
                      class="tv-header-right-action d-flex justify-content-end justify-content-md-center align-items-center">
-                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social"
-                        style="font-size: 26px;">
+                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social">
                         <i class="ti ti-brand-linkedin"></i>
                      </a>
-                     <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
-                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social"
-                        style="font-size: 26px;">
+                     <span class="separator">•</span>
+                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social">
                         <i class="ti ti-brand-instagram"></i>
                      </a>
-                     <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
+                     <span class="separator">|</span>
                      <?php
                      if (isLoggedIn()):
                         $currentUser = getCurrentUser();
@@ -46,8 +44,9 @@
                      <?php endif; ?>
                      <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
                      <div class="tv-header-bar">
-                        <button class="tv-menu-bar" style="font-size: 30px;">
-                           <span><i class="ti ti-menu-2"></i></span>
+                        <button class="tv-menu-bar" type="button">
+                           <span class="menu-icon"><i class="ti ti-x"></i></span>
+                           <span class="menu-text">Menú</span>
                         </button>
                      </div>
                   </div>

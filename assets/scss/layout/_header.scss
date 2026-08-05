@@ -25,7 +25,7 @@
             & li {
                 display: inline-block;
                 list-style-type: none;
-             
+            
                 position: relative;
                 padding-right: 35px;
                 margin-right: 35px;
@@ -187,7 +187,7 @@
             border-radius: 50%;
             border: 1px solid rgba(88, 91, 111, 0.2);
             color: var(--tv-text-body);
-       
+        
         @media #{$md}{
             margin-right: 0;
         }
@@ -440,9 +440,9 @@
             .tv-header-menu{
                 ul li{
                     &.has-dropdown{
-                       &:after{
+                    &:after{
                         color: var(--tv-heading-primary);
-                       } 
+                    } 
                     }
                 }
             }
@@ -455,7 +455,7 @@
             }
         }
     }
-  
+
     .tv-header-menu > nav > ul > li > a{
         color: var(--tv-common-white);
     }

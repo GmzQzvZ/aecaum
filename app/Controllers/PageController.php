@@ -49,6 +49,16 @@ class PageController extends BaseController {
                 }
             }
 
+            // Si la petición viene por AJAX, devolvemos JSON y no redirigimos
+            $isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+                    strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+
+            if ($isAjax) {
+                header('Content-Type: application/json');
+                echo json_encode(['sent' => $sent, 'error' => $error]);
+                return;
+            }
+
             // Si viene desde home, redirigir a home con el mensaje
             if ($fromHome) {
                 if ($sent) {
