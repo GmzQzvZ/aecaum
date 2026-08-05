@@ -20,7 +20,7 @@
                                                 la competitividad, la innovación y la previsibilidad de tu operación
                                             </p>
                                         </div>
-                                        <div class="tv-slider-btn">
+                                        <div>
                                             <a href="<?= APP_URL ?>/contacto" class="tv-btn-primary">
                                                 <span class="btn-wrap">
                                                     <span class="btn-text1">Sé parte de nosotros</span>
@@ -223,53 +223,101 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-xl-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                    <div class="single-project-item mb-30">
-                        <img src="assets/img/project/logistica.png" alt="Logística Internacional">
-                        <span class="icon">
-                            <a href="<?= APP_URL ?>/blog-details"> <i class="ti ti-arrow-right"></i></a>
-                        </span>
-                        <div class="single-project-content">
-                            <h3>Logística Internacional</h3>
-                            <div class="project-cat">
-                                <span>Digital Commerce y Cross-Border</span>
+                <div class="col-12">
+                    <div class="swiper-container tv-project-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/logistica.png" alt="Logística Internacional">
+                                    <span class="icon"><a class="course-link" data-course-id="course1" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Logística Internacional</h3>
+                                        <div class="project-cat"><span>Digital Commerce y Cross-Border</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/Gestion.png" alt="Gestión de la Última Milla">
+                                    <span class="icon"><a class="course-link" data-course-id="course3" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Gestión de la Última Milla</h3>
+                                        <div class="project-cat"><span>Modelos y Tecnologías de Vanguardia</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/fullfilment.png" alt="Fulfillment">
+                                    <span class="icon"><a class="course-link" data-course-id="course2" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Fulfillment</h3>
+                                        <div class="project-cat"><span>para Negocios Multicanal</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/ecommerce.jpeg" alt="Introducción al eCommerce">
+                                    <span class="icon"><a class="course-link" data-course-id="course4" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Introducción al eCommerce</h3>
+                                        <div class="project-cat"><span>Marketing digital y plataformas</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/tecnologia.jpeg" alt="Tecnología en Logística">
+                                    <span class="icon"><a class="course-link" data-course-id="course5" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Tecnología en Logística</h3>
+                                        <div class="project-cat"><span>Automatizaciones y actualidad</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/integracion.jpeg" alt="Integración y Diseño de Procesos">
+                                    <span class="icon"><a class="course-link" data-course-id="course6" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Integración y Diseño de Procesos</h3>
+                                        <div class="project-cat"><span>Mejora continua y diagramas</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/inteligencia.jpeg" alt="Inteligencia Artificial">
+                                    <span class="icon"><a class="course-link" data-course-id="course7" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Inteligencia Artificial</h3>
+                                        <div class="project-cat"><span>Optimización de procesos</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="single-project-item mb-30">
+                                    <img src="assets/img/project/estudio.jpeg" alt="Estudio e Investigación">
+                                    <span class="icon"><a class="course-link" data-course-id="course8" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <div class="single-project-content">
+                                        <h3>Estudio e Investigación</h3>
+                                        <div class="project-cat"><span>Casos logísticos</span></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-                    <div class="single-project-item mb-30">
-                        <img src="assets/img/project/Gestion.png" alt="Gestión de la Última Milla">
-                        <span class="icon">
-                            <a href="#"> <i class="ti ti-arrow-right"></i></a>
-                        </span>
-                        <div class="single-project-content">
-                            <h3>Gestión de la Última Milla</h3>
-                            <div class="project-cat">
-                                <span>Modelos y Tecnologías de <br> Vanguardia</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xl-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
-                    <div class="single-project-item mb-30">
-                        <img src="assets/img/project/fullfilment.png" alt="Fulfillment">
-                        <span class="icon">
-                            <a href="#"> <i class="ti ti-arrow-right"></i></a>
-                        </span>
-                        <div class="single-project-content">
-                            <h3>Fulfillment</h3>
-                            <div class="project-cat">
-                                <span>para Negocios Multicana</span>
-                            </div>
-                        </div>
+                        <br>
+                        <div class="swiper-pagination"></div>
+                        <button class="tv-slider-btn tv-slider-prev" aria-label="Anterior"><i class="ti ti-arrow-left"></i></button>
+                        <button class="tv-slider-btn tv-slider-next" aria-label="Siguiente"><i class="ti ti-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center mt-30">
                     <div class="service-bottom-text">
-                        <p>Los cursos son <a href="contact.html">gratuitos </a>para nuestros socios y arancelados para
+                        <p>Los cursos son <a href="<?= APP_URL ?>/blog-details">gratuitos </a>para nuestros socios y arancelados para
                             terceros</p>
                     </div>
                 </div>
@@ -289,6 +337,50 @@
         </div>
     </div>
     <!-- project-area-end -->
+        <style>
+            .tv-slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#0b3d91;color:#fff;border:none;display:flex;align-items:center;justify-content:center;z-index:50;box-shadow:0 6px 18px rgba(11,61,145,0.18);}
+            .tv-slider-prev{left:8px}
+            .tv-slider-next{right:8px}
+            .tv-slider-btn i{font-size:18px}
+            @media(min-width:992px){.tv-slider-btn{width:56px;height:56px}}
+        </style>
+        <script src="assets/js/swiper-bundle.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                if (typeof Swiper !== 'undefined') {
+                    new Swiper('.tv-project-slider', {
+                        loop: true,
+                        slidesPerView: 3,
+                        spaceBetween: 24,
+                        centeredSlides: false,
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                        },
+                        navigation: {
+                            nextEl: '.tv-slider-next',
+                            prevEl: '.tv-slider-prev',
+                        },
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            576: { slidesPerView: 2 },
+                            992: { slidesPerView: 3 }
+                        }
+                    });
+                        // bind click on course links: save selection and navigate
+                        document.querySelectorAll('.tv-project-slider .course-link').forEach(function (el) {
+                            el.addEventListener('click', function (e) {
+                                // store selected course id so blog-details can load it
+                                var cid = el.dataset.courseId;
+                                if (cid) {
+                                    try { localStorage.setItem('selectedCourse', cid); } catch (err) { /* ignore */ }
+                                }
+                                // allow normal navigation to blog-details
+                            });
+                        });
+                }
+            });
+        </script>
 
     <!-- team-area-start -->
     <div class="tv-team-area pt-130 pb-130 section-bg footer-bg" style="background-color: #c2e6f3">

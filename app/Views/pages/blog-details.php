@@ -44,30 +44,11 @@
             <div class="tv-blog-list-wrap">
                <div class="tv-blog-details">
                   <div class="tv-blog-details-thumb mb-20">
-                     <img src="assets/img/icon/logistica.png" alt="logistica"
+                     <img id="dynamicImage" alt="logistica"
                         style="width: 100%; height: 380px; object-fit: cover; object-position: top; border-radius: 25px 0 25px 0;">
                   </div>
-                  <div class="tv-blog-details-content">
+                  <div class="tv-blog-details-content" id="dynamicContent">
                      <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Modalidad Online</span>
-                     <h1 class="tv-section-title"><strong>Introducción al eCommerce</strong></h1>
-
-                     <p>El comercio digital transfronterizo es un pilar estratégico para las empresas
-                        que buscan expandirse y competir en un entorno globalizado. La
-                        digitalización ha transformado la forma en que operan los negocios, y
-                        comprender sus dinámicas es clave para maximizar oportunidades y
-                        minimizar riesgos. Este trayecto de formación proporciona conocimientos
-                        fundamentales sobre los principales ejes del comercio internacional, la
-                        logística global y la cadena de aprovisionamiento. Los participantes
-                        adquirirán una visión integral de aspectos esenciales como la secuencia de
-                        compraventa internacional, Incoterms, medios de pago, transporte,
-                        clasificación y valoración de mercancías.</p>
-
-                     <p>Además, se abordará la gestión del relacionamiento con organismos de
-                        control y comercio, junto con el marco normativo vigente, brindando
-                        herramientas para su actualización continua. Con un enfoque práctico y
-                        actualizado, esta formación permitirá a los profesionales del sector optimizar
-                        estrategias, mejorar la eficiencia operativa y adaptarse con éxito a las
-                        demandas del comercio digital sin fronteras.</p>
                   </div>
                </div>
             </div>
@@ -75,20 +56,36 @@
          <div class="col-xl-4 col-lg-4 col-12">
             <div class="tv-widget widget mb-30  wow-itfadeUp" data-wow-duratoin=".9s" data-wow-delay=".3s"
                style="background-color: #c2e6f3">
-               <h4>Categorias</h4>
+               <h4>Cursos disponibles</h4>
                <ul>
-                  <li class="cat-item">
-                     <a href="">Logística</a>
+                  <li class="cat-item active">
+                     <a href="javascript:void(0)" data-course-id="course1" onclick="updateContent('course1'); return false;">Logística</a>
                   </li>
                   <li class="cat-item">
-                     <a href="">eCommerce</a>
+                     <a href="javascript:void(0)" data-course-id="course2" onclick="updateContent('course2'); return false;">Tecnologías de Vanguardia</a>
                   </li>
                   <li class="cat-item">
-                     <a href="">Tecnología</a>
+                     <a href="javascript:void(0)" data-course-id="course3" onclick="updateContent('course3'); return false;">Fullfilment</a>
+                  </li>
+                  <li class="cat-item">
+                     <a href="javascript:void(0)" data-course-id="course4" onclick="updateContent('course4'); return false;">eCommerce</a>
+                  </li>
+                  <li class="cat-item">
+                     <a href="javascript:void(0)" data-course-id="course5" onclick="updateContent('course5'); return false;">Automatizaciones</a>
+                  </li>
+                  <li class="cat-item">
+                     <a href="javascript:void(0)" data-course-id="course6" onclick="updateContent('course6'); return false;">Diseño de Procesos</a>
+                  </li>
+                  <li class="cat-item">
+                     <a href="javascript:void(0)" data-course-id="course7" onclick="updateContent('course7'); return false;">Inteligencia Artificial</a>
+                  </li>
+                  <li class="cat-item">
+                     <a href="javascript:void(0)" data-course-id="course8" onclick="updateContent('course8'); return false;">Estudio e Investigación</a>
                   </li>
                </ul>
             </div>
          </div>
-      </div>
    </div>
 </div>
+
+<script src="assets/js/dynamic_content.js"></script>

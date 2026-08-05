@@ -52,7 +52,7 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
       <a href="<?= APP_URL ?>/admin/informes" class="<?= $currentSection === 'informes' ? 'active' : '' ?>">
    <i class="ti ti-file-text"></i> Informes
 </a>
-<a href="<?= APP_URL ?>admin/contacto" class="<?= $currentSection === 'contact' ? 'active' : '' ?>">
+<a href="<?= APP_URL ?>/admin/contacto" class="<?= $currentSection === 'contact' ? 'active' : '' ?>">
    <i class="ti ti-mail"></i> Mensajes de Contacto
 </a>
    </nav>

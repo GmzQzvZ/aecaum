@@ -5656,6 +5656,10 @@ only screen and (min-width: 576px) and (max-width: 767px),
   color: var(--tv-heading-primary);
 }
 
+.tv-blog-details-content {
+  text-align: justify;
+}
+
 .tv-blog-details-btm {
   padding: 24px 0;
   border-top: 1px solid rgba(88, 91, 111, 0.3);
@@ -7891,7 +7895,6 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   .tv-header-logo-img {
     max-width: 600px;
     margin-left: -320px;
-    /* Mantiene el desplazamiento a la izquierda solicitado */
   }
 }
 
