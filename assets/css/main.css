@@ -244,7 +244,6 @@ button:focus {
   outline: 0;
 }
 
-.uppercase {}
 
 .capitalize {
   text-transform: capitalize;
@@ -721,7 +720,6 @@ input[type=color] {
 .tv-btn-primary .btn-wrap {
   border: none !important;
   display: inline-block;
-  float: left;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -774,7 +772,6 @@ input[type=color] {
 .tv-btn-secondary .btn-wrap {
   border: none !important;
   display: inline-block;
-  float: left;
   overflow: hidden;
   position: relative;
   z-index: 1;
@@ -1070,7 +1067,7 @@ input[type=color] {
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
-  top: 130px;
+  top: 75px;
   right: -100%;
   width: 100%;
   bottom: 0;
@@ -1120,7 +1117,7 @@ input[type=color] {
 /* imangen menu */
 .itoffcanvas__left-image {
   position: absolute;
-  top: -130px;
+  top: -120px;
   /* extend above the menu's top */
   right: 0;
   /* attach to the right edge of the offcanvas */
@@ -7902,89 +7899,105 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 .tv-header-logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-left: 0;
   flex: 0 0 auto;
-  max-width: 320px;
-  height: auto;
-  max-height: 130px;
-  background-image: url('../img/logo/Fondos.svg');
-  background-size: cover;
-  background-position: center;
+  width: min(100%, 660px);
+  max-width: 660px;
+  height: 75px;
+  background-image: url('../img/logo/Fondos.png');
+  background-size: 100% 100%;
+  background-position: left center;
   background-repeat: no-repeat;
-  background-color: #FFF;
-  padding: 8px;
+  padding: 0 8px 0 0;
+  box-sizing: border-box;
 }
 
 .tv-header-logo-img {
-  width: auto !important;
-  height: 100%;
+  width: auto;
+  max-width: 45%;
+  height: auto;
+  max-height: 100%;
   object-fit: contain;
   transition: all 0.3s ease;
   display: block;
-  margin: 0;
+  margin-left: 0;
   z-index: 2;
 }
 
 @media (max-width: 1400px) {
   .tv-header-logo {
-    max-width: 300px;
-    max-height: 125px;
+    max-width: 600px;
+  }
+
+  .tv-header-logo-img {
+    max-width: 42%;
   }
 }
 
 @media (max-width: 1200px) {
   .tv-header-logo {
-    max-width: 280px;
-    max-height: 120px;
+    max-width: 560px;
+  }
+
+  .tv-header-logo-img {
+    max-width: 40%;
   }
 }
 
 @media (max-width: 1024px) {
   .tv-header-logo {
-    max-width: 260px;
-    max-height: 110px;
+    max-width: 520px;
+  }
+
+  .tv-header-logo-img {
+    max-width: 38%;
   }
 }
 
 @media (max-width: 912px) {
   .tv-header-logo {
-    max-width: 240px;
-    max-height: 105px;
+    max-width: 480px;
+  }
+
+  .tv-header-logo-img {
+    max-width: 36%;
   }
 }
 
 @media (max-width: 768px) {
   .tv-header-logo {
-    max-width: 220px;
-    max-height: 100px;
+    max-width: 420px;
   }
+
   .tv-header-logo-img {
-    max-width: 190px;
+    max-width: 34%;
   }
 }
 
 @media (max-width: 640px) {
   .tv-header-logo {
-    max-width: 200px;
-    max-height: 90px;
+    max-width: 380px;
   }
+
   .tv-header-logo-img {
-    max-width: 170px;
+    max-width: 32%;
   }
 }
 
 @media (max-width: 576px) {
   .tv-header-logo {
-    max-width: 180px;
-    max-height: 80px;
+    max-width: 340px;
   }
+
   .tv-header-logo-img {
-    max-width: 150px;
+    max-width: 30%;
   }
+
   .tv-header-right-action {
     gap: 0.5rem;
   }
+
   .tv-header-right-action .separator {
     display: none;
   }
@@ -8019,17 +8032,17 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 }
 
 .tv-header-area.header-style-1 .row.align-items-center {
-  min-height: 80px;
+  min-height: 75px;
 }
 
 @media only screen and (max-width: 767px) {
   header.tv-header-height .tv-header-area.header-style-1 .row.align-items-center {
-    min-height: 70px;
+    min-height: 75px;
   }
 }
 
 header.tv-header-height .tv-header-area.header-style-1 .row.align-items-center {
-  min-height: 80px;
+  min-height: 75px;
 }
 
 header.tv-header-height .tv-header-area.header-style-1 .tv-header-right-action .tv-btn-primary {
@@ -8072,7 +8085,7 @@ header.tv-header-height .tv-header-area.header-style-1 .tv-header-right-action .
 }
 
 .tv-header-area {
-  border-top: 1px solid rgba(66, 66, 66, 0.2);
+  border-bottom: none;
   background: var(--blue-900);
   z-index: 999;
   position: relative;
@@ -14785,14 +14798,14 @@ header.tv-header-height,
 header.tv-header-height .tv-header-area,
 header.tv-header-height .tv-header-area.header-style-1,
 header.tv-header-height .tv-header-area.header-style-1 .row.align-items-center {
-  min-height: 100px !important;
-  height: auto !important;
+  min-height: 75px !important;
+  height: 75px !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
 header.tv-header-height .tv-header-area.header-style-1 .row.align-items-center {
-  min-height: 100px !important;
+  min-height: 75px !important;
 }
 
 header.tv-header-height .tv-header-right-action .tv-btn-primary {
@@ -14830,19 +14843,20 @@ header.tv-header-height .tv-header-bar button {
 }
 
 header.tv-header-height .tv-header-bar button .menu-icon {
-  height: 64px !important;
-  width: 64px !important;
-  line-height: 64px !important;
+  height: 52px !important;
+  width: 52px !important;
+  line-height: 52px !important;
   background-color: rgba(255,255,255,0.14) !important;
   border: 1px solid rgba(255,255,255,0.35) !important;
   margin-left: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
+  border-radius: 50% !important;
 }
 
 header.tv-header-height .tv-header-bar button .menu-icon i {
-  font-size: 32px !important;
+  font-size: 28px !important;
   color: #ffffff !important;
 }
 
@@ -14890,11 +14904,12 @@ header.tv-header-height .tv-header-bar button .menu-text {
   }
 
   .tv-header-logo {
-    max-width: 220px;
+    max-width: 360px;
+    height: 86px;
   }
 
   .tv-header-logo-img {
-    max-width: 180px;
+    max-width: 60%;
   }
 
   .tv-header-right-action .social {
@@ -14917,11 +14932,12 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
 @media (max-width: 576px) {
   .tv-header-logo {
-    max-width: 160px;
+    max-width: 280px;
+    height: 72px;
   }
 
   .tv-header-logo-img {
-    max-width: 140px;
+    max-width: 70%;
   }
 
   .tv-header-right-action {
