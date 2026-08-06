@@ -31,13 +31,15 @@
 <div class="tv-blog-area pt-130 pb-130 blog-grid">
    <div class="container">
       <div class="row">
-         <div class="tv-section-title-box">
-            <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Nuestra Red</span>
-            <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right">Quiénes nos acompañan</h4>
-            <h6 class="tv-section-subtitle">Conocé a las empresas líderes del sector postal y logístico que conforman el
-               <br> ecosistema de última milla más dinámico del país.
-            </h6>
-            <div class="d-flex justify-content-end gap-2 mt-3 mb-4">
+         <div class="tv-section-title-box d-flex align-items-end justify-content-between flex-wrap gap-3">
+            <div>
+               <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Nuestra Red</span>
+               <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right">Quiénes nos acompañan</h4>
+               <h6 class="tv-section-subtitle">Conocé a las empresas líderes del sector postal y logístico que conforman el
+                  <br> ecosistema de última milla más dinámico del país.
+               </h6>
+            </div>
+            <div class="d-flex gap-2 mb-4">
                <div class="it-fade-anim">
                   <button type="button" class="carousel-nav-btn arrow-next" aria-label="Slide anterior">
                      <i class="ti ti-arrow-left"></i>
@@ -87,6 +89,46 @@
                            alcance global. Innovación, máxima
                            capilaridad y tecnología aplicada a la
                            distribución urbana y corporativa.</p>
+                        <a class="network-link" href="https://ocasa.com/logistica-general/es/"
+                           target="_blank">https://ocasa.com/logistica-general/es/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/andreani.webp" alt="Andreani">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/andreani.png" alt="Logo Andreani">
+                        <p>Andreani es la empresa de logística más
+                           grande del país, con alcance nacional y
+                           base en Brasil, reconocida por sus
+                           soluciones innovadoras. En nuestra
+                           continua integración de tecnología en los
+                           procesos logísticos.</p>
+                        <a class="network-link" href="https://personas.andreani.com/"
+                           target="_blank">https://personas.andreani.com/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Epsa.webp" alt="epsa">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos.png" alt="Logo Ocasa">
+                        <p>Somos la red logística que opera detrás
+                           de las principales marcas del país. Por eso
+                           todo lo que pedís llega. Siempre.</p>
+                        <a class="network-link" href="https://epsared.com.ar/"
+                           target="_blank">https://epsared.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Entregar.jpg" alt="Entregar">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-44.png" alt="Logo Ocasa">
+                        <p>Somos una empresa formada por jóvenes
+                           profesionales. Con una filosofía
+                           eco-friendly (cero uso de papel, todo
+                           digital) Ofrecemos entregas Same Day
+                           (entregas en el día) y Next Day (entregas
+                           al día siguiente) con mercadería
+                           asegurada.</p>
                         <a class="network-link" href="https://ocasa.com/logistica-general/es/"
                            target="_blank">https://ocasa.com/logistica-general/es/</a>
                      </div>
