@@ -6,7 +6,7 @@
                <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
                      <a href="<?= APP_URL ?>/">
-                        <img src="<?= ASSETS_URL ?>/img/logo/logo_3D.png" alt="AECAUM" class="tv-header-logo-img">
+                        <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/logo_3D.png" alt="AECAUM" class="tv-header-logo-img">
                      </a>
                   </div>
                   <div
@@ -45,8 +45,8 @@
                      <span class="separator" style="font-size: 22px; margin: 0 10px;">|</span>
                      <div class="tv-header-bar">
                         <button class="tv-menu-bar" type="button">
-                           <span class="menu-icon"><i class="ti ti-x"></i></span>
-                           <span class="menu-text">Menú</span>
+                           <span class="menu-icon" style="color:var(--blue--500);"><i class="ti ti-menu"></i></span>
+                           <span class="menu-text" style="color:var(--blue--500);">Menú</span>
                         </button>
                      </div>
                   </div>

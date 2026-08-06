@@ -31,7 +31,7 @@
             <div class="card-informe" style="border:1px solid #e5e7eb; border-radius:8px; overflow:hidden; background:#fff;">
                <div style="height:200px; overflow:hidden; background:#f5f6f7;">
                   <?php if (!empty($inf['image'])): ?>
-                  <img src="<?= APP_URL ?>/<?= htmlspecialchars($inf['image']) ?>" alt="<?= htmlspecialchars($inf['title']) ?>" style="width:100%; height:100%; object-fit:cover;">
+                  <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($inf['image']) ?>" alt="<?= htmlspecialchars($inf['title']) ?>" style="width:100%; height:100%; object-fit:cover;">
                   <?php endif; ?>
                </div>
                <div style="padding:15px;">

@@ -34,7 +34,7 @@
                <div class="col-xl-8 col-lg-8 col-12">
                   <div class="tv-blog-list-wrap">
                      <div class="single-blog-item blog-list first mb-30 wow itfadeUp" data-wow-duratoin =".9s" data-wow-delay=".3s">
-                        <img src="assets/img/blog/blog-list-thum-1.png" alt="">
+                        <img loading="lazy" src="assets/img/blog/blog-list-thum-1.png" alt="">
                         <div class="blog-content">
                            <div class="blog-meta">
                               <span class="author">Business solution</span>
@@ -46,7 +46,7 @@
                         </div>
                      </div>
                      <div class="single-blog-item blog-list first mb-30 wow itfadeUp" data-wow-duratoin =".9s" data-wow-delay=".5s">
-                        <img src="assets/img/blog/blog-list-thum-2.png" alt="">
+                        <img loading="lazy" src="assets/img/blog/blog-list-thum-2.png" alt="">
                         <div class="blog-content">
                            <div class="blog-meta">
                               <span class="author">Business solution</span>
@@ -58,7 +58,7 @@
                         </div>
                      </div>
                      <div class="single-blog-item blog-list first mb-30 wow itfadeUp" data-wow-duratoin =".9s" data-wow-delay=".7s">
-                        <img src="assets/img/blog/blog-list-thum-3.png" alt="">
+                        <img loading="lazy" src="assets/img/blog/blog-list-thum-3.png" alt="">
                         <div class="blog-content">
                            <div class="blog-meta">
                               <span class="author">Business solution</span>
@@ -104,7 +104,7 @@
                         <h4>Recent Post</h4>
                         <div class="widget-latest-post d-flex">
                            <div class="widget-thumb">
-                              <img src="assets/img/blog/blog-grid-1-1.png" alt="">
+                              <img loading="lazy" src="assets/img/blog/blog-grid-1-1.png" alt="">
                            </div>
                            <div class="widget-content">
                               <h6><a href="blog-details.html">Boost your startup business with our digital agency</a></h6>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="widget-latest-post d-flex">
                            <div class="widget-thumb">
-                              <img src="assets/img/blog/blog-grid-1-2.png" alt="">
+                              <img loading="lazy" src="assets/img/blog/blog-grid-1-2.png" alt="">
                            </div>
                            <div class="widget-content">
                               <h6><a href="blog-details.html">Boost your startup business with our digital agency</a></h6>
@@ -122,7 +122,7 @@
                         </div>
                         <div class="widget-latest-post d-flex">
                            <div class="widget-thumb">
-                              <img src="assets/img/blog/blog-grid-1-3.png" alt="">
+                              <img loading="lazy" src="assets/img/blog/blog-grid-1-3.png" alt="">
                            </div>
                            <div class="widget-content">
                               <h6><a href="blog-details.html">Boost your startup business with our digital agency</a></h6>

@@ -14,6 +14,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?= ASSETS_URL ?>/img/favicon.ico">
 
     <!-- CSS (rutas absolutas para que funcionen en cualquier sub-ruta) -->
+    <?php
+    function assetV(string $path): string {
+        $full = $_SERVER['DOCUMENT_ROOT'] . '/aecaum/' . ltrim($path, '/');
+        return file_exists($full) ? '?v=' . filemtime($full) : '?v=1';
+    }
+    ?>
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/slick.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/custom-animation.css">
@@ -23,25 +29,26 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/magnific-popup.css">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/spacing.css">
-    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/main.css">
+    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/main.css<?= assetV('assets/css/main.css') ?>">
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/splash.css">
 </head>
 
 <body id="body" class="tv-magic-cursor">
 
-    <!-- Preloader (solo en home) -->
+    <!-- Preloader (solo la primera vez) -->
     <?php if ($showSplash ?? false): ?>
+        <script>if(sessionStorage.getItem('hasSeenSplash')){document.write('<style>#preloader{display:none!important;}</style>');}</script>
         <div id="preloader">
             <div class="preloader-container">
                 <!-- Background buildings -->
                 <div class="preloader-bg">
-                    <img src="assets/img/icon/portada1.png" alt="currier">
+                    <img loading="lazy" src="assets/img/icon/portada1.png" alt="currier">
                 </div>
 
                 <!-- Content -->
                 <div class="preloader-content" data-speed="0.03">
                     <div class="preloader-logo">
-                        <img src="assets/img/logo/AECAUM PORTADA.png" alt="AECAUM">
+                        <img loading="lazy" src="assets/img/logo/AECAUM PORTADA.png" alt="AECAUM">
 
                         <div class="preloader-btn" data-speed="0.05">
                             <a href="<?= BASE_URL ?>/" class="tv-btn-primary">
@@ -76,7 +83,7 @@
                         <div class="search__top d-flex justify-content-between align-items-center">
                             <div class="search__logo">
                                 <a href="<?= BASE_URL ?>/">
-                                    <img src="<?= ASSETS_URL ?>/img/logo/logo-white.png" alt="AECAUM">
+                                    <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/logo-white.png" alt="AECAUM">
                                 </a>
                             </div>
                             <div class="search__close">
@@ -142,8 +149,8 @@
     <script src="<?= ASSETS_URL ?>/js/main-tv.js"></script>
     <script src="<?= ASSETS_URL ?>/js/custom-gsap.js"></script>
     <script src="<?= ASSETS_URL ?>/js/slider.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/main.js"></script>
-    <script src="<?= ASSETS_URL ?>/js/splash.js"></script>
+    <script src="<?= ASSETS_URL ?>/js/main.js<?= assetV('assets/js/main.js') ?>"></script>
+    <script src="<?= ASSETS_URL ?>/js/splash.js<?= assetV('assets/js/splash.js') ?>"></script>
 
     <script>
         // Mouse interaction for preloader background

@@ -14,7 +14,7 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
 <!-- Sidebar Admin -->
 <div class="sidebar">
    <div class="sidebar-brand">
-      <img src="<?= ASSETS_URL ?>/img/logo/aecaum.png" alt="AECAUM" onerror="this.style.display='none'">
+      <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/aecaum.png" alt="AECAUM" onerror="this.style.display='none'">
       <div class="sidebar-brand-text">
          <h2>AECAUM</h2>
          <span>Panel de Administración</span>

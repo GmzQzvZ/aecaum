@@ -24,7 +24,7 @@
          <?php foreach ($indices as $index): ?>
          <div style="border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #fff;">
             <div style="height: 200px; overflow: hidden; background: #f5f6f7;">
-               <img src="<?= APP_URL ?>/<?= htmlspecialchars($index['image']) ?>" alt="<?= htmlspecialchars($index['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;">
+               <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($index['image']) ?>" alt="<?= htmlspecialchars($index['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
             <div style="padding: 15px;">
                <h4 style="margin: 0 0 10px 0; color: #0a3a78;"><?= htmlspecialchars($index['title']) ?></h4>

@@ -55,8 +55,8 @@
                <div class="swiper-wrapper">
                   <div class="swiper-slide">
                      <div class="tv-network-card mb-30">
-                        <img class="top-image" src="assets/img/blog/urbano.png" alt="Urbano Envios">
-                        <img class="logo-image" src="assets/img/logo/urbano.png" alt="Logo Urbano">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/urbano.png" alt="Urbano Envios">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/urbano.png" alt="Logo Urbano">
                         <p>Especialistas en soluciones logísticas
                            integrales para e-commerce y
                            distribución postal, garantizando entregas
@@ -68,8 +68,8 @@
                   </div>
                   <div class="swiper-slide">
                      <div class="tv-network-card mb-30">
-                        <img class="top-image" src="assets/img/blog/bluemail.png" alt="Bluemail">
-                        <img class="logo-image" src="assets/img/logo/bluemail.png" alt="Logo Bluemail">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/bluemail.png" alt="Bluemail">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/bluemail.png" alt="Logo Bluemail">
                         <p>Especialistas en logística integral y
                            distribución postal. Brindan soluciones a
                            medida, eficientes y seguras para
@@ -81,8 +81,8 @@
                   </div>
                   <div class="swiper-slide">
                      <div class="tv-network-card mb-30">
-                        <img class="top-image" src="assets/img/blog/ocasa.jpg" alt="Ocasa">
-                        <img class="logo-image" src="assets/img/logo/ocasa.png" alt="Logo Ocasa">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/ocasa.jpg" alt="Ocasa">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/ocasa.png" alt="Logo Ocasa">
                         <p>Soluciones logísticas integrales de
                            alcance global. Innovación, máxima
                            capilaridad y tecnología aplicada a la

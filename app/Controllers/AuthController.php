@@ -105,7 +105,7 @@ class AuthController extends BaseController {
                     $body    = "
                         <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                             <div style='background: #0a3a78; padding: 30px; text-align: center;'>
-                                <img src='" . APP_URL . "/assets/img/logo/logo.png' alt='AECAUM' style='max-width: 150px; margin-bottom: 15px;'>
+                                <img loading='lazy' src='" . APP_URL . "/assets/img/logo/logo.png' alt='AECAUM' style='max-width: 150px; margin-bottom: 15px;'>
                                 <h1 style='color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;'>Recuperación de Contraseña</h1>
                             </div>
                             <div style='padding: 30px;'>
@@ -113,9 +113,8 @@ class AuthController extends BaseController {
                                 <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Recibimos una solicitud para restablecer la contraseña de tu cuenta en <strong style='color: #0a3a78;'>ACAEUM</strong>.</p>
                                 <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Hacé clic en el botón para crear una nueva contraseña. El enlace es válido por <strong style='color: #00aae6;'>1 hora</strong>.</p>
                                 <p style='text-align:center;margin:32px 0;'>
-                                    <a href='{$resetLink}'
-                                       style='background:#00aae6;color:#fff;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;font-size:16px;'>
-                                       Restablecer contraseña
+                                    <a href='{$resetLink}' style='background:#00aae6;color:#fff;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;font-size:16px;'>
+                                    Restablecer contraseña
                                     </a>
                                 </p>
                                 <div style='background: #F5F6F7; border-left: 4px solid #6d8089; padding: 15px; margin: 25px 0;'>

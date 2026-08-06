@@ -57,7 +57,7 @@ class AdminController extends BaseController {
                     $body = "
                         <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                             <div style='background: #0a3a78; padding: 30px; text-align: center;'>
-                                <img src='" . APP_URL . "/assets/img/logo/logo.png' alt='AECAUM' style='max-width: 150px; margin-bottom: 15px;'>
+                                <img loading='lazy' src='" . APP_URL . "/assets/img/logo/logo.png' alt='AECAUM' style='max-width: 150px; margin-bottom: 15px;'>
                                 <h1 style='color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;'>¡Bienvenido a AECAUM!</h1>
                             </div>
                             <div style='padding: 30px;'>

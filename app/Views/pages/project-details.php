@@ -33,7 +33,7 @@
             <div class="row">
                <div class="col-12">
                   <div class="project-thumbnail mb-60">
-                     <img src="assets/img/project/project-details.png" alt="">
+                     <img loading="lazy" src="assets/img/project/project-details.png" alt="">
                   </div>
                </div>
             </div>
@@ -48,8 +48,8 @@
                            <p>Use both direct conversations and indirect observations to get visibility into employees’ challenges and concerns. Use every opportunity to make clear to employees that you support and care them. To facilitate regular conversations between managers and employees, provide. </p>
                         </div>
                         <div class="tv-blog-details-thumb-img d-flex justify-content-between">
-                          <div> <img src="assets/img/blog/blog-details-thumb-1-2.png" alt=""></div>
-                          <div> <img src="assets/img/blog/blog-details-thumb-1-3.png" alt=""></div>
+                          <div> <img loading="lazy" src="assets/img/blog/blog-details-thumb-1-2.png" alt=""></div>
+                          <div> <img loading="lazy" src="assets/img/blog/blog-details-thumb-1-3.png" alt=""></div>
                         </div>
                         <p class="mb-60">When an unknown printer took ar galley offer type year anddey scrambled make aewer specimen  a book bethas survived not only five when anner year unknown printer eed  little help from friend from time to time. Although we offer the one-stop convenience. unknown printer took galley type year anddey scrambled. unknown printer.</p>
                         

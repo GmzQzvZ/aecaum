@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="tv-slider-arrow-box d-none d-lg-block">
-                    <div class="swiper-pagination"></div> <!-- paginacion  slider hero  -->
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -48,17 +48,19 @@
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 pr-40 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
                     <div class="tv-section-title-box">
-                        <span class="tv-section-subtitle"
-                            style="color:#00a3e0; font-weight:700; font-size:16px; margin-bottom:10px; display:block;">Acerca
+                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Acerca
                             de AECAUM</span>
-                        <h2 class="tv-section-title pb-20" style="font-size:42px; font-weight:800; color:#0b3d91; line-height:1.2;">La institucion que 
+                        <h2 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right"
+                            style="font-size:42px; font-weight:800; color:#0b3d91; line-height:1.2;">La institucion que
                             respalda y potencia la última milla.</h2>
-                        <p class="tv-section" style="font-size:16px; color:#6b7280; margin-bottom:15px; line-height:1.6;">
+                        <p class="tv-section"
+                            style="font-size:16px; color:#6b7280; margin-bottom:15px; line-height:1.6;">
                             <strong>AECAUM</strong> es la Asociación de Empresas de Correo de Argentina Última Milla, la
                             entidad que representa institucionalmente al sector de los correos privados especializados
                             en la última milla nacional e internacional.
                         </p>
-                        <p class="tv-section" style="font-size:16px; color:#6b7280; margin-bottom:35px; line-height:1.6;">
+                        <p class="tv-section"
+                            style="font-size:16px; color:#6b7280; margin-bottom:35px; line-height:1.6;">
                             <strong>Fundada el 15 de agosto de 2003</strong> e inscripta en la Inspección General de
                             Justicia bajo Personería Jurídica N° 213, <strong>nucleamos a las principales empresas
                                 privadas del mercado postal y logístico de la última milla de Argentina:</strong>
@@ -115,9 +117,12 @@
                 <!-- Columna derecha: collage de fotos -->
                 <div class="col-xl-6 col-lg-6 pl-40 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
                     <div class="tv-about-images-group">
-                        <img src="assets/img/about/hero1.jpg" alt="Reunión Directiva" class="about-img-main">
-                        <img src="assets/img/about/hero2.jpg" alt="Presentación AECAUM" class="about-img-left">
-                        <img src="assets/img/about/hero3.jpg" alt="Reunión AECAUM" class="about-img-right">
+                        <img loading="lazy" src="assets/img/about/hero1.jpg" alt="Reunión Directiva"
+                            class="about-img-main">
+                        <img loading="lazy" src="assets/img/about/hero2.jpg" alt="Presentación AECAUM"
+                            class="about-img-left">
+                        <img loading="lazy" src="assets/img/about/hero3.jpg" alt="Reunión AECAUM"
+                            class="about-img-right">
                     </div>
                 </div>
             </div>
@@ -144,7 +149,7 @@
             <div class="row justify-content-center mb-4">
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
                     <div class="single-service-item mb-30 h-100">
-                        <img src="assets/img/logo/indices.png">
+                        <img loading="lazy" src="assets/img/logo/indices.png">
                         <h3 class="service-section-title">
                             Índice de Costos
                         </h3>
@@ -154,7 +159,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
                     <div class="single-service-item mb-30 h-100">
-                        <img src="assets/img/logo/representacion.png">
+                        <img loading="lazy" src="assets/img/logo/representacion.png">
                         <h3 class="service-section-title">
                             Representación Sectorial
                         </h3>
@@ -164,7 +169,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
                     <div class="single-service-item mb-30 h-100">
-                        <img src="assets/img/logo/networking.png">
+                        <img loading="lazy" src="assets/img/logo/networking.png">
                         <h3 class="service-section-title">
                             Networking y Alianzas
                         </h3>
@@ -178,7 +183,7 @@
 
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-service-item mb-30 h-100">
-                        <img src="assets/img/logo/asesoria.png">
+                        <img loading="lazy" src="assets/img/logo/asesoria.png">
                         <h3 class="service-section-title">
                             Asesoía Especializada
                         </h3>
@@ -188,7 +193,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-service-item mb-30 h-100">
-                        <img src="assets/img/logo/tumilla.png">
+                        <img loading="lazy" src="assets/img/logo/tumilla.png">
                         <h3 class="service-section-title">
                             Capacitación
                         </h3>
@@ -209,6 +214,83 @@
     </div>
     <!-- Service-area-end -->
 
+    <!-- counter-area-start -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="tv-counter-area pb-130">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+                    <div class="single-couter-wrap mt-60   d-flex align-items-center justify-content-center">
+                        <div class="inner">
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="25">+25</span></h5>
+                            <h6>Años de experiencia</h6>
+                        </div>
+                    </div>
+                    <br>
+                    <h3>Lorem ipsum dolor</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit,
+                        sed do eiusmod tempor in
+                        cididunt ut labore et dolore</p>
+                </div>
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
+                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
+                        <div class="inner">
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="70">70</span>%</h5>
+                            <h6>Años de experiencia</h6>
+                        </div>
+                    </div>
+                    <br>
+                    <h3>Lorem ipsum dolor</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit,
+                        sed do eiusmod tempor in
+                        cididunt ut labore et dolore</p>
+                </div>
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
+                        <div class="inner">
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="50">50</span></h5>
+                            <h6>Asociados</h6>
+                        </div>
+                    </div>
+                    <br>
+                    <h3>Lorem ipsum dolor</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit,
+                        sed do eiusmod tempor in
+                        cididunt ut labore et dolore</p>
+                </div>
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
+                    <div class="single-couter-wrap d-flex align-items-center justify-content-center">
+                        <div class="inner">
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="19">90</span></h5>
+                            <h6>Capacitados</h6>
+                        </div>
+                    </div>
+                    <br>
+                    <h3>Lorem ipsum dolor</h3>
+                    <br>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit,
+                        sed do eiusmod tempor in
+                        cididunt ut labore et dolore</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- counter-area-end -->
+
     <!-- project-area-start -->
     <div class="tv-project-area pt-130 pb-130">
         <div class="container">
@@ -216,7 +298,7 @@
                 <div class="col-12 text-center">
                     <div class="tv-section-title-box mb-60">
                         <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Capacitación</span><br>
-                        <img src="assets/img/logo/tumilla.png" alt="tumilla" style="max-width: 10%;">
+                        <img loading="lazy" src="assets/img/logo/tumilla.png" alt="tumilla" style="max-width: 10%;">
                         <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right">Diplomatura en Logística,
                             eCommerce <br> y Optimización de Procesos</h4>
                     </div>
@@ -228,8 +310,11 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/logistica.png" alt="Logística Internacional">
-                                    <span class="icon"><a class="course-link" data-course-id="course1" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/logistica.png"
+                                        alt="Logística Internacional">
+                                    <span class="icon"><a class="course-link" data-course-id="course1"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Logística Internacional</h3>
                                         <div class="project-cat"><span>Digital Commerce y Cross-Border</span></div>
@@ -238,8 +323,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/Gestion.png" alt="Gestión de la Última Milla">
-                                    <span class="icon"><a class="course-link" data-course-id="course3" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/Gestion.png"
+                                        alt="Gestión de la Última Milla">
+                                    <span class="icon"><a class="course-link" data-course-id="course3"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Gestión de la Última Milla</h3>
                                         <div class="project-cat"><span>Modelos y Tecnologías de Vanguardia</span></div>
@@ -248,8 +336,10 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/fullfilment.png" alt="Fulfillment">
-                                    <span class="icon"><a class="course-link" data-course-id="course2" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/fullfilment.png" alt="Fulfillment">
+                                    <span class="icon"><a class="course-link" data-course-id="course2"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Fulfillment</h3>
                                         <div class="project-cat"><span>para Negocios Multicanal</span></div>
@@ -258,8 +348,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/ecommerce.jpeg" alt="Introducción al eCommerce">
-                                    <span class="icon"><a class="course-link" data-course-id="course4" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/ecommerce.jpeg"
+                                        alt="Introducción al eCommerce">
+                                    <span class="icon"><a class="course-link" data-course-id="course4"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Introducción al eCommerce</h3>
                                         <div class="project-cat"><span>Marketing digital y plataformas</span></div>
@@ -268,8 +361,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/tecnologia.jpeg" alt="Tecnología en Logística">
-                                    <span class="icon"><a class="course-link" data-course-id="course5" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/tecnologia.jpeg"
+                                        alt="Tecnología en Logística">
+                                    <span class="icon"><a class="course-link" data-course-id="course5"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Tecnología en Logística</h3>
                                         <div class="project-cat"><span>Automatizaciones y actualidad</span></div>
@@ -278,8 +374,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/integracion.jpeg" alt="Integración y Diseño de Procesos">
-                                    <span class="icon"><a class="course-link" data-course-id="course6" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/integracion.jpeg"
+                                        alt="Integración y Diseño de Procesos">
+                                    <span class="icon"><a class="course-link" data-course-id="course6"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Integración y Diseño de Procesos</h3>
                                         <div class="project-cat"><span>Mejora continua y diagramas</span></div>
@@ -288,8 +387,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/inteligencia.jpeg" alt="Inteligencia Artificial">
-                                    <span class="icon"><a class="course-link" data-course-id="course7" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/inteligencia.jpeg"
+                                        alt="Inteligencia Artificial">
+                                    <span class="icon"><a class="course-link" data-course-id="course7"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Inteligencia Artificial</h3>
                                         <div class="project-cat"><span>Optimización de procesos</span></div>
@@ -298,8 +400,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="single-project-item mb-30">
-                                    <img src="assets/img/project/estudio.jpeg" alt="Estudio e Investigación">
-                                    <span class="icon"><a class="course-link" data-course-id="course8" href="<?= APP_URL ?>/blog-details"><i class="ti ti-arrow-right"></i></a></span>
+                                    <img loading="lazy" src="assets/img/project/estudio.jpeg"
+                                        alt="Estudio e Investigación">
+                                    <span class="icon"><a class="course-link" data-course-id="course8"
+                                            href="<?= APP_URL ?>/blog-details"><i
+                                                class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Estudio e Investigación</h3>
                                         <div class="project-cat"><span>Casos logísticos</span></div>
@@ -309,15 +414,18 @@
                         </div>
                         <br>
                         <div class="swiper-pagination"></div>
-                        <button class="tv-slider-btn tv-slider-prev" aria-label="Anterior"><i class="ti ti-arrow-left"></i></button>
-                        <button class="tv-slider-btn tv-slider-next" aria-label="Siguiente"><i class="ti ti-arrow-right"></i></button>
+                        <button class="tv-slider-btn tv-slider-prev" aria-label="Anterior"><i
+                                class="ti ti-arrow-left"></i></button>
+                        <button class="tv-slider-btn tv-slider-next" aria-label="Siguiente"><i
+                                class="ti ti-arrow-right"></i></button>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12 text-center mt-30">
                     <div class="service-bottom-text">
-                        <p>Los cursos son <a href="<?= APP_URL ?>/blog-details">gratuitos </a>para nuestros socios y arancelados para
+                        <p>Los cursos son <a href="<?= APP_URL ?>/blog-details">gratuitos </a>para nuestros socios y
+                            arancelados para
                             terceros</p>
                     </div>
                 </div>
@@ -325,7 +433,7 @@
             <div class="row">
                 <div class="col-12 text-center mt-30 ">
                     <div class="tv-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".5">
-                        <a href="project.html" class="tv-btn-primary">
+                        <a href="<?= APP_URL ?>/blog-details" class="tv-btn-primary">
                             <span class="btn-wrap">
                                 <span class="btn-text1">Ver todos los cursos</span>
                                 <span class="btn-text2">Ver todos los cursos</span>
@@ -337,53 +445,83 @@
         </div>
     </div>
     <!-- project-area-end -->
-        <style>
-            .tv-slider-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:#0b3d91;color:#fff;border:none;display:flex;align-items:center;justify-content:center;z-index:50;box-shadow:0 6px 18px rgba(11,61,145,0.18);}
-            .tv-slider-prev{left:8px}
-            .tv-slider-next{right:8px}
-            .tv-slider-btn i{font-size:18px}
-            @media(min-width:992px){.tv-slider-btn{width:56px;height:56px}}
-        </style>
-        <script src="assets/js/swiper-bundle.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                if (typeof Swiper !== 'undefined') {
-                    new Swiper('.tv-project-slider', {
-                        loop: true,
-                        slidesPerView: 3,
-                        spaceBetween: 24,
-                        centeredSlides: false,
-                        pagination: {
-                            el: '.swiper-pagination',
-                            clickable: true,
-                        },
-                        navigation: {
-                            nextEl: '.tv-slider-next',
-                            prevEl: '.tv-slider-prev',
-                        },
-                        breakpoints: {
-                            0: { slidesPerView: 1 },
-                            576: { slidesPerView: 2 },
-                            992: { slidesPerView: 3 }
+    <style>
+        .tv-slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #0b3d91;
+            color: #fff;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            box-shadow: 0 6px 18px rgba(11, 61, 145, 0.18);
+        }
+
+        .tv-slider-prev {
+            left: 8px
+        }
+
+        .tv-slider-next {
+            right: 8px
+        }
+
+        .tv-slider-btn i {
+            font-size: 18px
+        }
+
+        @media(min-width:992px) {
+            .tv-slider-btn {
+                width: 56px;
+                height: 56px
+            }
+        }
+    </style>
+    <script src="assets/js/swiper-bundle.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof Swiper !== 'undefined') {
+                new Swiper('.tv-project-slider', {
+                    loop: true,
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                    centeredSlides: false,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.tv-slider-next',
+                        prevEl: '.tv-slider-prev',
+                    },
+                    breakpoints: {
+                        0: { slidesPerView: 1 },
+                        576: { slidesPerView: 2 },
+                        992: { slidesPerView: 3 }
+                    }
+                });
+                // bind click on course links: save selection and navigate
+                document.querySelectorAll('.tv-project-slider .course-link').forEach(function (el) {
+                    el.addEventListener('click', function (e) {
+                        // store selected course id so blog-details can load it
+                        var cid = el.dataset.courseId;
+                        if (cid) {
+                            try { localStorage.setItem('selectedCourse', cid); } catch (err) { /* ignore */ }
                         }
+                        // allow normal navigation to blog-details
                     });
-                        // bind click on course links: save selection and navigate
-                        document.querySelectorAll('.tv-project-slider .course-link').forEach(function (el) {
-                            el.addEventListener('click', function (e) {
-                                // store selected course id so blog-details can load it
-                                var cid = el.dataset.courseId;
-                                if (cid) {
-                                    try { localStorage.setItem('selectedCourse', cid); } catch (err) { /* ignore */ }
-                                }
-                                // allow normal navigation to blog-details
-                            });
-                        });
-                }
-            });
-        </script>
+                });
+            }
+        });
+    </script>
 
     <!-- team-area-start -->
-    <div class="tv-team-area pt-130 pb-130 section-bg footer-bg" style="background-color: #c2e6f3">
+    <div class="tv-team-area pt-180 pb-180 section-bg footer-bg" style="background-color: #c2e6f3">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-5 col-lg-5 col-12">
@@ -392,7 +530,7 @@
                             <div class="swiper-wrapper ">
                                 <div class="swiper-slide">
                                     <div class="single-team-item">
-                                        <img src="assets/img/team/Marcelo.png" alt="">
+                                        <img loading="lazy" src="assets/img/team/Marcelo.png" alt="">
                                         <div class="team-social">
                                             <a href="#"><i class="ti ti-brand-linkedin"></i></a>
                                             <a href="#"><i class="ti ti-brand-x"></i></a>
@@ -409,7 +547,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="single-team-item">
-                                        <img src="assets/img/team/Sr Walter.png" alt="">
+                                        <img loading="lazy" src="assets/img/team/Sr Walter.png" alt="">
                                         <div class="team-social">
                                             <a href="#"><i class="ti ti-brand-linkedin"></i></a>
                                             <a href="#"><i class="ti ti-brand-x"></i></a>
@@ -427,7 +565,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="single-team-item">
-                                        <img src="assets/img/team/Arq. Diego.png" alt="">
+                                        <img loading="lazy" src="assets/img/team/Arq. Diego.png" alt="">
                                         <div class="team-social">
                                             <a href="#"><i class="ti ti-brand-linkedin"></i></a>
                                             <a href="#"><i class="ti ti-brand-x"></i></a>
@@ -461,10 +599,11 @@
                         <div class="tv-team-arrow-box d-flex justify-content-md-end">
                             <div>
                                 <div class="it-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".7">
-                                            <a href="<?= APP_URL ?>/team" class="tv-btn-icon">
-                                                <i class="ti ti-plus"></i>
-                                            </a>
-                                        </div>
+                                    <a href="<?= APP_URL ?>/team" class="tv-btn-icon"
+                                        style="background: #00a3e0; color: #fff; border-radius: 50%; width: 64px; height: 64px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0, 163, 224, 0.25);">
+                                        <i class="ti ti-plus"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="tv-team-pagination d-flex">
@@ -484,7 +623,7 @@
                 <div class="col-xxl-7 col-xl-6 col-lg-6 col-md-5">
                     <div class="video-play-btn-area p-relative">
                         <div class="tv-video-icon">
-                            <img src="">
+                            <img loading="lazy" src="">
                         </div>
                     </div>
                 </div>
@@ -532,12 +671,12 @@
                             </form>
 
                             <script>
-                                (function(){
+                                (function () {
                                     var form = document.getElementById('home-contact-form');
                                     var result = document.getElementById('contact-result');
                                     if (!form) return;
 
-                                    form.addEventListener('submit', function(e){
+                                    form.addEventListener('submit', function (e) {
                                         e.preventDefault();
                                         var fd = new FormData(form);
 
@@ -547,16 +686,16 @@
                                             headers: {
                                                 'X-Requested-With': 'XMLHttpRequest'
                                             }
-                                        }).then(function(resp){
+                                        }).then(function (resp) {
                                             return resp.json();
-                                        }).then(function(json){
+                                        }).then(function (json) {
                                             if (json.sent) {
                                                 result.innerHTML = '<div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #c3e6cb;"><strong>¡Mensaje enviado!</strong> Nos pondremos en contacto contigo pronto.</div>';
                                                 form.reset();
                                             } else {
                                                 result.innerHTML = '<div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;"><strong>Error:</strong> ' + (json.error || 'Hubo un error') + '</div>';
                                             }
-                                        }).catch(function(err){
+                                        }).catch(function (err) {
                                             result.innerHTML = '<div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #f5c6cb;"><strong>Error:</strong> Error de conexión</div>';
                                         });
                                     });
@@ -571,50 +710,7 @@
     </div>
     <!-- CTA-area-end -->
 
-    <!-- counter-area-start -->
-    <div class="tv-counter-area pb-130">
-        <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                    <div class="single-couter-wrap mt-60   d-flex align-items-center justify-content-center">
-                        <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="25">25</span></h5>
-                            <h6>Years Experience</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
-                        <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="97">97</span>%</h5>
-                            <h6>Retention Rate</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
-                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
-                        <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="8">8</span>K</h5>
-                            <h6>Project Completed</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
-                    <div class="single-couter-wrap d-flex align-items-center justify-content-center">
-                        <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="19">19</span>K</h5>
-                            <h6>Happy Clients</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- counter-area-end -->
+
 
     <!-- brand-area-start -->
     <div class="tv-brand-area pt-80 pb-80">
@@ -626,28 +722,32 @@
             </div>
             <div class="swiper-container tv-brand-active">
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/ANDREANI.png"
-                            alt="logo de ANDREANI" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/ocasa.png"
-                            alt="logo de ocasa" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/arlog.png"
-                            alt="logo de arnog" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/cace.png"
-                            alt="logo de cace" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/epsa.png"
-                            alt="logo de epasa" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/faetyl.png"
-                            alt="logo de faetyl" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/urbano.png"
-                            alt="logo de urbano" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/camara comercio.png"
-                            alt="logo de camara comercio" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/BlueMail.png"
-                            alt="logo de bluemail" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/transban.png"
-                            alt="logo de transban" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img src="assets/img/logo/nyg.png" alt="logo de nyg"
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/ANDREANI.png" alt="logo de ANDREANI"
                             style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/ocasa.png"
+                            alt="logo de ocasa" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/arlog.png"
+                            alt="logo de arnog" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/cace.png"
+                            alt="logo de cace" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/epsa.png"
+                            alt="logo de epasa" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/faetyl.png"
+                            alt="logo de faetyl" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/urbano.png"
+                            alt="logo de urbano" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/camara comercio.png" alt="logo de camara comercio"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/BlueMail.png" alt="logo de bluemail"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/transban.png" alt="logo de transban"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/nyg.png"
+                            alt="logo de nyg" style="max-height: 80px; width: auto;"></div>
                 </div>
             </div>
         </div>

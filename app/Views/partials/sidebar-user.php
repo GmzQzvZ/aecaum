@@ -1,7 +1,7 @@
 <!-- Sidebar Usuario -->
 <div class="sidebar">
    <div class="sidebar-brand">
-      <img src="<?= ASSETS_URL ?>/img/logo/logo.png" alt="AECAUM" onerror="this.style.display='none'">
+      <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/logo.png" alt="AECAUM" onerror="this.style.display='none'">
       <div class="sidebar-brand-text">
          <h2>AECAUM</h2>
          <span>Mi Panel</span>

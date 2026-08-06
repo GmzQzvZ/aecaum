@@ -1200,7 +1200,7 @@ input[type=color] {
   background: transparent;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 30px !important;
   font-weight: 500;
   cursor: pointer;
   padding: 5px 10px;
@@ -1431,23 +1431,24 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 
 .itoffcanvas__text p {
   color: #ffffff;
-  font-size: 14px !important;
+  font-size: 16px !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu {
-  font-size: 14px !important;
+  font-size: 24px !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu ul {
-  font-size: 14px !important;
+  font-size: 24px !important;
   list-style: none;
   padding-left: 0;
 }
 
 .itoffcanvas .itoffcanvas__text .menu ul li {
-  font-size: 14px !important;
+  font-size: 24px !important;
   position: relative;
   padding-left: 0;
+  margin-bottom: 6px !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu ul li::before {
@@ -1455,22 +1456,26 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 .itoffcanvas .itoffcanvas__text .menu ul li a {
-  font-size: 14px !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
   color: var(--blue-500) !important;
   text-decoration: none !important;
-  padding: 5px 0 !important;
-  display: block !important;
-  content: "";
+  padding: 6px 0 !important;
+  display: inline-block !important;
+  line-height: 1.3 !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu .submenu {
-  font-size: 13px !important;
+  font-size: 18px !important;
+  margin-top: 4px !important;
+  margin-bottom: 10px !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu .submenu li {
-  font-size: 13px !important;
+  font-size: 18px !important;
   position: relative;
-  padding-left: 25px;
+  padding-left: 20px;
+  margin-bottom: 4px !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu .submenu li::before {
@@ -1480,21 +1485,24 @@ only screen and (min-width: 768px) and (max-width: 991px) {
   top: 50%;
   transform: translateY(-50%);
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1;
 }
 
 .itoffcanvas .itoffcanvas__text .menu .submenu li a {
-  font-size: 13px !important;
+  font-size: 18px !important;
+  font-weight: 400 !important;
   color: white !important;
   text-decoration: none !important;
-  padding: 3px 0 3px 25px !important;
-  display: block !important;
-  content: "";
+  padding: 4px 0 4px 15px !important;
+  display: inline-block !important;
+  line-height: 1.4 !important;
 }
 
 .itoffcanvas .itoffcanvas__text .menu .destacado a {
   color: #f7a600 !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
 }
 
 .itoffcanvas__info {
@@ -1708,12 +1716,12 @@ only screen and (min-width: 768px) and (max-width: 991px) {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.71;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--blue-500);
   text-transform: capitalize;
 }
 
 .tv-breadcrumb-list span a {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--blue-500);
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px),
@@ -1733,7 +1741,7 @@ only screen and (min-width: 768px) and (max-width: 991px),
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
-  color: #fff;
+  color: var var(--blue-500);
   text-transform: capitalize;
   font-style: normal;
 }
@@ -7773,7 +7781,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   width: 52px;
   color: var(--tv-common-white);
   background: transparent;
-  border: 2px solid rgba(255,255,255,0.65);
+  border: 2px solid rgba(255, 255, 255, 0.65);
   border-radius: 50%;
   font-size: 24px;
 }
@@ -7794,6 +7802,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
     width: 44px;
     font-size: 22px;
   }
+
   .tv-header-bar button .menu-text {
     font-size: 14px;
   }
@@ -7819,10 +7828,9 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   visibility: visible;
   width: 100%;
   z-index: 999;
-  visibility: visible;
-  background-color: var(--tv-common-white);
-  animation: 0.95s ease 0s normal forwards 1 running ;
-  box-shadow: 0px 1px 3px 0px rgba(18, 20, 32, 0.14);
+  background-color: var(--blue-900);
+  animation: headerSlideDown 0.45s ease 0s normal forwards 1 running;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
 }
 
 .header-sticky .tv-header-menu>nav>ul>li>a {
@@ -7868,7 +7876,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   z-index: 999;
   visibility: visible;
   background-color: var(--tv-heading-primary);
-  animation: 0.95s ease 0s normal forwards 1 running ;
+  animation: 0.95s ease 0s normal forwards 1 running;
   box-shadow: 0px 1px 3px 0px rgba(18, 20, 32, 0.14);
 }
 
@@ -7900,14 +7908,14 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-left: 0;
+  margin-left: -400px;
   flex: 0 0 auto;
   width: min(100%, 660px);
   max-width: 660px;
   height: 75px;
   background-image: url('../img/logo/Fondos.png');
   background-size: 100% 100%;
-  background-position: left center;
+  background-position: left;
   background-repeat: no-repeat;
   padding: 0 8px 0 0;
   box-sizing: border-box;
@@ -7921,7 +7929,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   object-fit: contain;
   transition: all 0.3s ease;
   display: block;
-  margin-left: 0;
+  margin-left: 155px;
   z-index: 2;
 }
 
@@ -8000,6 +8008,22 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 
   .tv-header-right-action .separator {
     display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .tv-header-logo {
+    justify-content: center;
+    margin-left: -10px;
+    width: 100%;
+    max-width: 100%;
+    height: 62px;
+    background-position: center;
+  }
+
+  .tv-header-logo-img {
+    max-width: 58%;
+    margin-left: 0;
   }
 }
 
@@ -10154,12 +10178,14 @@ only screen and (min-width: 576px) and (max-width: 767px),
   margin: 0 35px;
 }
 
-.tv-text-slider-active .slider-transtion {
-  -webktv-transition-timing-function: linear;
-  transition-timing-function: linear;
+.tv-text-slider-active .slider-transtion,
+.tv-brand-active .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
 }
 
-.tv-text-slider-active .swiper-slide {
+.tv-text-slider-active .swiper-slide,
+.tv-brand-active .swiper-slide {
   width: auto;
 }
 
@@ -10513,6 +10539,83 @@ only screen and (min-width: 576px) and (max-width: 767px),
   text-align: center;
   line-height: 40px;
   font-weight: 700;
+}
+
+.tv-team-card {
+  background: transparent;
+  padding: 12px 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+.team-member-icon {
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  margin-right: 14px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: transparent;
+}
+
+.tv-team-card .tv-section-title {
+  margin-bottom: 0;
+  line-height: 1.15;
+  font-size: 1rem;
+  color: var(--text-500);
+}
+
+.tv-team-card .tv-section-subtitle {
+  display: block;
+  margin-bottom: 0;
+  line-height: 1.15;
+  color: var(--text-500);
+  font-size: 0.92rem;
+}
+
+.tv-team-card h4:last-child {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.92rem;
+  color: var(--blue-900);
+  letter-spacing: 0.01em;
+}
+
+.tv-team-card {
+  background: transparent;
+  padding: 2px 0;
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+}
+
+
+.tv-team-area .centered-team {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tv-team-area .tv-team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 85%;
+  margin-left: auto;
+  margin-right: 0;
+  gap: 0 6px;
+}
+
+.tv-team-area .tv-team-grid>.col-xl-6,
+.tv-team-area .tv-team-grid>.col-lg-6,
+.tv-team-area .tv-team-grid>.col-md-6 {
+  flex: 0 0 calc(50% - 6px);
+  max-width: calc(50% - 6px);
+  margin-bottom: 18px;
 }
 
 .team-social {
@@ -14830,7 +14933,7 @@ header.tv-header-height .tv-header-right-action .social i {
 header.tv-header-height .tv-header-right-action .separator {
   font-size: 30px !important;
   margin: 0 8px !important;
-  color: rgba(255,255,255,0.7) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
   line-height: 1.2 !important;
   vertical-align: middle !important;
 }
@@ -14846,8 +14949,8 @@ header.tv-header-height .tv-header-bar button .menu-icon {
   height: 52px !important;
   width: 52px !important;
   line-height: 52px !important;
-  background-color: rgba(255,255,255,0.14) !important;
-  border: 1px solid rgba(255,255,255,0.35) !important;
+  background-color: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
   margin-left: 0 !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -14937,7 +15040,8 @@ header.tv-header-height .tv-header-bar button .menu-text {
   }
 
   .tv-header-logo-img {
-    max-width: 70%;
+
+    max-width: 60%;
   }
 
   .tv-header-right-action {
@@ -14962,7 +15066,7 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
 /* ==== AECAUM Custom Footer ==== */
 .aecaum-footer {
-  background-color: #004b87;
+  background-color: var(--blue-900);
   color: #ffffff;
   padding: 80px 0 0;
 }
@@ -15684,3 +15788,47 @@ header.tv-header-height .tv-header-bar button .menu-text {
 .download-button:hover {
   background: var(--blue-700);
 }
+
+/* ==== Header Sticky (acompaña el scroll en la parte superior) ==== */
+header.tv-header-height {
+  position: relative;
+  z-index: 999;
+}
+
+#header-sticky.header-sticky,
+.header-sticky {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background-color: var(--blue-900) !important;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.35) !important;
+  animation: headerSlideDown 0.35s ease-out 0s 1 normal forwards !important;
+}
+
+/* ==== Team Area Height Adjustment ==== */
+.tv-team-area {
+  padding-top: 180px !important;
+  padding-bottom: 180px !important;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .tv-team-area {
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+    min-height: auto;
+  }
+}
+
+/* ==== Offcanvas Menu (debajo del header sticky independientemente del scroll) ==== */
+.itoffcanvas {
+  position: fixed !important;
+  top: 75px !important;
+  height: calc(100vh - 75px) !important;
+  z-index: 9998 !important;
+}

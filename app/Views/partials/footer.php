@@ -3,10 +3,15 @@
     <div class="tv-footer-wrap footer-bg z-index-1">
 
         <!-- newsletter-section-start -->
+        <?php
+        $currentUri = $_SERVER['REQUEST_URI'] ?? '';
+        $isBlogDetails = (strpos($currentUri, 'blog-details') !== false);
+        if (empty($hideNewsletter) && !$isBlogDetails):
+        ?>
         <div class="nl-section">
             <!-- LEFT: light bg + image -->
             <div class="nl-left">
-                <img src="assets/img/footer/newsletter.jpeg" alt="Newsletter visual" class="nl-img">
+                <img loading="lazy" src="assets/img/footer/newsletter.jpeg" alt="Newsletter visual" class="nl-img">
             </div>
             <!-- RIGHT: dark blue bg + form -->
             <div class="nl-right">
@@ -24,23 +29,21 @@
                 </form>
             </div>
         </div>
+        <?php endif; ?>
         <!-- newsletter-section-end -->
 
 
         <!-- aecaum-footer-main-start -->
         <div class="aecaum-footer">
             <div class="container">
-                <!-- TOP: Logo -->
                 <div class="row mb-50">
                     <div class="col-12 text-center">
                         <div class="aecaum-footer-logo">
-                            <img src="assets/img/footer/LOGO SOLO AECAUM.png" alt="AECAUM Logo">
+                            <img loading="lazy" src="assets/img/footer/LOGO SOLO AECAUM.png" alt="AECAUM Logo">
                         </div>
                     </div>
                 </div>
-
                 <div class="row aecaum-footer-main align-items-start justify-content-between">
-
                     <!-- LEFT: Contact info -->
                     <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-contact">
                         <ul>

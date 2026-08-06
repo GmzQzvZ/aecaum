@@ -34,7 +34,7 @@
       <div class="row justify-content-center">
          <div class="col-xxl-12 col-xl-7 col-lg-7 col-md-9">
             <div class="tv-error-thumb text-center mb-120 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-               <img src="<?= ASSETS_URL ?>/img/logo/Logo.png" alt="">
+               <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/Logo.png" alt="">
             </div>
          </div>
       </div>

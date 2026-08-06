@@ -10,12 +10,12 @@
                </div>
                <div class="tv-breadcrumb-list-wrap">
                   <div class="tv-breadcrumb-list">
-                     <span><a href="index.html">Home</a></span>
+                     <span><a href="<?= APP_URL ?>/home">Home</a></span>
                      <span class="dvdr">
                         <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path
                               d="M4.47698 6.00058L0.352151 10.1253L1.53065 11.3038L6.83398 6.00058L1.53065 0.697266L0.352151 1.87577L4.47698 6.00058Z"
-                              fill="#F5F6F7" />
+                              fill="#00aae6" />
                         </svg>
                      </span>
                      <i>Nosotros</i>
@@ -81,29 +81,17 @@
             </div>
 
             <div class="mb-40 mt-40">
-               <img src="assets/img/about/about3.jpg" alt="" style="width: 100%; border-radius: 50px 0 50px 0;">
+               <img loading="lazy" src="assets/img/about/about3.jpg" alt=""
+                  style="width: 100%; border-radius: 50px 0 50px 0;">
             </div>
-
-            <!-- <div class="row mt-30">
-               <div class="col-6">
-                  <p style="color: #0b3d91; font-weight: 500; font-size: 15px;">Lorem ipsum dolor sit amet, consectetur
-                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-               </div>
-               <div class="col-6">
-                  <h5 style="color: #0b3d91; font-size: 18px; font-weight: bold; margin-bottom: 10px;">Nuestra Misión
-                  </h5>
-                  <p style="color: #0b3d91; font-weight: 500; font-size: 15px;">Lorem ipsum dolor sit amet, consectetur
-                     adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-               </div>
-            </div> -->
          </div>
 
          <!-- RIGHT COLUMN -->
          <div class="col-xl-6 col-lg-6 pl-40">
             <div class="tv-about-images-group p-relative" style="min-height: 850px; position: relative;">
-               <img src="assets/img/about/about1.jpg" alt="Diplomatura"
+               <img loading="lazy" src="assets/img/about/about1.jpg" alt="Diplomatura"
                   style="position: absolute; top: 0; left: 0; width: 60%; border-radius: 50px 0 50px 0; z-index: 1;">
-               <img src="assets/img/about/about2.png" alt="AECAUM"
+               <img loading="lazy" src="assets/img/about/about2.png" alt="AECAUM"
                   style="position: absolute; top: 350px; right: 0; width: 60%; border-radius: 50px 0 50px 0; z-index: -2;">
             </div>
 
@@ -145,7 +133,8 @@
                      +25
                   </div>
                </div>
-               <img src="assets/img/about/about4.jpg" alt="" style="width: 55%; border-radius: 50px 0 50px 0;">
+               <img loading="lazy" src="assets/img/about/about4.jpg" alt=""
+                  style="width: 55%; border-radius: 50px 0 50px 0;">
             </div>
          </div>
       </div>
@@ -156,44 +145,72 @@
 
 
 <!-- counter-area-start -->
+<br>
+<br>
+<br>
+<br>
 <div class="tv-counter-area pb-130">
    <div class="container">
       <div class="row justify-content-center align-items-center">
          <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
             <div class="single-couter-wrap mt-60   d-flex align-items-center justify-content-center">
                <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="25">25</span>
-                  </h5>
-                  <h6>Years Experience</h6>
+                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="25">+25</span></h5>
+                  <h6>Años de experiencia</h6>
                </div>
             </div>
+            <br>
+            <h3>Lorem ipsum dolor</h3>
+            <br>
+            <p>Lorem ipsum dolor sit amet,
+               consectetur adipiscing elit,
+               sed do eiusmod tempor in
+               cididunt ut labore et dolore</p>
          </div>
          <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
             <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
                <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="97">97</span>%
-                  </h5>
-                  <h6>Retention Rate</h6>
+                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="70">70</span>%</h5>
+                  <h6>Años de experiencia</h6>
                </div>
             </div>
+            <br>
+            <h3>Lorem ipsum dolor</h3>
+            <br>
+            <p>Lorem ipsum dolor sit amet,
+               consectetur adipiscing elit,
+               sed do eiusmod tempor in
+               cididunt ut labore et dolore</p>
          </div>
          <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
             <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="8">8</span>K
-                  </h5>
-                  <h6>Project Completed</h6>
+                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="50">50</span></h5>
+                  <h6>Asociados</h6>
                </div>
             </div>
+            <br>
+            <h3>Lorem ipsum dolor</h3>
+            <br>
+            <p>Lorem ipsum dolor sit amet,
+               consectetur adipiscing elit,
+               sed do eiusmod tempor in
+               cididunt ut labore et dolore</p>
          </div>
          <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
             <div class="single-couter-wrap d-flex align-items-center justify-content-center">
                <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="19">19</span>K
-                  </h5>
-                  <h6>Happy Clients</h6>
+                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="19">90</span></h5>
+                  <h6>Capacitados</h6>
                </div>
             </div>
+            <br>
+            <h3>Lorem ipsum dolor</h3>
+            <br>
+            <p>Lorem ipsum dolor sit amet,
+               consectetur adipiscing elit,
+               sed do eiusmod tempor in
+               cididunt ut labore et dolore</p>
          </div>
       </div>
    </div>
@@ -210,87 +227,84 @@
                   <div class="swiper-wrapper ">
                      <div class="swiper-slide">
                         <div class="single-team-item">
-                           <img src="assets/img/team/Marcelo.png" alt="Sr. Marcelo Wirth">
+                           <img loading="lazy" src="assets/img/team/Marcelo.png" alt="">
                            <div class="team-social">
                               <a href="#"><i class="ti ti-brand-linkedin"></i></a>
-                              <a href="#"><i class="ti ti-brand-twitter"></i></a>
+                              <a href="#"><i class="ti ti-brand-x"></i></a>
                            </div>
                            <div class="team-content d-flex justify-content-between align-items-center">
                               <div>
-                                 <h2 class="team-name"><a href="<?= APP_URL ?>/team">Sr. Marcelo Wirth</a></h2>
-                                 <p class="designation">Presidente <br>
-                                    <strong>URBANO EXPRESS ARGENTINA S.A</strong>
-                                 </p>
-                              </div>
-                              <div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="swiper-slide">
-                        <div class="single-team-item">
-                           <img src="assets/img/team/Sr Walter.png" alt="Sr. Walter Santagatti ">
-                           <div class="team-social">
-                              <a href="#"><i class="ti ti-brand-linkedin"></i></a>
-                              <a href="#"><i class="ti ti-brand-twitter"></i></a>
-                           </div>
-                           <div class="team-content d-flex justify-content-between align-items-center">
-                              <div>
-                                 <h2 class="team-name"><a href="<?= APP_URL ?>/team">Sr. Walter Santagatti</a>
+                                 <h2 class="team-name"><a href="team-details.html">Sr. Marcelo Wirth</a>
                                  </h2>
-                                 <p class="designation">Vicepresidente 1º <br>
-                                    <strong>CORREO ANDREANI S.A.</strong>
-                                 </p>
-                              </div>
-                              <div>
-                                 <div>
-                                 </div>
+                                 <p class="designation">Presidente</p>
+                                 <p class="designation"><strong>URBANO EXPRESS ARGENTINA S.A</strong></p>
                               </div>
                            </div>
                         </div>
                      </div>
                      <div class="swiper-slide">
                         <div class="single-team-item">
-                           <img src="assets/img/team/Arq. Diego.png" alt="Arq. Diego M. Cash">
+                           <img loading="lazy" src="assets/img/team/Sr Walter.png" alt="">
                            <div class="team-social">
                               <a href="#"><i class="ti ti-brand-linkedin"></i></a>
-                              <a href="#"><i class="ti ti-brand-twitter"></i></a>
+                              <a href="#"><i class="ti ti-brand-x"></i></a>
                            </div>
                            <div class="team-content d-flex justify-content-between align-items-center">
                               <div>
-                                 <h2 class="team-name"><a href="<?= APP_URL ?>/team">Arq. Diego M. Cash</a></h2>
-                                 <p class="designation">Vicepresidente 2º <br>
-                                    <strong>ESETECE S.A.</strong>
-                                 </p>
+                                 <h2 class="team-name"><a href="team-details.html">Sr. Walter Santagatti
+                                    </a>
+                                 </h2>
+                                 <p class="designation">Vicepresidente 1º</p>
+                                 <p class="designation"><strong>CORREO ANDREANI S.A.</strong></p>
                               </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="swiper-slide">
+                        <div class="single-team-item">
+                           <img loading="lazy" src="assets/img/team/Arq. Diego.png" alt="">
+                           <div class="team-social">
+                              <a href="#"><i class="ti ti-brand-linkedin"></i></a>
+                              <a href="#"><i class="ti ti-brand-x"></i></a>
+                           </div>
+                           <div class="team-content d-flex justify-content-between align-items-center">
                               <div>
-                                 <div>
-                                 </div>
+                                 <h2 class="team-name"><a href="team-details.html">Arq. Diego M. Cash</a>
+                                 </h2>
+                                 <p class="designation">Web Developer</p>
+                                 <p class="designation"><strong>ESETECE S.A.</strong></p>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-
             </div>
          </div>
          <div class="col-xl-7 col-lg-7 col-12 order-md-0">
             <div class="tv-team-right-area">
                <div class="tv-section-title-box mb-40">
-                  <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Nuestras Autoridades</span>
-                  <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right auth-title-white">
-                     Liderazgo Estratégico
+                  <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Nuestras
+                     Autoridades</span>
+                  <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-left"
+                     style="color: white !important; font-size: 45px;">Liderazgo Estratégico
                   </h4>
-                  <p style="color: white;">Conocé a los líderes que representan y potencian los intereses
+                  <p>Conocé a los líderes que representan y potencian los intereses
                      de la última milla en Argentina, impulsando el crecimiento y la
                      competitividad de todo el sector</p>
                </div>
                <div class="tv-team-arrow-box d-flex justify-content-md-end">
                   <div>
+                     <div class="it-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".7">
+                        <a href="<?= APP_URL ?>/team" class="tv-btn-icon"
+                           style="background: #00a3e0; color: #fff; border-radius: 50%; width: 64px; height: 64px; display: inline-flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0, 163, 224, 0.25);">
+                           <i class="ti ti-plus"></i>
+                        </a>
+                     </div>
                   </div>
                </div>
-               <div class="tv-team-pagination d-flex"></div>
+               <div class="tv-team-pagination d-flex">
+               </div>
             </div>
          </div>
       </div>

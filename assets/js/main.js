@@ -14,7 +14,7 @@
 	// 07. Sticky Header Js
 	windowOn.on('scroll', function () {
 		var scroll = windowOn.scrollTop();
-		if (scroll < 400) {
+		if (scroll < 10) {
 			$("#header-sticky").removeClass("header-sticky");
 		} else {
 			$("#header-sticky").addClass("header-sticky");
@@ -204,12 +204,13 @@
 
 	///////////////////////////////////////////////////
 	// wow animation
-	// var wow = new WOW(
-	// 	{
-	// 	  mobile: true,
-	// 	}
-	//   );
-	//   wow.init();
+	if (typeof WOW !== 'undefined') {
+		var wow = new WOW({
+			mobile: true,
+			live: true
+		});
+		wow.init();
+	}
 	// var windowOn = $(window);
 
 	//One Page Scroll Js

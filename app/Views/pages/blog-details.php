@@ -31,7 +31,7 @@
 <div class="tv-blog-area pt-130 pb-130">
    <div class="container">
       <div class="text-center">
-         <img src="assets/img/icon/diplomatura.png" alt="diplomatura" style="width: 30%; height: auto;">
+         <img loading="lazy" src="assets/img/icon/diplomatura.png" alt="diplomatura" style="width: 30%; height: auto;">
          <h1 class="text-center py-3" style="color:#072868; font-weight:900; font-size:44px;">Programa de
             Capacitación Académica <br> AECAUM - UNDelta</h1>
          <p style="color:#6d8089; font-size:16px;">Potenciamos el ecosistema logístico. Una propuesta
@@ -44,7 +44,7 @@
             <div class="tv-blog-list-wrap">
                <div class="tv-blog-details">
                   <div class="tv-blog-details-thumb mb-20">
-                     <img id="dynamicImage" alt="logistica"
+                     <img loading="lazy" id="dynamicImage" alt="logistica"
                         style="width: 100%; height: 380px; object-fit: cover; object-position: top; border-radius: 25px 0 25px 0;">
                   </div>
                   <div class="tv-blog-details-content" id="dynamicContent">

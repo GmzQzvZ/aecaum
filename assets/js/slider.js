@@ -6,31 +6,33 @@
 	// 13. Swiper Js
 	var it_text_slider = new Swiper(".tv-text-slider-active", {
 		loop: true,
-		freemode: true,
+		freeMode: true,
 		slidesPerView: 'auto',
 		spaceBetween: 0,
 		centeredSlides: true,
-		allowTouchMove: false,
-		speed: 2500,
+		allowTouchMove: true,
+		speed: 3000,
 		autoplay: {
 		  delay: 1,
-		  disableOnInteraction: true,
+		  disableOnInteraction: false,
+		  pauseOnMouseEnter: false,
 		},
 	  });
 	
 	////////////////////////////////////////////////////
 	// 13. Swiper Js
-	var it_text_slider = new Swiper(".tv-brand-active", {
+	var it_brand_slider = new Swiper(".tv-brand-active", {
 		loop: true,
-		freemode: true,
+		freeMode: true,
 		slidesPerView: 'auto',
 		spaceBetween: 30,
-		centeredSlides: true,
-		allowTouchMove: false,
-		speed: 2500,
+		centeredSlides: false,
+		allowTouchMove: true,
+		speed: 3000,
 		autoplay: {
 		  delay: 1,
-		  disableOnInteraction: true,
+		  disableOnInteraction: false,
+		  pauseOnMouseEnter: false,
 		},
 	  }); 	  
 

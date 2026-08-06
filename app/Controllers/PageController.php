@@ -127,7 +127,8 @@ class PageController extends BaseController {
 
     public function blogDetails(): void {
         $this->render('pages/blog-details', [
-            'pageTitle' => 'Artículo | AECAUM',
+            'pageTitle'      => 'Artículo | AECAUM',
+            'hideNewsletter' => true,
         ]);
     }
 

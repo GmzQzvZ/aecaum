@@ -1,10 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const preloader = document.getElementById('preloader');
     
-    // Solo inicializar si existe el preloader (solo en home)
+    // Solo inicializar si existe el preloader
     if (!preloader) return;
 
+    // Si ya vio el splash en esta sesión de navegador, ocultarlo de inmediato
+    if (sessionStorage.getItem('hasSeenSplash')) {
+        preloader.style.display = 'none';
+        return;
+    }
+
     const hidePreloader = () => {
+        sessionStorage.setItem('hasSeenSplash', 'true');
         if (!preloader.classList.contains('hidden')) {
             preloader.classList.add('hidden');
             setTimeout(() => {
