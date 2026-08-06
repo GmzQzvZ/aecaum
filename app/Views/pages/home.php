@@ -205,7 +205,7 @@
             <div class="row">
                 <div class="col-12 text-center mt-30">
                     <div class="service-bottom-text">
-                        <p>Potenciá la competitividad de tu operación <a href="contact.html">sumándote </a> a la red
+                        <p>Potenciá la competitividad de tu operación <a style="color: #00aae6">sumándote </a> a la red
                             logística y postal más importante del país.</p>
                     </div>
                 </div>
@@ -722,32 +722,44 @@
             </div>
             <div class="swiper-container tv-brand-active">
                 <div class="swiper-wrapper align-items-center">
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/logos.png"
+                            alt="logo de epsa" style="max-height: 80px; width: auto;"></div>
                     <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/ANDREANI.png" alt="logo de ANDREANI"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/ocasa.png"
-                            alt="logo de ocasa" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/arlog.png"
-                            alt="logo de arnog" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/cace.png"
-                            alt="logo de cace" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/epsa.png"
-                            alt="logo de epasa" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/faetyl.png"
-                            alt="logo de faetyl" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/urbano.png"
-                            alt="logo de urbano" style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/camara comercio.png" alt="logo de camara comercio"
+                            src="assets/img/logo/Logos-44.png" alt="logo de entregar"
                             style="max-height: 80px; width: auto;"></div>
                     <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/BlueMail.png" alt="logo de bluemail"
+                            src="assets/img/logo/Logos-45.png" alt="logo de skynde"
                             style="max-height: 80px; width: auto;"></div>
                     <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/transban.png" alt="logo de transban"
+                            src="assets/img/logo/Logos-46.png" alt="logo de mailex"
                             style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/nyg.png"
-                            alt="logo de nyg" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-47.png" alt="logo de webpack"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-48.png" alt="logo de servermar"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-49.png" alt="logo de ema" 
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-50.png" alt="logo de dt logistica"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-51.png" alt="logo de NyG" 
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-52.png" alt="logo de portal"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-53.png" alt="logo de tranas-ban"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-54.png" alt="logo de raiconet"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-55.png" alt="logo de qb andina"
+                            style="max-height: 80px; width: auto;"></div>
                 </div>
             </div>
         </div>

@@ -33,58 +33,51 @@
 
    <!-- Section 1: Comisión Directiva -->
    <div class="tv-team-area pt-130 pb-130">
-      <div class="container">
-         <div class="row justify-content-center">
-            <span class="tv-section-subtitle tv-spltv-text ">Autoridades</span>
-            <p class="tv-section-title">2025-2027</p>
-         </div>
       <div class="container centered-team">
-         <div class="row justify-content-start tv-team-grid">
+         <div class="row justify-content-start text-start mb-50">
+            <div class="col-12">
+               <span class="tv-section-subtitle tv-spltv-text">Autoridades</span>
+               <h2 class="tv-section-title">2025-2027</h2>
+            </div>
+         </div>
+         <div class="row justify-content-start tv-team-grid gx-3">
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Jorge Aguirre</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">EMA SERVICIOS S.A.</span>
-                        <h4>SECRETARIO</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Jorge Aguirre</h3>
+                     <p>EMA SERVICIOS S.A.</p>
+                     <p><strong>SECRETARIO</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Dra. Ileana Escaba</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">TRANSPORTES SERVEMAR S.A.</span>
-                        <h4>PROSECRETARIO</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Dra. Ileana Escaba</h3>
+                     <p>TRANSPORTES SERVEMAR S.A.</p>
+                     <p><strong>PROSECRETARIO</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Francisco Mamone</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">BLUE MAIL S.A.</span>
-                        <h4>TESORERO</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Francisco Mamone</h3>
+                     <p>BLUE MAIL S.A.</p>
+                     <p><strong>TESORERO</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Aníbal Sirota</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">INTER POST S.A.</span>
-                        <h4>PROTESORERO</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Aníbal Sirota</h3>
+                     <p>INTER POST S.A.</p>
+                     <p><strong>PROTESORERO</strong></p>
                   </div>
                </div>
             </div>
@@ -96,88 +89,74 @@
    <!-- Section 2: Vocales -->
    <div class="tv-team-area pt-130 pb-130 section-bg footer-bg" style="background-color: #c2e6f3">
       <div class="container centered-team">
-         <div class="row justify-content-start tv-team-grid">
+         <div class="row justify-content-start tv-team-grid gx-3">
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Ernesto Nogués</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">RAICO S.A.</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Ernesto Nogués</h3>
+                     <p>RAICO S.A.</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Iván Bullrich</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">ENVÍO POSTAL S.A. (EPSA)</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Iván Bullrich</h3>
+                     <p>ENVÍO POSTAL S.A. (EPSA)</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Sergio Ebert</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">FAST MAIL S.R.L.</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Sergio Ebert</h3>
+                     <p>FAST MAIL S.R.L.</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sra. Judith Pérez</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Q B ANDINA S.A.</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sra. Judith Pérez</h3>
+                     <p>Q B ANDINA S.A.</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Marcelo Andrasnik</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">SERVIJUR S.R.L.</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Marcelo Andrasnik</h3>
+                     <p>SERVIJUR S.R.L.</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Rolando Navarro</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">(ocasa)</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Rolando Navarro</h3>
+                     <p>(ocasa)</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Arq. Pablo Guerchi</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">LATIN AMERICA POSTAL S.A. (LA POSTAL)</span>
-                        <h4>VOCAL</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Arq. Pablo Guerchi</h3>
+                     <p>LATIN AMERICA POSTAL S.A. (LA POSTAL)</p>
+                     <p><strong>VOCAL</strong></p>
                   </div>
                </div>
             </div>
@@ -189,28 +168,24 @@
    <!-- Section 3: Revisores de Cuentas -->
    <div class="tv-team-area pt-130 pb-130 white-bg">
       <div class="container centered-team">
-         <div class="row justify-content-start tv-team-grid">
+         <div class="row justify-content-start tv-team-grid gx-3">
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Nahuel Poppi</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">LHS WORLDWIDE S.A.</span>
-                        <h4>REVISOR DE CUENTAS TITULAR</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Nahuel Poppi</h3>
+                     <p>LHS WORLDWIDE S.A.</p>
+                     <p><strong>REVISOR DE CUENTAS TITULAR</strong></p>
                   </div>
                </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-               <div class="tv-section-title-box tv-team-card">
-                  <div class="d-flex align-items-start">
-                     <div class="team-member-icon"><i class="ti ti-user-circle"></i></div>
-                     <div>
-                        <h4 class="tv-section-title tv-spltv-text tv-spltv-in-right">Sr. Ernesto Fernández Machado</h4>
-                        <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">SKYNDE S.A.</span>
-                        <h4>REVISOR DE CUENTAS SUPLENTE</h4>
-                     </div>
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Ernesto Fernández Machado</h3>
+                     <p>SKYNDE S.A.</p>
+                     <p><strong>REVISOR DE CUENTAS SUPLENTE</strong></p>
                   </div>
                </div>
             </div>

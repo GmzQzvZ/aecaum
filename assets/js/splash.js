@@ -4,14 +4,36 @@ document.addEventListener('DOMContentLoaded', function () {
     // Solo inicializar si existe el preloader
     if (!preloader) return;
 
-    // Si ya vio el splash en esta sesión de navegador, ocultarlo de inmediato
-    if (sessionStorage.getItem('hasSeenSplash')) {
+    // Verificar si es un F5/reload o una navegación desde otra página interna
+    let isReload = false;
+    try {
+        const nav = performance.getEntriesByType("navigation");
+        if (nav.length > 0 && nav[0].type === "reload") {
+            isReload = true;
+        }
+    } catch(e) {}
+
+    let isInternalNavigation = false;
+    const ref = document.referrer;
+    if (ref && ref.indexOf(window.location.host) !== -1) {
+        try {
+            const refPath = new URL(ref).pathname.replace(/\/$/, "");
+            const currPath = window.location.pathname.replace(/\/$/, "");
+            if (refPath !== currPath) {
+                isInternalNavigation = true;
+            }
+        } catch(e) {
+            isInternalNavigation = true;
+        }
+    }
+
+    // Si viene de otra página del sitio Y NO es recarga F5 -> Ocultar inmediatamente
+    if (isInternalNavigation && !isReload) {
         preloader.style.display = 'none';
         return;
     }
 
     const hidePreloader = () => {
-        sessionStorage.setItem('hasSeenSplash', 'true');
         if (!preloader.classList.contains('hidden')) {
             preloader.classList.add('hidden');
             setTimeout(() => {

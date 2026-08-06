@@ -16,8 +16,8 @@
             <!-- RIGHT: dark blue bg + form -->
             <div class="nl-right">
                 <h2 class="nl-title">Suscribite a nuestro Newsletter</h2>
-                <p class="nl-text">Mantenete actualizado con la agenda de nuestro ecosistema.<br>
-                    Información estratégica, inversiones y análisis clave para los líderes de<br> la logística
+                <p class="nl-text">Mantenete actualizado con la agenda de nuestro ecosistema.
+                    Información estratégica, inversiones y análisis clave para los líderes de la logística
                     argentina.</p>
                 <form action="https://mailchi.mp/correos/suscribite-a-nuestro-newsletter" class="nl-form"
                     title="link de newsletter" target="_blank">

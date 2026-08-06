@@ -10550,15 +10550,16 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .team-member-icon {
-  width: 64px;
-  height: 64px;
-  min-width: 64px;
-  margin-right: 14px;
+  width: 82px;
+  height: 82px;
+  min-width: 82px;
+  margin-right: 10px;
+  margin-top: -6px;
   color: #6b7280;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 2.8rem;
   background: transparent;
 }
 
@@ -10593,6 +10594,13 @@ only screen and (min-width: 576px) and (max-width: 767px),
   transition: none;
 }
 
+/* El div de texto ocupa todo el espacio disponible junto al icono */
+.tv-team-card .d-flex > div:not(.team-member-icon) {
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+
 
 .tv-team-area .centered-team {
   max-width: 1180px;
@@ -10605,8 +10613,8 @@ only screen and (min-width: 576px) and (max-width: 767px),
   flex-wrap: wrap;
   justify-content: center;
   width: 85%;
-  margin-left: auto;
-  margin-right: 0;
+  margin-left: 18%;
+  margin-right: auto;
   gap: 0 6px;
 }
 
@@ -15319,94 +15327,102 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
 /* ==== New Newsletter section ==== */
 .nl-section {
-  display: flex;
-  align-items: stretch;
-  min-height: 340px;
-  width: 100%;
+  display: flex !important;
+  align-items: stretch !important;
+  min-height: 650px !important;
+  width: 100% !important;
 }
 
 .nl-left {
-  flex: 0 0 50%;
-  background: #f0f4f8;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex: 0 0 50% !important;
+  background: #f0f4f8 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 650px !important;
 }
 
 .nl-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 650px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
 }
 
 .nl-right {
-  flex: 0 0 50%;
-  background: var(--blue-900, #0a2d5e);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 70px;
+  flex: 0 0 50% !important;
+  background: var(--blue-900, #0a2d5e) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 110px 100px !important;
+  min-height: 650px !important;
 }
 
 .nl-title {
-  color: #ffffff;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  line-height: 1.3;
+  color: #ffffff !important;
+  font-size: 46px !important;
+  font-weight: 800 !important;
+  margin-bottom: 28px !important;
+  line-height: 1.2 !important;
 }
 
 .nl-text {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 15px;
-  line-height: 1.7;
-  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 20px !important;
+  line-height: 1.8 !important;
+  margin-bottom: 44px !important;
+  max-width: 650px !important;
 }
 
 .nl-form {
-  gap: 0;
-  max-width: 480px;
+  gap: 0 !important;
+  max-width: 550px !important;
 }
 
 .nl-input {
-  flex: 1;
-  padding: 10px 20px;
-  border: none;
-  outline: none;
-  font-size: 15px;
-  color: #333;
-  background: #ffffff;
-  border-radius: 0;
+  flex: 1 !important;
+  padding: 16px 28px !important;
+  border: none !important;
+  outline: none !important;
+  font-size: 18px !important;
+  color: #333 !important;
+  background: #ffffff !important;
+  border-radius: 0 !important;
 }
 
 .nl-input::placeholder {
-  color: #888;
+  color: #888 !important;
 }
 
 .nl-btn {
-  padding: 10px 20px;
-  background: var(--blue-500, #2196f3);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s;
-  white-space: nowrap;
-  border-radius: 8px 0px 8px 0px;
-  border: none;
+  padding: 20px 52px !important;
+  background: var(--blue-500, #00aae6) !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  border-radius: 12px 0px 12px 0px !important;
+  border: none !important;
+  box-shadow: 0 6px 18px rgba(0, 170, 230, 0.4) !important;
 }
 
 .nl-btn:hover {
-  background: var(--blue-700, #1565c0);
+  background: var(--blue-700, #072868) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 24px rgba(0, 170, 230, 0.6) !important;
 }
 
 @media (max-width: 991px) {
   .nl-section {
     flex-direction: column;
+    min-height: auto;
   }
 
   .nl-left,
@@ -15416,15 +15432,25 @@ header.tv-header-height .tv-header-bar button .menu-text {
   }
 
   .nl-left {
-    min-height: 260px;
+    min-height: 320px;
   }
 
   .nl-right {
-    padding: 40px 30px;
+    padding: 60px 35px;
   }
 
   .nl-title {
-    font-size: 22px;
+    font-size: 28px;
+  }
+
+  .nl-text {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .nl-btn {
+    padding: 14px 30px;
+    font-size: 16px;
   }
 }
 
@@ -15810,18 +15836,30 @@ header.tv-header-height {
 
 /* ==== Team Area Height Adjustment ==== */
 .tv-team-area {
-  padding-top: 180px !important;
-  padding-bottom: 180px !important;
-  min-height: 750px;
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  min-height: auto !important;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.tv-team-grid {
+  width: 85% !important;
+  margin-left: 18% !important;
+  margin-right: auto !important;
+  --bs-gutter-x: 1.25rem !important;
 }
 
 @media (max-width: 991px) {
   .tv-team-area {
-    padding-top: 120px !important;
-    padding-bottom: 120px !important;
-    min-height: auto;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+  }
+  .tv-team-grid {
+    max-width: 100% !important;
   }
 }
 
@@ -15831,4 +15869,57 @@ header.tv-header-height {
   top: 75px !important;
   height: calc(100vh - 75px) !important;
   z-index: 9998 !important;
-}
+}
+
+/* ==== Team: overrides feature-item dentro de tv-team-area ==== */
+.tv-team-area .feature-item {
+  gap: 8px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+/* Icono sin fondo, color gris */
+.tv-team-area .feature-icon {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #6b7280 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tv-team-area .feature-icon i {
+  color: #6b7280 !important;
+  font-size: 2.8rem;
+}
+
+/* Textos compactos, sin margen entre líneas */
+.tv-team-area .feature-content h3,
+.tv-team-area .feature-content p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.3;
+}
+
+/* Nombre: gris */
+.tv-team-area .feature-content h3 {
+  color: #6b7280 !important;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Empresa: azul claro */
+.tv-team-area .feature-content p:first-of-type {
+  color: #08A9E6 !important;
+  font-size: 0.88rem;
+}
+
+/* Cargo: azul oscuro */
+.tv-team-area .feature-content p:last-of-type strong {
+  color: var(--blue-900) !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+

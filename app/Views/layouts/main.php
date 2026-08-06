@@ -35,9 +35,37 @@
 
 <body id="body" class="tv-magic-cursor">
 
-    <!-- Preloader (solo la primera vez) -->
+    <!-- Preloader (se muestra al ingresar o recargar; se oculta si se regresa desde otra subpágina) -->
     <?php if ($showSplash ?? false): ?>
-        <script>if(sessionStorage.getItem('hasSeenSplash')){document.write('<style>#preloader{display:none!important;}</style>');}</script>
+        <script>
+        (function() {
+            var isReload = false;
+            try {
+                var nav = performance.getEntriesByType("navigation");
+                if (nav.length > 0 && nav[0].type === "reload") {
+                    isReload = true;
+                }
+            } catch(e) {}
+
+            var ref = document.referrer;
+            var isInternalNavigation = false;
+            if (ref && ref.indexOf(window.location.host) !== -1) {
+                try {
+                    var refPath = new URL(ref).pathname.replace(/\/$/, "");
+                    var currPath = window.location.pathname.replace(/\/$/, "");
+                    if (refPath !== currPath) {
+                        isInternalNavigation = true;
+                    }
+                } catch(e) {
+                    isInternalNavigation = true;
+                }
+            }
+
+            if (isInternalNavigation && !isReload) {
+                document.write('<style>#preloader{display:none!important;}</style>');
+            }
+        })();
+        </script>
         <div id="preloader">
             <div class="preloader-container">
                 <!-- Background buildings -->
