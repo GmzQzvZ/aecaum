@@ -1057,6 +1057,10 @@ input[type=color] {
   visibility: visible;
 }
 
+header.menu-open {
+  position: relative;
+  z-index: 1000;
+}
 
 .tv-instagram img {
   width: 100%;

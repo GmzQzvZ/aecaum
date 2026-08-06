@@ -142,11 +142,7 @@
 </div>
 <!-- about-area-end -->
 
-
-
 <!-- counter-area-start -->
-<br>
-<br>
 <br>
 <br>
 <div class="tv-counter-area pb-130">

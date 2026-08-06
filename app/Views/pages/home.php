@@ -722,8 +722,9 @@
             </div>
             <div class="swiper-container tv-brand-active">
                 <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" src="assets/img/logo/logos.png"
-                            alt="logo de epsa" style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" 
+                            src="assets/img/logo/logos.png" alt="logo de epsa"
+                            style="max-height: 80px; width: auto;"></div>
                     <div class="swiper-slide" style="width: auto;"><img loading="lazy"
                             src="assets/img/logo/Logos-44.png" alt="logo de entregar"
                             style="max-height: 80px; width: auto;"></div>
@@ -759,6 +760,36 @@
                             style="max-height: 80px; width: auto;"></div>
                     <div class="swiper-slide" style="width: auto;"><img loading="lazy"
                             src="assets/img/logo/Logos-55.png" alt="logo de qb andina"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-56.png" alt="logo de interpost"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-57.png" alt="logo de stc"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-58.png" alt="logo de postalplus"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-59.png" alt="logo de net courier"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-60.png" alt="logo de servijur"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-61.png" alt="logo de lhs"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-62.png" alt="logo de fast mail"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-68.png" alt="logo de translyf"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-69.png" alt="logo de cneo"
+                            style="max-height: 80px; width: auto;"></div>
+                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
+                            src="assets/img/logo/Logos-70.png" alt="logo de bat"
                             style="max-height: 80px; width: auto;"></div>
                 </div>
             </div>

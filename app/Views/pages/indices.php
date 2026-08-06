@@ -56,18 +56,16 @@
                   <div class="grafico-container">
                      <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image']) ?>"
                         alt="<?= htmlspecialchars($indices[0]['title']) ?>" style="width: 100%; border-radius: 8px;">
-                  </div>
-                  <?php if (!empty($indices[0]['informe'])): ?>
-                     <div class="text-center mt-30">
-                        <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe']) ?>" class="btn-informe-completo"
-                           target="_blank">
-                           Informe Completo
-                        </a>
-                        <div class="btn-primary">
-                           Informe Completo
+                     <?php if (!empty($indices[0]['informe'])): ?>
+                        <div class="text-center mt-30">
+                           <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe']) ?>"
+                              class="btn-informe-completo" target="_blank" style="color: #fff">
+                              <i class="ti ti-file-download" style="margin-right: 8px; font-size: 20px; color: #fff"></i>
+                              Informe Completo
+                           </a>
                         </div>
-                     </div>
-                  <?php endif; ?>
+                     <?php endif; ?>
+                  </div>
                </div>
             </div>
 

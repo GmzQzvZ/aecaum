@@ -18,7 +18,7 @@
                               fill="#F5F6F7" />
                         </svg>
                      </span>
-                     <i>Nuestra Red</i>
+                     <p>Nuestra Red</p>
                   </div>
                </div>
             </div>
@@ -35,7 +35,8 @@
             <div>
                <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right">Nuestra Red</span>
                <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right">Quiénes nos acompañan</h4>
-               <h6 class="tv-section-subtitle">Conocé a las empresas líderes del sector postal y logístico que conforman el
+               <h6 class="tv-section-subtitle">Conocé a las empresas líderes del sector postal y logístico que conforman
+                  el
                   <br> ecosistema de última milla más dinámico del país.
                </h6>
             </div>
@@ -55,12 +56,13 @@
          <div class="col-12 mt-40">
             <div class="swiper-container tv-brand-slider-active">
                <div class="swiper-wrapper">
+                  <!-- 1 -->
                   <div class="swiper-slide">
                      <div class="tv-network-card mb-30">
-                        <img loading="lazy" class="top-image" src="assets/img/blog/urbano.png" alt="Urbano Envios">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/urbano.png" alt="Urbano">
                         <img loading="lazy" class="logo-image" src="assets/img/logo/urbano.png" alt="Logo Urbano">
                         <p>Especialistas en soluciones logísticas
-                           integrales para e-commerce y
+                           integrales para e-commerce
                            distribución postal, garantizando entregas
                            ágiles y eficientes con una amplia red de
                            cobertura en todo el país.</p>
@@ -93,6 +95,7 @@
                            target="_blank">https://ocasa.com/logistica-general/es/</a>
                      </div>
                   </div>
+                  <!-- 2 -->
                   <div class="swiper-slide">
                      <div class="tv-network-card mb-30">
                         <img loading="lazy" class="top-image" src="assets/img/blog/andreani.webp" alt="Andreani">
@@ -120,7 +123,7 @@
                   </div>
                   <div class="swiper-slide">
                      <div class="tv-network-card mb-30">
-                        <img loading="lazy" class="top-image" src="assets/img/blog/Entregar.jpg" alt="Entregar">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Entregar.jpg" alt="ocasa">
                         <img loading="lazy" class="logo-image" src="assets/img/logo/logos-44.png" alt="Logo Ocasa">
                         <p>Somos una empresa formada por jóvenes
                            profesionales. Con una filosofía
@@ -131,6 +134,244 @@
                            asegurada.</p>
                         <a class="network-link" href="https://ocasa.com/logistica-general/es/"
                            target="_blank">https://ocasa.com/logistica-general/es/</a>
+                     </div>
+                  </div>
+                  <!-- 3 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/webpack.jpg" alt="webpack">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-47.png" alt="Logo webpack">
+                        <p>Un servicio logístico ágil, flexible y seguro
+                           capaz de integrarse con múltiples
+                           plataformas de ecommerce mediante
+                           APIs, automatizando los procesos de
+                           retiro y entrega de cada producto</p>
+                        <a class="network-link" href="https://webpack.com.ar/"
+                           target="_blank">https://webpack.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/sky.jpg" alt="skynde">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-45.png" alt="Logo skynde">
+                        <p>Skynde nace del Grupo Ceta, con más de
+                           10 años de experiencia operando
+                           servicios a escala nacional. Sumamos
+                           tecnología y talento joven para entregar
+                           una logística 360° ágil, transparente y
+                           humana.</p>
+                        <a class="network-link" href="https://www.skynde.com/nosotros"
+                           target="_blank">https://www.skynde.com/nosotros</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/mailex.jpeg" alt="Mailex">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-46.png" alt="Logo Mailex">
+                        <p>somos una empresa de más de 28 años
+                           de trayectoria, dedicada a prestar
+                           servicios postales, de
+                           logística integral y courier internacional.</p>
+                        <a class="network-link" href="https://www.mailexpress.com.ar/nosotros"
+                           target="_blank">https://www.mailexpress.com.ar/nosotros</a>
+                     </div>
+                  </div>
+                  <!-- 4 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Servemar.jpeg" alt="Servemar">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-48.png" alt="Logo Servemar">
+                        <p>El Nro. 1 en el Registro Nacional de Prestadores de Servicios Postales de la ENACOM.
+                           Interconectamos diariamente las principales ciudades del país en tiempos mínimos. </p>
+                        <a class="network-link" href="https://servemar.com.ar/"
+                           target="_blank">https://servemar.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Ema.jpg" alt="Ema">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-49.png" alt="Logo Ema">
+                        <p>Brindamos servicios especializados a empresas prestadoras de servicios
+                           públicos de electricidad, gas y agua, con soluciones a medida.</p>
+                        <a class="network-link" href="https://www.skynde.com/nosotros"
+                           target="_blank">https://www.skynde.com/nosotros</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Dt-logistica.jpg" alt="DT logistica">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-50.png"
+                           alt="Logo DT logistica">
+                        <p>Somos una Empresa B Certificada, dedicada al diseño e implementación de soluciones en
+                           logística y distribución. Nuestros servicios están orientados a empresas del sector
+                           de la salud, de higiene y cuidado personal, cosmética, y productos compatibles.</p>
+                        <a class="network-link" href="https://www.dtlogistica.com.ar/"
+                           target="_blank">https://www.dtlogistica.com.ar/</a>
+                     </div>
+                  </div>
+                  <!-- 5 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/NyG.jpeg" alt="NyG">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-51.png" alt="Logo NyG">
+                        <p>Somos una empresa de logística y distribución. Brindamos un servicio integral
+                           que brinda soluciones a los problemas de envíos en tiempo y forma.</p>
+                        <a class="network-link" href="https://nygtransporte.com.ar/"
+                           target="_blank">https://servemar.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/postal.jpg" alt="La Postal">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-52.png" alt="Logo La Postal">
+                        <p>32 años de trayectoria consolidada, posicionándose como la empresa de mayor crecimiento
+                           y líder en el segmento de servicios logísticos para empresas de servicios públicos.</p>
+                        <a class="network-link" href="https://www.lapostal.com.ar/"
+                           target="_blank">https://www.lapostal.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/TransBan.jpeg" alt="DT logistica">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-53.png" alt="Logo Trans-ban">
+                        <p>Servicio de logística integral, recepción de mercadería, almacenamiento,
+                           administración de stock, picking, servicio de distribución urbano y nacional.</p>
+                        <a class="network-link" href="https://transban.com.ar/"
+                           target="_blank">https://transban.com.ar/</a>
+                     </div>
+                  </div>
+                  <!-- 6 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Qb andina.webp" alt="qb andina">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-55.png" alt="Logo qb andina">
+                        <p>Mantenimiento de redes eléctricas, Fibra óptica e instalación de cámaras.
+                           Proyectos de obras, Servicios postales, Inspecciones e indagaciones.</p>
+                        <a class="network-link" href="https://www.qb-andina.com/"
+                           target="_blank">https://www.qb-andina.com/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/net courier.jpg" alt="Net courier">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-59.png"
+                           alt="Logo Net courier">
+                        <p>Somos una Empresa especializada en brindar servicios de courier internacional,
+                           envío aéreo desde y hacia cualquier lugar del mundo de paquetes, muestras, documentos,
+                           impresos y prototipos.</p>
+                        <a class="network-link" href="https://www.courier.com.ar/"
+                           target="_blank">https://www.courier.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Raiconet.webp" alt="Raiconet">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-54.png" alt="Logo Raiconet">
+                        <p>En Raiconet nos especializamos en brindar soluciones logísticas internacionales
+                           profesionales y creativas, adaptadas a las necesidades específicas de cada cliente.</p>
+                        <a class="network-link" href="https://www.raiconet.com.ar/"
+                           target="_blank">https://www.raiconet.com.ar/</a>
+                     </div>
+                  </div>
+                  <!-- 7 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/portalmas.jpeg" alt="postal-plus">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-58.png"
+                           alt="Logo postal-plus">
+                        <p>En Postal+ estamos comprometidos con la calidad de nuestro servicio. Trabajamos junto a
+                           nuestros
+                           clientes para lograr mayor eficiencia en su sistema logístico. </p>
+                        <a class="network-link" href="https://www.postalmas.com.ar/"
+                           target="_blank">https://postalmas.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/interpost.jpg"
+                           alt="correo-interpost">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-59.png"
+                           alt="Logo correo-interpost">
+                        <p>Somos una Empresa especializada en brindar servicios de courier internacional,
+                           envío aéreo desde y hacia cualquier lugar del mundo de paquetes, muestras, documentos,
+                           impresos y prototipos.</p>
+                        <a class="network-link" href="https://www.correointerpost.com.ar/"
+                           target="_blank">https://www.correointerpost.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/stc.webp" alt="Raiconet">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-57.png" alt="Logo Raiconet">
+                        <p>Estar conectados con quienes nos eligen es mucho más que logística. Es estar en sintonía,
+                           entendernos y trabajar para brindar un servicio de excelencia, de asistencia y cercanía. Eso
+                           es hacer logística a medida.</p>
+                        <a class="network-link" href="https://www.stcpostal.com.ar/"
+                           target="_blank">https://www.stcpostal.com.ar/</a>
+                     </div>
+                  </div>
+                  <!-- 8 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/FastMail_.avif" alt="postal-plus">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-62.png"
+                           alt="Logo postal-plus">
+                        <p>trabajamos como socio estratégico de tu e-commerce para que cada pedido llegue en tiempo y
+                           forma, fortaleciendo la confianza de tus clientes y mejorando su experiencia de compra.</p>
+                        <a class="network-link" href="https://www.fastmail.com.ar/"
+                           target="_blank">https://www.fastmail.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/LHS.jpg" alt="correo-interpost">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-61.png"
+                           alt="Logo correo-interpost">
+                        <p>Tenemos el firme objetivo de brindar un servicio personalizado, que deriva en una excelente
+                           performance de seguridad, garantía y rapidez, tanto en importaciones como exportaciones.</p>
+                        <a class="network-link" href="https://lhsww.com.ar" target="_blank">https://lhsww.com.ar</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/Servijur.jpeg" alt="servijur">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-60.png" alt="Logo servijur">
+                        <p>Más de dos décadas de trabajo nos respaldan en garantizar a nuestros clientes el mejor
+                           servicio de correo privado.</p>
+                        <a class="network-link" href="https://www.servijursrl.com.ar/"
+                           target="_blank">https://www.servijursrl.com.ar/</a>
+                     </div>
+                  </div>
+                  <!-- 9 -->
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/transl.jpg" alt="translyf">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-68.png" alt="Logo translyf">
+                        <p>Somos una empresa para empresas. Contamos con personal calificado.
+                           Desde 1994 nuestro objetivo fundamental ha sido optimizar los servicios de distribución
+                           de facturas de electricidad, correspondencia y lectura de medidore.</p>
+                        <a class="network-link" href="http://www.translyf.com.ar/"
+                           target="_blank">http://www.translyf.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/bat.webp" alt="bat">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-70.png" alt="Logo bat">
+                        <p>Nos especializamos en el servicio de distribución de correspondencia con control o bajo
+                           puerta en la Ciudad Autónoma de Buenos Aires, y de manera parcial en Provincia de Buenos
+                           Aires.</p>
+                        <a class="network-link" href="https://www.batservicios.com.ar/"
+                           target="_blank">https://www.batservicios.com.ar/</a>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <div class="tv-network-card mb-30">
+                        <img loading="lazy" class="top-image" src="assets/img/blog/cneo.png" alt="cneo">
+                        <img loading="lazy" class="logo-image" src="assets/img/logo/logos-69.png" alt="Logo cneo">
+                        <p>Somos una empresa de logística internacional enfocada en brindar un servicio de calidad
+                           y excelencia, ajustado a las necesidades de nuestros clientes.</p>
+                        <a class="network-link" href="http://cneo.com.ar/" target="_blank">http://cneo.com.ar/</a>
                      </div>
                   </div>
                </div>

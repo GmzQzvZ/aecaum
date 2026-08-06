@@ -29,7 +29,15 @@
    </div>
    <!-- breadcrumb-area-end -->
    <main>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <?php
+
+
       // Dynamic list of institucional reports
       ?>
       <div class="book-list">
@@ -64,6 +72,12 @@
       <div><br /></div>
       <div><br /></div>
       </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
    </main>
 
    <style>

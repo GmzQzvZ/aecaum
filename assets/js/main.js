@@ -180,16 +180,31 @@
 	////////////////////////////////////////////////////
 	// 09. Sidebar Js
 	$(".tv-menu-bar").on("click", function () {
-		$(".itoffcanvas").addClass("opened");
-		$(".body-overlay").addClass("apply");
-	});
-	$(".close-btn").on("click", function () {
-		$(".itoffcanvas").removeClass("opened");
-		$(".body-overlay").removeClass("apply");
+		var isOpen = $(".itoffcanvas").hasClass("opened");
+		if (isOpen) {
+			$(".itoffcanvas").removeClass("opened");
+			$(".body-overlay").removeClass("apply");
+			$("#menu-toggle-icon").removeClass("ti-x").addClass("ti-menu-2");
+			$("header").removeClass("menu-open");
+		} else {
+			$(".itoffcanvas").addClass("opened");
+			$(".body-overlay").addClass("apply");
+			$("#menu-toggle-icon").removeClass("ti-menu-2").addClass("ti-x");
+			$("header").addClass("menu-open");
+		}
 	});
 	$(".body-overlay").on("click", function () {
 		$(".itoffcanvas").removeClass("opened");
 		$(".body-overlay").removeClass("apply");
+		$("#menu-toggle-icon").removeClass("ti-x").addClass("ti-menu-2");
+		$("header").removeClass("menu-open");
+	});
+
+	$("#offcanvas-close").on("click", function () {
+		$(".itoffcanvas").removeClass("opened");
+		$(".body-overlay").removeClass("apply");
+		$("#menu-toggle-icon").removeClass("ti-x").addClass("ti-menu-2");
+		$("header").removeClass("menu-open");
 	});
 
 	////////////////////////////////////////////////////
