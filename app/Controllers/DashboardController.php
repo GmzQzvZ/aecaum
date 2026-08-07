@@ -30,4 +30,39 @@ class DashboardController extends BaseController {
             ],
         ], 'panel');
     }
+
+    public function indices(): void {
+        requireLogin();
+
+        // Redirigir admins a su panel
+        if (hasRole('Superadmin') || hasRole('admin')) {
+            $this->redirect('admin/indices');
+            return;
+        }
+
+        $indices = \Index::all();
+
+        $this->render('dashboard/indices', [
+            'pageTitle'   => 'Índices | AECAUM',
+            'currentUser' => getCurrentUser(),
+            'indices'     => $indices,
+        ], 'panel');
+    }
+    public function informesInstitucionales(): void {
+        requireLogin();
+
+        // Redirigir admins a su panel
+        if (hasRole('Superadmin') || hasRole('admin')) {
+            $this->redirect('admin/informes');
+            return;
+        }
+
+        $informes = \Informe::all();
+
+        $this->render('dashboard/informes-institucionales', [
+            'pageTitle'   => 'Informes Institucionales | AECAUM',
+            'currentUser' => getCurrentUser(),
+            'informes'     => $informes,
+        ], 'panel');
+    }
 }

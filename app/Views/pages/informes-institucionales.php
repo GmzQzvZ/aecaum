@@ -29,55 +29,59 @@
    </div>
    <!-- breadcrumb-area-end -->
    <main>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <?php
-
-
-      // Dynamic list of institucional reports
-      ?>
-      <div class="book-list">
-         <?php if (empty($informes)): ?>
-            <p>No hay informes disponibles.</p>
-         <?php else: ?>
-            <ul>
-               <?php foreach ($informes as $inf): ?>
-                  <li>
-                     <div class="book-container-641c7de49b2051004c756763">
-                        <div class="book">
-                           <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($inf['image']) ?>"
-                              alt="<?= htmlspecialchars($inf['title']) ?>" />
+      <div class="tv-about-area z-index-1 p-relative pt-130 pb-130 white-bg">
+         <div class="row text-center mb-40">
+            <div class="col-lg-12">
+               <h3 class="tv-section-subtitle"
+                  style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informe</h3>
+               <p style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                  Aunque el alivio en los combustibles trajo algo de oxígeno al sector, la presión ahora se traslada
+                  silenciosamente a la<br> estructura laboral, donde la mano de obra se consolida como el principal
+                  driver de
+                  costos. Este cambio no solo redefine la<br> ecuación operativa de la última milla, sino que obliga a
+                  las
+                  empresas a replantear márgenes, contratos y eficiencia en un<br> contexto donde la aparente calma
+                  mensual
+                  contrasta con un acumulado interanual que ya roza niveles críticos y un<br> escenario internacional
+                  que vuelve a
+                  tensionar la cadena logística.
+               </p>
+            </div>
+         </div>
+         <?php
+         // Dynamic list of institucional reports
+         ?>
+         <div class="book-list">
+            <?php if (empty($informes)): ?>
+               <p>No hay informes disponibles.</p>
+            <?php else: ?>
+               <ul>
+                  <?php foreach ($informes as $inf): ?>
+                     <li>
+                        <div class="book-container">
+                           <div class="book">
+                              <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($inf['image']) ?>"
+                                 alt="<?= htmlspecialchars($inf['title']) ?>" />
+                           </div>
                         </div>
-                     </div>
-                     <div class="book-info">
-                        <h4><?= htmlspecialchars($inf['title']) ?></h4>
-                        <p>Año: <?= htmlspecialchars($inf['year']) ?></p>
-                        <?php if (!empty($inf['file_path'])): ?>
-                           <a class="download-button" href="<?= APP_URL . '/' . htmlspecialchars($inf['file_path']) ?>"
-                              target="_blank" rel="nofollow">Descargar</a>
-                        <?php elseif (!empty($inf['download_url'])): ?>
-                           <a class="download-button" href="<?= htmlspecialchars($inf['download_url']) ?>" target="_blank"
-                              rel="nofollow">Descargar</a>
-                        <?php endif; ?>
-                     </div>
-                  </li>
-               <?php endforeach; ?>
-            </ul>
-         <?php endif; ?>
+                        <div class="book-info">
+                           <h4><?= htmlspecialchars($inf['title']) ?></h4>
+                           <p>Año: <?= htmlspecialchars($inf['year']) ?></p>
+                           <?php if (!empty($inf['file_path'])): ?>
+                              <a class="download-button" href="<?= APP_URL . '/' . htmlspecialchars($inf['file_path']) ?>"
+                                 target="_blank" rel="nofollow">Descargar</a>
+                           <?php elseif (!empty($inf['download_url'])): ?>
+                              <a class="download-button" href="<?= htmlspecialchars($inf['download_url']) ?>" target="_blank"
+                                 rel="nofollow">Descargar</a>
+                           <?php endif; ?>
+                        </div>
+                     </li>
+                  <?php endforeach; ?>
+               </ul>
+            <?php endif; ?>
+         </div>
+
       </div>
-      <div><br /></div>
-      <div><br /></div>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
    </main>
 
    <style>

@@ -31,22 +31,37 @@
 
    <!-- indices-area-start -->
    <div class="tv-about-area z-index-1 p-relative pt-130 pb-130 white-bg">
-      <div class="container">
+      <div class="container" style="text-align: center;">
+
+
+         <!-- Textos introductorios -->
+         <div class="row text-center mb-40">
+            <div class="col-lg-12">
+               <h3 class="tv-section-subtitle"
+                  style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">IMC</h3>
+               <p style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6;">
+                  Aunque el alivio en los combustibles trajo algo de oxígeno al sector, la presión ahora se traslada
+                  silenciosamente a la<br> estructura laboral, donde la mano de obra se consolida como el principal
+                  driver de
+                  costos. Este cambio no solo redefine la<br> ecuación operativa de la última milla, sino que obliga a
+                  las
+                  empresas a replantear márgenes, contratos y eficiencia en un<br> contexto donde la aparente calma
+                  mensual
+                  contrasta con un acumulado interanual que ya roza niveles críticos y un<br> escenario internacional
+                  que vuelve a
+                  tensionar la cadena logística.
+               </p>
+            </div>
+         </div>
 
          <?php if (!empty($indices)): ?>
             <!-- Header del Índice de Costos -->
             <div class="row mb-50">
                <div class="col-lg-12 text-center">
-                  <span class="tv-section-subtitle" style="color: #00a3e0; font-weight: 700; font-size: 16px;">
-                     <?= htmlspecialchars($indices[0]['month'] ?? 'Junio') ?>
-                  </span>
                   <h2 class="tv-section-title"
-                     style="font-size: 42px; font-weight: 800; color: #0b3d91; margin-bottom: 20px;">
+                     style="font-size: 42px; font-weight: 800; color: #00a3e0; margin-bottom: 20px;">
                      <?= htmlspecialchars($indices[0]['title']) ?>
                   </h2>
-                  <p style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6;">
-                     <?= htmlspecialchars($indices[0]['description']) ?>
-                  </p>
                </div>
             </div>
 
@@ -54,20 +69,68 @@
             <div class="row mb-50">
                <div class="col-lg-12">
                   <div class="grafico-container">
-                     <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image']) ?>"
-                        alt="<?= htmlspecialchars($indices[0]['title']) ?>" style="width: 100%; border-radius: 8px;">
-                     <?php if (!empty($indices[0]['informe'])): ?>
-                        <div class="text-center mt-30">
-                           <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe']) ?>"
-                              class="btn-informe-completo" target="_blank" style="color: #fff">
-                              <i class="ti ti-file-download" style="margin-right: 8px; font-size: 20px; color: #fff"></i>
+
+
+
+                     <!-- Imágenes 1 y 2 -->
+                     <div class="row">
+                        <div class="col-lg-6 mb-20">
+                           <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image']) ?>"
+                              alt="Servicio Última Milla" style="width: 100%; border-radius: 8px;">
+                        </div>
+                        <?php if (!empty($indices[0]['image2'])): ?>
+                           <div class="col-lg-6 mb-20">
+                              <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image2']) ?>"
+                                 alt="Servicios Postales" style="width: 100%; border-radius: 8px;">
+                           </div>
+                        <?php endif; ?>
+                     </div>
+
+                     <!-- Texto intermedio (H6) -->
+                     <div class="row mt-20 mb-30 text-center">
+                        <div class="col-lg-12">
+                           <h6 style="color: #0b3d91">
+                              Los índices de variación de costos de los servicios de última milla y postal son homologados
+                              por la Universidad<br> Tecnológica Nacional (UTN) a través de su Centro Tecnológico de
+                              Transporte, Tránsito y Seguridad Vial (C3T).
+                           </h6>
+                           <img src="assets/img/logo/UTN.jpg" alt="UTN" style="width: 200px;">
+                           <img src="assets/img/logo/C3TLogo.png" alt="C3T" style="width: 120px;">
+                        </div>
+                     </div>
+
+                     <!-- Imagen 3 -->
+                     <div class="row">
+                        <?php if (!empty($indices[0]['image3'])): ?>
+                           <div class="col-lg-12 mb-20">
+                              <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['image3']) ?>"
+                                 alt="Porcentajes" style="width: 100%; border-radius: 8px;">
+                           </div>
+                        <?php endif; ?>
+                     </div>
+
+                     <div class="text-center mt-20"
+                        style="display: flex; justify-content: center; gap: 200px; flex-wrap: wrap;">
+                        <?php if (!empty($indices[0]['informe_mensual'])): ?>
+                           <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe_mensual']) ?>" download
+                              class="btn-informe-completo" style="color: #fff; background: #0b3d91;">
+                              <i style="margin-right: 8px; font-size: 20px; color: #fff"></i>
+                              Informe mensual
+                           </a>
+                        <?php endif; ?>
+                        <?php if (!empty($indices[0]['informe'])): ?>
+                           <?php $targetUrl = isLoggedIn() ? APP_URL . '/dashboard/indices' : APP_URL . '/login'; ?>
+                           <a href="<?= $targetUrl ?>" class="btn-informe-completo" style="color: #fff">
+                              <i style="margin-right: 8px; font-size: 20px; color: #fff"></i>
                               Informe Completo
                            </a>
-                        </div>
-                     <?php endif; ?>
+                        <?php endif; ?>
+                     </div>
                   </div>
                </div>
             </div>
+            <h4 class="text-center mt-40" style="font-weight: 700; font-size: 24px;">Descargá los IMC de los meses
+               anteriores</h4>
 
             <!-- Tarjetas de Meses agrupadas por Año -->
             <?php if (count($indices) > 1):
@@ -79,6 +142,19 @@
                }
                // Ordenar por año descendente
                krsort($grouped);
+
+               // Ordenar los meses de cada año cronológicamente (Enero a Diciembre)
+               $mesesOrder = ['enero' => 1, 'febrero' => 2, 'marzo' => 3, 'abril' => 4, 'mayo' => 5, 'junio' => 6, 'julio' => 7, 'agosto' => 8, 'septiembre' => 9, 'octubre' => 10, 'noviembre' => 11, 'diciembre' => 12];
+               foreach ($grouped as &$items) {
+                  usort($items, function ($a, $b) use ($mesesOrder) {
+                     $mA = strtolower($a['month'] ?? '');
+                     $mB = strtolower($b['month'] ?? '');
+                     $valA = $mesesOrder[$mA] ?? 99;
+                     $valB = $mesesOrder[$mB] ?? 99;
+                     return $valA <=> $valB;
+                  });
+               }
+               unset($items);
                ?>
                <?php foreach ($grouped as $yearGroup => $items): ?>
                   <div class="row mt-50">
@@ -90,8 +166,12 @@
                         </div>
                         <div class="month-cards">
                            <?php foreach ($items as $idx): ?>
-                              <a href="<?= APP_URL ?>/indices?month=<?= urlencode($idx['month'] ?? '') ?>&year=<?= urlencode($idx['year'] ?? '') ?>"
-                                 class="month-card">
+                              <?php
+                              $downloadUrl = !empty($idx['informe_mensual'])
+                                 ? APP_URL . '/' . htmlspecialchars($idx['informe_mensual'])
+                                 : (!empty($idx['image']) ? APP_URL . '/' . htmlspecialchars($idx['image']) : '#');
+                              ?>
+                              <a href="<?= $downloadUrl ?>" <?= $downloadUrl !== '#' ? 'download target="_blank"' : 'onclick="alert(\'Documento no disponible\'); return false;"' ?> class="month-card">
                                  <div class="month-text">
                                     <span class="month-name"><?= ucfirst(htmlspecialchars($idx['month'] ?? 'Mes')) ?></span>
                                     <span class="month-label"><?= htmlspecialchars($idx['title'] ?? 'Índices de Costos') ?></span>
@@ -107,164 +187,170 @@
                <?php endforeach; ?>
             <?php endif; ?>
          <?php else: ?>
-            <div class="row">
+            <!-- Texto intermedio (H6) cuando no hay registros -->
+            <div class="row mt-20 mb-40 text-center">
                <div class="col-lg-12">
-                  <div class="empty-state text-center">
-                     <i class="ti ti-layout-grid-off" style="font-size: 48px; color: #9ca3af;"></i>
-                     <p style="color: #6d8089; margin-top: 15px;">No hay índices publicados aún.</p>
+                  <h6 style="color: #0b3d91">
+                     Los índices de variación de costos de los servicios de última milla y postal son homologados
+                     por la Universidad<br> Tecnológica Nacional (UTN) a través de su Centro Tecnológico de Transporte,
+                     Tránsito y Seguridad Vial (C3T).
+                  </h6>
+                  <img src="assets/img/logo/UTN.jpg" alt="UTN" style="width: 200px;">
+                  <img src="assets/img/logo/C3TLogo.png" alt="C3T" style="width: 120px;">
+               </div>
+
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="empty-state text-center">
+                        <i class="ti ti-layout-grid-off" style="font-size: 48px; color: #9ca3af;"></i>
+                        <p style="color: #6d8089; margin-top: 15px;">No hay índices publicados aún.</p>
+                     </div>
                   </div>
                </div>
-            </div>
-         <?php endif; ?>
+            <?php endif; ?>
 
+         </div>
       </div>
-   </div>
-   <!-- indices-area-end -->
+      <!-- indices-area-end -->
 
-   <style>
-      /* Título separador por año */
-      .year-group-title {
-         display: flex;
-         align-items: center;
-         gap: 20px;
-         margin-bottom: 30px;
-      }
-
-      .year-group-title h3 {
-         font-size: 28px;
-         font-weight: 800;
-         color: #0b3d91;
-         margin: 0;
-         white-space: nowrap;
-      }
-
-      .year-line {
-         flex: 1;
-         height: 2px;
-         background: linear-gradient(90deg, #00a3e0, #e5e7eb);
-      }
-
-      .year-group-title .year-line:first-child {
-         background: linear-gradient(90deg, #e5e7eb, #00a3e0);
-      }
-
-      /* Botón de informe completo */
-      .btn-informe-completo {
-         display: inline-flex;
-         align-items: center;
-         justify-content: center;
-         background: #00A3E0;
-         color: #ffffff;
-         padding: 12px 35px;
-         border-radius: 20px 0 20px 0;
-         text-decoration: none;
-         font-weight: 500;
-         font-size: 18px;
-         transition: all 0.3s ease;
-      }
-
-      .btn-informe-completo:hover {
-         background: #008fcc;
-         color: #ffffff;
-         transform: translateY(-2px);
-         box-shadow: 0 4px 12px rgba(0, 163, 224, 0.3);
-      }
-
-      /* Gráfico/Imagen container */
-      .grafico-container {
-         background: #ffffff;
-         border: 1px solid #e5e7eb;
-         border-radius: 12px;
-         padding: 25px;
-         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      }
-
-      /* Tarjetas de meses */
-      .month-cards {
-         display: flex;
-         justify-content: center;
-         gap: 20px;
-         flex-wrap: wrap;
-      }
-
-      .month-card {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         padding: 15px 20px;
-         background: #d9eff9;
-         border-radius: 30px 0 30px 0;
-         text-decoration: none;
-         transition: all 0.3s ease;
-         width: calc(33.333% - 14px);
-         min-width: 250px;
-      }
-
-      .month-card:hover {
-         background: #c2e5f5;
-         transform: translateY(-3px);
-      }
-
-      .month-card.active {
-         background: #c2e5f5;
-      }
-
-      .month-text {
-         display: flex;
-         flex-direction: column;
-         text-align: left;
-      }
-
-      .month-name {
-         font-size: 22px;
-         font-weight: 600;
-         color: #00A3E0;
-         line-height: 1.1;
-      }
-
-      .month-label {
-         font-size: 18px;
-         color: #0a3a78;
-         font-weight: 500;
-         margin-top: 4px;
-      }
-
-      .month-icon {
-         width: 45px;
-         height: 45px;
-         background: #00A3E0;
-         border-radius: 6px;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         color: #ffffff;
-         font-size: 20px;
-         flex-shrink: 0;
-         transition: all 0.3s ease;
-      }
-
-      .month-card:hover .month-icon {
-         transform: scale(1.05);
-      }
-
-      /* Responsive */
-      @media (max-width: 991px) {
-         .service-panel {
-            margin-bottom: 20px;
+      <style>
+         /* Título separador por año */
+         .year-group-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
          }
 
+         .year-group-title h3 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #0b3d91;
+            margin: 0;
+            white-space: nowrap;
+         }
+
+         .year-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #00a3e0, #e5e7eb);
+         }
+
+         .year-group-title .year-line:first-child {
+            background: linear-gradient(90deg, #e5e7eb, #00a3e0);
+         }
+
+         /* Botón de informe completo */
+         .btn-informe-completo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #00A3E0;
+            color: #ffffff;
+            padding: 12px 35px;
+            border-radius: 20px 0 20px 0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: all 0.3s ease;
+         }
+
+         .btn-informe-completo:hover {
+            background: #008fcc;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 163, 224, 0.3);
+         }
+
+         /* Gráfico/Imagen container */
          .grafico-container {
-            margin-top: 20px;
+            background: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
          }
-      }
 
-      @media (max-width: 576px) {
+         /* Tarjetas de meses */
          .month-cards {
-            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
          }
 
          .month-card {
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            border-radius: 30px 0 30px 0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: calc(33.333% - 14px);
+            min-width: 250px;
          }
-      }
-   </style>
+
+         .month-card:hover {
+            transform: translateY(-3px);
+         }
+
+         .month-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+         }
+
+         .month-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #00A3E0;
+            line-height: 1.1;
+         }
+
+         .month-label {
+            font-size: 18px;
+            color: #0a3a78;
+            font-weight: 500;
+            margin-top: 4px;
+         }
+
+         .month-icon {
+            width: 45px;
+            height: 45px;
+            background: #00A3E0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 20px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+         }
+
+         .month-card:hover .month-icon {
+            transform: scale(1.05);
+         }
+
+         /* Responsive */
+         @media (max-width: 991px) {
+            .service-panel {
+               margin-bottom: 20px;
+            }
+
+            .grafico-container {
+               margin-top: 20px;
+            }
+         }
+
+         @media (max-width: 576px) {
+            .month-cards {
+               flex-direction: column;
+            }
+
+            .month-card {
+               width: 100%;
+            }
+         }
+      </style>

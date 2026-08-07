@@ -40,6 +40,40 @@
                <h2 class="tv-section-title">2025-2027</h2>
             </div>
          </div>
+
+         <div class="row justify-content-start tv-team-grid gx-3">
+            <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Marcelo Wirth</h3>
+                     <p>URBANO EXPRESS ARGENTINA S.A.</p>
+                     <p><strong>PRESIDENTE</strong></p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Sr. Walter Santagatti</h3>
+                     <p>VICEPRESIDENTE 1º</p>
+                     <p><strong>CORREO ANDREANI S.A.</strong></p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
+               <div class="feature-item">
+                  <div class="feature-icon"><i class="ti ti-user-circle"></i></div>
+                  <div class="feature-content">
+                     <h3>Arq. Diego M. Cash</h3>
+                     <p>VICEPRESIDENTE 2º</p>
+                     <p><strong>ESETECE S.A.</strong></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br>
          <div class="row justify-content-start tv-team-grid gx-3">
             <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
                <div class="feature-item">

@@ -28,7 +28,7 @@ loadEnv(__DIR__ . '/../.env');
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
 define('DB_USER', getenv('DB_USER') ?: 'root');
 define('DB_PASS', getenv('DB_PASS') ?: '');
-define('DB_NAME', getenv('DB_NAME') ?: 'aecaum_db');
+define('DB_NAME', getenv('DB_NAME') ?: 'correos_aecaum_db');
 
 // Configuración de JWT
 define('JWT_SECRET', getenv('JWT_SECRET') ?: 'default_secret_change_in_production');

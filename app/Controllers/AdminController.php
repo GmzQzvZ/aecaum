@@ -255,26 +255,62 @@ class AdminController extends BaseController {
             $action = $_POST['action'] ?? '';
 
             if ($action === 'create_index') {
+                $uploadDir = ROOT_PATH . '/uploads/indices/';
+                if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
+
+                $imagePath = '';
                 if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-                    $uploadDir = ROOT_PATH . '/uploads/indices/';
-                    if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
-
-                    $filename = time() . '_' . basename($_FILES['image']['name']);
-                    $filepath = $uploadDir . $filename;
-
-                    if (move_uploaded_file($_FILES['image']['tmp_name'], $filepath)) {
-                        $ok = \Index::create([
-                            'title'       => $this->input('title'),
-                            'image'       => 'uploads/indices/' . $filename,
-                            'description' => $this->input('description'),
-                            'month'       => $this->input('month') ?: 'enero',
-                            'year'        => (int)($this->input('year') ?: date('Y')),
-                            'informe'     => $this->input('Informe') ?: '',
-                        ]);
-
-                        $this->redirect('admin/indices?' . ($ok ? 'success=index_created' : 'error=create_failed'));
-                        return;
+                    $filename = time() . '_1_' . basename($_FILES['image']['name']);
+                    if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadDir . $filename)) {
+                        $imagePath = 'uploads/indices/' . $filename;
                     }
+                }
+
+                $image2Path = null;
+                if (isset($_FILES['image2']) && $_FILES['image2']['error'] === UPLOAD_ERR_OK) {
+                    $filename = time() . '_2_' . basename($_FILES['image2']['name']);
+                    if (move_uploaded_file($_FILES['image2']['tmp_name'], $uploadDir . $filename)) {
+                        $image2Path = 'uploads/indices/' . $filename;
+                    }
+                }
+
+                $image3Path = null;
+                if (isset($_FILES['image3']) && $_FILES['image3']['error'] === UPLOAD_ERR_OK) {
+                    $filename = time() . '_3_' . basename($_FILES['image3']['name']);
+                    if (move_uploaded_file($_FILES['image3']['tmp_name'], $uploadDir . $filename)) {
+                        $image3Path = 'uploads/indices/' . $filename;
+                    }
+                }
+
+                $informePath = '';
+                if (isset($_FILES['informe']) && $_FILES['informe']['error'] === UPLOAD_ERR_OK) {
+                    $filename = time() . '_pdf_' . basename($_FILES['informe']['name']);
+                    if (move_uploaded_file($_FILES['informe']['tmp_name'], $uploadDir . $filename)) {
+                        $informePath = 'uploads/indices/' . $filename;
+                    }
+                }
+
+                $informeMensualPath = '';
+                if (isset($_FILES['informe_mensual']) && $_FILES['informe_mensual']['error'] === UPLOAD_ERR_OK) {
+                    $filename = time() . '_mensual_' . basename($_FILES['informe_mensual']['name']);
+                    if (move_uploaded_file($_FILES['informe_mensual']['tmp_name'], $uploadDir . $filename)) {
+                        $informeMensualPath = 'uploads/indices/' . $filename;
+                    }
+                }
+
+                if ($imagePath && $informePath && $informeMensualPath) { // Ambos marcados como required en HTML
+                    $ok = \Index::create([
+                        'title'   => $this->input('title'),
+                        'image'   => $imagePath,
+                        'image2'  => $image2Path,
+                        'image3'  => $image3Path,
+                        'month'   => $this->input('month') ?: 'enero',
+                        'year'    => (int)($this->input('year') ?: date('Y')),
+                        'informe' => $informePath,
+                        'informe_mensual' => $informeMensualPath,
+                    ]);
+                    $this->redirect('admin/indices?' . ($ok ? 'success=index_created' : 'error=create_failed'));
+                    return;
                 }
                 $this->redirect('admin/indices?error=upload_failed');
                 return;
@@ -284,8 +320,12 @@ class AdminController extends BaseController {
                 $id = (int) ($_POST['index_id'] ?? 0);
                 if ($id) {
                     $index = \Index::findById($id);
-                    if ($index && file_exists(ROOT_PATH . '/' . $index['image'])) {
-                        unlink(ROOT_PATH . '/' . $index['image']);
+                    if ($index) {
+                        if (!empty($index['image']) && file_exists(ROOT_PATH . '/' . $index['image'])) unlink(ROOT_PATH . '/' . $index['image']);
+                        if (!empty($index['image2']) && file_exists(ROOT_PATH . '/' . $index['image2'])) unlink(ROOT_PATH . '/' . $index['image2']);
+                        if (!empty($index['image3']) && file_exists(ROOT_PATH . '/' . $index['image3'])) unlink(ROOT_PATH . '/' . $index['image3']);
+                        if (!empty($index['informe']) && file_exists(ROOT_PATH . '/' . $index['informe'])) unlink(ROOT_PATH . '/' . $index['informe']);
+                        if (!empty($index['informe_mensual']) && file_exists(ROOT_PATH . '/' . $index['informe_mensual'])) unlink(ROOT_PATH . '/' . $index['informe_mensual']);
                     }
                     \Index::delete($id);
                     $this->redirect('admin/indices?success=index_deleted');

@@ -73,7 +73,7 @@
             <nav class="menu">
                <ul>
                   <li><a href="<?= APP_URL ?>/nosotros">Nosotros</a></li>
-                  <li>
+                  <!-- <li>
                      <a href="<?= APP_URL ?>/legislacion/marco-regulatorio">Legislación y asuntos laborales</a>
                      <ul class="submenu">
                         <li><a href="<?= APP_URL ?>/legislacion/marco-regulatorio">Marco regulatorio</a></li>
@@ -82,11 +82,11 @@
                               escalas salariales</a></li>
                         <li><a href="<?= APP_URL ?>/legislacion/novedades-enacom">Novedades ENACOM</a></li>
                      </ul>
-                  </li>
+                  </li> -->
                   <li>
                      <a href="<?= APP_URL ?>/indices">Índices</a>
                      <ul class="submenu">
-                        <li><a href="<?= APP_URL ?>/indices/imc">IMC</a></li>
+                        <!-- <li><a href="<?= APP_URL ?>/indices/imc">IMC</a></li> -->
                         <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
                      </ul>
                   </li>

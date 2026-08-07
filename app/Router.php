@@ -27,6 +27,8 @@ class Router {
 
         // --- Panel de usuario ---
         $this->get('dashboard',                       DashboardController::class, 'index');
+        $this->get('dashboard/indices',               DashboardController::class, 'indices');
+        $this->get('dashboard/informes-institucionales', DashboardController::class, 'informesInstitucionales');
         
         // --- Documentos (Seguros) ---
         $this->get('documento/ver',                   DocumentController::class, 'serve');

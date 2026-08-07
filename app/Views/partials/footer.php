@@ -7,28 +7,28 @@
         $currentUri = $_SERVER['REQUEST_URI'] ?? '';
         $isBlogDetails = (strpos($currentUri, 'blog-details') !== false);
         if (empty($hideNewsletter) && !$isBlogDetails):
-        ?>
-        <div class="nl-section">
-            <!-- LEFT: light bg + image -->
-            <div class="nl-left">
-                <img loading="lazy" src="assets/img/footer/newsletter.jpeg" alt="Newsletter visual" class="nl-img">
+            ?>
+            <div class="nl-section">
+                <!-- LEFT: light bg + image -->
+                <div class="nl-left">
+                    <img loading="lazy" src="assets/img/footer/newsletter.jpeg" alt="Newsletter visual" class="nl-img">
+                </div>
+                <!-- RIGHT: dark blue bg + form -->
+                <div class="nl-right">
+                    <h2 class="nl-title">Suscribite a nuestro Newsletter</h2>
+                    <p class="nl-text">Mantenete actualizado con la agenda de nuestro ecosistema.
+                        Información estratégica, inversiones y análisis clave para los líderes de la logística
+                        argentina.</p>
+                    <form action="https://mailchi.mp/correos/suscribite-a-nuestro-newsletter" class="nl-form"
+                        title="link de newsletter" target="_blank">
+                        <button type="submit" class="nl-btn">
+                            <span class="btn-wrap">
+                                <span class="btn-text1">Inscribirme</span>
+                            </span>
+                        </button>
+                    </form>
+                </div>
             </div>
-            <!-- RIGHT: dark blue bg + form -->
-            <div class="nl-right">
-                <h2 class="nl-title">Suscribite a nuestro Newsletter</h2>
-                <p class="nl-text">Mantenete actualizado con la agenda de nuestro ecosistema.
-                    Información estratégica, inversiones y análisis clave para los líderes de la logística
-                    argentina.</p>
-                <form action="https://mailchi.mp/correos/suscribite-a-nuestro-newsletter" class="nl-form"
-                    title="link de newsletter" target="_blank">
-                    <button type="submit" class="nl-btn">
-                        <span class="btn-wrap">
-                            <span class="btn-text1">Inscribirme</span>
-                        </span>
-                    </button>
-                </form>
-            </div>
-        </div>
         <?php endif; ?>
         <!-- newsletter-section-end -->
 
@@ -41,6 +41,11 @@
                         <div class="aecaum-footer-logo">
                             <img loading="lazy" src="assets/img/footer/LOGO SOLO AECAUM.png" alt="AECAUM Logo">
                         </div>
+                        <p class="aecaum-footer-tagline">
+                            Conectate con el futuro de la última milla. Estamos<br>
+                            acá para resolver tus dudas e impulsar el crecimiento<br>
+                            de tu empresa.
+                        </p>
                     </div>
                 </div>
                 <div class="row aecaum-footer-main align-items-start justify-content-between">
@@ -49,51 +54,43 @@
                         <ul>
                             <li>
                                 <span class="footer-icon-circle"><i class="ti ti-mail"></i></span>
-                                <div>
+                                <div class="aecaum-footer-mail">
                                     <small>Email</small>
-                                    <a href="mailto:info@aecaum.org.ar">info@aecaum.org.ar</a>
+                                    <a
+                                        href="mailto:lroqueiro.secretaria@correos.org.ar">lroqueiro.secretaria@correos.org.ar</a>
                                 </div>
                             </li>
                             <li>
                                 <span class="footer-icon-circle"><i class="ti ti-phone"></i></span>
-                                <div>
+                                <div class="aecaum-footer-phone">
                                     <small>Teléfono</small>
-                                    <span>+54 11 [Número]</span>
+                                    <span>+54 911 4551 5338</span>
                                 </div>
                             </li>
                             <li>
                                 <span class="footer-icon-circle"><i class="ti ti-map-pin"></i></span>
-                                <div>
+                                <div class="aecaum-footer-address">
                                     <small>Ubicación</small>
-                                    <span>Martínez, Bs. As.</span>
+                                    <span>Colectora Panamericana 264</span>
+                                    <span>Piso 1 Of. 4 - B1640, Martinez Bs. As.</span>
                                 </div>
                             </li>
                         </ul>
                     </div>
-
                     <div class="col-lg-4 col-md-12 mb-50 aecaum-footer-center text-center">
-                        <p class="aecaum-footer-tagline">
-                            Conectate con el futuro de la última milla. Estamos<br>
-                            acá para resolver tus dudas e impulsar el crecimiento<br>
-                            de tu empresa.
-                        </p>
                         <div class="aecaum-footer-social mt-25 mb-10">
                             <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank"
                                 class="footer-social-icon"
-                                style="width: 50px; height: 50px; font-size: 28px; border-width: 2px; color: #fff">
+                                style="width: 50px; height: 50px; font-size: 28px; color: #fff">
                                 <i class="ti ti-brand-instagram"></i>
                             </a>
                             <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank"
                                 class="footer-social-icon"
-                                style="width: 50px; height: 50px; font-size: 28px; border-width: 2px;color: #fff">
+                                style="width: 50px; height: 50px; font-size: 28px; color: #fff">
                                 <i class="ti ti-brand-linkedin"></i>
                             </a>
                         </div>
                         <p class="aecaum-footer-social-handle mb-25">aecaum.ultimamilla</p>
-                        <p class="aecaum-footer-address">
-                            <strong>Colectora Panamericana 264</strong><br>
-                            Piso 1 Of. 4 – B1640, Martínez, Bs. As.
-                        </p>
                         <div class="aecaum-footer-links mt-15">
                             <a href="mailto:aeca@correos.org.ar">aeca@correos.org.ar</a><br>
                             <a href="https://correos.org.ar" target="_blank">www.correos.org.ar</a>
@@ -101,9 +98,9 @@
                     </div>
 
                     <!-- RIGHT: Servicios -->
-                    <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-services" style="text-align: right;">
+                    <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-services">
                         <h4>Servicios</h4>
-                        <ul style="list-style: none; padding: 0;">
+                        <ul>
                             <li><a href="<?= APP_URL ?>/service">Academia</a></li>
                             <li><a href="<?= APP_URL ?>/indices">Índice de Costos</a></li>
                             <li><a href="<?= APP_URL ?>/service">Networking y Alianzas</a></li>

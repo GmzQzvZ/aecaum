@@ -11,34 +11,41 @@
       </button>
    </div>
 
-   <?php if ($success === 'index_created'): ?><div class="alert-success"><i class="ti ti-circle-check"></i> Índice creado exitosamente.</div><?php endif; ?>
-   <?php if ($success === 'index_deleted'): ?><div class="alert-success"><i class="ti ti-circle-check"></i> Índice eliminado correctamente.</div><?php endif; ?>
-   <?php if ($error): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> Ocurrió un error. Intentá nuevamente.</div><?php endif; ?>
+   <?php if ($success === 'index_created'): ?>
+      <div class="alert-success"><i class="ti ti-circle-check"></i> Índice creado exitosamente.</div><?php endif; ?>
+   <?php if ($success === 'index_deleted'): ?>
+      <div class="alert-success"><i class="ti ti-circle-check"></i> Índice eliminado correctamente.</div><?php endif; ?>
+   <?php if ($error): ?>
+      <div class="alert-error"><i class="ti ti-alert-circle"></i> Ocurrió un error. Intentá nuevamente.</div>
+   <?php endif; ?>
 
    <div class="panel-card">
       <h3><i class="ti ti-list"></i> Lista de índices (<?= count($indices) ?>)</h3>
       <?php if (empty($indices)): ?>
-      <div class="empty-state"><i class="ti ti-layout-grid-off"></i><p>No hay índices registrados aún.</p></div>
-      <?php else: ?>
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
-         <?php foreach ($indices as $index): ?>
-         <div style="border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #fff;">
-            <div style="height: 200px; overflow: hidden; background: #f5f6f7;">
-               <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($index['image']) ?>" alt="<?= htmlspecialchars($index['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-            <div style="padding: 15px;">
-               <h4 style="margin: 0 0 10px 0; color: #0a3a78;"><?= htmlspecialchars($index['title']) ?></h4>
-               <p style="color: #6d8089; font-size: 14px; margin: 0 0 15px 0; line-height: 1.5;"><?= htmlspecialchars($index['description']) ?></p>
-               <form method="POST" action="<?= APP_URL ?>/admin/indices" style="display:inline;"
-                  onsubmit="return confirm('¿Eliminar índice <?= htmlspecialchars($index['title']) ?>?')">
-                  <input type="hidden" name="action" value="delete_index">
-                  <input type="hidden" name="index_id" value="<?= $index['id'] ?>">
-                  <button type="submit" class="btn-danger-sm"><i class="ti ti-trash"></i> Eliminar</button>
-               </form>
-            </div>
+         <div class="empty-state"><i class="ti ti-layout-grid-off"></i>
+            <p>No hay índices registrados aún.</p>
          </div>
-         <?php endforeach; ?>
-      </div>
+      <?php else: ?>
+         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px;">
+            <?php foreach ($indices as $index): ?>
+               <div style="border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; background: #fff;">
+                  <div style="height: 200px; overflow: hidden; background: #f5f6f7;">
+                     <img loading="lazy" src="<?= APP_URL ?>/<?= htmlspecialchars($index['image']) ?>"
+                        alt="<?= htmlspecialchars($index['title']) ?>" style="width: 100%; height: 100%; object-fit: cover;">
+                  </div>
+                  <div style="padding: 15px;">
+                     <h4 style="margin: 0 0 10px 0; color: #0a3a78;"><?= htmlspecialchars($index['title']) ?></h4>
+
+                     <form method="POST" action="<?= APP_URL ?>/admin/indices" style="display:inline;"
+                        onsubmit="return confirm('¿Eliminar índice <?= htmlspecialchars($index['title']) ?>?')">
+                        <input type="hidden" name="action" value="delete_index">
+                        <input type="hidden" name="index_id" value="<?= $index['id'] ?>">
+                        <button type="submit" class="btn-danger-sm"><i class="ti ti-trash"></i> Eliminar</button>
+                     </form>
+                  </div>
+               </div>
+            <?php endforeach; ?>
+         </div>
       <?php endif; ?>
    </div>
 </div>
@@ -88,16 +95,26 @@
             </div>
          </div>
          <div class="form-group">
-            <label>Imagen *</label>
+            <label>Imagen Servicio Última Milla *</label>
             <input type="file" name="image" required accept="image/*">
          </div>
-         <div class="form-group">
-            <label>Descripción</label>
-            <textarea name="description" rows="4" placeholder="Descripción del índice"></textarea>
+         <div class="form-row">
+            <div class="form-group">
+               <label>Imagen Servicios Postales *</label>
+               <input type="file" name="image2" required accept="image/*">
+            </div>
+            <div class="form-group">
+               <label>Imagen Porcentajes *</label>
+               <input type="file" name="image3" required accept="image/*">
+            </div>
          </div>
          <div class="form-group">
-            <label>Informe Completo</label>
-            <input type="text" name="Informe" placeholder="URL del informe completo">
+            <label>Informe Completo (PDF) *</label>
+            <input type="file" name="informe" required accept="application/pdf">
+         </div>
+         <div class="form-group">
+            <label>Informe Mensual (PDF) *</label>
+            <input type="file" name="informe_mensual" required accept="application/pdf">
          </div>
          <div style="display:flex;gap:12px;margin-top:8px;">
             <button type="submit" class="btn-primary-sm"><i class="ti ti-check"></i> Crear índice</button>

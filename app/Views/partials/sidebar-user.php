@@ -19,8 +19,14 @@
 
    <nav class="sidebar-nav">
       <div class="nav-group-label">Mi espacio</div>
-      <a href="<?= APP_URL ?>/dashboard" class="active">
+      <a href="<?= APP_URL ?>/dashboard" class="<?= strpos($_SERVER['REQUEST_URI'], '/dashboard') !== false && strpos($_SERVER['REQUEST_URI'], '/indices') === false && strpos($_SERVER['REQUEST_URI'], '/informes-institucionales') === false ? 'active' : '' ?>">
          <i class="ti ti-dashboard"></i> Dashboard
+      </a>
+      <a href="<?= APP_URL ?>/dashboard/indices" class="<?= strpos($_SERVER['REQUEST_URI'], '/dashboard/indices') !== false ? 'active' : '' ?>">
+         <i class="ti ti-layout-grid"></i> Índices
+      </a>
+      <a href="<?= APP_URL ?>/dashboard/informes-institucionales" class="<?= strpos($_SERVER['REQUEST_URI'], '/dashboard/informes-institucionales') !== false ? 'active' : '' ?>">
+         <i class="ti ti-file-description"></i> Informes Inst.
       </a>
    </nav>
 
