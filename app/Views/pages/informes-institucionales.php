@@ -32,20 +32,26 @@
       <div class="tv-about-area z-index-1 p-relative pt-130 pb-130 white-bg">
          <div class="row text-center mb-40">
             <div class="col-lg-12">
-               <h3 class="tv-section-subtitle"
-                  style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informe</h3>
-               <p style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6;">
-                  Aunque el alivio en los combustibles trajo algo de oxígeno al sector, la presión ahora se traslada
-                  silenciosamente a la<br> estructura laboral, donde la mano de obra se consolida como el principal
-                  driver de
-                  costos. Este cambio no solo redefine la<br> ecuación operativa de la última milla, sino que obliga a
-                  las
-                  empresas a replantear márgenes, contratos y eficiencia en un<br> contexto donde la aparente calma
-                  mensual
-                  contrasta con un acumulado interanual que ya roza niveles críticos y un<br> escenario internacional
-                  que vuelve a
-                  tensionar la cadena logística.
-               </p>
+               <h4 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informe</h4>
+               <h1>Informe Anual de Actividad</h1>
+               <h2 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">
+                  La radiografía más completa de la logística de última milla en Argentina</h2>
+               <div style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; text-align: justify;">
+                  <p>Aquí presentamos nuestro Informe Anual, una herramienta fundamental diseñada para entender cómo se mueve nuestra industria 
+                     y cuáles son las fuerzas que están redefiniendo el mercado postal y de paquetería en el país.</p>
+
+                  <p>Nuestros informes combinan datos oficiales con información sectorial propia, ofreciendo una visión profunda del escenario operativo, comercial y normativo actual.</p>
+
+                  <p><strong>¿Qué encontrarás en nuestros Informes Anuales?</strong></p>
+
+                  <p>Ya sea que busques datos para tu planificación estratégica, análisis de tendencias o información sobre el impacto regulatorio, nuestros informes cubren los pilares esenciales del sector:</p>
+
+                  <p><strong>Diagnóstico del Mercado:</strong> Evolución histórica y real de los volúmenes de envíos, con foco en el crecimiento del e-commerce y la paquetería.</p>
+                  <p><strong>Transformación Normativa:</strong> Análisis crítico sobre cómo las nuevas regulaciones impactan en la libre competencia y en la formalidad del sector.</p>
+                  <p><strong>Radiografía de los Operadores:</strong> Información detallada sobre el dinamismo del Registro Nacional de Prestadores y el mapa de competencia actual.</p>
+                  <p><strong>Gestión y Eficiencia:</strong> Indicadores clave (KPIs) sobre ausentismo, cobranza y dotación laboral en las empresas socias de AECAUM. </p>
+                  <p><strong>Análisis de Costos:</strong>Seguimiento detallado de nuestros Índices de Mayores Costos (IMC), desglosando qué presiones afectan la rentabilidad y dónde están las oportunidades de optimización.</p>
+               </div>
             </div>
          </div>
          <?php

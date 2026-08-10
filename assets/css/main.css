@@ -12622,6 +12622,26 @@ only screen and (min-width: 768px) and (max-width: 991px),
   }
 }
 
+.inner {
+  padding-top: 50px;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  inline-size: none;
+  background-color: #c2e6f3c5;
+}
+
+.inner2 {
+  padding-top: 50px;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  inline-size: none;
+  background-color: #3acaff;
+}
+
 .tv-pro-details-wrap {
   margin-left: -30px;
 }
@@ -15808,7 +15828,8 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
 /* ---------- Informes Institucionales: book item layout ---------- */
 .book-list li {
-  margin-bottom: 60px; /* Esto dará altura entre las filas de libros */
+  margin-bottom: 60px;
+  /* Esto dará altura entre las filas de libros */
   display: flex;
   flex-direction: column;
   align-items: center;

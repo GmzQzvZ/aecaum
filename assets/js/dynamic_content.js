@@ -128,6 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateContent(stored);
     try { localStorage.removeItem('selectedCourse'); } catch(e){}
   } else {
-    updateContent('course1');
+    updateContent('course2');
   }
 });

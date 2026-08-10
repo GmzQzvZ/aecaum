@@ -59,33 +59,32 @@
                <h4>Cursos disponibles</h4>
                <ul>
                   <li class="cat-item active">
-                     <a href="javascript:void(0)" data-course-id="course1" onclick="updateContent('course1'); return false;">Logística</a>
+                     <a href="javascript:void(0)" data-course-id="course1" onclick="updateContent('course2'); return false;">Fullfilment</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course2" onclick="updateContent('course2'); return false;">Tecnologías de Vanguardia</a>
+                     <a href="javascript:void(0)" data-course-id="course2" onclick="updateContent('course4'); return false;">eCommerce</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course3" onclick="updateContent('course3'); return false;">Fullfilment</a>
+                     <a href="javascript:void(0)" data-course-id="course3" onclick="updateContent('course3'); return false;">Última MIlla</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course4" onclick="updateContent('course4'); return false;">eCommerce</a>
+                     <a href="javascript:void(0)" data-course-id="course4" onclick="updateContent('course1'); return false;">Cross-border</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course5" onclick="updateContent('course5'); return false;">Automatizaciones</a>
+                     <a href="javascript:void(0)" data-course-id="course5" onclick="updateContent('course5'); return false;">Tecnología</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course6" onclick="updateContent('course6'); return false;">Diseño de Procesos</a>
+                     <a href="javascript:void(0)" data-course-id="course6" onclick="updateContent('course6'); return false;">Integracíon</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course7" onclick="updateContent('course7'); return false;">Inteligencia Artificial</a>
+                     <a href="javascript:void(0)" data-course-id="course7" onclick="updateContent('course8'); return false;">Investigación</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course8" onclick="updateContent('course8'); return false;">Estudio e Investigación</a>
+                     <a href="javascript:void(0)" data-course-id="course8" onclick="updateContent('course7'); return false;">Inteligencia Artificial</a>
                   </li>
                </ul>
             </div>
          </div>
    </div>
 </div>
-
 <script src="assets/js/dynamic_content.js"></script>

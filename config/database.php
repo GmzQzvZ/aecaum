@@ -4,7 +4,8 @@
 // ============================================================
 
 // Cargar variables de entorno desde .env
-function loadEnv($file) {
+function loadEnv($file)
+{
     if (!file_exists($file)) {
         return;
     }
@@ -26,8 +27,9 @@ function loadEnv($file) {
 loadEnv(__DIR__ . '/../.env');
 
 define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_USER', getenv('DB_USER') ?: 'correos_adminaecaum');
+define('DB_PASS', getenv('DB_PASS') ?: 'aecaum_db2026*');
+// define('DB_NAME', getenv('DB_NAME') ?: 'aecaum_db'); 
 define('DB_NAME', getenv('DB_NAME') ?: 'correos_aecaum_db');
 
 // Configuración de JWT
@@ -61,30 +63,37 @@ $conn->set_charset('utf8mb4');
 // Funciones de Autenticación
 // ============================================================
 
-function isLoggedIn(): bool {
+function isLoggedIn(): bool
+{
     return isset($_COOKIE['aecaum_token']) && \App\Helpers\JwtHelper::verifyToken($_COOKIE['aecaum_token']) !== null;
 }
 
-function hasRole(string $role): bool {
-    if (!isset($_COOKIE['aecaum_token'])) return false;
+function hasRole(string $role): bool
+{
+    if (!isset($_COOKIE['aecaum_token']))
+        return false;
     $payload = \App\Helpers\JwtHelper::verifyToken($_COOKIE['aecaum_token']);
     return $payload && isset($payload['role_name']) && $payload['role_name'] === $role;
 }
 
-function hasAccess(array $allowedRoles): bool {
-    if (!isset($_COOKIE['aecaum_token'])) return false;
+function hasAccess(array $allowedRoles): bool
+{
+    if (!isset($_COOKIE['aecaum_token']))
+        return false;
     $payload = \App\Helpers\JwtHelper::verifyToken($_COOKIE['aecaum_token']);
     return $payload && isset($payload['role_name']) && (in_array($payload['role_name'], $allowedRoles) || $payload['role_name'] === 'Superadmin' || $payload['role_name'] === 'admin');
 }
 
-function requireLogin(): void {
+function requireLogin(): void
+{
     if (!isLoggedIn()) {
         header('Location: ' . APP_URL . '/login');
         exit;
     }
 }
 
-function requireRole(string $role): void {
+function requireRole(string $role): void
+{
     requireLogin();
     if (!hasRole($role)) {
         header('Location: ' . APP_URL . '/dashboard');
@@ -92,11 +101,14 @@ function requireRole(string $role): void {
     }
 }
 
-function getCurrentUser(): ?array {
-    if (!isset($_COOKIE['aecaum_token'])) return null;
+function getCurrentUser(): ?array
+{
+    if (!isset($_COOKIE['aecaum_token']))
+        return null;
     $payload = \App\Helpers\JwtHelper::verifyToken($_COOKIE['aecaum_token']);
-    if (!$payload) return null;
-    
+    if (!$payload)
+        return null;
+
     global $conn;
     $stmt = $conn->prepare("
         SELECT u.*, r.name AS role_name, r.label AS role_label

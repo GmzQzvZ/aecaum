@@ -37,20 +37,32 @@
          <!-- Textos introductorios -->
          <div class="row text-center mb-40">
             <div class="col-lg-12">
-               <h3 class="tv-section-subtitle"
-                  style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">IMC</h3>
-               <p style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6;">
-                  Aunque el alivio en los combustibles trajo algo de oxígeno al sector, la presión ahora se traslada
-                  silenciosamente a la<br> estructura laboral, donde la mano de obra se consolida como el principal
-                  driver de
-                  costos. Este cambio no solo redefine la<br> ecuación operativa de la última milla, sino que obliga a
-                  las
-                  empresas a replantear márgenes, contratos y eficiencia en un<br> contexto donde la aparente calma
-                  mensual
-                  contrasta con un acumulado interanual que ya roza niveles críticos y un<br> escenario internacional
-                  que vuelve a
-                  tensionar la cadena logística.
-               </p>
+               <h4 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informes</h4>
+               <h1>Índices de Mayores Costos AECAUM</h1>
+               <h2 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Gestión eficiente basada en evidencia técnica</h2>
+               <div style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6; text-align: justify;">
+                  <p>En un entorno económico dinámico, la capacidad de dimensionar con precisión el impacto de la estructura de costos es una 
+                     ventaja competitiva fundamental. Desde AECAUM, desarrollamos y monitoreamos mensualmente nuestros Índices de 
+                     Mayores Costos (IMC), una herramienta técnica diseñada para reflejar la realidad operativa de nuestras empresas.</p>
+
+                  <p>Estos índices no solo sirven como referencia para la sostenibilidad de nuestros asociados, sino que garantizan una 
+                     transparencia absoluta en la relación con clientes y el mercado en general.</p>
+
+                  <p><strong>¿Cómo trabajamos nuestros índices?</strong></p>
+
+                  <p>Nuestros indicadores son auditados y homologados por la Universidad Tecnológica Nacional (UTN) a través de su Centro 
+                     Tecnológico de Transporte, Tránsito y Seguridad Vial (C3T). Esta alianza estratégica aporta el rigor científico necesario para 
+                     desglosar la complejidad de nuestra cadena de valor.</p>
+                  
+                  <p><strong> Publicamos mensualmente dos índices específicos:</strong></p>
+
+                  <ul style="margin-left: 30px;">
+                     <li>Índice de Última Milla: Enfocado en las variables críticas que componen la logística de distribución de última instancia 
+                        (combustibles, mano de obra, mantenimiento, peajes, entre otros).</li>
+
+                     <li> Índice de Servicios Postales: Diseñado para capturar la estructura de costos específica de la operación postal tradicional.</li>
+                  </ul>
+               </div>
             </div>
          </div>
 

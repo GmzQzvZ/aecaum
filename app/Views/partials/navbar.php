@@ -15,24 +15,19 @@
                      <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social">
                         <i class="ti ti-brand-linkedin"></i>
                      </a>
-                     <span class="separator">•</span>
+                     <span class="separator" style="color: #00aae6 !important;">•</span>
                      <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social">
                         <i class="ti ti-brand-instagram"></i>
                      </a>
-                     <span class="separator">|</span>
+                     <span class="separator" style="color: #00aae6 !important;">|</span>
                      <?php
                      if (isLoggedIn()):
                         $currentUser = getCurrentUser();
                         $userName = $currentUser['name'] ?? 'Mi panel';
                         ?>
                         <a href="<?= APP_URL ?>/dashboard" class="tv-btn-primary d-none d-md-block">
-                           <span class="btn-wrap">
-                              <span class="btn-text1">
-                                 Hola, <?= htmlspecialchars($userName) ?>
-                              </span>
-                              <span class="btn-text2">
-                                 Hola, <?= htmlspecialchars($userName) ?>
-                              </span>
+                           <span class="btn-wrap" style="white-space: nowrap;">
+                              <span class="btn-text">Hola, <?= htmlspecialchars($userName) ?></span>
                            </span>
                         </a>
                      <?php else: ?>
@@ -43,12 +38,11 @@
                            </span>
                         </a>
                      <?php endif; ?>
-                     <span class="separator" style="font-size: 22px; margin: 0 10px; color:var(--blue--500);">|</span>
+                     <span class="separator" style="font-size: 22px; margin: 0 10px; color: #00aae6 !important;">|</span>
                      <div class="tv-header-bar">
                         <button class="tv-menu-bar" type="button">
-                           <span class="menu-icon" style="color:var(--blue--500);"><i id="menu-toggle-icon"
-                                 class="ti ti-menu-2"></i></span>
-                           <span class="menu-text" style="color:var(--blue--500);">Menú</span>
+                           <span class="menu-icon" style="color: #00aae6 !important;"><i id="menu-toggle-icon" class="ti ti-menu-2"></i></span>
+                           <span class="menu-text" style="color: #00aae6 !important;">Menú</span>
                         </button>
                      </div>
                   </div>
@@ -86,18 +80,18 @@
                   <li>
                      <a href="<?= APP_URL ?>/indices">Índices</a>
                      <ul class="submenu">
-                        <!-- <li><a href="<?= APP_URL ?>/indices/imc">IMC</a></li> -->
+                        <!-- <li><a href="<?= APP_URL ?>/indices">IMC</a></li> -->
                         <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
                      </ul>
                   </li>
-                  <li>
+                  <!-- <li>
                      <a href="<?= APP_URL ?>/prensa/eventos-institucionales">Prensa y Relaciones Institucionales</a>
                      <ul class="submenu">
                         <li><a href="<?= APP_URL ?>/prensa/eventos-institucionales">Eventos Institucionales</a></li>
                         <li><a href="<?= APP_URL ?>/prensa/aecaum-en-los-medios">AECAUM en los medios</a></li>
                      </ul>
-                  </li>
-                  <li><a href="<?= APP_URL ?>/proyectos">Conciencia Sustentable</a></li>
+                  </li> -->
+                  <!-- <li><a href="<?= APP_URL ?>/proyectos">Conciencia Sustentable</a></li> -->
                   <li class="destacado"><a href="https://correos.org.ar/asociados/" target="_blank">Asociate</a></li>
                   <li><a href="<?= APP_URL ?>/contacto">Contacto</a></li>
                </ul>

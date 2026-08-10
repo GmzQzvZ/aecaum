@@ -46,6 +46,12 @@ CREATE TABLE IF NOT EXISTS indices (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+ALTER TABLE `indices`
+ADD COLUMN `image2` VARCHAR(255) NULL DEFAULT NULL AFTER `image`,
+ADD COLUMN `image3` VARCHAR(255) NULL DEFAULT NULL AFTER `image2`,
+ADD COLUMN `informe_mensual` VARCHAR(255) NULL DEFAULT '' AFTER `informe`;
+
+
 -- Tabla de informes institucionales
 CREATE TABLE IF NOT EXISTS informes (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -87,5 +93,3 @@ INSERT INTO users (name, email, password, role_id) VALUES
 ('Sebastian Gomez', 'zvzgmzq@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1);
 
 
-usuario: adminaecaum
-password: aecaum_db2026*

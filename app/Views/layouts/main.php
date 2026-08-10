@@ -15,7 +15,8 @@
 
     <!-- CSS (rutas absolutas para que funcionen en cualquier sub-ruta) -->
     <?php
-    function assetV(string $path): string {
+    function assetV(string $path): string
+    {
         $full = $_SERVER['DOCUMENT_ROOT'] . '/aecaum/' . ltrim($path, '/');
         return file_exists($full) ? '?v=' . filemtime($full) : '?v=1';
     }
@@ -34,43 +35,42 @@
 </head>
 
 <body id="body" class="tv-magic-cursor">
-
     <!-- Preloader (se muestra al ingresar o recargar; se oculta si se regresa desde otra subpágina) -->
     <?php if ($showSplash ?? false): ?>
         <script>
-        (function() {
-            var isReload = false;
-            try {
-                var nav = performance.getEntriesByType("navigation");
-                if (nav.length > 0 && nav[0].type === "reload") {
-                    isReload = true;
-                }
-            } catch(e) {}
-
-            var ref = document.referrer;
-            var isInternalNavigation = false;
-            if (ref && ref.indexOf(window.location.host) !== -1) {
+            (function () {
+                var isReload = false;
                 try {
-                    var refPath = new URL(ref).pathname.replace(/\/$/, "");
-                    var currPath = window.location.pathname.replace(/\/$/, "");
-                    if (refPath !== currPath) {
+                    var nav = performance.getEntriesByType("navigation");
+                    if (nav.length > 0 && nav[0].type === "reload") {
+                        isReload = true;
+                    }
+                } catch (e) { }
+
+                var ref = document.referrer;
+                var isInternalNavigation = false;
+                if (ref && ref.indexOf(window.location.host) !== -1) {
+                    try {
+                        var refPath = new URL(ref).pathname.replace(/\/$/, "");
+                        var currPath = window.location.pathname.replace(/\/$/, "");
+                        if (refPath !== currPath) {
+                            isInternalNavigation = true;
+                        }
+                    } catch (e) {
                         isInternalNavigation = true;
                     }
-                } catch(e) {
-                    isInternalNavigation = true;
                 }
-            }
 
-            if (isInternalNavigation && !isReload) {
-                document.write('<style>#preloader{display:none!important;}</style>');
-            }
-        })();
+                if (isInternalNavigation && !isReload) {
+                    document.write('<style>#preloader{display:none!important;}</style>');
+                }
+            })();
         </script>
         <div id="preloader">
             <div class="preloader-container">
                 <!-- Background buildings -->
                 <div class="preloader-bg">
-                    <img loading="lazy" src="assets/img/icon/portada1.png" alt="currier">
+                    <img loading="lazy" src="assets/img/icon/intro2.png" alt="currier">
                 </div>
 
                 <!-- Content -->
@@ -181,17 +181,33 @@
     <script src="<?= ASSETS_URL ?>/js/splash.js<?= assetV('assets/js/splash.js') ?>"></script>
 
     <script>
-        // Mouse interaction for preloader background
-        document.addEventListener("mousemove", (e) => {
-            const img = document.querySelector(".preloader-bg img");
+        // Mouse parallax suave para el fondo del preloader
+        (function () {
+            let targetX = 0, targetY = 0;
+            let currentX = 0, currentY = 0;
+            let rafId = null;
+            const ease = 0.06;
 
-            if (!img) return;
+            document.addEventListener("mousemove", (e) => {
+                targetX = (e.clientX - window.innerWidth / 2) * 0.03;
+                targetY = (e.clientY - window.innerHeight / 2) * 0.03;
+            });
 
-            const x = (window.innerWidth / 2 - e.clientX) * 0.03;
-            const y = (window.innerHeight / 2 - e.clientY) * 0.03;
+            function animate() {
+                const preloader = document.getElementById("preloader");
+                // Detener el loop si el preloader ya está oculto
+                if (!preloader || preloader.classList.contains("hidden")) return;
 
-            img.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
-        });
+                const img = preloader.querySelector(".preloader-bg img");
+                if (img) {
+                    currentX += (targetX - currentX) * ease;
+                    currentY += (targetY - currentY) * ease;
+                    img.style.transform = `translate(${currentX}px, ${currentY}px) scale(1.05)`;
+                }
+                rafId = requestAnimationFrame(animate);
+            }
+            animate();
+        })();
     </script>
 
 </body>

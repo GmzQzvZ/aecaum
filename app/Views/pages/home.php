@@ -223,11 +223,11 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                    <div class="single-couter-wrap mt-60   d-flex align-items-center justify-content-center">
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center" >
                         <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="25">+25</span></h5>
-                            <h6>Años de experiencia</h6>
+                            <h5><span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
+                                    data-purecounter-end="43">43</span>%</h5>
+                            <h6 style="font-weight: 800 !important;">del volumen total de paquetería</h6>
                         </div>
                     </div>
                     <br>
@@ -239,13 +239,15 @@
                         cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
-                        <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="70">70</span>%</h5>
-                            <h6>Años de experiencia</h6>
+                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center" >
+                        <div class="inner2">
+                            <h5>+<span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
+                                    data-purecounter-end="22">22</span></h5>
+                            <h6 style="font-weight: 800 !important;">Años de trayectoria institucional</h6>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <br>
                     <h3>Lorem ipsum dolor</h3>
                     <br>
@@ -257,9 +259,9 @@
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
                     <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                         <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="50">50</span></h5>
-                            <h6>Asociados</h6>
+                            <h5 style="font-size: 60px; ">+<span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="10000" data-purecounter-separator="." style="font-weight: 800 !important;">10.000</span></h5>
+                            <h6 style="font-weight: 800 !important;">Empleados directos representados</h6>
                         </div>
                     </div>
                     <br>
@@ -272,12 +274,14 @@
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-couter-wrap d-flex align-items-center justify-content-center">
-                        <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="19">90</span></h5>
-                            <h6>Capacitados</h6>
+                        <div class="inner2">
+                            <h5 style="font-size: 65px;">+<span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="1300" data-purecounter-separator="." style="font-weight: 800 !important;">1.300</span></h5>
+                            <h6 style="font-weight: 800 !important;">Participantes<br> capacitados</h6>
                         </div>
                     </div>
+                    <br>
+                    <br>
                     <br>
                     <h3>Lorem ipsum dolor</h3>
                     <br>
