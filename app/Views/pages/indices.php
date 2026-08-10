@@ -121,8 +121,7 @@
                         <?php endif; ?>
                      </div>
 
-                     <div class="text-center mt-20"
-                        style="display: flex; justify-content: center; gap: 200px; flex-wrap: wrap;">
+                     <div class="botones-informes">
                         <?php if (!empty($indices[0]['informe_mensual'])): ?>
                            <a href="<?= APP_URL ?>/<?= htmlspecialchars($indices[0]['informe_mensual']) ?>" download
                               class="btn-informe-completo" style="color: #fff; background: #0b3d91;">
@@ -363,6 +362,28 @@
 
             .month-card {
                width: 100%;
+            }
+
+            .botones-informes {
+               gap: 15px;
+            }
+            .btn-informe-completo {
+               width: 100%;
+            }
+         }
+
+         /* Estilos para botones de informes */
+         .botones-informes {
+            display: flex;
+            justify-content: center;
+            gap: 200px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+         }
+
+         @media (max-width: 991px) {
+            .botones-informes {
+               gap: 30px;
             }
          }
       </style>

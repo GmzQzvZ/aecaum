@@ -15222,10 +15222,10 @@ header.tv-header-height .tv-header-bar button .menu-text {
   color: #00A3E0;
   font-size: 18px;
   font-weight: 700;
-  margin-left: 100px;
+  margin-left: auto;
   margin-bottom: 10px;
   text-transform: capitalize;
-  text-align: left;
+  text-align: right;
 }
 
 .aecaum-footer-services ul {
@@ -15235,8 +15235,8 @@ header.tv-header-height .tv-header-bar button .menu-text {
 }
 
 .aecaum-footer-services ul li {
-  margin-left: 100px;
   margin-bottom: 14px;
+  text-align: right;
 }
 
 .aecaum-footer-services ul li a {
@@ -15263,7 +15263,6 @@ header.tv-header-height .tv-header-bar button .menu-text {
   margin: 0;
 }
 
-/* Responsive adjustments for footer */
 @media (max-width: 991px) {
   .aecaum-footer {
     padding: 60px 0 0;
@@ -15276,6 +15275,12 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
   .aecaum-footer-contact,
   .aecaum-footer-services {
+    text-align: center;
+  }
+
+  /* En tablet: Contacto y Servicios lado a lado, Centro arriba al 100% */
+  .aecaum-footer-services h4,
+  .aecaum-footer-services ul li {
     text-align: center;
   }
 
@@ -15293,11 +15298,22 @@ header.tv-header-height .tv-header-bar button .menu-text {
     padding: 40px 0 0;
   }
 
-  .aecaum-footer .col-lg-3,
-  .aecaum-footer .col-lg-6 {
+  /* En mobile: todas las columnas al 100% */
+  .aecaum-footer .col-lg-4,
+  .aecaum-footer .col-md-6,
+  .aecaum-footer .col-md-12 {
     width: 100%;
     max-width: 100%;
     flex: 0 0 100%;
+  }
+
+  .aecaum-footer-services h4,
+  .aecaum-footer-services ul li {
+    text-align: center;
+  }
+
+  .aecaum-footer-center {
+    padding-top: 0;
   }
 }
 
@@ -15582,6 +15598,79 @@ header.tv-header-height .tv-header-bar button .menu-text {
   transform-origin: center;
 }
 
+/* Responsive adjustments for tv-about-images-group */
+@media (max-width: 1199px) {
+  .tv-about-images-group {
+    min-height: 600px;
+  }
+
+  .about-img-left,
+  .about-img-right {
+    top: 300px;
+  }
+
+  .about-img-right {
+    right: -20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .tv-about-images-group {
+    min-height: auto;
+    margin-top: 50px;
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .tv-about-images-group img {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+  }
+
+  .about-img-main {
+    width: 100%;
+    transform: scale(1);
+    margin-bottom: 10px;
+  }
+
+  .about-img-left,
+  .about-img-right {
+    width: 48%;
+  }
+}
+
+@media (max-width: 767px) {
+  .tv-about-images-group {
+    min-height: auto;
+    margin-left: 0;
+    gap: 15px;
+    padding-bottom: 30px;
+  }
+
+  .about-img-main {
+    width: 100%;
+    transform: none;
+    border-radius: 30px 0 30px 0;
+    margin-bottom: 0;
+  }
+
+  .about-img-left,
+  .about-img-right {
+    width: 48%;
+    transform: none;
+    border-radius: 20px 0 20px 0;
+  }
+
+  .tv-about-images-group img:hover {
+    transform: translateY(-4px);
+  }
+}
+
 /*=========================================
 =            Single Service Item          =
 =========================================*/
@@ -15589,7 +15678,6 @@ header.tv-header-height .tv-header-bar button .menu-text {
 .single-service-item {
   background: #ffffff;
   margin: 0 25px !important;
-  /* Margen a los lados para hacerlas más delgadas */
   padding: 40px 25px;
   border-radius: 60px 0 60px 0;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
@@ -15625,6 +15713,23 @@ header.tv-header-height .tv-header-bar button .menu-text {
   line-height: 1.6;
   margin: 0;
 }
+
+@media (max-width: 991px) {
+  .single-service-item {
+    margin: 20px 0 !important;
+    padding-top: 10px;
+    /* 20px arriba y abajo, 0 a los lados */
+  }
+}
+
+@media (max-width: 767px) {
+  .single-service-item {
+    margin: 20px 0 !important;
+    padding-top: 10px;
+    /* 20px arriba y abajo, 0 a los lados */
+  }
+}
+
 
 /*=========================================
 =            Network Cards                =
@@ -15818,6 +15923,25 @@ header.tv-header-height .tv-header-bar button .menu-text {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
+}
+
+@media (max-width: 1199px) {
+  .book-list ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .book-list ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .book-list ul {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .book-list li {

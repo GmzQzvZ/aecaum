@@ -131,10 +131,9 @@
     <!-- about-area-end -->
 
     <!-- Service-area-start -->
-
     <div class="tv-service-area gray-bg pt-130 pb-130" style="background-color: #d5ecf5;">
         <div class="container">
-            <div class="row  justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="tv-section-title-box mb-60">
                         <span class="tv-section-subtitle tv-spltv-text tv-spltv-in-right"
@@ -177,10 +176,8 @@
                             comerciales y participá de eventos exclusivos.</p>
                     </div>
                 </div>
-
                 <!-- Salto de línea para separar 3 arriba y 2 abajo con un espacio extra -->
                 <div class="w-100 d-none d-lg-block mb-4"></div>
-
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-service-item mb-30 h-100">
                         <img loading="lazy" src="assets/img/logo/asesoria.png">
