@@ -96,7 +96,11 @@
                      </ul>
                   </li> -->
                   <!-- <li><a href="<?= APP_URL ?>/proyectos">Conciencia Sustentable</a></li> -->
+
                   <li class="destacado"><a href="https://correos.org.ar/asociados/" target="_blank">Asociate</a></li>
+
+                  <li><a href="<?= APP_URL ?>/hackathon">Hackathon</a></li>
+                  
                   <li><a href="<?= APP_URL ?>/contacto">Contacto</a></li>
                </ul>
             </nav>
