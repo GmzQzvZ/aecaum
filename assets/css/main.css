@@ -7909,41 +7909,40 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
 
 /* Logo Image Responsive */
 .tv-header-logo {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-left: -400px;
-  flex: 0 0 auto;
-  width: min(100%, 660px);
-  max-width: 660px;
-  height: 75px;
-  background-image: url('../img/logo/Fondos.png');
-  background-size: 100% 100%;
-  background-position: left;
-  background-repeat: no-repeat;
-  padding: 0 8px 0 0;
-  box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    flex: 0 0 auto;
+    width: min(100%, 660px);
+    max-width: 660px;
+    height: 75px;
+    padding: 0 8px 0 0;
+    box-sizing: border-box;
 }
 
 .tv-header-logo-img {
   width: auto;
-  max-width: 45%;
+  max-width: 400px;
   height: auto;
-  max-height: 100%;
+  max-height: 80px;
   object-fit: contain;
   transition: all 0.3s ease;
   display: block;
-  margin-left: 220px;
+  margin-left: 0 !important;
   z-index: 2;
 }
 
 @media (max-width: 1400px) {
   .tv-header-logo {
     max-width: 600px;
+    margin-left: -250px;
   }
 
   .tv-header-logo-img {
-    max-width: 42%;
+    max-width: 260px;
+    margin-left: -100px !important;
   }
 }
 
@@ -7953,7 +7952,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 40%;
+    max-width: 240px;
+    margin-left: -60px;
   }
 }
 
@@ -7963,7 +7963,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 38%;
+    max-width: 220px;
+    margin-left: -65px;
   }
 }
 
@@ -7973,7 +7974,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 36%;
+    max-width: 200px;
+    margin-left: -70px;
   }
 }
 
@@ -7983,7 +7985,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 34%;
+    max-width: 180px;
+    margin-left: -75px;
   }
 }
 
@@ -7993,7 +7996,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 32%;
+    max-width: 160px;
+    margin-left: -50px;
   }
 }
 
@@ -8003,7 +8007,8 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 30%;
+    max-width: 140px;
+    margin-left: -55px;
   }
 
   .tv-header-right-action {
@@ -8026,8 +8031,66 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    max-width: 58%;
+    max-width: 120px;
     margin-left: 0;
+  }
+}
+
+/* Custom Responsive Breakpoints */
+@media (max-width: 480px) { /* small phones */
+  .tv-header-logo {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tv-header-logo-img {
+    max-width: 120px;
+    margin-left: 10px !important;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) { /* large phones */
+  .tv-header-logo {
+    margin-left: 0;
+  }
+
+  .tv-header-logo-img {
+    max-width: 160px;
+    margin-left: 20px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* tablets */
+  .tv-header-logo {
+    margin-left: 0;
+  }
+
+  .tv-header-logo-img {
+    max-width: 200px;
+    margin-left: 30px !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) { /* laptops */
+  .tv-header-logo {
+    margin-left: 0;
+  }
+
+  .tv-header-logo-img {
+    max-width: 280px;
+    margin-left: 50px !important;
+  }
+}
+
+@media (min-width: 1441px) { /* desktop and wide screens */
+  .tv-header-logo {
+    margin-left: 0;
+  }
+
+  .tv-header-logo-img {
+    max-width: 350px;
+    margin-left: 80px !important;
   }
 }
 
@@ -11898,6 +11961,14 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   background: linear-gradient(90deg, var(--blue-900) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+.tv-slider-active {
+  height: 900px;
+}
+
+.tv-slider-active .swiper-slide {
+  height: 900px;
+}
+
 .tv-slider-bg {
   position: absolute;
   top: 0;
@@ -15014,6 +15085,7 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
   .tv-header-logo-img {
     max-width: 220px;
+    margin-left: -35px;
   }
 
   .tv-header-right-action {
@@ -15045,6 +15117,7 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
   .tv-header-logo-img {
     max-width: 100%;
+    margin-left: -45px;
   }
 
   .tv-header-right-action .social {
@@ -15073,6 +15146,7 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
   .tv-header-logo-img {
     max-width: 100%;
+    margin-left: -55px;
   }
 
   .tv-header-right-action {
@@ -16081,4 +16155,23 @@ header.tv-header-height {
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.03em;
+}
+
+.footer-bloo-link {
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+    text-decoration: none;
+}
+
+.footer-bloo-img {
+    max-width: 100px;
+    height: auto;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-bloo-img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }

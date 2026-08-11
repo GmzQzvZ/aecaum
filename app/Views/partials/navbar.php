@@ -5,8 +5,8 @@
             <div class="row align-items-center">
                <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
-                     <a href="<?= APP_URL ?>/">
-                        <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/logo_3D.png" alt="AECAUM"
+                     <a href="<?= APP_URL ?>/"  >
+                        <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/Logoyfondo2.png" alt="AECAUM"
                            class="tv-header-logo-img">
                      </a>
                   </div>

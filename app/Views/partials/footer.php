@@ -118,3 +118,6 @@
         </div>
     </div>
 </footer>
+<a href="https://www.instagram.com/bloo.mkt/" target="_blank" class="footer-bloo-link">
+    <img src="assets/img/logo/Cierre bloo.png" alt="Bloo Marketing" class="footer-bloo-img">
+</a>

@@ -11,14 +11,70 @@
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="tv-slider-content z-index-1">
                                         <span class="tv-slider-subtitle">LA VOZ DE LA ÚLTIMA MILLA EN ARGENTINA</span>
-                                        <h1 class="tv-slider-title p-relative">Respaldo y potencia
-                                            para la logística
-                                            nacional.
-                                        </h1>
+                                        <h1 class="tv-slider-title p-relative">Respaldo y potencia para la logística
+                                            nacional.</h1>
                                         <div class="tv-slider-text pb-20">
                                             <p>Unimos a las empresas líderes del sector postal y logístico para asegurar
                                                 la competitividad, la innovación y la previsibilidad de tu operación
                                             </p>
+                                        </div>
+                                        <div>
+                                            <a href="<?= APP_URL ?>/contacto" class="tv-btn-primary">
+                                                <span class="btn-wrap">
+                                                    <span class="btn-text1">Sé parte de nosotros</span>
+                                                    <span class="btn-text2">Sé parte de nosotros</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tv-slider-overlay z-index-1 fix p-relative">
+                        <div class="tv-slider-bg" data-background="assets/img/slider/Portada_2.jpeg"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="tv-slider-content z-index-1">
+                                        <span class="tv-slider-subtitle">ÍNDICES MENSUALES DE COSTOS AECAUM</span>
+                                        <h1 class="tv-slider-title p-relative">El termómetro exacto de tu estructura
+                                            operativa.</h1>
+                                        <div class="tv-slider-text pb-20">
+                                            <p>Anticipá escenarios y protegé tu rentabilidad con nuestros Índices de
+                                                Última Milla
+                                                y Servicios Postales, auditados y homologados mensualmente por la UTN.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <a href="<?= APP_URL ?>/contacto" class="tv-btn-primary">
+                                                <span class="btn-wrap">
+                                                    <span class="btn-text1">Sé parte de nosotros</span>
+                                                    <span class="btn-text2">Sé parte de nosotros</span>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="tv-slider-overlay z-index-1 fix p-relative">
+                        <div class="tv-slider-bg" data-background="assets/img/slider/Slider.png"></div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6">
+                                    <div class="tv-slider-content z-index-1">
+                                        <span class="tv-slider-subtitle">ASOCIATE A AECAUM</span>
+                                        <h1 class="tv-slider-title p-relative">Sumate a la red que mueve al país.</h1>
+                                        <div class="tv-slider-text pb-20">
+                                            <p>Impulsá el crecimiento de tu empresa con el respaldo institucional y
+                                                las herramientas técnicas estratégicas para liderar el futuro de la
+                                                última milla.</p>
                                         </div>
                                         <div>
                                             <a href="<?= APP_URL ?>/contacto" class="tv-btn-primary">
@@ -220,10 +276,10 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center" >
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                         <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
-                                    data-purecounter-end="43">43</span>%</h5>
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    style="font-weight: 800 !important;" data-purecounter-end="43">43</span>%</h5>
                             <h6 style="font-weight: 800 !important;">del volumen total de paquetería</h6>
                         </div>
                     </div>
@@ -236,10 +292,10 @@
                         cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center" >
+                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
                         <div class="inner2">
-                            <h5>+<span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
-                                    data-purecounter-end="22">22</span></h5>
+                            <h5>+<span class="purecounter" data-purecounter-duration="0"
+                                    style="font-weight: 800 !important;" data-purecounter-end="22">22</span></h5>
                             <h6 style="font-weight: 800 !important;">Años de trayectoria institucional</h6>
                         </div>
                     </div>
@@ -257,7 +313,8 @@
                     <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                         <div class="inner">
                             <h5 style="font-size: 60px; ">+<span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="10000" data-purecounter-separator="." style="font-weight: 800 !important;">10.000</span></h5>
+                                    data-purecounter-end="10000" data-purecounter-separator="."
+                                    style="font-weight: 800 !important;">10.000</span></h5>
                             <h6 style="font-weight: 800 !important;">Empleados directos representados</h6>
                         </div>
                     </div>
@@ -273,7 +330,8 @@
                     <div class="single-couter-wrap d-flex align-items-center justify-content-center">
                         <div class="inner2">
                             <h5 style="font-size: 65px;">+<span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="1300" data-purecounter-separator="." style="font-weight: 800 !important;">1.300</span></h5>
+                                    data-purecounter-end="1300" data-purecounter-separator="."
+                                    style="font-weight: 800 !important;">1.300</span></h5>
                             <h6 style="font-weight: 800 !important;">Participantes<br> capacitados</h6>
                         </div>
                     </div>
@@ -742,14 +800,13 @@
             ['Logos-52.png', 'portal'],
             ['Logos-53.png', 'tranas-ban'],
             ['Logos-54.png', 'raiconet'],
-            ['Logos-55.png', 'qb andina'],
-            ['Logos-56.png', 'interpost'],
-            ['Logos-57.png', 'stc'],
-            ['Logos-58.png', 'postalplus'],
-            ['Logos-59.png', 'net courier'],
-            ['Logos-60.png', 'servijur'],
-            ['Logos-61.png', 'lhs'],
-            ['Logos-62.png', 'fast mail'],
+            ['logos-56.png', 'interpost'],
+            ['logos-57.png', 'stc'],
+            ['logos-58.png', 'postalplus'],
+            ['logos-59.png', 'net courier'],
+            ['logos-60.png', 'servijur'],
+            ['logos-61.png', 'lhs'],
+            ['logos-62.png', 'fast mail'],
             ['Logos-68.png', 'translyf'],
             ['Logos-69.png', 'cneo'],
             ['Logos-70.png', 'bat']
