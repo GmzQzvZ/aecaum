@@ -37,10 +37,10 @@
          <!-- Textos introductorios -->
          <div class="row text-center mb-40">
             <div class="col-lg-12">
-               <h4 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informes</h4>
-               <h1>Índices de Mayores Costos AECAUM</h1>
-               <h2 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Gestión eficiente basada en evidencia técnica</h2>
-               <div style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6; text-align: justify;">
+               <h4 class="tv-section-subtitle wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informes</h4>
+               <h1 class="wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">Índices de Mayores Costos AECAUM</h1>
+               <h2 class="tv-section-subtitle wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Gestión eficiente basada en evidencia técnica</h2>
+               <div class="wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s" style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; line-height: 1.6; text-align: justify;">
                   <p>En un entorno económico dinámico, la capacidad de dimensionar con precisión el impacto de la estructura de costos es una 
                      ventaja competitiva fundamental. Desde AECAUM, desarrollamos y monitoreamos mensualmente nuestros Índices de 
                      Mayores Costos (IMC), una herramienta técnica diseñada para reflejar la realidad operativa de nuestras empresas.</p>
@@ -285,7 +285,7 @@
          /* Tarjetas de meses */
          .month-cards {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 20px;
             flex-wrap: wrap;
          }

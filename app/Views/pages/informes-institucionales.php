@@ -32,11 +32,11 @@
       <div class="tv-about-area z-index-1 p-relative pt-130 pb-130 white-bg">
          <div class="row text-center mb-40">
             <div class="col-lg-12">
-               <h4 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informe</h4>
-               <h1>Informe Anual de Actividad</h1>
-               <h2 class="tv-section-subtitle" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">
+               <h4 class="tv-section-subtitle wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">Informe</h4>
+               <h1 class="wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">Informe Anual de Actividad</h1>
+               <h2 class="tv-section-subtitle wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s" style="font-size: 24px; color: #00a3e0; font-weight: 700; margin-bottom: 15px;">
                   La radiografía más completa de la logística de última milla en Argentina</h2>
-               <div style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; text-align: justify;">
+               <div class="wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s" style="font-size: 16px; color: #6b7280; max-width: 900px; margin: 0 auto; text-align: justify;">
                   <p>Aquí presentamos nuestro Informe Anual, una herramienta fundamental diseñada para entender cómo se mueve nuestra industria 
                      y cuáles son las fuerzas que están redefiniendo el mercado postal y de paquetería en el país.</p>
 

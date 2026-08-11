@@ -1076,7 +1076,7 @@ header.menu-open {
   width: 100%;
   bottom: 0;
   box-shadow: 0 16px -32px 0 rgba(0, 0, 0, 0.8);
-  background-color: #0315389d;
+  background-color: #0a1b3be0;
   /* Azul muy oscuro según mockup */
   z-index: 9999;
   /* No flex layout – image will be positioned absolutely behind content */
@@ -1743,9 +1743,9 @@ only screen and (min-width: 768px) and (max-width: 991px),
 
 .tv-breadcrumb-list i {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.71;
-  color: var var(--blue-500);
+  color: var(--blue-500);
   text-transform: capitalize;
   font-style: normal;
 }
@@ -7933,7 +7933,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   object-fit: contain;
   transition: all 0.3s ease;
   display: block;
-  margin-left: 155px;
+  margin-left: 220px;
   z-index: 2;
 }
 
@@ -15039,25 +15039,25 @@ header.tv-header-height .tv-header-bar button .menu-text {
   }
 
   .tv-header-logo {
-    max-width: 360px;
-    height: 86px;
+    max-width: 250px;
+    height: auto;
   }
 
   .tv-header-logo-img {
-    max-width: 60%;
+    max-width: 100%;
   }
 
   .tv-header-right-action .social {
-    font-size: 32px !important;
+    font-size: 24px !important;
   }
 
   header.tv-header-height .tv-header-bar button .menu-icon {
-    height: 54px !important;
-    width: 54px !important;
+    height: 44px !important;
+    width: 44px !important;
   }
 
   header.tv-header-height .tv-header-bar button .menu-icon i {
-    font-size: 28px !important;
+    font-size: 24px !important;
   }
 
   header.tv-header-height .tv-header-bar button .menu-text {
@@ -15067,13 +15067,12 @@ header.tv-header-height .tv-header-bar button .menu-text {
 
 @media (max-width: 576px) {
   .tv-header-logo {
-    max-width: 280px;
-    height: 72px;
+    max-width: 180px;
+    height: auto;
   }
 
   .tv-header-logo-img {
-
-    max-width: 60%;
+    max-width: 100%;
   }
 
   .tv-header-right-action {
@@ -15082,7 +15081,17 @@ header.tv-header-height .tv-header-bar button .menu-text {
   }
 
   .tv-header-right-action .social {
-    font-size: 28px !important;
+    font-size: 20px !important;
+    margin: 0 4px !important;
+  }
+
+  header.tv-header-height .tv-header-bar button .menu-icon {
+    height: 38px !important;
+    width: 38px !important;
+  }
+
+  header.tv-header-height .tv-header-bar button .menu-icon i {
+    font-size: 20px !important;
   }
 }
 

@@ -220,10 +220,10 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center" >
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                         <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
-                                    data-purecounter-end="43">43</span>%</h5>
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    style="font-weight: 800 !important;" data-purecounter-end="43">43</span>%</h5>
                             <h6 style="font-weight: 800 !important;">del volumen total de paquetería</h6>
                         </div>
                     </div>
@@ -236,10 +236,10 @@
                         cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center" >
+                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
                         <div class="inner2">
-                            <h5>+<span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
-                                    data-purecounter-end="22">22</span></h5>
+                            <h5>+<span class="purecounter" data-purecounter-duration="0"
+                                    style="font-weight: 800 !important;" data-purecounter-end="22">22</span></h5>
                             <h6 style="font-weight: 800 !important;">Años de trayectoria institucional</h6>
                         </div>
                     </div>
@@ -257,7 +257,8 @@
                     <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                         <div class="inner">
                             <h5 style="font-size: 60px; ">+<span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="10000" data-purecounter-separator="." style="font-weight: 800 !important;">10.000</span></h5>
+                                    data-purecounter-end="10000" data-purecounter-separator="."
+                                    style="font-weight: 800 !important;">10.000</span></h5>
                             <h6 style="font-weight: 800 !important;">Empleados directos representados</h6>
                         </div>
                     </div>
@@ -273,7 +274,8 @@
                     <div class="single-couter-wrap d-flex align-items-center justify-content-center">
                         <div class="inner2">
                             <h5 style="font-size: 65px;">+<span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="1300" data-purecounter-separator="." style="font-weight: 800 !important;">1.300</span></h5>
+                                    data-purecounter-end="1300" data-purecounter-separator="."
+                                    style="font-weight: 800 !important;">1.300</span></h5>
                             <h6 style="font-weight: 800 !important;">Participantes<br> capacitados</h6>
                         </div>
                     </div>
@@ -722,78 +724,49 @@
                 </a>
             </div>
             <div class="swiper-container tv-brand-active">
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy" 
-                            src="assets/img/logo/logos.png" alt="logo de epsa"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-44.png" alt="logo de entregar"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-45.png" alt="logo de skynde"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-46.png" alt="logo de mailex"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-47.png" alt="logo de webpack"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-48.png" alt="logo de servermar"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-49.png" alt="logo de ema" 
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-50.png" alt="logo de dt logistica"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-51.png" alt="logo de NyG" 
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-52.png" alt="logo de portal"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-53.png" alt="logo de tranas-ban"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-54.png" alt="logo de raiconet"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-55.png" alt="logo de qb andina"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-56.png" alt="logo de interpost"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-57.png" alt="logo de stc"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-58.png" alt="logo de postalplus"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-59.png" alt="logo de net courier"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-60.png" alt="logo de servijur"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-61.png" alt="logo de lhs"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-62.png" alt="logo de fast mail"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-68.png" alt="logo de translyf"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-69.png" alt="logo de cneo"
-                            style="max-height: 80px; width: auto;"></div>
-                    <div class="swiper-slide" style="width: auto;"><img loading="lazy"
-                            src="assets/img/logo/Logos-70.png" alt="logo de bat"
-                            style="max-height: 80px; width: auto;"></div>
-                </div>
+                <div class="swiper-wrapper align-items-center" id="logos-container"></div>
             </div>
         </div>
     </div>
     <!-- brand-area-end -->
+
+    <script>
+        const logos = [
+            ['logos.png', 'epsa'],
+            ['Logos-44.png', 'entregar'],
+            ['Logos-45.png', 'skynde'],
+            ['Logos-46.png', 'mailex'],
+            ['Logos-47.png', 'webpack'],
+            ['Logos-48.png', 'servermar'],
+            ['Logos-49.png', 'ema'],
+            ['Logos-50.png', 'dt logistica'],
+            ['Logos-51.png', 'NyG'],
+            ['Logos-52.png', 'portal'],
+            ['Logos-53.png', 'tranas-ban'],
+            ['Logos-54.png', 'raiconet'],
+            ['Logos-55.png', 'qb andina'],
+            ['Logos-56.png', 'interpost'],
+            ['Logos-57.png', 'stc'],
+            ['Logos-58.png', 'postalplus'],
+            ['Logos-59.png', 'net courier'],
+            ['Logos-60.png', 'servijur'],
+            ['Logos-61.png', 'lhs'],
+            ['Logos-62.png', 'fast mail'],
+            ['Logos-68.png', 'translyf'],
+            ['Logos-69.png', 'cneo'],
+            ['Logos-70.png', 'bat']
+        ];
+
+        const container = document.getElementById('logos-container');
+
+        container.innerHTML = logos.map(([image, name]) => `
+            <div class="swiper-slide">
+                <img
+                    loading="lazy"
+                    src="assets/img/logo/${image}"
+                    alt="logo de ${name}"
+                >
+            </div>
+        `).join('');
+
+    </script>

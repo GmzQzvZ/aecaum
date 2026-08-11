@@ -70,7 +70,7 @@
             <div class="preloader-container">
                 <!-- Background buildings -->
                 <div class="preloader-bg">
-                    <img loading="lazy" src="assets/img/icon/intro2.png" alt="currier">
+                    <img loading="lazy" src="assets/img/INTRO2.png" alt="currier">
                 </div>
 
                 <!-- Content -->

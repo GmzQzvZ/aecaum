@@ -12,14 +12,16 @@
                   </div>
                   <div
                      class="tv-header-right-action d-flex justify-content-end justify-content-md-center align-items-center">
-                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social">
+                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank"
+                        class="social d-none d-md-inline-block">
                         <i class="ti ti-brand-linkedin"></i>
                      </a>
-                     <span class="separator" style="color: #00aae6 !important;">•</span>
-                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social">
+                     <span class="separator d-none d-md-inline-block" style="color: #00aae6 !important;">•</span>
+                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank"
+                        class="social d-none d-md-inline-block">
                         <i class="ti ti-brand-instagram"></i>
                      </a>
-                     <span class="separator" style="color: #00aae6 !important;">|</span>
+                     <span class="separator d-none d-md-inline-block" style="color: #00aae6 !important;">|</span>
                      <?php
                      if (isLoggedIn()):
                         $currentUser = getCurrentUser();
@@ -38,10 +40,12 @@
                            </span>
                         </a>
                      <?php endif; ?>
-                     <span class="separator" style="font-size: 22px; margin: 0 10px; color: #00aae6 !important;">|</span>
+                     <span class="separator"
+                        style="font-size: 22px; margin: 0 10px; color: #00aae6 !important;">|</span>
                      <div class="tv-header-bar">
                         <button class="tv-menu-bar" type="button">
-                           <span class="menu-icon" style="color: #00aae6 !important;"><i id="menu-toggle-icon" class="ti ti-menu-2"></i></span>
+                           <span class="menu-icon" style="color: #00aae6 !important;"><i id="menu-toggle-icon"
+                                 class="ti ti-menu-2"></i></span>
                            <span class="menu-text" style="color: #00aae6 !important;">Menú</span>
                         </button>
                      </div>
@@ -96,6 +100,35 @@
                   <li><a href="<?= APP_URL ?>/contacto">Contacto</a></li>
                </ul>
             </nav>
+            <div class="offcanvas-mobile-extras d-block d-md-none mt-40">
+               <?php
+               if (isLoggedIn()):
+                  $currentUser = getCurrentUser();
+                  $userName = $currentUser['name'] ?? 'Mi panel';
+                  ?>
+                  <a href="<?= APP_URL ?>/dashboard" class="tv-btn-primary mb-30"
+                     style="display: block; text-align: center; border-radius: 8px;">
+                     <span class="btn-wrap" style="display: inline-block;">
+                        <span class="btn-text">Hola, <?= htmlspecialchars($userName) ?></span>
+                     </span>
+                  </a>
+               <?php else: ?>
+                  <a href="<?= APP_URL ?>/login" class="tv-btn-primary mb-30"
+                     style="display: block; text-align: center; border-radius: 8px;">
+                     <span class="btn-wrap" style="display: inline-block;">
+                        <span class="btn-text">Login</span>
+                     </span>
+                  </a>
+               <?php endif; ?>
+               <div class="offcanvas-socials" style="display: flex; justify-content: center; gap: 20px;">
+                  <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social">
+                     <i class="ti ti-brand-linkedin" style="font-size: 32px; color: #00aae6;"></i>
+                  </a>
+                  <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social">
+                     <i class="ti ti-brand-instagram" style="font-size: 32px; color: #00aae6;"></i>
+                  </a>
+               </div>
+            </div>
          </div>
       </div>
    </div>

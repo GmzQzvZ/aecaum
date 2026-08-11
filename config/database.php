@@ -26,10 +26,17 @@ function loadEnv($file)
 }
 loadEnv(__DIR__ . '/../.env');
 
-define('DB_HOST', getenv('DB_HOST') ?: 'aecaum.correos.org.ar');
-define('DB_USER', getenv('DB_USER') ?: 'correos_adminaecaum');
-define('DB_PASS', getenv('DB_PASS') ?: 'aecaum_db2026*');
-define('DB_NAME', getenv('DB_NAME') ?: 'correos_aecaum_db');
+//desarrollo
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'aecaum_db');
+
+//produccion
+// define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+// define('DB_USER', getenv('DB_USER') ?: 'correos_adminaecaum');
+// define('DB_PASS', getenv('DB_PASS') ?: 'aecaum_db2026*');
+// define('DB_NAME', getenv('DB_NAME') ?: 'correos_aecaum_db');
 
 // Configuración de JWT
 define('JWT_SECRET', getenv('JWT_SECRET') ?: 'default_secret_change_in_production');
