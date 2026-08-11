@@ -77,9 +77,9 @@ class PageController extends BaseController {
         ]);
     }
 
-    public function faq(): void {
-        $this->render('pages/faq', [
-            'pageTitle' => 'Preguntas Frecuentes | AECAUM',
+    public function hackathon(): void {
+        $this->render('pages/hackathon', [
+            'pageTitle' => 'hackathon | AECAUM',
         ]);
     }
 

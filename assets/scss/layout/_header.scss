@@ -6,115 +6,136 @@
 
 /* Logo Image Responsive */
 .tv-header-logo {
+  --tv-logo-height: 75px;
+  --tv-logo-width: 320px;
   display: flex;
   align-items: center;
+  position: relative;
+  height: var(--tv-logo-height);
+  isolation: isolate;
+}
+
+.tv-header-logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 100%;
+  bottom: 0;
+  width: 100vw;
+  background: #fff;
+  z-index: -1;
 }
 
 .tv-header-logo-img {
   width: auto;
-  max-width: 320px;
-  height: auto;
-  max-height: 80px;
+  max-width: none;
+  height: var(--tv-logo-height);
+  max-height: 100%;
   object-fit: contain;
   transition: all 0.3s ease;
   display: block;
-  margin-left: -50px;
+  margin-left: -70px;
   z-index: 2;
 }
 
 /* Para pantallas grandes (24"+) */
 @media #{$xxxl} {
+  .tv-header-logo {
+    --tv-logo-width: 350px;
+  }
+
   .tv-header-logo-img {
-    max-width: 350px;
-    margin-left: -60px;
+    margin-left: -80px;
   }
 }
 
 @media #{$xxl} {
   .tv-header-logo {
+    --tv-logo-width: 260px;
     max-width: 600px;
   }
 
   .tv-header-logo-img {
-    max-width: 260px;
-    margin-left: -55px;
+    margin-left: -75px;
   }
 }
 
 @media #{$xl} {
   .tv-header-logo {
+    --tv-logo-width: 240px;
     max-width: 560px;
   }
 
   .tv-header-logo-img {
-    max-width: 240px;
-    margin-left: -60px;
+    margin-left: -80px;
   }
 }
 
 @media #{$lg} {
   .tv-header-logo {
+    --tv-logo-width: 220px;
     max-width: 520px;
   }
 
   .tv-header-logo-img {
-    max-width: 220px;
-    margin-left: -65px;
+    margin-left: -85px;
   }
 }
 
 @media #{$md} {
   .tv-header-logo {
+    --tv-logo-width: 200px;
     max-width: 480px;
   }
 
   .tv-header-logo-img {
-    max-width: 200px;
-    margin-left: -40px;
+    margin-left: -60px;
   }
 }
 
 @media #{$sm} {
   .tv-header-logo {
+    --tv-logo-width: 180px;
     max-width: 420px;
   }
 
   .tv-header-logo-img {
-    max-width: 180px;
-    margin-left: -45px;
+    margin-left: -65px;
   }
 }
 
 @media #{$xs} {
   .tv-header-logo {
+    --tv-logo-width: 160px;
     max-width: 380px;
   }
 
   .tv-header-logo-img {
-    max-width: 160px;
-    margin-left: -50px;
+    margin-left: -70px;
   }
 }
 
 @media (max-width: 576px) {
   .tv-header-logo {
+    --tv-logo-height: 62px;
+    --tv-logo-width: 140px;
     max-width: 340px;
   }
 
   .tv-header-logo-img {
-    max-width: 140px;
-    margin-left: -55px;
+    margin-left: -5px;
   }
 }
 
 @media (max-width: 500px) {
   .tv-header-logo {
+    --tv-logo-height: 60px;
+    --tv-logo-width: 120px;
     justify-content: center;
     margin-left: -10px;
   }
 
   .tv-header-logo-img {
-    max-width: 120px;
     margin-left: 0;
   }
 }
@@ -122,56 +143,58 @@
 /* Custom Responsive Breakpoints */
 @media (max-width: 480px) { /* small phones */
   .tv-header-logo {
+    --tv-logo-height: 60px;
+    --tv-logo-width: 100px;
     margin-left: -100px;
   }
 
   .tv-header-logo-img {
-    max-width: 100px;
-    margin-left: -80px !important;
+    margin-left: -15px !important;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) { /* large phones */
   .tv-header-logo {
+    --tv-logo-height: 62px;
+    --tv-logo-width: 140px;
     margin-left: -150px;
   }
 
   .tv-header-logo-img {
-    max-width: 140px;
-    margin-left: -90px !important;
+    margin-left: -25px !important;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) { /* tablets */
   .tv-header-logo {
+    --tv-logo-width: 180px;
     margin-left: -200px;
   }
 
   .tv-header-logo-img {
-    max-width: 180px;
-    margin-left: -100px !important;
+    margin-left: -115px !important;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1440px) { /* laptops */
   .tv-header-logo {
+    --tv-logo-width: 220px;
     margin-left: -220px;
   }
 
   .tv-header-logo-img {
-    max-width: 220px;
-    margin-left: -110px !important;
+    margin-left: -125px !important;
   }
 }
 
 @media (min-width: 1441px) { /* desktop and wide screens */
   .tv-header-logo {
+    --tv-logo-width: 280px;
     margin-left: -350px;
   }
 
   .tv-header-logo-img {
-    max-width: 280px;
-    margin-left: -120px !important;
+    margin-left: -135px !important;
   }
 }
 .tv-header-transparent {

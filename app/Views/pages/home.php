@@ -283,13 +283,6 @@
                             <h6 style="font-weight: 800 !important;">del volumen total de paquetería</h6>
                         </div>
                     </div>
-                    <br>
-                    <h3>Lorem ipsum dolor</h3>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit,
-                        sed do eiusmod tempor in
-                        cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
                     <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
@@ -299,15 +292,6 @@
                             <h6 style="font-weight: 800 !important;">Años de trayectoria institucional</h6>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                    <br>
-                    <h3>Lorem ipsum dolor</h3>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit,
-                        sed do eiusmod tempor in
-                        cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
                     <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
@@ -319,12 +303,6 @@
                         </div>
                     </div>
                     <br>
-                    <h3>Lorem ipsum dolor</h3>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit,
-                        sed do eiusmod tempor in
-                        cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-couter-wrap d-flex align-items-center justify-content-center">
@@ -335,15 +313,6 @@
                             <h6 style="font-weight: 800 !important;">Participantes<br> capacitados</h6>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                    <br>
-                    <h3>Lorem ipsum dolor</h3>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit,
-                        sed do eiusmod tempor in
-                        cididunt ut labore et dolore</p>
                 </div>
             </div>
         </div>
@@ -633,7 +602,7 @@
                                             <div>
                                                 <h2 class="team-name"><a href="team-details.html">Arq. Diego M. Cash</a>
                                                 </h2>
-                                                <p class="designation">Web Developer</p>
+                                                <p class="designation">Vicepresidente 2°</p>
                                                 <p class="designation"><strong>ESETECE S.A.</strong></p>
                                             </div>
                                         </div>
@@ -800,6 +769,7 @@
             ['Logos-52.png', 'portal'],
             ['Logos-53.png', 'tranas-ban'],
             ['Logos-54.png', 'raiconet'],
+            ['Logos-55.png', 'QB andina'],
             ['logos-56.png', 'interpost'],
             ['logos-57.png', 'stc'],
             ['logos-58.png', 'postalplus'],

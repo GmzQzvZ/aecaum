@@ -65,6 +65,7 @@ $this->match('GET|POST', 'admin/informes/', AdminController::class, 'informes');
         $this->get('team',                            PageController::class, 'team');
         $this->get('blog',                            PageController::class, 'blogList');
         $this->get('blog-details',                    PageController::class, 'blogDetails');
+        $this->get('hackathon',                       PageController::class, 'hackathon');
 
         // --- Secciones institucionales (contenido dinámico) ---
         $contentPages = require APP_PATH . '/config/content_pages.php';

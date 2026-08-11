@@ -55,6 +55,10 @@
         width: 400px;
         padding: 40px;
     }
+    @media (max-width: 768px) {
+        top: 62px;
+        min-height: calc(100vh - 62px);
+    }
     &.opened {
       right: 0;
       -webktv-transition: all .4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
