@@ -220,10 +220,10 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center" >
                         <div class="inner">
-                            <h5><span class="purecounter" data-purecounter-duration="0"
-                                    style="font-weight: 800 !important;" data-purecounter-end="43">43</span>%</h5>
+                            <h5><span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
+                                    data-purecounter-end="43">43</span>%</h5>
                             <h6 style="font-weight: 800 !important;">del volumen total de paquetería</h6>
                         </div>
                     </div>
@@ -236,10 +236,10 @@
                         cididunt ut labore et dolore</p>
                 </div>
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
+                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center" >
                         <div class="inner2">
-                            <h5>+<span class="purecounter" data-purecounter-duration="0"
-                                    style="font-weight: 800 !important;" data-purecounter-end="22">22</span></h5>
+                            <h5>+<span class="purecounter" data-purecounter-duration="0" style="font-weight: 800 !important;"
+                                    data-purecounter-end="22">22</span></h5>
                             <h6 style="font-weight: 800 !important;">Años de trayectoria institucional</h6>
                         </div>
                     </div>
@@ -257,8 +257,7 @@
                     <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
                         <div class="inner">
                             <h5 style="font-size: 60px; ">+<span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="10000" data-purecounter-separator="."
-                                    style="font-weight: 800 !important;">10.000</span></h5>
+                                    data-purecounter-end="10000" data-purecounter-separator="." style="font-weight: 800 !important;">10.000</span></h5>
                             <h6 style="font-weight: 800 !important;">Empleados directos representados</h6>
                         </div>
                     </div>
@@ -274,8 +273,7 @@
                     <div class="single-couter-wrap d-flex align-items-center justify-content-center">
                         <div class="inner2">
                             <h5 style="font-size: 65px;">+<span class="purecounter" data-purecounter-duration="0"
-                                    data-purecounter-end="1300" data-purecounter-separator="."
-                                    style="font-weight: 800 !important;">1.300</span></h5>
+                                    data-purecounter-end="1300" data-purecounter-separator="." style="font-weight: 800 !important;">1.300</span></h5>
                             <h6 style="font-weight: 800 !important;">Participantes<br> capacitados</h6>
                         </div>
                     </div>
