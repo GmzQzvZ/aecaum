@@ -4,6 +4,7 @@
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <title><?= htmlspecialchars($pageTitle ?? APP_NAME) ?></title>
+   <meta name="robots" content="noindex, nofollow">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="shortcut icon" type="image/x-icon" href="<?= ASSETS_URL ?>/img/favicon.ico">
    <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/bootstrap.min.css">

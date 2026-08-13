@@ -4,21 +4,95 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><?= htmlspecialchars($pageTitle ?? 'AECAUM - Asociación de Empresas de Correo de Argentina Última Milla') ?>
-    </title>
-    <meta name="description"
-        content="<?= htmlspecialchars($pageDescription ?? 'AECAUM representa institucionalmente al sector de correos privados de la última milla en Argentina.') ?>">
+    <title><?= htmlspecialchars($pageTitle ?? 'AECAUM - Asociación de Empresas de Correo de Argentina Última Milla') ?></title>
+    <meta name="description" content="<?= htmlspecialchars($pageDescription ?? 'AECAUM representa institucionalmente al sector de correos privados de la última milla en Argentina.') ?>">
+    <meta name="keywords" content="<?= htmlspecialchars($pageKeywords ?? 'AECAUM, correo privado, ultima milla, logistica argentina, e-commerce, indices postales, envios paquete, correo postal argentina') ?>">
+    <meta name="robots" content="<?= htmlspecialchars($metaRobots ?? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="AECAUM - Asociación de Empresas de Correo de Argentina Última Milla">
+
+    <?php 
+        $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http') . '://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . ($_SERVER['REQUEST_URI'] ?? '');
+        $canonical = $canonicalUrl ?? $currentUrl;
+        $ogImg = $ogImage ?? (ASSETS_URL . '/img/logo/AECAUM PORTADA.png');
+    ?>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?= htmlspecialchars($canonical) ?>">
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="<?= htmlspecialchars($ogType ?? 'website') ?>">
+    <meta property="og:site_name" content="AECAUM">
+    <meta property="og:title" content="<?= htmlspecialchars($pageTitle ?? 'AECAUM - Asociación de Empresas de Correo de Argentina Última Milla') ?>">
+    <meta property="og:description" content="<?= htmlspecialchars($pageDescription ?? 'AECAUM representa institucionalmente al sector de correos privados de la última milla en Argentina.') ?>">
+    <meta property="og:url" content="<?= htmlspecialchars($canonical) ?>">
+    <meta property="og:image" content="<?= htmlspecialchars($ogImg) ?>">
+    <meta property="og:locale" content="es_AR">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?= htmlspecialchars($pageTitle ?? 'AECAUM - Asociación de Empresas de Correo de Argentina Última Milla') ?>">
+    <meta name="twitter:description" content="<?= htmlspecialchars($pageDescription ?? 'AECAUM representa institucionalmente al sector de correos privados de la última milla en Argentina.') ?>">
+    <meta name="twitter:image" content="<?= htmlspecialchars($ogImg) ?>">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "<?= BASE_URL ?>/#organization",
+          "name": "AECAUM - Asociación de Empresas de Correo de Argentina Última Milla",
+          "alternateName": "AECAUM",
+          "url": "<?= BASE_URL ?>/",
+          "logo": "<?= ASSETS_URL ?>/img/logo/AECAUM PORTADA.png",
+          "description": "Asociación que representa a las empresas líderes del sector postal y de logística de última milla en la República Argentina.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "AR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["Spanish"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "<?= BASE_URL ?>/#website",
+          "url": "<?= BASE_URL ?>/",
+          "name": "AECAUM",
+          "publisher": {
+            "@id": "<?= BASE_URL ?>/#organization"
+          },
+          "inLanguage": "es-AR"
+        }
+      ]
+    }
+    </script>
+
+    <?php if (defined('GA_MEASUREMENT_ID') && GA_MEASUREMENT_ID): ?>
+    <!-- Google Analytics 4 (GA4) / SEM Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<?= GA_MEASUREMENT_ID ?>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '<?= GA_MEASUREMENT_ID ?>');
+    </script>
+    <?php endif; ?>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="<?= ASSETS_URL ?>/img/favicon.ico">
 
     <!-- CSS (rutas absolutas para que funcionen en cualquier sub-ruta) -->
     <?php
-    function assetV(string $path): string
-    {
-        $full = $_SERVER['DOCUMENT_ROOT'] . '/aecaum/' . ltrim($path, '/');
-        return file_exists($full) ? '?v=' . filemtime($full) : '?v=1';
+    if (!function_exists('assetV')) {
+        function assetV(string $path): string
+        {
+            $full = ROOT_PATH . '/' . ltrim($path, '/');
+            return file_exists($full) ? '?v=' . filemtime($full) : '?v=1';
+        }
     }
     ?>
     <link rel="stylesheet" href="<?= ASSETS_URL ?>/css/bootstrap.min.css">

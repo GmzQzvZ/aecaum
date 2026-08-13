@@ -1,0 +1,36 @@
+# robots.txt para AECAUM (Asociación de Empresas de Correo de Argentina Última Milla)
+User-agent: *
+
+# Permitir indexación de rutas públicas
+Allow: /
+Allow: /home
+Allow: /about
+Allow: /nosotros
+Allow: /contact
+Allow: /contacto
+Allow: /faq
+Allow: /indices
+Allow: /informes-institucionales
+Allow: /network
+Allow: /service
+Allow: /project
+Allow: /proyectos
+Allow: /blog
+Allow: /hackathon
+Allow: /assets/
+
+# Bloquear indexación de áreas privadas y administrativas
+Disallow: /admin/
+Disallow: /admin
+Disallow: /dashboard/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /logout
+Disallow: /recuperar-clave
+Disallow: /forgot-password
+Disallow: /reset-password
+Disallow: /reset-clave
+Disallow: /documento/
+
+# Ubicación oficial del Mapa de Sitio XML
+Sitemap: /sitemap.xml

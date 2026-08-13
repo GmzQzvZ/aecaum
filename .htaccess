@@ -1,11 +1,11 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Ajustar al nombre de la carpeta del proyecto en htdocs
-RewriteBase /aecaum/
-
-# Ignorar archivos o directorios reales
+# Ignorar archivos o directorios reales existentes
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# Redirigir todo lo demás a index.php
-RewriteRule ^(.*)$ index.php [QSA,L]
+# Redirigir todas las peticiones a index.php
+# Esto funciona en localhost y en producción
+RewriteRule ^ index.php [QSA,L]
+</IfModule>

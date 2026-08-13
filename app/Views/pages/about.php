@@ -114,27 +114,7 @@
             </div>
 
             <div class="p-relative mt-60 text-end d-flex justify-content-end align-items-center">
-               <div
-                  style="position: absolute; left: 0px; z-index: 2; width: 180px; height: 180px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                  <div
-                     style="position: absolute; width: 100%; height: 100%; text-align: center; font-size: 12px; color: #00a4e4; font-weight: bold; transform: rotate(-45deg);">
-                     <!-- Placeholder para el texto circular -->
-                     <svg viewBox="0 0 100 100" style="width: 100%; height: 100%; animation: spin 10s linear infinite;">
-                        <path d="M 50,50 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" id="circleText" fill="none" />
-                        <text>
-                           <textPath href="#circleText" fill="#00a4e4" font-size="12px" letter-spacing="3px">
-                              consectetur
-                              Lorem ipsum dolor sit amet,</textPath>
-                        </text>
-                     </svg>
-                  </div>
-                  <div
-                     style="width: 100px; height: 100px; background-color: #00a4e4; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 38px; font-weight: bold; z-index: 3;">
-                     +25
-                  </div>
-               </div>
-               <img loading="lazy" src="assets/img/about/about4.jpg" alt=""
-                  style="width: 55%; border-radius: 50px 0 50px 0;">
+               <img loading="lazy" src="assets/img/about/about4.jpg" alt="" style="width: 55%; border-radius: 50px 0 50px 0;">
             </div>
          </div>
       </div>
@@ -143,74 +123,51 @@
 <!-- about-area-end -->
 
 <!-- counter-area-start -->
-<br>
-<br>
 <div class="tv-counter-area pb-130">
-   <div class="container">
-      <div class="row justify-content-center align-items-center">
-         <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
-            <div class="single-couter-wrap mt-60   d-flex align-items-center justify-content-center">
-               <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="25">+25</span></h5>
-                  <h6>Años de experiencia</h6>
-               </div>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
+                        <div class="inner">
+                            <h5><span class="purecounter" data-purecounter-duration="0"
+                                    style="font-weight: 800 !important;" data-purecounter-end="43">43</span>%</h5>
+                            <h6 style="font-weight: 800 !important;">del volumen total de paquetería</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
+                    <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
+                        <div class="inner2">
+                            <h5>+<span class="purecounter" data-purecounter-duration="0"
+                                    style="font-weight: 800 !important;" data-purecounter-end="22">22</span></h5>
+                            <h6 style="font-weight: 800 !important;">Años de trayectoria institucional</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
+                    <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
+                        <div class="inner">
+                            <h5 style="font-size: 60px; ">+<span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="10000" data-purecounter-separator="."
+                                    style="font-weight: 800 !important;">10.000</span></h5>
+                            <h6 style="font-weight: 800 !important;">Empleados directos representados</h6>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
+                    <div class="single-couter-wrap d-flex align-items-center justify-content-center">
+                        <div class="inner2">
+                            <h5 style="font-size: 65px;">+<span class="purecounter" data-purecounter-duration="0"
+                                    data-purecounter-end="1300" data-purecounter-separator="."
+                                    style="font-weight: 800 !important;">1.300</span></h5>
+                            <h6 style="font-weight: 800 !important;">Participantes<br> capacitados</h6>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br>
-            <h3>Lorem ipsum dolor</h3>
-            <br>
-            <p>Lorem ipsum dolor sit amet,
-               consectetur adipiscing elit,
-               sed do eiusmod tempor in
-               cididunt ut labore et dolore</p>
-         </div>
-         <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
-            <div class="single-couter-wrap  d-flex align-items-center justify-content-center">
-               <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="70">70</span>%</h5>
-                  <h6>Años de experiencia</h6>
-               </div>
-            </div>
-            <br>
-            <h3>Lorem ipsum dolor</h3>
-            <br>
-            <p>Lorem ipsum dolor sit amet,
-               consectetur adipiscing elit,
-               sed do eiusmod tempor in
-               cididunt ut labore et dolore</p>
-         </div>
-         <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
-            <div class="single-couter-wrap mt-60 d-flex align-items-center justify-content-center">
-               <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="50">50</span></h5>
-                  <h6>Asociados</h6>
-               </div>
-            </div>
-            <br>
-            <h3>Lorem ipsum dolor</h3>
-            <br>
-            <p>Lorem ipsum dolor sit amet,
-               consectetur adipiscing elit,
-               sed do eiusmod tempor in
-               cididunt ut labore et dolore</p>
-         </div>
-         <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
-            <div class="single-couter-wrap d-flex align-items-center justify-content-center">
-               <div class="inner">
-                  <h5><span class="purecounter" data-purecounter-duration="0" data-purecounter-end="19">90</span></h5>
-                  <h6>Capacitados</h6>
-               </div>
-            </div>
-            <br>
-            <h3>Lorem ipsum dolor</h3>
-            <br>
-            <p>Lorem ipsum dolor sit amet,
-               consectetur adipiscing elit,
-               sed do eiusmod tempor in
-               cididunt ut labore et dolore</p>
-         </div>
-      </div>
-   </div>
-</div>
+        </div>
+    </div>
 <!-- counter-area-end -->
 
 <!-- team-area-start -->
@@ -267,7 +224,7 @@
                               <div>
                                  <h2 class="team-name"><a href="team-details.html">Arq. Diego M. Cash</a>
                                  </h2>
-                                 <p class="designation">Web Developer</p>
+                                 <p class="designation">Vicepresidente 2°</p>
                                  <p class="designation"><strong>ESETECE S.A.</strong></p>
                               </div>
                            </div>

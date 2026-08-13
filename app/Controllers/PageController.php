@@ -7,8 +7,9 @@ class PageController extends BaseController {
 
     public function about(): void {
         $this->render('pages/about', [
-            'pageTitle'       => 'Nosotros | AECAUM',
-            'pageDescription' => 'Conocé la historia, misión y visión de la Asociación de Empresas de Correo de Argentina Última Milla.',
+            'pageTitle'       => 'Nosotros - Quiénes Somos | AECAUM',
+            'pageDescription' => 'Conocé la historia, misión, visión y estructura de AECAUM, la Asociación de Empresas de Correo de Argentina Última Milla.',
+            'pageKeywords'    => 'nosotros aecaum, historia aecaum, empresas de correo argentina, asociacion postal argentina, mision vision aecaum',
         ]);
     }
 
@@ -71,64 +72,92 @@ class PageController extends BaseController {
         }
 
         $this->render('pages/contact', [
-            'pageTitle' => 'Contacto | AECAUM',
-            'sent'      => $sent,
-            'error'     => $error,
+            'pageTitle'       => 'Contacto e Institucional | AECAUM',
+            'pageDescription' => 'Ponete en contacto con AECAUM. Consultas institucionales, información para asociar tu empresa de correo o logística de última milla.',
+            'pageKeywords'    => 'contacto aecaum, asociar empresa correo, soporte aecaum, formulario contacto logistica argentina',
+            'sent'            => $sent,
+            'error'           => $error,
+        ]);
+    }
+
+    public function faq(): void {
+        $this->render('pages/faq', [
+            'pageTitle'       => 'Preguntas Frecuentes (FAQ) | AECAUM',
+            'pageDescription' => 'Respuestas a las preguntas frecuentes sobre la Asociación de Empresas de Correo de Argentina Última Milla, regulación postal y membresías.',
+            'pageKeywords'    => 'faq aecaum, preguntas frecuentes correo argentina, regulacion postal argentina, asociarse aecaum',
         ]);
     }
 
     public function hackathon(): void {
         $this->render('pages/hackathon', [
-            'pageTitle' => 'hackathon | AECAUM',
+            'pageTitle'       => 'Hackathon de Innovación Postal | AECAUM',
+            'pageDescription' => 'Iniciativas y Hackathon de tecnología e innovación en la logística postal y de última milla en Argentina.',
+            'pageKeywords'    => 'hackathon aecaum, innovacion logistica, tecnologia postal, e-commerce logistica argentina',
         ]);
     }
 
     public function service(): void {
         $this->render('pages/service', [
-            'pageTitle' => 'Servicios | AECAUM',
+            'pageTitle'       => 'Servicios e Iniciativas | AECAUM',
+            'pageDescription' => 'Servicios, representación gremial e institucional, asesores y beneficios que brinda AECAUM a sus empresas asociadas.',
+            'pageKeywords'    => 'servicios aecaum, beneficios socios aecaum, representacion institucional correo, asesoria postal argentina',
         ]);
     }
 
     public function serviceDetails(): void {
         $this->render('pages/service-details', [
-            'pageTitle' => 'Detalle de Servicio | AECAUM',
+            'pageTitle'       => 'Detalle de Servicios | AECAUM',
+            'pageDescription' => 'Información detallada sobre las soluciones y acompañamiento institucional de AECAUM para la industria del correo.',
+            'pageKeywords'    => 'detalle servicios aecaum, soporte postal argentina, ultima milla pymes',
         ]);
     }
 
     public function project(): void {
         $this->render('pages/project', [
-            'pageTitle' => 'Conciencia Sustentable | AECAUM',
+            'pageTitle'       => 'Conciencia Sustentable y Proyectos | AECAUM',
+            'pageDescription' => 'Proyectos de sustentabilidad, descarbonización y movilidad limpia en la distribución postal y de última milla en Argentina.',
+            'pageKeywords'    => 'sustentabilidad logistica, movilidad sustentable aecaum, correo ecologico argentina, proyectos aecaum',
         ]);
     }
 
     public function projectDetails(): void {
         $this->render('pages/project-details', [
-            'pageTitle' => 'Detalle de Proyecto | AECAUM',
+            'pageTitle'       => 'Detalle de Proyecto | AECAUM',
+            'pageDescription' => 'Conocé los detalles y el impacto ambiental y social de los proyectos de AECAUM.',
+            'pageKeywords'    => 'proyectos sustentables correo, impacto ambiental logistica, aecaum iniciativas',
         ]);
     }
 
     public function team(): void {
         $this->render('pages/team', [
-            'pageTitle' => 'Equipo | AECAUM',
+            'pageTitle'       => 'Autoridades y Equipo Directivo | AECAUM',
+            'pageDescription' => 'Conocé a las autoridades y miembros de la comisión directiva de AECAUM.',
+            'pageKeywords'    => 'autoridades aecaum, comision directiva aecaum, lideres sector postal argentina',
         ]);
     }
 
     public function network(): void {
         $this->render('pages/network', [
-            'pageTitle' => 'Red de Socios | AECAUM',
+            'pageTitle'       => 'Red de Empresas Socias | AECAUM',
+            'pageDescription' => 'Nuestra red nacional de empresas privadas de correo y logística urbana en toda la República Argentina.',
+            'pageKeywords'    => 'empresas asociadas aecaum, red de correo argentina, correos privados miembros, ultima milla argentina',
         ]);
     }
 
     public function blogList(): void {
         $this->render('pages/blog-list', [
-            'pageTitle' => 'Blog y Novedades | AECAUM',
+            'pageTitle'       => 'Blog y Novedades del Sector Postal | AECAUM',
+            'pageDescription' => 'Noticias, artículos técnicos, normativas y actualidad del sector del correo privado y logística e-commerce en Argentina.',
+            'pageKeywords'    => 'blog aecaum, noticias correo argentina, actualidad logistica, novedades postales',
         ]);
     }
 
     public function blogDetails(): void {
         $this->render('pages/blog-details', [
-            'pageTitle'      => 'Artículo | AECAUM',
-            'hideNewsletter' => true,
+            'pageTitle'       => 'Novedades y Noticias | AECAUM',
+            'pageDescription' => 'Análisis y novedades institucionales sobre el desarrollo de la última milla en Argentina.',
+            'pageKeywords'    => 'articulo aecaum, informe sectorial correo, logistica urbana',
+            'hideNewsletter'  => true,
         ]);
     }
 
@@ -148,22 +177,24 @@ class PageController extends BaseController {
         }
 
         $this->render('pages/indices', [
-            'pageTitle' => 'Índices | AECAUM',
-            'indices'   => $indices,
-            'month'     => $month,
-            'year'      => $year,
+            'pageTitle'       => 'Índices de Costos Postales y Logística (IMC) | AECAUM',
+            'pageDescription' => 'Consulta el Índice de Costos de Distribución Postal y Última Milla de AECAUM. Estadísticas oficiales y evolución de costos del sector.',
+            'pageKeywords'    => 'indice costos correo argentina, imc aecaum, costos ultima milla, tarifa postal argentina, estadisticas correo',
+            'indices'         => $indices,
+            'month'           => $month,
+            'year'            => $year,
         ]);
     }
 
     public function informesInstitucionales(): void {
-        // Obtener los informes institucionales desde la tabla de informes
         $informes = \Informe::all();
-        // Renderizar vista específica con los informes
         $this->render('pages/informes-institucionales', [
-            'pageTitle' => 'Informes Institucionales | AECAUM',
-            'informes'   => $informes,
-            'month'     => $this->query('month'),
-            'year'      => $this->query('year'),
+            'pageTitle'       => 'Informes Institucionales y Reportes Sectoriales | AECAUM',
+            'pageDescription' => 'Descargá informes institucionales, estudios del sector postal y publicaciones de AECAUM.',
+            'pageKeywords'    => 'informes aecaum, reportes sector postal, estudios logistica argentina, publicaciones aecaum',
+            'informes'        => $informes,
+            'month'           => $this->query('month'),
+            'year'            => $this->query('year'),
         ]);
     }
 
@@ -179,7 +210,8 @@ class PageController extends BaseController {
         $page = $pages[$slug];
         $this->render('pages/content', [
             'pageTitle'          => $page['title'] . ' | AECAUM',
-            'pageDescription'    => $page['description'] ?? '',
+            'pageDescription'    => $page['description'] ?? 'Información institucional de la Asociación de Empresas de Correo de Argentina Última Milla.',
+            'pageKeywords'       => 'aecaum, ' . strtolower($page['title']) . ', correo privado argentina',
             'sectionTitle'       => $page['title'],
             'sectionDescription' => $page['description'] ?? '',
             'breadcrumb'         => $page['breadcrumb'] ?? $page['title'],
@@ -190,7 +222,9 @@ class PageController extends BaseController {
     public function notFound(): void {
         http_response_code(404);
         $this->render('pages/404', [
-            'pageTitle' => 'Página no encontrada | AECAUM',
+            'pageTitle'       => 'Página No Encontrada (404) | AECAUM',
+            'pageDescription' => 'La página que estás buscando no existe o ha sido movida.',
+            'metaRobots'      => 'noindex, follow',
         ]);
     }
 }

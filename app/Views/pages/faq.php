@@ -1,5 +1,39 @@
 
 
+<!-- Structured Data: FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es AECAUM y a quién representa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AECAUM es la Asociación de Empresas de Correo de Argentina Última Milla, reuniendo institucionalmente a las empresas privadas prestadoras de servicios de correo, paquetería y logística urbana en Argentina."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puedo consultar el Índice de Costos de Última Milla (IMC)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Puedes ingresar a la sección de Índices en nuestro portal público para consultar y descargar la evolución mensual y anual de los costos de distribución postal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo puede una empresa asociarse a AECAUM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Las empresas prestadoras de servicios postales y de última milla habilitadas pueden solicitar su adhesión completando el formulario de contacto institucional."
+      }
+    }
+  ]
+}
+</script>
+
       <!-- breadcrumb-area-start -->
       <div class="tv-breadcrumb-area tv-breadcrumb-overlay tv-breadcrumb-ptb z-index-1 fix p-relative"
          data-background="assets/img/breadcrumb/nosotros.png">
