@@ -3,6 +3,7 @@
 .cursor
 .github
 .qodo
+database.html
 
 # Archivos de debug
 smtp_debug.php
@@ -25,3 +26,6 @@ Thumbs.db
 
 #Datos personales
 datos
+
+config/database.php
+app/Controllers/AdminController.php

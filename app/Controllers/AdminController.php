@@ -414,6 +414,7 @@ class AdminController extends BaseController {
                     'image' => $imagePath,
                     'year' => (int)$this->input('year'),
                     'file_path' => $filePath,
+                    'route' => $this->input('route'),
                 ]);
                 $this->redirect('admin/informes?' . ($ok ? 'success=informe_created' : 'error=create_failed'));
                 return;

@@ -208,7 +208,8 @@
                         <h3 class="service-section-title">
                             Índice de Costos
                         </h3>
-                        <p>Accedé a nuestro reporte mensual homologado, el termómetro exacto para medir la
+                        <p style="text-align:left ;">Accedé a nuestro reporte mensual homologado, el termómetro exacto
+                            para medir la
                             evolución de tus costos operativos y tomar mejores decisiones.</p>
                     </div>
                 </div>
@@ -218,7 +219,8 @@
                         <h3 class="service-section-title">
                             Representación Sectorial
                         </h3>
-                        <p>Llevamos la voz de la última milla a la agenda pública. Participamos activamente en mesas
+                        <p style="text-align:left ;">Llevamos la voz de la última milla a la agenda pública.
+                            Participamos activamente en mesas
                             de diálogo y gestión ante entidades gubernamentales.</p>
                     </div>
                 </div>
@@ -228,29 +230,32 @@
                         <h3 class="service-section-title">
                             Networking y Alianzas
                         </h3>
-                        <p>Formá parte de la red de líderes del sector. Conectá con referentes, generá sinergias
+                        <p style="text-align:left ;">Formá parte de la red de líderes del sector. Conectá con
+                            referentes, generá sinergias
                             comerciales y participá de eventos exclusivos.</p>
                     </div>
                 </div>
-                <!-- Salto de línea para separar 3 arriba y 2 abajo con un espacio extra -->
                 <div class="w-100 d-none d-lg-block mb-4"></div>
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-service-item mb-30 h-100">
                         <img loading="lazy" src="assets/img/logo/asesoria.png">
                         <h3 class="service-section-title">
-                            Asesoía Especializada
+                            Asesoría Especializada
                         </h3>
-                        <p>Consultoría legal en materia laboral, regulación postal y aspectos tributarios específicos
+                        <p style="text-align:left ;">Consultoría legal en materia laboral, regulación postal y aspectos
+                            tributarios específicos
                             del sector.</p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
                     <div class="single-service-item mb-30 h-100">
-                        <img loading="lazy" src="assets/img/logo/tumilla.png">
+                        <img loading="lazy" src="assets/img/logo/tumilla.png" alt="tumilla"
+                            style="width: 35% !important; max-width: none !important;">
                         <h3 class="service-section-title">
                             Capacitación
                         </h3>
-                        <p>Accedé a foros universitarios y programas de profesionalización exclusivos, diseñados para
+                        <p style="text-align:left ;">Accedé a foros universitarios y programas de profesionalización
+                            exclusivos, diseñados para
                             potenciar el talento de tus equipos y elevar el estándar de tu operación.</p>
                     </div>
                 </div>
@@ -268,11 +273,7 @@
     <!-- Service-area-end -->
 
     <!-- counter-area-start -->
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="tv-counter-area pb-130">
+    <div class="tv-project-area pt-20 pb-10">
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="col-lg-3 col-xl-3 col-md-6 wow itfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
@@ -320,7 +321,7 @@
     <!-- counter-area-end -->
 
     <!-- project-area-start -->
-    <div class="tv-project-area pt-130 pb-130">
+    <div class="tv-project-area pt-30 pb-130">
         <div class="container">
             <div class="row  justify-content-center">
                 <div class="col-12 text-center">

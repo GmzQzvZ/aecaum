@@ -56,8 +56,7 @@
                                 <span class="footer-icon-circle"><i class="ti ti-mail"></i></span>
                                 <div class="aecaum-footer-mail">
                                     <small>Email</small>
-                                    <a
-                                        href="mailto:lroqueiro.secretaria@correos.org.ar">lroqueiro.secretaria@correos.org.ar</a>
+                                    <a href="mailto:aeca@correos.org.ar">aeca@correos.org.ar</a>
                                 </div>
                             </li>
                             <li>

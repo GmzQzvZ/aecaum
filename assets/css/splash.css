@@ -103,7 +103,7 @@
 }
 
 .preloader-logo img {
-    width: 2500px;
+    width: 500px;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
 }
@@ -125,7 +125,8 @@
 .preloader-btn .tv-btn-primary {
     background: linear-gradient(135deg, #00a3e0 0%, #0077b6 100%);
     border: none;
-    padding: 15px 50px;
+    margin-top: 20px;
+    padding: 8px 40px;
     border-radius: 20px 0 20px 0;
     color: white;
     font-weight: 600;

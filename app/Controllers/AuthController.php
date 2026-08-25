@@ -3,9 +3,11 @@
 // Controller: Auth — Autenticación de usuarios
 // ============================================================
 
-class AuthController extends BaseController {
+class AuthController extends BaseController
+{
 
-    public function login(): void {
+    public function login(): void
+    {
         // Redirigir si ya está logueado
         if (isLoggedIn()) {
             $this->redirect(hasRole('Superadmin') ? 'admin' : 'dashboard');
@@ -15,8 +17,8 @@ class AuthController extends BaseController {
         $error = '';
 
         if ($this->isPost()) {
-            $email    = trim($_POST['email']    ?? '');
-            $password =      $_POST['password'] ?? '';
+            $email = trim($_POST['email'] ?? '');
+            $password = $_POST['password'] ?? '';
 
             if (empty($email) || empty($password)) {
                 $error = 'Por favor completá todos los campos.';
@@ -32,7 +34,7 @@ class AuthController extends BaseController {
                         'role_id' => $user['role_id'],
                         'action' => 'auth'
                     ];
-                    
+
                     require_once ROOT_PATH . '/app/Helpers/JwtHelper.php';
                     $token = \App\Helpers\JwtHelper::generateToken($payload, 86400); // 24 horas
 
@@ -57,11 +59,12 @@ class AuthController extends BaseController {
 
         $this->render('auth/login', [
             'pageTitle' => 'Iniciar Sesión | AECAUM',
-            'error'     => $error,
+            'error' => $error,
         ]);
     }
 
-    public function logout(): void {
+    public function logout(): void
+    {
         // Eliminar la cookie JWT
         setcookie('aecaum_token', '', [
             'expires' => time() - 3600,
@@ -70,12 +73,13 @@ class AuthController extends BaseController {
             'httponly' => true,
             'samesite' => 'Strict'
         ]);
-        
+
         $this->redirect('login');
     }
 
-    public function forgotPassword(): void {
-        $sent  = false;
+    public function forgotPassword(): void
+    {
+        $sent = false;
         $error = '';
 
         if ($this->isPost()) {
@@ -93,19 +97,20 @@ class AuthController extends BaseController {
 
                     $payload = [
                         'user_id' => $user['id'],
-                        'email'   => $email,
-                        'action'  => 'password_reset',
+                        'email' => $email,
+                        'action' => 'password_reset',
                     ];
                     $token = \App\Helpers\JwtHelper::generateToken($payload, 3600);
 
                     // Construir enlace de restablecimiento
                     $resetLink = APP_URL . '/reset-password?token=' . urlencode($token);
+                    $logoUrl = 'https://r2.fivemanage.com/MfeHpBFNP9b0bx7GdZMbE/AECAUMBrand-05.png';
 
                     $subject = 'Recuperación de Contraseña — ACAEUM';
-                    $body    = "
+                    $body = "
                         <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                             <div style='background: #0a3a78; padding: 30px; text-align: center;'>
-                                <img loading='lazy' src='" . APP_URL . "/assets/img/logo/logo.png' alt='AECAUM' style='max-width: 150px; margin-bottom: 15px;'>
+                                <img src='{$logoUrl}' alt='AECAUM' style='max-width: 300px; margin-bottom: -100px; margin-top: -100px;'>
                                 <h1 style='color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;'>Recuperación de Contraseña</h1>
                             </div>
                             <div style='padding: 30px;'>
@@ -143,19 +148,20 @@ class AuthController extends BaseController {
 
         $this->render('auth/forgot-password', [
             'pageTitle' => 'Recuperar Contraseña | ACAEUM',
-            'sent'      => $sent,
-            'error'     => $error,
+            'sent' => $sent,
+            'error' => $error,
         ]);
     }
 
-    public function resetPassword(): void {
+    public function resetPassword(): void
+    {
         require_once ROOT_PATH . '/app/Helpers/JwtHelper.php';
 
-        $token   = trim($_GET['token'] ?? $_POST['token'] ?? '');
+        $token = trim($_GET['token'] ?? $_POST['token'] ?? '');
         $message = '';
-        $error   = '';
+        $error = '';
         $isValid = false;
-        $userId  = null;
+        $userId = null;
 
         if (empty($token)) {
             $error = 'El enlace de recuperación es inválido o no se proporcionó.';
@@ -164,7 +170,7 @@ class AuthController extends BaseController {
 
             if ($payload && isset($payload['action']) && $payload['action'] === 'password_reset') {
                 $isValid = true;
-                $userId  = (int) $payload['user_id'];
+                $userId = (int) $payload['user_id'];
             } else {
                 $error = 'El enlace ha expirado o es inválido. Por favor, solicitá uno nuevo.';
             }
@@ -172,20 +178,20 @@ class AuthController extends BaseController {
 
         // Procesar cambio de contraseña (POST)
         if ($this->isPost() && $isValid && $userId) {
-            $password        = $_POST['password']         ?? '';
+            $password = $_POST['password'] ?? '';
             $confirmPassword = $_POST['confirm_password'] ?? '';
 
             if (empty($password) || strlen($password) < 6) {
-                $error   = 'La contraseña debe tener al menos 6 caracteres.';
+                $error = 'La contraseña debe tener al menos 6 caracteres.';
             } elseif ($password !== $confirmPassword) {
-                $error   = 'Las contraseñas no coinciden.';
+                $error = 'Las contraseñas no coinciden.';
             } else {
                 $currentUser = User::findById($userId);
                 $ok = $currentUser && User::update($userId, [
                     'password' => $password,
-                    'name'     => $currentUser['name'],
-                    'email'    => $currentUser['email'],
-                    'role_id'  => $currentUser['role_id'],
+                    'name' => $currentUser['name'],
+                    'email' => $currentUser['email'],
+                    'role_id' => $currentUser['role_id'],
                 ]);
 
                 if ($ok) {
@@ -199,10 +205,10 @@ class AuthController extends BaseController {
 
         $this->render('auth/reset-password', [
             'pageTitle' => 'Restablecer Contraseña | ACAEUM',
-            'token'     => htmlspecialchars($token),
-            'isValid'   => $isValid,
-            'message'   => $message,
-            'error'     => $error,
+            'token' => htmlspecialchars($token),
+            'isValid' => $isValid,
+            'message' => $message,
+            'error' => $error,
         ]);
     }
 }

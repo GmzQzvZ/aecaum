@@ -40,7 +40,7 @@ class MailHelper {
             // Tiempo de espera (segundos)
             $mail->Timeout    = 30;
 
-            // Remitente — debe ser la misma cuenta Gmail autenticada
+            // Remitente 
             $mail->setFrom(\MAIL_FROM, \MAIL_FROM_NAME);
             $mail->addAddress($to);
 

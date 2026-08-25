@@ -17,8 +17,8 @@ class Informe {
      */
     public static function create(array $data): bool {
         global $conn;
-        $stmt = $conn->prepare("INSERT INTO informes (title, image, year, file_path) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param('ssis', $data['title'], $data['image'], $data['year'], $data['file_path']);
+        $stmt = $conn->prepare("INSERT INTO informes (title, image, year, file_path, route) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param('ssiss', $data['title'], $data['image'], $data['year'], $data['file_path'], $data['route']);
         return $stmt->execute();
     }
 

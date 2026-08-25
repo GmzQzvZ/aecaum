@@ -31,7 +31,7 @@
 <div class="tv-blog-area pt-130 pb-130">
    <div class="container">
       <div class="text-center">
-         <img loading="lazy" src="assets/img/icon/diplomatura.png" alt="diplomatura" style="width: 30%; height: auto;">
+         <img loading="lazy" src="assets/img/icon/DIPLOMATURA.png" alt="diplomatura" style="width: 30%; height: auto;">
          <h1 class="text-center py-3" style="color:#072868; font-weight:900; font-size:44px;">Programa de
             Capacitación Académica <br> AECAUM - UNDelta</h1>
          <p style="color:#6d8089; font-size:16px;">Potenciamos el ecosistema logístico. Una propuesta
@@ -59,32 +59,52 @@
                <h4>Cursos disponibles</h4>
                <ul>
                   <li class="cat-item active">
-                     <a href="javascript:void(0)" data-course-id="course1" onclick="updateContent('course2'); return false;">Fullfilment</a>
+                     <a href="javascript:void(0)" data-course-id="course1"
+                        onclick="updateContent('course2'); return false;">Fullfilment</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course2" onclick="updateContent('course4'); return false;">eCommerce</a>
+                     <a href="javascript:void(0)" data-course-id="course2"
+                        onclick="updateContent('course4'); return false;">eCommerce</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course3" onclick="updateContent('course3'); return false;">Última MIlla</a>
+                     <a href="javascript:void(0)" data-course-id="course3"
+                        onclick="updateContent('course3'); return false;">Última MIlla</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course4" onclick="updateContent('course1'); return false;">Cross-border</a>
+                     <a href="javascript:void(0)" data-course-id="course4"
+                        onclick="updateContent('course1'); return false;">Cross-border</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course5" onclick="updateContent('course5'); return false;">Tecnología</a>
+                     <a href="javascript:void(0)" data-course-id="course5"
+                        onclick="updateContent('course5'); return false;">Tecnología</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course6" onclick="updateContent('course6'); return false;">Integracíon</a>
+                     <a href="javascript:void(0)" data-course-id="course6"
+                        onclick="updateContent('course6'); return false;">Integracíon</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course7" onclick="updateContent('course8'); return false;">Investigación</a>
+                     <a href="javascript:void(0)" data-course-id="course7"
+                        onclick="updateContent('course8'); return false;">Investigación</a>
                   </li>
                   <li class="cat-item">
-                     <a href="javascript:void(0)" data-course-id="course8" onclick="updateContent('course7'); return false;">Inteligencia Artificial</a>
+                     <a href="javascript:void(0)" data-course-id="course8"
+                        onclick="updateContent('course7'); return false;">Inteligencia Artificial</a>
                   </li>
                </ul>
             </div>
          </div>
+         <br>
+         <br>
+         <br>
+         <div class="tv-blog-details-content">
+            <div class="text-center">
+               <img loading="lazy" src="assets/img/icon/Inscripciones.png" alt="Inscripciones"
+                  style="width: 30%; height: auto;"><br><br>
+               <img loading="lazy" src="assets/img/icon/iconos.png" alt="iconos" style="width: 15%; height: auto;"><br>
+               <p href="https://wa.me/+5491149603219" class="tv-section-subtitle" style="font-size:22px;"> +54 9 11 4960 3219 </p>
+               <p class="tv-section-title" style="font-size:22px;">diplomatura@correos.org.ar </p>
+            </div>
+         </div>
+      </div>
    </div>
-</div>
-<script src="assets/js/dynamic_content.js"></script>
+   <script src="assets/js/dynamic_content.js"></script>

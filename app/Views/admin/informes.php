@@ -37,6 +37,9 @@
                <div style="padding:15px;">
                   <h4 style="margin:0 0 10px 0; color:#0a3a78;"><?= htmlspecialchars($inf['title']) ?></h4>
                   <p style="color:#6d8089; font-size:14px; margin:0 0 15px 0; line-height:1.5;">Año: <?= htmlspecialchars($inf['year']) ?></p>
+                  <?php if (!empty($inf['route'])): ?>
+                  <p style="margin:0 0 10px 0;"><a href="<?= htmlspecialchars($inf['route']) ?>" target="_blank" style="font-size:13px; color:#0056b3; text-decoration:none;">Ver versión web</a></p>
+                  <?php endif; ?>
                   <?php if (!empty($inf['file_path'])): ?>
                   <a href="<?= APP_URL . '/' . htmlspecialchars($inf['file_path']) ?>" class="btn-primary-sm" target="_blank" rel="nofollow" style="display:inline-block;">Descargar</a>
                   <?php endif; ?>
@@ -65,10 +68,14 @@
             <div class="form-group">
                 <label>Año *</label>
                 <select name="year" required>
-                <?php for ($y = 2000; $y <= date('Y'); $y++): ?>
+                <?php for ($y = 2015; $y <= date('Y'); $y++): ?>
                    <option value="<?= $y ?>"><?= $y ?></option>
                 <?php endfor; ?>
                 </select>
+            </div>
+            <div class="form-group">
+               <label>Ruta (Versión web)</label>
+               <input type="url" name="route" placeholder="https://ejemplo.com/informe">
             </div>
             <div class="form-group">
                <label>Imagen (portada) *</label>

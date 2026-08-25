@@ -5,23 +5,29 @@
             <div class="row align-items-center">
                <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
-                     <a href="<?= APP_URL ?>/"  >
+                     <a href="<?= APP_URL ?>/">
                         <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/Logoyfondo2.png" alt="AECAUM"
                            class="tv-header-logo-img">
                      </a>
                   </div>
                   <div
                      class="tv-header-right-action d-flex justify-content-end justify-content-md-center align-items-center">
-                     <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank"
-                        class="social d-none d-md-inline-block">
-                        <i class="ti ti-brand-linkedin"></i>
-                     </a>
-                     <span class="separator d-none d-md-inline-block" style="color: #00aae6 !important;">•</span>
-                     <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank"
-                        class="social d-none d-md-inline-block">
-                        <i class="ti ti-brand-instagram"></i>
-                     </a>
-                     <span class="separator d-none d-md-inline-block" style="color: #00aae6 !important;">|</span>
+                     <div class="d-none d-md-flex align-items-center" style="margin-right: 10px;">
+                        <a href="https://www.linkedin.com/company/aeca-correos-privados/" target="_blank" class="social"
+                           style="display: inline-flex; align-items: center; padding: 0; margin: 0;">
+                           <img src="<?= ASSETS_URL ?>/img/icon/linkedin.png"
+                              style="width: 30px; height: auto; display: block; object-fit: contain; vertical-align: middle;">
+                        </a>
+                        <span
+                           style="color: #00aae6; font-size: 24px; line-height: 1; margin: 0 2px; vertical-align: middle; display: inline-flex; align-items: center;">•</span>
+                        <a href="https://www.instagram.com/aecaum.ultimamilla/?hl=es" target="_blank" class="social"
+                           style="display: inline-flex; align-items: center; padding: 0; margin: 0;">
+                           <img src="<?= ASSETS_URL ?>/img/icon/instagram.png"
+                              style="width: 30px; height: auto; display: block; object-fit: contain; vertical-align: middle;">
+                        </a>
+                     </div>
+                     <span class="separator d-none d-md-inline-block"
+                        style="color: #00aae6 !important; margin: 0 15px 0 5px; font-size: 20px;">|</span>
                      <?php
                      if (isLoggedIn()):
                         $currentUser = getCurrentUser();
@@ -33,7 +39,7 @@
                            </span>
                         </a>
                      <?php else: ?>
-                        <a href="<?= APP_URL ?>/login" class="tv-btn-primary d-none d-md-block">
+                        <a href="<?= APP_URL ?>/login" class="tv-btn-rounded d-none d-md-block">
                            <span class="btn-wrap">
                               <span class="btn-text1">Login</span>
                               <span class="btn-text2">Login</span>
@@ -71,6 +77,8 @@
             <nav class="menu">
                <ul>
                   <li><a href="<?= APP_URL ?>/nosotros">Nosotros</a></li>
+                  <li><a href="https://correos.org.ar/newsletters/">Newsletter</a></li>
+                  <li><a href="<?= APP_URL ?>/blog-details">Capacitaciones</a></li>
                   <!-- <li>
                      <a href="<?= APP_URL ?>/legislacion/marco-regulatorio">Legislación y asuntos laborales</a>
                      <ul class="submenu">
@@ -84,7 +92,6 @@
                   <li>
                      <a href="<?= APP_URL ?>/indices">Índices</a>
                      <ul class="submenu">
-                        <!-- <li><a href="<?= APP_URL ?>/indices">IMC</a></li> -->
                         <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
                      </ul>
                   </li>
@@ -100,7 +107,7 @@
                   <li class="destacado"><a href="https://correos.org.ar/asociados/" target="_blank">Asociate</a></li>
 
                   <li><a href="<?= APP_URL ?>/hackathon">Hackathon</a></li>
-                  
+
                   <li><a href="<?= APP_URL ?>/contacto">Contacto</a></li>
                </ul>
             </nav>
