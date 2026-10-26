@@ -51,6 +51,19 @@ ADD COLUMN `image2` VARCHAR(255) NULL DEFAULT NULL AFTER `image`,
 ADD COLUMN `image3` VARCHAR(255) NULL DEFAULT NULL AFTER `image2`,
 ADD COLUMN `informe_mensual` VARCHAR(255) NULL DEFAULT '' AFTER `informe`;
 
+-- Contenido editable de la agenda institucional (una entrada por mes y año)
+CREATE TABLE IF NOT EXISTS agenda_months (
+    year SMALLINT UNSIGNED NOT NULL,
+    month_number TINYINT UNSIGNED NOT NULL,
+    title VARCHAR(255) NOT NULL DEFAULT '',
+    subtitle VARCHAR(255) NOT NULL DEFAULT '',
+    text_one LONGTEXT NOT NULL,
+    text_two LONGTEXT NOT NULL,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (year, month_number),
+    CONSTRAINT chk_agenda_month CHECK (month_number BETWEEN 1 AND 12)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 -- Tabla de informes institucionales
 CREATE TABLE IF NOT EXISTS informes (
@@ -91,5 +104,4 @@ INSERT INTO roles (name, label, description) VALUES
 -- Insertar usuario admin inicial (contraseña: admin123)
 INSERT INTO users (name, email, password, role_id) VALUES 
 ('Sebastian Gomez', 'zvzgmzq@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1);
-
 

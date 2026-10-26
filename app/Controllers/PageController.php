@@ -5,6 +5,34 @@
 
 class PageController extends BaseController {
 
+    /** Agenda institucional agrupada por mes. */
+    public function agenda(): void {
+        $years = \Agenda::years();
+        $currentYear = (int) date('Y');
+        if ($years === []) $years = [$currentYear];
+
+        $requestedYear = (int) $this->query('year', (string) $years[0]);
+        if (!in_array($requestedYear, $years, true)) $requestedYear = $years[0];
+
+        $entries = \Agenda::all($requestedYear);
+        $requestedMonth = (int) $this->query('month', '0');
+        if ($requestedMonth < 1 || $requestedMonth > 12) {
+            $currentMonth = (int) date('n');
+            $requestedMonth = isset($entries[$currentMonth])
+                ? $currentMonth
+                : (int) (array_key_last($entries) ?: $currentMonth);
+        }
+
+        $this->render('pages/agenda', [
+            'pageTitle'       => 'Agenda Institucional | AECAUM',
+            'pageDescription' => 'Agenda mensual de la Asociación de Empresas de Correo de Argentina Última Milla.',
+            'agendaEntries'   => $entries,
+            'agendaYears'     => $years,
+            'selectedYear'    => $requestedYear,
+            'selectedMonth'   => $requestedMonth,
+        ]);
+    }
+
     public function about(): void {
         $this->render('pages/about', [
             'pageTitle'       => 'Nosotros - Quiénes Somos | AECAUM',

@@ -5,6 +5,51 @@
 
 class AdminController extends BaseController {
 
+    /** Edición del título y los dos textos de cada mes de la agenda. */
+    public function agenda(): void {
+        requireLogin();
+        if (!hasRole('Superadmin') && !hasRole('admin')) {
+            $this->redirect('dashboard');
+            return;
+        }
+
+        if ($this->isPost() && ($_POST['action'] ?? '') === 'save_agenda_month') {
+            $years = \Agenda::years();
+            $year = $years ? max($years) : (int) date('Y');
+            $month = (int) ($_POST['month_number'] ?? 0);
+            if ($year < 1 || $year > 9999 || !isset(\Agenda::MONTHS[$month])) {
+                $this->redirect('admin/agenda?error=invalid_selection');
+                return;
+            }
+            $ok = \Agenda::save(
+                $year,
+                $month,
+                $this->input('title'),
+                $this->input('subtitle'),
+                trim((string) ($_POST['text_one'] ?? '')),
+                trim((string) ($_POST['text_two'] ?? ''))
+            );
+            $this->redirect('admin/agenda?month=' . $month . '&' . ($ok ? 'success=agenda_saved' : 'error=save_failed'));
+            return;
+        }
+
+        $years = \Agenda::years();
+        $year = $years ? max($years) : (int) date('Y');
+        $entries = \Agenda::all($year);
+        $month = (int) $this->query('month', (string) (array_key_first($entries) ?: 1));
+        if (!isset(\Agenda::MONTHS[$month])) $month = 1;
+
+        $this->render('admin/agenda', [
+            'pageTitle'   => 'Agenda Institucional | Admin AECAUM',
+            'currentUser' => getCurrentUser(),
+            'months'      => \Agenda::MONTHS,
+            'entries'     => $entries,
+            'selectedMonth' => $month,
+            'success'     => $this->query('success'),
+            'error'       => $this->query('error'),
+        ], 'panel');
+    }
+
     /** Dashboard principal del admin */
     public function index(): void {
         requireLogin();

@@ -64,4 +64,149 @@
             </div>
          </div>
    </div>
-</div>
+   </div>
+   </div>
+<!-- seccion1 -->
+   <section class="hackathon-lineup" aria-labelledby="hackathon-lineup-title">
+      <div class="container">
+         <h2 id="hackathon-lineup-title">LineUp</h2>
+         <div class="hackathon-lineup-list">
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="12:00">12:00 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>ESCENARIO PRINCIPAL:</h3>
+                     <p>Bienvenida, presentación del jurado y coordinadores</p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card hackathon-lineup-card-filled">
+                  <time class="hackathon-lineup-time" datetime="12:30">12:30 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>AULA MAGNA:</h3>
+                     <p>Presentación de problemáticas a trabajar y reglas<br class="hackathon-lineup-break"> de trabajo por equipo</p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="13:00">13:00 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>AULA 7:</h3>
+                     <p>Ciclo de charlas abiertas:</p>
+                  </div>
+               </div>
+            </article>
+         </div>
+      </div>
+   </section>
+<!-- seccion2 -->
+   <section class="hackathon-lineup hackathon-lineup-secondary" aria-label="Charlas del ciclo">
+      <div class="container">
+         <div class="hackathon-lineup-list">
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="12:30">12:30 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>RETO EN SALUD:</h3>
+                     <p>La Última Milla, con Natalia Montenegro</p>
+                     <p><strong>Urbano Express</strong></p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card hackathon-lineup-card-filled">
+                  <time class="hackathon-lineup-time" datetime="13:20">13:20 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>ÚLTIMA MILLA:</h3>
+                     <p>El último paso de la logística o el primero de una nueva
+                        experiencia? Con Gabriel Lucchesi de  <strong> OCASA</strong></p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="14:00">14:00 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>DATO MATA RELATO:</h3>
+                     <p>Más allá del promedio con Tamara Pardieux de <strong> OCASA</strong></p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="14:15">14:15 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>DEL CORREO DE LAS CARTAS AL CORREO DE LAS COSAS:</h3>
+                     <p>20 oportunidades, con Gaston Mamone de <strong>Bluemail</strong>
+                     y Mariano Carrasco de <strong>iflow</strong></p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="14:45">14:45 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>MITOS Y VERDADES DE TU IA DE CADA DÍA:</h3>
+                     <p>con Emilio Suad de <strong>La Postal</strong></p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-item">
+               <div class="hackathon-lineup-label">Hora</div>
+               <div class="hackathon-lineup-card">
+                  <time class="hackathon-lineup-time" datetime="15:00">15:00 hr.</time>
+                  <div class="hackathon-lineup-description">
+                     <h3>CIERRE DEL CICLO</h3>
+                  </div>
+               </div>
+            </article>
+         </div>
+      </div>
+   </section>
+<!-- seccion3 -->
+   <section class="hackathon-lineup-final" aria-label="Presentaciones y cierre">
+      <div class="container">
+         <div class="hackathon-lineup-final-list">
+            <article class="hackathon-lineup-final-item">
+               <div class="hackathon-lineup-final-label">Hora</div>
+               <div class="hackathon-lineup-final-card">
+                  <time class="hackathon-lineup-final-time" datetime="12:00">12:00 hr.</time>
+                  <div class="hackathon-lineup-final-description">
+                     <span class="hackathon-lineup-final-stage">AULA MAGNA</span>
+                     <p>Exposición y defensa de las soluciones desarrolladas</p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-final-item">
+               <div class="hackathon-lineup-final-label">Hora</div>
+               <div class="hackathon-lineup-final-card hackathon-lineup-final-card-filled">
+                  <time class="hackathon-lineup-final-time" datetime="12:30">12:30 hr.</time>
+                  <div class="hackathon-lineup-final-description">
+                     <span class="hackathon-lineup-final-stage">AULA MAGNA</span>
+                     <p>Devoluciones del Jurado</p>
+                  </div>
+               </div>
+            </article>
+            <article class="hackathon-lineup-final-item">
+               <div class="hackathon-lineup-final-label">Hora</div>
+               <div class="hackathon-lineup-final-card">
+                  <time class="hackathon-lineup-final-time" datetime="13:00">13:00 hr.</time>
+                  <div class="hackathon-lineup-final-description">
+                     <span class="hackathon-lineup-final-stage">ESCENARIO PRINCIPAL</span>
+                     <p>Premiación y cierre del Hackathon</p>
+                  </div>
+               </div>
+            </article>
+         </div>
+      </div>
+   </section>

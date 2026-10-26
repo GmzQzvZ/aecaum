@@ -15973,7 +15973,7 @@ header.tv-header-height .tv-header-bar button .menu-text {
   width: 200px;
   height: 319px;
   transform: translateZ(25px);
-  background-color: #01060f;
+  background-color: #0b3d91;
   border-radius: 0 2px 2px 0;
   box-shadow: 5px 5px 20px #aaaaaa;
 }
@@ -16018,7 +16018,7 @@ header.tv-header-height .tv-header-bar button .menu-text {
   width: 200px;
   height: 319px;
   transform: translateZ(-25px);
-  background-color: #01060f;
+  background-color: #0b3d91;
   border-radius: 0 2px 2px 0;
   box-shadow: -10px 0 50px 10px #aaaaaa;
 }
@@ -16042,8 +16042,8 @@ header.tv-header-height .tv-header-bar button .menu-text {
   display: inline-block;
   background: var(--blue-500);
   color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 15% 0 15% 0;
+  padding: 0.3rem 2rem;
+  border-radius: 20px 0 20px 0;
   text-decoration: none;
   transition: background .3s ease;
 }
@@ -16289,4 +16289,428 @@ header.tv-header-height {
 .tv-btn-rounded:hover .btn-wrap .btn-text2 {
   top: 50%;
   transform: translateY(-50%);
+}
+
+.hackathon-lineup {
+  --lineup-blue: #004b87;
+  --lineup-light-blue: #c9e9f8;
+  padding: 0 0 80px;
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup h2 {
+  margin: 0 0 28px;
+  color: var(--lineup-blue);
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hackathon-lineup-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hackathon-lineup-item {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 15px;
+  min-height: 176px;
+}
+
+.hackathon-lineup-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lineup-blue);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.hackathon-lineup-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 345px) minmax(0, 1fr);
+  align-items: center;
+  border: 3px solid var(--lineup-blue);
+  border-radius: 50px 0 70px 0;
+  padding: 20px 34px 20px 58px;
+}
+
+.hackathon-lineup-card-filled {
+  border-color: var(--lineup-light-blue);
+  background: var(--lineup-light-blue);
+}
+
+.hackathon-lineup-time {
+  display: block;
+  border-right: 3px solid var(--lineup-blue);
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hackathon-lineup-description {
+  padding-left: 52px;
+  font-size: clamp(19px, 2.3vw, 34px);
+  line-height: 1.02;
+}
+
+.hackathon-lineup-description h3,
+.hackathon-lineup-description p {
+  margin: 0;
+  color: var(--lineup-blue);
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.hackathon-lineup-description h3 {
+  font-weight: 700;
+}
+
+.hackathon-talks {
+  padding: 0 0 42px;
+}
+
+.hackathon-talks .hackathon-lineup-list {
+  gap: 12px;
+}
+
+.hackathon-talks .hackathon-lineup-item {
+  min-height: 176px;
+}
+
+@media (max-width: 767px) {
+  .hackathon-lineup {
+    padding-bottom: 50px;
+  }
+
+  .hackathon-lineup h2 {
+    font-size: 46px;
+  }
+
+  .hackathon-lineup-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 150px;
+  }
+
+  .hackathon-lineup-label {
+    font-size: 24px;
+  }
+
+  .hackathon-lineup-card {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: 10px;
+    border-radius: 35px 0 45px 0;
+    padding: 16px 18px;
+  }
+
+  .hackathon-lineup-time {
+    border-right: 0;
+    border-bottom: 2px solid var(--lineup-blue);
+    padding-bottom: 6px;
+    font-size: 38px;
+  }
+
+  .hackathon-lineup-description {
+    padding-left: 0;
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .hackathon-lineup-break {
+    display: none;
+  }
+
+  .hackathon-lineup-secondary .hackathon-lineup-item {
+    min-height: 150px;
+  }
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 1) .hackathon-lineup-card {
+  border-color: var(--lineup-blue);
+  background: var(--lineup-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 1) .hackathon-lineup-time {
+  border-color: #fff;
+  color: #fff;
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 1) .hackathon-lineup-description h3,
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 1) .hackathon-lineup-description p {
+  color: #fff;
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 2) .hackathon-lineup-card {
+  border-color: var(--lineup-blue);
+  background: #fff;
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 2) .hackathon-lineup-time {
+  border-color: var(--lineup-blue);
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 2) .hackathon-lineup-description h3,
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n + 2) .hackathon-lineup-description p {
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n) .hackathon-lineup-card {
+  border-color: var(--lineup-light-blue);
+  background: var(--lineup-light-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n) .hackathon-lineup-time {
+  border-color: var(--lineup-blue);
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n) .hackathon-lineup-description h3,
+.hackathon-lineup-secondary .hackathon-lineup-item:nth-child(3n) .hackathon-lineup-description p {
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-card {
+  border-color: var(--lineup-blue);
+  background: var(--lineup-blue);
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-time {
+  border-color: #fff;
+  color: #fff;
+}
+
+.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-description h3,
+.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-description p {
+  color: #fff;
+}
+
+.hackathon-lineup-final {
+  --lineup-blue: #004b87;
+  --lineup-light-blue: #c9e9f8;
+  padding: 0 0 80px;
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup-final-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hackathon-lineup-final-item {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 15px;
+  min-height: 176px;
+}
+
+.hackathon-lineup-final-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lineup-blue);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.hackathon-lineup-final-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 345px) minmax(0, 1fr);
+  align-items: center;
+  min-width: 0;
+  border: 3px solid var(--lineup-blue);
+  border-radius: 50px 0 70px 0;
+  padding: 20px 34px 20px 58px;
+}
+
+.hackathon-lineup-final-card-filled {
+  border-color: var(--lineup-light-blue);
+  background: var(--lineup-light-blue);
+}
+
+.hackathon-lineup-final-time {
+  display: block;
+  border-right: 3px solid var(--lineup-blue);
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hackathon-lineup-final-description {
+  min-width: 0;
+  padding: 16px 0 0 52px;
+  font-size: clamp(19px, 2.3vw, 34px);
+  line-height: 1.02;
+}
+
+.hackathon-lineup-final-description p {
+  margin: 0;
+  color: var(--lineup-blue);
+}
+
+.hackathon-lineup-final-stage {
+  position: absolute;
+  top: -20px;
+  left: clamp(190px, 32%, 405px);
+  z-index: 1;
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 0 10px 0;
+  padding: 0 28px;
+  background: var(--lineup-blue);
+  color: #fff;
+  font-size: clamp(16px, 2.8vw, 21px);
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .hackathon-lineup-item,
+  .hackathon-lineup-final-item {
+    grid-template-columns: 54px minmax(0, 1fr);
+    gap: 10px;
+    min-height: 150px;
+  }
+
+  .hackathon-lineup-label,
+  .hackathon-lineup-final-label {
+    font-size: 25px;
+  }
+
+  .hackathon-lineup-card,
+  .hackathon-lineup-final-card {
+    grid-template-columns: minmax(180px, 34%) minmax(0, 1fr);
+    padding-right: 22px;
+    padding-left: 32px;
+  }
+
+  .hackathon-lineup-time,
+  .hackathon-lineup-final-time {
+    font-size: 36px;
+  }
+
+  .hackathon-lineup-description,
+  .hackathon-lineup-final-description {
+    padding-left: 28px;
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .hackathon-lineup-final-stage {
+    left: clamp(180px, 34%, 300px);
+  }
+}
+
+@media (max-width: 767px) {
+  .hackathon-lineup-final {
+    padding-bottom: 50px;
+  }
+
+  .hackathon-lineup-final-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 8px;
+    min-height: 150px;
+  }
+
+  .hackathon-lineup-final-label {
+    font-size: 24px;
+  }
+
+  .hackathon-lineup-final-card {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: 10px;
+    border-radius: 35px 0 45px 0;
+    padding: 16px 18px;
+  }
+
+  .hackathon-lineup-final-time {
+    border-right: 0;
+    border-bottom: 2px solid var(--lineup-blue);
+    padding-bottom: 6px;
+    font-size: 38px;
+  }
+
+  .hackathon-lineup-final-description {
+    padding: 0;
+    font-size: 19px;
+    line-height: 1.15;
+  }
+
+  .hackathon-lineup-final-stage {
+    position: static;
+    min-height: 36px;
+    margin-bottom: 8px;
+    padding: 0 14px;
+    font-size: 15px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hackathon-lineup {
+    padding-bottom: 36px;
+  }
+
+  .hackathon-lineup h2 {
+    margin-bottom: 16px;
+    font-size: 36px;
+  }
+
+  .hackathon-lineup-item,
+  .hackathon-lineup-secondary .hackathon-lineup-item,
+  .hackathon-lineup-final-item {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 6px;
+    min-height: 0;
+  }
+
+  .hackathon-lineup-label,
+  .hackathon-lineup-secondary .hackathon-lineup-label,
+  .hackathon-lineup-final-label {
+    font-size: 17px;
+  }
+
+  .hackathon-lineup-card,
+  .hackathon-lineup-secondary .hackathon-lineup-card,
+  .hackathon-lineup-final-card {
+    min-height: 150px;
+    padding: 12px 14px;
+  }
+
+  .hackathon-lineup-time,
+  .hackathon-lineup-secondary .hackathon-lineup-time,
+  .hackathon-lineup-final-time {
+    font-size: 30px;
+  }
+
+  .hackathon-lineup-description,
+  .hackathon-lineup-secondary .hackathon-lineup-description,
+  .hackathon-lineup-final-description {
+    font-size: 16px;
+    line-height: 1.12;
+  }
+
+  .hackathon-lineup-final-stage {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
 }

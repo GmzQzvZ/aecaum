@@ -5,7 +5,7 @@
             <div class="row align-items-center">
                <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
-                     <a href="<?= APP_URL ?>/">
+                     <a href="<?= APP_URL ?>/"  >
                         <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/Logoyfondo2.png" alt="AECAUM"
                            class="tv-header-logo-img">
                      </a>
@@ -26,8 +26,7 @@
                               style="width: 30px; height: auto; display: block; object-fit: contain; vertical-align: middle;">
                         </a>
                      </div>
-                     <span class="separator d-none d-md-inline-block"
-                        style="color: #00aae6 !important; margin: 0 15px 0 5px; font-size: 20px;">|</span>
+                     <span class="separator d-none d-md-inline-block" style="color: #00aae6 !important;">|</span>
                      <?php
                      if (isLoggedIn()):
                         $currentUser = getCurrentUser();
@@ -76,7 +75,15 @@
          <div class="itoffcanvas__text">
             <nav class="menu">
                <ul>
-                  <li><a href="<?= APP_URL ?>/nosotros">Nosotros</a></li>
+                  <li>
+                     <a href="<?= APP_URL ?>/nosotros">Nosotros</a>
+                     <ul class="submenu">
+                        <li><a href="<?= APP_URL ?>/network">Nuestra Red</a></li>
+                        <li><a href="<?= APP_URL ?>/agenda">Agenda Institucional</a></li>
+                     </ul>
+                  </li>
+                  <!-- <li><a href="<?= APP_URL ?>/indices">IMC</a></li> -->
+
                   <li><a href="https://correos.org.ar/newsletters/">Newsletter</a></li>
                   <li><a href="<?= APP_URL ?>/blog-details">Capacitaciones</a></li>
                   <!-- <li>
@@ -92,6 +99,7 @@
                   <li>
                      <a href="<?= APP_URL ?>/indices">Índices</a>
                      <ul class="submenu">
+                        <!-- <li><a href="<?= APP_URL ?>/indices">IMC</a></li> -->
                         <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
                      </ul>
                   </li>
