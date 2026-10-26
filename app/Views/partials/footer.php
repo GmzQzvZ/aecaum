@@ -100,10 +100,10 @@
                     <div class="col-lg-4 col-md-6 mb-50 aecaum-footer-services">
                         <h4>Servicios</h4>
                         <ul>
-                            <li><a href="<?= APP_URL ?>/service">Academia</a></li>
+                            <li><a href="<?= APP_URL ?>">Academia</a></li>
                             <li><a href="<?= APP_URL ?>/indices">Índice de Costos</a></li>
-                            <li><a href="<?= APP_URL ?>/service">Networking y Alianzas</a></li>
-                            <li><a href="<?= APP_URL ?>/service">Representación Sectorial</a></li>
+                            <li><a href="<?= APP_URL ?>/network">Networking y Alianzas</a></li>
+                            <li>Representación Sectorial</li>
                         </ul>
                     </div>
 

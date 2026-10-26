@@ -10,7 +10,7 @@
                </div>
                <div class="tv-breadcrumb-list-wrap">
                   <div class="tv-breadcrumb-list">
-                     <span><a href="index.html">Home</a></span>
+                     <span><a href="<?= APP_URL ?>/home">Home</a></span>
                      <span class="dvdr">
                         <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path
