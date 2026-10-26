@@ -26,6 +26,7 @@ Thumbs.db
 
 #Datos personales
 datos
+*.zip
 
 config/database.php
 app/Controllers/AdminController.php
