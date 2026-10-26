@@ -55,13 +55,230 @@ $monthName = $months[$selectedMonth] ?? '';
 </section>
 
 <style>
-.institutional-agenda{padding:80px 0 100px;background:#fff}.institutional-agenda>.container{max-width:910px}
-.agenda-month-label{display:inline-flex;min-width:160px;justify-content:center;align-items:center;padding:11px 24px;margin-bottom:48px;border-radius:0 0 9px 0;background:#05a9e0;color:#fff;font-size:23px;font-weight:700}
-.agenda-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.95fr);grid-template-rows:auto auto auto;column-gap:52px;align-items:start}
-.agenda-content{min-width:0}.agenda-section-one{grid-column:1;grid-row:1}.agenda-section-two{grid-column:1;grid-row:3}.agenda-eyebrow{display:block;margin-bottom:8px;color:#05a9e0;font-size:14px}.agenda-entry-title{margin:0 0 18px;color:#0b477d;font-size:36px;line-height:1.22;font-weight:750}.agenda-copy{margin:0 0 20px;color:#82939b;font-size:15px;line-height:1.55}.agenda-copy p{margin:0 0 14px}.agenda-copy ul,.agenda-copy ol{margin:0 0 16px;padding-left:23px}.agenda-copy ul{list-style:disc}.agenda-copy ol{list-style:decimal}.agenda-copy li{padding-left:3px;margin-bottom:4px}.agenda-copy strong,.agenda-copy b{color:#0b477d;font-weight:700}.agenda-section-divider{grid-column:1/-1;grid-row:2;width:calc(100% - 5px);height:5px;margin:52px auto;background:#07366d;border:0}
-.agenda-index{grid-column:2;grid-row:1/4;margin-top:32px;padding:30px 28px;background:#c8eaf8;border-radius:17px 0 17px 0}.agenda-index h2{margin:0 0 18px 4px;color:#0b477d;font-size:17px;font-weight:700}.agenda-index nav{display:grid;gap:10px}.agenda-index nav a{display:flex;min-height:49px;justify-content:center;align-items:center;padding:10px 14px;border-radius:7px;background:#fff;color:#0b477d;font-size:14px;text-decoration:none;transition:background .2s,color .2s}.agenda-index nav a:hover,.agenda-index nav a.is-active{background:#05a9e0;color:#fff}.agenda-index-empty{margin:0;color:#647780;font-size:14px;line-height:1.5}.agenda-empty{padding:32px;border-radius:12px;background:#f3f8fb;color:#647780;font-size:16px}
-@media(max-width:767px){.institutional-agenda{padding:52px 0 68px}.agenda-month-label{margin-bottom:30px}.agenda-layout{grid-template-columns:1fr;grid-template-rows:auto;gap:24px}.agenda-section-one,.agenda-section-two,
-.agenda-section-divider,.agenda-index
-{grid-column:0.5;
-grid-row:auto}.agenda-entry-title{font-size:29px}.agenda-section-divider{margin:8px 0;width:100%}.agenda-index{margin-top:0;padding:24px}.agenda-index nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}}
+/* ==========================================================================
+   1. CONTENEDOR PRINCIPAL
+   ========================================================================== */
+.institutional-agenda {
+  padding: 80px 0 100px;
+  background: #ffffff;
+}
+
+.institutional-agenda > .container {
+  max-width: 910px;
+}
+
+/* Etiqueta del mes */
+.agenda-month-label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 160px;
+  padding: 11px 24px;
+  margin-bottom: 48px;
+  border-radius: 0 0 9px 0;
+  background: #05a9e0;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   2. ESTRUCTURA Y LAYOUT (GRID)
+   ========================================================================== */
+.agenda-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.95fr);
+  grid-template-rows: auto auto auto;
+  column-gap: 52px;
+  align-items: start;
+}
+
+.agenda-content {
+  min-width: 0;
+}
+
+.agenda-section-one {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.agenda-section-two {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Línea divisoria de secciones */
+.agenda-section-divider {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  width: calc(90% - 5px);
+  height: 2px;
+  margin: 52px auto;
+  background: #072868;
+  border: 2px solid #072868;
+}
+
+/* ==========================================================================
+   3. TIPIFICACIÓN Y TEXTO DE ENTRADAS
+   ========================================================================== */
+.agenda-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #05a9e0;
+  font-size: 14px;
+}
+
+.agenda-entry-title {
+  margin: 0 0 18px;
+  color: #0b477d;
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.agenda-copy {
+  margin: 0 0 20px;
+  color: #82939b;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.agenda-copy p {
+  margin: 0 0 14px;
+}
+
+.agenda-copy ul,
+.agenda-copy ol {
+  margin: 0 0 16px;
+  padding-left: 23px;
+}
+
+.agenda-copy ul {
+  list-style: disc;
+}
+
+.agenda-copy ol {
+  list-style: decimal;
+}
+
+.agenda-copy li {
+  padding-left: 3px;
+  margin-bottom: 4px;
+}
+
+.agenda-copy strong,
+.agenda-copy b {
+  color: #0b477d;
+  font-weight: 700;
+}
+
+/* Estado sin contenido (vacío) */
+.agenda-empty {
+  padding: 32px;
+  border-radius: 12px;
+  background: #f3f8fb;
+  color: #647780;
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   4. MENÚ LATERAL / ÍNDICE (SIDEBAR)
+   ========================================================================== */
+.agenda-index {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  margin-top: 32px;
+  padding: 30px 28px;
+  background: #c8eaf8;
+  border-radius: 17px 0 17px 0;
+}
+
+.agenda-index h2 {
+  margin: 0 0 18px 4px;
+  color: #0b477d;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.agenda-index nav {
+  display: grid;
+  gap: 10px;
+}
+
+.agenda-index nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 49px;
+  padding: 10px 14px;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #0b477d;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Estado al pasar el cursor o botón activo */
+.agenda-index nav a:hover,
+.agenda-index nav a.is-active {
+  background: #05a9e0;
+  color: #ffffff;
+}
+
+.agenda-index-empty {
+  margin: 0;
+  color: #647780;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   5. ADAPTABILIDAD A DISPOSITIVOS MÓVILES (MEDIA QUERY)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .institutional-agenda {
+    padding: 52px 0 68px;
+  }
+
+  .agenda-month-label {
+    margin-bottom: 30px;
+  }
+
+  /* Cambiar layout a 1 sola columna */
+  .agenda-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+
+  .agenda-section-one,
+  .agenda-section-two,
+  .agenda-section-divider,
+  .agenda-index {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .agenda-entry-title {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .agenda-section-divider {
+    margin: 8px 0;
+    width: 100%;
+  }
+
+  .agenda-index {
+    margin-top: 0;
+    padding: 24px;
+  }
+
+  /* El índice se muestra en 2 columnas en móviles */
+  .agenda-index nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+}
 </style>

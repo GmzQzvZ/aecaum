@@ -45,6 +45,7 @@ class AdminController extends BaseController {
             'months'      => \Agenda::MONTHS,
             'entries'     => $entries,
             'selectedMonth' => $month,
+            'editModal'   => $this->query('edit') === '1',
             'success'     => $this->query('success'),
             'error'       => $this->query('error'),
         ], 'panel');
