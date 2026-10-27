@@ -16478,21 +16478,6 @@ header.tv-header-height {
   color: var(--lineup-blue);
 }
 
-.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-card {
-  border-color: var(--lineup-blue);
-  background: var(--lineup-blue);
-}
-
-.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-time {
-  border-color: #fff;
-  color: #fff;
-}
-
-.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-description h3,
-.hackathon-lineup-secondary .hackathon-lineup-item:last-child .hackathon-lineup-description p {
-  color: #fff;
-}
-
 .hackathon-lineup-final {
   --lineup-blue: #004b87;
   --lineup-light-blue: #c9e9f8;

@@ -21,14 +21,7 @@ class AdminController extends BaseController {
                 $this->redirect('admin/agenda?error=invalid_selection');
                 return;
             }
-            $ok = \Agenda::save(
-                $year,
-                $month,
-                $this->input('title'),
-                $this->input('subtitle'),
-                trim((string) ($_POST['text_one'] ?? '')),
-                trim((string) ($_POST['text_two'] ?? ''))
-            );
+            $ok = \Agenda::saveSections($year, $month, $_POST['sections'] ?? []);
             $this->redirect('admin/agenda?month=' . $month . '&' . ($ok ? 'success=agenda_saved' : 'error=save_failed'));
             return;
         }

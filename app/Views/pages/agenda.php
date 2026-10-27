@@ -1,6 +1,7 @@
 <?php
 $months = \Agenda::MONTHS;
 $entry = $agendaEntries[$selectedMonth] ?? null;
+$sections = $entry ? ($entry['sections'] ?? \Agenda::sectionsFromRow($entry)) : [];
 $monthName = $months[$selectedMonth] ?? '';
 ?>
 <!-- breadcrumb-area-start -->
@@ -26,18 +27,15 @@ $monthName = $months[$selectedMonth] ?? '';
          <?php if (!$entry): ?>
             <article class="agenda-content agenda-empty">Todavía no hay contenido publicado para <?= htmlspecialchars($monthName) ?>.</article>
          <?php else: ?>
-            <article class="agenda-content agenda-section-one">
-               <span class="agenda-eyebrow">Agenda Mensual</span>
-               <?php if (!empty($entry['title'])): ?><h1 class="agenda-entry-title"><?= nl2br(htmlspecialchars($entry['title'])) ?></h1><?php endif; ?>
-               <?php if (!empty($entry['text_one'])): ?><div class="agenda-copy"><?= \Agenda::renderFormatted($entry['text_one']) ?></div><?php endif; ?>
-            </article>
-            <?php if (!empty($entry['text_one']) && !empty($entry['text_two'])): ?>
-                <hr class="agenda-section-divider"><?php endif; ?>
-            <article class="agenda-content agenda-section-two">
-               <span class="agenda-eyebrow">Agenda Mensual</span>
-               <?php if (!empty($entry['subtitle'])): ?><h2 class="agenda-entry-title"><?= nl2br(htmlspecialchars($entry['subtitle'])) ?></h2><?php endif; ?>
-               <?php if (!empty($entry['text_two'])): ?><div class="agenda-copy"><?= \Agenda::renderFormatted($entry['text_two']) ?></div><?php endif; ?>
-            </article>
+            <?php $renderedSections = 0; foreach ($sections as $section): ?>
+               <?php if (trim((string) ($section['title'] ?? '')) === '' && trim(strip_tags((string) ($section['text'] ?? ''))) === '') continue; ?>
+               <?php if ($renderedSections > 0): ?><hr class="agenda-section-divider"><?php endif; ?>
+               <article class="agenda-content agenda-section-item">
+                  <span class="agenda-eyebrow">Agenda Mensual</span>
+                  <?php if (!empty($section['title'])): ?><h<?= $renderedSections === 0 ? '1' : '2' ?> class="agenda-entry-title"><?= nl2br(htmlspecialchars($section['title'], ENT_QUOTES, 'UTF-8')) ?></h<?= $renderedSections === 0 ? '1' : '2' ?>><?php endif; ?>
+                  <?php if (!empty($section['text'])): ?><div class="agenda-copy"><?= \Agenda::renderFormatted($section['text']) ?></div><?php endif; ?>
+               </article>
+            <?php $renderedSections++; endforeach; ?>
          <?php endif; ?>
          <aside class="agenda-index" aria-label="Índice de meses">
             <h2>Nuestro Año</h2>
@@ -64,7 +62,7 @@ $monthName = $months[$selectedMonth] ?? '';
 }
 
 .institutional-agenda > .container {
-  max-width: 910px;
+  max-width: 1140px;
 }
 
 /* Etiqueta del mes */
@@ -72,13 +70,13 @@ $monthName = $months[$selectedMonth] ?? '';
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 160px;
-  padding: 11px 24px;
+  min-width: 175px;
+  padding: 13px 26px;
   margin-bottom: 48px;
   border-radius: 0 0 9px 0;
   background: #05a9e0;
   color: #ffffff;
-  font-size: 23px;
+  font-size: 25px;
   font-weight: 700;
 }
 
@@ -97,20 +95,14 @@ $monthName = $months[$selectedMonth] ?? '';
   min-width: 0;
 }
 
-.agenda-section-one {
+.agenda-section-item {
   grid-column: 1;
-  grid-row: 1;
-}
-
-.agenda-section-two {
-  grid-column: 1;
-  grid-row: 3;
 }
 
 /* Línea divisoria de secciones */
 .agenda-section-divider {
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: auto;
   width: calc(90% - 5px);
   height: 2px;
   margin: 52px auto;
@@ -125,13 +117,13 @@ $monthName = $months[$selectedMonth] ?? '';
   display: block;
   margin-bottom: 8px;
   color: #05a9e0;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .agenda-entry-title {
   margin: 0 0 18px;
   color: #0b477d;
-  font-size: 30px;
+  font-size: 36px;
   line-height: 1.25;
   font-weight: 700;
 }
@@ -139,8 +131,8 @@ $monthName = $months[$selectedMonth] ?? '';
 .agenda-copy {
   margin: 0 0 20px;
   color: #82939b;
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .agenda-copy p {
@@ -178,7 +170,7 @@ $monthName = $months[$selectedMonth] ?? '';
   border-radius: 12px;
   background: #f3f8fb;
   color: #647780;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* ==========================================================================
@@ -186,7 +178,7 @@ $monthName = $months[$selectedMonth] ?? '';
    ========================================================================== */
 .agenda-index {
   grid-column: 2;
-  grid-row: 1 / 4;
+  grid-row: 1 / span 99;
   margin-top: 32px;
   padding: 30px 28px;
   background: #c8eaf8;
@@ -196,7 +188,7 @@ $monthName = $months[$selectedMonth] ?? '';
 .agenda-index h2 {
   margin: 0 0 18px 4px;
   color: #0b477d;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -209,12 +201,12 @@ $monthName = $months[$selectedMonth] ?? '';
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 49px;
-  padding: 10px 14px;
+  min-height: 54px;
+  padding: 12px 16px;
   border-radius: 7px;
   background: #ffffff;
   color: #0b477d;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
@@ -252,8 +244,7 @@ $monthName = $months[$selectedMonth] ?? '';
     gap: 24px;
   }
 
-  .agenda-section-one,
-  .agenda-section-two,
+  .agenda-section-item,
   .agenda-section-divider,
   .agenda-index {
     grid-column: 1;
@@ -261,8 +252,12 @@ $monthName = $months[$selectedMonth] ?? '';
   }
 
   .agenda-entry-title {
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 700;
+  }
+
+  .agenda-copy {
+    font-size: 17px;
   }
 
   .agenda-section-divider {

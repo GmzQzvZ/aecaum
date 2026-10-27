@@ -15,7 +15,10 @@ class Agenda {
         if (!$stmt->execute()) return [];
         $result = $stmt->get_result();
         $entries = [];
-        while ($row = $result->fetch_assoc()) $entries[(int)$row['month_number']] = $row;
+        while ($row = $result->fetch_assoc()) {
+            $row['sections'] = self::sectionsFromRow($row);
+            $entries[(int)$row['month_number']] = $row;
+        }
         $stmt->close();
         return $entries;
     }
@@ -38,6 +41,47 @@ class Agenda {
         );
         if (!$stmt) return false;
         $stmt->bind_param('iissss', $year, $month, $title, $subtitle, $textOne, $textTwo);
+        $saved = $stmt->execute();
+        $stmt->close();
+        return $saved;
+    }
+
+    /** Convert the legacy two-section columns to a uniform section list. */
+    public static function sectionsFromRow(array $row): array {
+        if (!empty($row['sections_json'])) {
+            $decoded = json_decode($row['sections_json'], true);
+            if (is_array($decoded)) return array_values(array_filter($decoded, 'is_array'));
+        }
+
+        return [
+            ['title' => (string) ($row['title'] ?? ''), 'text' => (string) ($row['text_one'] ?? '')],
+            ['title' => (string) ($row['subtitle'] ?? ''), 'text' => (string) ($row['text_two'] ?? '')],
+        ];
+    }
+
+    /** Save any number of agenda sections while mirroring the first two to legacy columns. */
+    public static function saveSections(int $year, int $month, array $sections): bool {
+        global $conn;
+        $clean = [];
+        foreach ($sections as $section) {
+            if (!is_array($section)) continue;
+            $title = trim((string) ($section['title'] ?? ''));
+            $text = trim((string) ($section['text'] ?? ''));
+            if ($title === '' && trim(strip_tags($text)) === '') continue;
+            $clean[] = ['title' => $title, 'text' => $text];
+        }
+
+        $first = $clean[0] ?? ['title' => '', 'text' => ''];
+        $second = $clean[1] ?? ['title' => '', 'text' => ''];
+        $json = json_encode($clean, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        if ($json === false) return false;
+
+        $stmt = $conn->prepare(
+            'INSERT INTO agenda_months (year, month_number, title, subtitle, text_one, text_two, sections_json) VALUES (?, ?, ?, ?, ?, ?, ?) '
+            . 'ON DUPLICATE KEY UPDATE title = VALUES(title), subtitle = VALUES(subtitle), text_one = VALUES(text_one), text_two = VALUES(text_two), sections_json = VALUES(sections_json)'
+        );
+        if (!$stmt) return false;
+        $stmt->bind_param('iisssss', $year, $month, $first['title'], $second['title'], $first['text'], $second['text'], $json);
         $saved = $stmt->execute();
         $stmt->close();
         return $saved;

@@ -217,15 +217,6 @@ $hackathonJury = [
                   </div>
                </div>
             </article>
-            <article class="hackathon-lineup-item">
-               <div class="hackathon-lineup-label">Hora</div>
-               <div class="hackathon-lineup-card">
-                  <time class="hackathon-lineup-time" datetime="15:00">15:00 hr.</time>
-                  <div class="hackathon-lineup-description">
-                     <h3>CIERRE DEL CICLO</h3>
-                  </div>
-               </div>
-            </article>
          </div>
       </div>
    </section>

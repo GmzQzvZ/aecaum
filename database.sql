@@ -11,6 +11,20 @@ CREATE TABLE IF NOT EXISTS roles (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Migración para bases existentes: admite cualquier cantidad de secciones.
+SET @agenda_sections_column_exists = (
+    SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'agenda_months' AND COLUMN_NAME = 'sections_json'
+);
+SET @agenda_sections_migration = IF(
+    @agenda_sections_column_exists = 0,
+    'ALTER TABLE agenda_months ADD COLUMN sections_json LONGTEXT NULL',
+    'SELECT 1'
+);
+PREPARE agenda_sections_statement FROM @agenda_sections_migration;
+EXECUTE agenda_sections_statement;
+DEALLOCATE PREPARE agenda_sections_statement;
+
 -- Tabla de usuarios
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -59,6 +73,7 @@ CREATE TABLE IF NOT EXISTS agenda_months (
     subtitle VARCHAR(255) NOT NULL DEFAULT '',
     text_one LONGTEXT NOT NULL,
     text_two LONGTEXT NOT NULL,
+    sections_json LONGTEXT NULL,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (year, month_number),
     CONSTRAINT chk_agenda_month CHECK (month_number BETWEEN 1 AND 12)
