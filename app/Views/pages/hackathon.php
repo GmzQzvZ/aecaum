@@ -27,8 +27,7 @@
    <div class="container">
       <div class="text-center">
          <h1 class="tv-slider-title " style="font-weight:900; font-size:44px;">1° Hackathon de la Última Milla</h1>
-         <h2 style=" color:#00aae6 ;font-weight:900; font-size:20px;">una iniciativa de AECAUM</h2>
-         <p style="color:#6d8089; font-size:20px;">Desde AECAUM impulsamos el 1° Hackatón de Última Milla, diseñado para impactar 
+         <p style="color:#6d8089; font-size:20px;">Desde AECA Ultima Milla impulsamos el 1° Hackatón de Última Milla, diseñado para impactar 
          directamente en el ecosistema logístico de última milla.</p>
       </div>
       <div class="row">
@@ -78,9 +77,9 @@ $hackathonJury = [
    ['name' => 'IGNACIO RODRÍGUEZ QUINTANA', 'role' => 'AECA - Última Milla', 'image' => 'ANfitriones-91.png'],
    ['name' => 'JULIETA DAFFONCHIO', 'role' => 'Directora Ejecutiva - FAETYL', 'image' => 'Hackaton-92.png'],
    ['name' => 'RAFAEL RODRÍGUEZ RODA', 'role' => 'Director Ejecutivo CEDOL', 'image' => 'Hackaton-94.png'],
-   ['name' => 'GABRIELA SIUEL', 'role' => 'Directora - UNAB', 'image' => 'ANfitriones-94.png'],
+   ['name' => 'GABRIELA SIUFI', 'role' => 'Directora - UNAB', 'image' => 'ANfitriones-94.png'],
    ['name' => 'GERARDO ROJAS', 'role' => 'Presidente - UIAB', 'image' => 'Hackaton-95.png'],
-   ['name' => 'PABLO BELTRÁN', 'role' => 'Miembro Comisión Directiva - ARLOG', 'image' => 'Hackaton-96.png'],
+   ['name' => 'PABLO BELTRÁN', 'role' => 'Miembro Comisión Directiva - ARLOG', 'image' => 'pablo.png'],
    ['name' => 'DIEGO BERARDO', 'role' => 'Vicepresidente - CESSI', 'image' => 'Hackaton-98.png'],
 ];
 ?>
@@ -121,7 +120,7 @@ $hackathonJury = [
 <!-- seccion1 -->
    <section class="hackathon-lineup hackathon-lineup-intro" aria-labelledby="hackathon-lineup-title">
       <div class="container">
-         <h2 id="hackathon-lineup-title">LineUp</h2>
+         <h2 id="hackathon-lineup-title">Cronograma</h2>
          <div class="hackathon-lineup-list">
             <article class="hackathon-lineup-item">
                <div class="hackathon-lineup-label">Hora</div>

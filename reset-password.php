@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isValidToken) {
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Restablecer Contraseña - ACAEUM</title>
+   <title>Restablecer Contraseña - AECA Última Milla</title>
    <meta name="description" content="Restablecer contraseña ACAEUM">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="assets/css/bootstrap.min.css">

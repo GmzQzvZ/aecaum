@@ -104,9 +104,9 @@ class AuthController extends BaseController
 
                     // Construir enlace de restablecimiento
                     $resetLink = APP_URL . '/reset-password?token=' . urlencode($token);
-                    $logoUrl = 'https://r2.fivemanage.com/MfeHpBFNP9b0bx7GdZMbE/AECAUMBrand-05.png';
+                    $logoUrl = 'https://r2.fivemanage.com/MfeHpBFNP9b0bx7GdZMbE/Logoblanco.png';
 
-                    $subject = 'Recuperación de Contraseña — ACAEUM';
+                    $subject = 'Recuperación de Contraseña — AECA Última Milla';
                     $body = "
                         <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                             <div style='background: #0a3a78; padding: 30px; text-align: center;'>
@@ -132,7 +132,7 @@ class AuthController extends BaseController
                                 </p>
                             </div>
                             <div style='background: #0a3a78; padding: 20px; text-align: center;'>
-                                <p style='color: #ffffff; margin: 0; font-size: 12px; opacity: 0.8;'>© 2026 AECAUM. Todos los derechos reservados.</p>
+                                <p style='color: #ffffff; margin: 0; font-size: 12px; opacity: 0.8;'>© 2026 AECA Última Milla. Todos los derechos reservados.</p>
                             </div>
                         </div>
                     ";

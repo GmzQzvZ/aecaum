@@ -91,13 +91,14 @@ class AdminController extends BaseController {
                 if ($ok) {
                     // Enviar correo de bienvenida con las credenciales
                     require_once ROOT_PATH . '/app/Helpers/MailHelper.php';
+                    $logoUrl = 'https://r2.fivemanage.com/MfeHpBFNP9b0bx7GdZMbE/Logoblanco.png';
 
-                    $subject = 'Bienvenido a AECAUM — Tus credenciales de acceso';
+                    $subject = 'Bienvenido a AECA Última Milla — Tus credenciales de acceso';
                     $body = "
                         <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                             <div style='background: #0a3a78; padding: 30px; text-align: center;'>
-                                <img loading='lazy' src='" . APP_URL . "/assets/img/logo/logo.png' alt='AECAUM' style='max-width: 150px; margin-bottom: 15px;'>
-                                <h1 style='color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;'>¡Bienvenido a AECAUM!</h1>
+                                <img src='{$logoUrl}' alt='AECA Última Milla' style='max-width: 300px; margin-bottom: -100px; margin-top: -100px;'>
+                                <h1 style='color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;'>¡Bienvenido a AECA Última Milla!</h1>
                             </div>
                             <div style='padding: 30px;'>
                                 <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Hola <strong style='color: #0a3a78;'>{$name}</strong>,</p>
@@ -119,10 +120,10 @@ class AdminController extends BaseController {
                                 <div style='background: #fff3cd; border-left: 4px solid #ECB014; padding: 15px; margin: 25px 0;'>
                                     <p style='color: #856404; margin: 0; font-size: 14px;'><strong>⚠ Por seguridad, te recomendamos cambiar tu contraseña al iniciar sesión por primera vez.</strong></p>
                                 </div>
-                                <p style='color: #6d8089; font-size: 16px; line-height: 1.6; margin-top: 25px;'>Saludos,<br><strong style='color: #0a3a78;'>Equipo AECAUM</strong></p>
+                                <p style='color: #6d8089; font-size: 16px; line-height: 1.6; margin-top: 25px;'>Saludos,<br><strong style='color: #0a3a78;'>Equipo AECA Última Milla</strong></p>
                             </div>
                             <div style='background: #0a3a78; padding: 20px; text-align: center;'>
-                                <p style='color: #ffffff; margin: 0; font-size: 12px; opacity: 0.8;'>© 2026 AECAUM. Todos los derechos reservados.</p>
+                                <p style='color: #ffffff; margin: 0; font-size: 12px; opacity: 0.8;'>© 2026 AECA Última Milla. Todos los derechos reservados.</p>
                             </div>
                         </div>
                     ";

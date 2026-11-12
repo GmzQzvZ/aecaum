@@ -31,7 +31,11 @@
                <td><div style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;"><?= htmlspecialchars($msg['message']) ?></div></td>
                <td><?= date('d/m/Y H:i', strtotime($msg['created_at'])) ?></td>
                <td>
-                  <button class="btn-primary-sm" onclick="viewMessage(<?= $msg['id'] ?>, '<?= htmlspecialchars($msg['name'], ENT_QUOTES) ?>', '<?= htmlspecialchars($msg['email'], ENT_QUOTES) ?>', '<?= htmlspecialchars($msg['message'], ENT_QUOTES) ?>')" title="Ver mensaje">
+                  <button type="button" class="btn-primary-sm" data-view-message
+                     data-name="<?= htmlspecialchars($msg['name'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>"
+                     data-email="<?= htmlspecialchars($msg['email'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>"
+                     data-message="<?= htmlspecialchars($msg['message'], ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>"
+                     title="Ver mensaje">
                      <i class="ti ti-eye"></i>
                   </button>
                   <form method="POST" action="<?= APP_URL ?>/admin/contacto" style="display:inline;"
@@ -50,6 +54,25 @@
 </div>
 
 <!-- Modal: Ver mensaje -->
+<style>
+   #modal-view-message {
+      padding: 16px;
+      overflow-y: auto;
+   }
+   #modal-view-message .modal-box {
+      width: min(500px, 100%);
+      max-width: 100%;
+      max-height: calc(100vh - 32px);
+      max-height: calc(100dvh - 32px);
+      overflow-y: auto;
+   }
+   #view_message {
+      max-height: 45vh;
+      max-height: 45dvh;
+      overflow-y: auto;
+      overflow-wrap: anywhere;
+   }
+</style>
 <div class="modal-overlay" id="modal-view-message" onclick="if(event.target===this)this.classList.remove('show')">
    <div class="modal-box">
       <h4><i class="ti ti-mail"></i> Mensaje de contacto</h4>
@@ -71,10 +94,12 @@
 </div>
 
 <script>
-function viewMessage(id, name, email, message) {
-   document.getElementById('view_name').textContent = name;
-   document.getElementById('view_email').textContent = email;
-   document.getElementById('view_message').textContent = message;
-   document.getElementById('modal-view-message').classList.add('show');
-}
+document.querySelectorAll('[data-view-message]').forEach(button => {
+   button.addEventListener('click', () => {
+      document.getElementById('view_name').textContent = button.dataset.name;
+      document.getElementById('view_email').textContent = button.dataset.email;
+      document.getElementById('view_message').textContent = button.dataset.message;
+      document.getElementById('modal-view-message').classList.add('show');
+   });
+});
 </script>

@@ -32,10 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
         
         // Preparar email
         $resetLink = 'http://' . $_SERVER['HTTP_HOST'] . '/aecaum/reset-password.php?token=' . $token;
-        $subject = 'Recuperación de Contraseña - ACAEUM';
+        $subject = 'Recuperación de Contraseña - AECA Última Milla';
         $body = "
             <h2>Hola {$user['name']},</h2>
-            <p>Has solicitado restablecer tu contraseña en ACAEUM.</p>
+            <p>Has solicitado restablecer tu contraseña en AECA Última Milla.</p>
             <p>Por favor, haz clic en el siguiente enlace para crear una nueva contraseña. Este enlace es válido por 1 hora.</p>
             <p><a href='{$resetLink}' style='padding: 10px 15px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;'>Restablecer Contraseña</a></p>
             <p>Si no solicitaste este cambio, puedes ignorar este correo.</p>
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
 <head>
    <meta charset="utf-8">
    <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <title>Recuperar Contraseña - ACAEUM</title>
+   <title>Recuperar Contraseña - AECA Última Milla</title>
    <meta name="description" content="Página de recuperación de contraseña de ACAEUM">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 

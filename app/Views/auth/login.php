@@ -5,7 +5,7 @@
          <div class="col-xl-6 col-lg-8">
             <div class="tv-section-title-box text-center mb-40">
                <h4 class="tv-section-title pb-20 tv-spltv-text tv-spltv-in-right">Acceso a tu cuenta</h4>
-               <p class="tv-section">Ingresá tus credenciales para acceder a los servicios exclusivos de AECAUM.</p>
+               <p class="tv-section">Ingresá tus credenciales para acceder a los servicios exclusivos de AECA Última Milla.</p>
                <?php if (!empty($error)): ?>
                <div class="alert alert-danger" style="background:#f8d7da;color:#721c24;padding:12px 20px;border-radius:8px;margin-top:15px;">
                   <?= htmlspecialchars($error) ?>
