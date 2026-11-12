@@ -49,6 +49,7 @@ define('SMTP_PORT', getenv('SMTP_PORT') ?: 465);
 define('SMTP_SECURE', getenv('SMTP_SECURE') ?: 'ssl');
 define('MAIL_FROM', getenv('MAIL_FROM') ?: SMTP_USER);
 define('MAIL_FROM_NAME', getenv('MAIL_FROM_NAME') ?: 'Soporte ACAEUM');
+define('CONTACT_COPY_EMAILS', getenv('CONTACT_COPY_EMAILS') ?: '');
 
 
 // Conexión global

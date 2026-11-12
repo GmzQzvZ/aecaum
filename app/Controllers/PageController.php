@@ -67,6 +67,53 @@ class PageController extends BaseController {
                         'email'   => $email,
                         'message' => $message,
                     ]);
+
+                    if ($ok) {
+                        $copyRecipients = [];
+
+                        if (defined('CONTACT_COPY_EMAILS') && !empty(CONTACT_COPY_EMAILS)) {
+                            $copyRecipients = preg_split('/[;,]/', CONTACT_COPY_EMAILS, -1, PREG_SPLIT_NO_EMPTY);
+                            $copyRecipients = array_map('trim', $copyRecipients);
+                            $copyRecipients = array_values(array_filter($copyRecipients, fn($email) => filter_var($email, FILTER_VALIDATE_EMAIL)));
+                        }
+
+                        if (empty($copyRecipients) && defined('MAIL_FROM') && !empty(MAIL_FROM)) {
+                            $copyRecipients[] = MAIL_FROM;
+                        }
+
+                        if (!empty($copyRecipients)) {
+                            $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+                            $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+                            $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
+
+                            $subject = 'Nuevo mensaje de contacto — AECAUM';
+                            $body = "
+                                <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
+                                    <div style='background: #0a3a78; padding: 30px; text-align: center;'>
+                                        <h1 style='color: #ffffff; margin: 0; font-size: 28px; font-weight: 600;'>Nuevo mensaje de contacto</h1>
+                                    </div>
+                                    <div style='padding: 30px;'>
+                                        <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'><strong>Nombre:</strong> {$safeName}</p>
+                                        <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'><strong>Email:</strong> {$safeEmail}</p>
+                                        <div style='background: #f5f6f7; border-left: 4px solid #0a3a78; padding: 15px; margin: 20px 0;'>
+                                            <p style='color: #6d8089; margin: 0; font-size: 15px; line-height: 1.7;'>{$safeMessage}</p>
+                                        </div>
+                                    </div>
+                                    <div style='background: #0a3a78; padding: 20px; text-align: center;'>
+                                        <p style='color: #ffffff; margin: 0; font-size: 12px; opacity: 0.8;'>© 2026 AECAUM. Todos los derechos reservados.</p>
+                                    </div>
+                                </div>
+                            ";
+
+                            foreach ($copyRecipients as $copyTo) {
+                                $mailSent = \App\Helpers\MailHelper::sendMail($copyTo, $subject, $body);
+                                if (!$mailSent) {
+                                    error_log('No se pudo enviar la copia del mensaje de contacto a ' . $copyTo . '. Error: ' . \App\Helpers\MailHelper::$lastError);
+                                }
+                            }
+                        }
+                    }
+
                     $sent = $ok;
                     error_log('Resultado Contact::create: ' . ($ok ? 'SUCCESS' : 'FAILED'));
                     if (!$ok) {
