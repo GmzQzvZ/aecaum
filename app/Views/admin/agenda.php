@@ -7,7 +7,7 @@ if (!$sections) $sections = [['title' => '', 'text' => ''], ['title' => '', 'tex
 <div class="main-content">
    <div class="page-header"><div><h1><i class="ti ti-calendar-event"></i> Agenda institucional</h1><p>Seleccioná un mes para crear o editar sus secciones.</p></div></div>
    <?php if ($success === 'agenda_saved'): ?><div class="alert-success"><i class="ti ti-circle-check"></i> Contenido de <?= htmlspecialchars($months[$selectedMonth]) ?> guardado.</div><?php endif; ?>
-   <?php if ($error): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> No se pudo guardar. Revisá los datos e intentá nuevamente.</div><?php endif; ?>
+   <?php if ($error === 'upload_failed'): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> No se pudo cargar la imagen: <?= htmlspecialchars($_GET['reason'] ?? 'error desconocido', ENT_QUOTES, 'UTF-8') ?></div><?php elseif ($error === 'upload_too_large'): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> El formulario supera el límite de carga permitido por el servidor (post_max_size). Reducí el tamaño o la cantidad de imágenes.</div><?php elseif ($error === 'sections_save_failed'): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> No se pudieron guardar las secciones. Ejecutá las migraciones de agenda de database.sql en la base de datos.</div><?php elseif ($error): ?><div class="alert-error"><i class="ti ti-alert-circle"></i> No se pudo guardar el contenido. Revisá los campos y la configuración de la base de datos.</div><?php endif; ?>
    <div class="panel-card"><h3><i class="ti ti-calendar-month"></i> Meses de la agenda</h3><div class="agenda-month-grid">
       <?php foreach ($months as $number => $name): $entry = $entries[$number] ?? null; ?>
          <a class="agenda-month-card <?= $entry ? 'has-content' : 'is-empty' ?>" href="<?= APP_URL ?>/admin/agenda?month=<?= $number ?>&amp;edit=1"><span class="agenda-month-card-name"><?= htmlspecialchars($name) ?></span><span class="agenda-month-card-status"><i class="ti <?= $entry ? 'ti-circle-check' : 'ti-circle-plus' ?>"></i> <?= $entry ? 'Editar contenido' : 'Agregar contenido' ?></span></a>
@@ -16,12 +16,14 @@ if (!$sections) $sections = [['title' => '', 'text' => ''], ['title' => '', 'tex
    <?php if ($editModal): ?>
    <div class="agenda-modal-backdrop" id="agenda-modal" role="dialog" aria-modal="true" aria-labelledby="agenda-modal-title"><div class="agenda-modal">
       <div class="agenda-modal-header"><div><span>Agenda institucional</span><h2 id="agenda-modal-title"><?= isset($entries[$selectedMonth]) ? 'Editar' : 'Agregar' ?> contenido · <?= htmlspecialchars($months[$selectedMonth]) ?></h2></div><a class="agenda-modal-close" href="<?= APP_URL ?>/admin/agenda" aria-label="Cerrar">&times;</a></div>
-      <form id="agenda-content-form" method="POST" action="<?= APP_URL ?>/admin/agenda">
+      <form id="agenda-content-form" method="POST" action="<?= APP_URL ?>/admin/agenda" enctype="multipart/form-data">
          <input type="hidden" name="action" value="save_agenda_month"><input type="hidden" name="month_number" value="<?= $selectedMonth ?>">
          <div id="agenda-sections">
          <?php foreach ($sections as $index => $section): ?>
             <section class="agenda-admin-section" data-section>
                <div class="agenda-section-heading"><h3>Sección <?= $index + 1 ?></h3><?php if ($index > 1): ?><button type="button" class="agenda-remove-section">Quitar sección</button><?php endif; ?></div>
+               <div class="form-group"><label>Imagen de esta nota (JPG, PNG o WebP)</label><?php if (!empty($section['image'])): ?><p><img src="<?= APP_URL ?>/<?= htmlspecialchars($section['image'], ENT_QUOTES, 'UTF-8') ?>" alt="Imagen actual" style="width:150px;height:90px;object-fit:cover;border-radius:8px"></p><?php endif; ?><input type="file" data-image-input name="note_images[<?= $index ?>]" accept="image/jpeg,image/png,image/webp"></div>
+               <input type="hidden" data-field="created_at" name="sections[<?= $index ?>][created_at]" value="<?= htmlspecialchars($section['created_at'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
                <div class="form-group"><label>Título</label><input type="text" maxlength="255" data-field="title" name="sections[<?= $index ?>][title]" value="<?= htmlspecialchars($section['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>" placeholder="Título de la sección"></div>
                <div class="form-group"><label>Contenido</label><div class="agenda-toolbar"><button type="button" data-command="bold" title="Negrita"><strong>B</strong></button><button type="button" data-command="insertUnorderedList" title="Lista con viñetas">• Lista</button><button type="button" data-command="insertOrderedList" title="Lista numerada">1. Lista</button></div><div class="agenda-rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Contenido de la sección…"><?= \Agenda::renderFormatted($section['text'] ?? '') ?></div><textarea hidden data-field="text" name="sections[<?= $index ?>][text]"></textarea><small>Usá los controles para aplicar negrita o crear listas.</small></div>
             </section>
@@ -45,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
       list.querySelectorAll('[data-section]').forEach(function (section, index) {
          section.querySelector('h3').textContent = 'Sección ' + (index + 1);
          section.querySelectorAll('[data-field]').forEach(function (field) { field.name = 'sections[' + index + '][' + field.dataset.field + ']'; });
+         const imageInput = section.querySelector('[data-image-input]'); if (imageInput) imageInput.name = 'note_images[' + index + ']';
          const remove = section.querySelector('.agenda-remove-section');
          if (index < 2 && remove) remove.remove();
          if (index >= 2 && !remove) {
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
    }
    document.getElementById('agenda-add-section').addEventListener('click', function () {
       const section = document.createElement('section'); section.className = 'agenda-admin-section'; section.dataset.section = '';
-      section.innerHTML = '<div class="agenda-section-heading"><h3></h3><button type="button" class="agenda-remove-section">Quitar sección</button></div><div class="form-group"><label>Título</label><input type="text" maxlength="255" data-field="title" placeholder="Título de la sección"></div><div class="form-group"><label>Contenido</label><div class="agenda-toolbar"><button type="button" data-command="bold" title="Negrita"><strong>B</strong></button><button type="button" data-command="insertUnorderedList" title="Lista con viñetas">• Lista</button><button type="button" data-command="insertOrderedList" title="Lista numerada">1. Lista</button></div><div class="agenda-rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Contenido de la sección…"></div><textarea hidden data-field="text"></textarea><small>Usá los controles para aplicar negrita o crear listas.</small></div>';
+      section.innerHTML = '<div class="agenda-section-heading"><h3></h3><button type="button" class="agenda-remove-section">Quitar sección</button></div><input type="hidden" data-field="created_at" value=""><div class="form-group"><label>Imagen de esta nota (JPG, PNG o WebP)</label><input type="file" data-image-input accept="image/jpeg,image/png,image/webp"></div><div class="form-group"><label>Título</label><input type="text" maxlength="255" data-field="title" placeholder="Título de la sección"></div><div class="form-group"><label>Contenido</label><div class="agenda-toolbar"><button type="button" data-command="bold" title="Negrita"><strong>B</strong></button><button type="button" data-command="insertUnorderedList" title="Lista con viñetas">• Lista</button><button type="button" data-command="insertOrderedList" title="Lista numerada">1. Lista</button></div><div class="agenda-rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Contenido de la sección…"></div><textarea hidden data-field="text"></textarea><small>Usá los controles para aplicar negrita o crear listas.</small></div>';
       list.appendChild(section); reindex(); section.querySelector('input').focus();
    });
    list.addEventListener('click', function (event) {

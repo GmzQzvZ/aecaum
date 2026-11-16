@@ -23,6 +23,65 @@ class Agenda {
         return $entries;
     }
 
+    /** Aplana las secciones de todos los meses como notas individuales, de la más reciente a la más antigua. */
+    public static function allNotes(): array {
+        global $conn;
+        $result = $conn->query('SELECT * FROM agenda_months ORDER BY year DESC, month_number DESC');
+        if (!$result) return [];
+        $notes = [];
+        while ($row = $result->fetch_assoc()) {
+            foreach (self::sectionsFromRow($row) as $index => $section) {
+                $title = trim((string) ($section['title'] ?? ''));
+                $text = trim((string) ($section['text'] ?? ''));
+                if ($title === '' && trim(strip_tags($text)) === '') continue;
+                $createdAt = (string) ($section['created_at'] ?? $row['updated_at'] ?? '');
+                $notes[] = [
+                    'year' => (int) $row['year'],
+                    'month_number' => (int) $row['month_number'],
+                    'section_index' => (int) $index,
+                    'title' => $title,
+                    'text' => $text,
+                    'image' => (string) ($section['image'] ?? ''),
+                    'created_at' => $createdAt,
+                    'created_timestamp' => strtotime($createdAt) ?: 0,
+                ];
+            }
+        }
+        usort($notes, static function (array $a, array $b): int {
+            // Mantener juntos los registros del mismo mes y ordenar los meses
+            // cronológicamente. La fecha de creación solo define el orden dentro
+            // de cada mes, ya que puede ser anterior al mes de la agenda al editar.
+            return ($b['year'] <=> $a['year'])
+                ?: (($b['month_number'] <=> $a['month_number'])
+                    ?: (($b['created_timestamp'] <=> $a['created_timestamp'])
+                        ?: ($b['section_index'] <=> $a['section_index'])));
+        });
+        return $notes;
+    }
+
+    /** Entradas del mes más reciente que contengan notas publicables. */
+    public static function latestMonthWithNotes(): ?array {
+        global $conn;
+        $result = $conn->query('SELECT * FROM agenda_months ORDER BY year DESC, month_number DESC LIMIT 1');
+        if (!$result || !($row = $result->fetch_assoc())) return null;
+        $row['sections'] = self::sectionsFromRow($row);
+        return $row;
+    }
+
+    public static function find(int $year, int $month): ?array {
+        global $conn;
+        $stmt = $conn->prepare('SELECT * FROM agenda_months WHERE year = ? AND month_number = ? LIMIT 1');
+        if (!$stmt) return null;
+        $stmt->bind_param('ii', $year, $month);
+        if (!$stmt->execute()) { $stmt->close(); return null; }
+        $result = $stmt->get_result();
+        $row = $result ? $result->fetch_assoc() : null;
+        $stmt->close();
+        if (!$row) return null;
+        $row['sections'] = self::sectionsFromRow($row);
+        return $row;
+    }
+
     public static function years(): array {
         global $conn;
         $result = $conn->query('SELECT DISTINCT year FROM agenda_months ORDER BY year DESC');
@@ -62,13 +121,24 @@ class Agenda {
     /** Save any number of agenda sections while mirroring the first two to legacy columns. */
     public static function saveSections(int $year, int $month, array $sections): bool {
         global $conn;
+        $existingEntry = self::find($year, $month);
+        $existingSections = $existingEntry['sections'] ?? [];
         $clean = [];
-        foreach ($sections as $section) {
+        foreach ($sections as $index => $section) {
             if (!is_array($section)) continue;
             $title = trim((string) ($section['title'] ?? ''));
             $text = trim((string) ($section['text'] ?? ''));
             if ($title === '' && trim(strip_tags($text)) === '') continue;
-            $clean[] = ['title' => $title, 'text' => $text];
+            $createdAt = trim((string) ($section['created_at'] ?? ''));
+            if ($createdAt === '' || strtotime($createdAt) === false) {
+                $createdAt = (string) ($existingSections[$index]['created_at'] ?? $existingEntry['updated_at'] ?? date('Y-m-d H:i:s'));
+            }
+            $clean[] = [
+                'title' => $title,
+                'text' => $text,
+                'created_at' => $createdAt,
+                'image' => (string) (!empty($section['image']) ? $section['image'] : ($existingSections[$index]['image'] ?? '')),
+            ];
         }
 
         $first = $clean[0] ?? ['title' => '', 'text' => ''];
@@ -85,6 +155,24 @@ class Agenda {
         $saved = $stmt->execute();
         $stmt->close();
         return $saved;
+    }
+
+    public static function saveImage(int $year, int $month, string $image): bool {
+        global $conn;
+        $stmt = $conn->prepare('UPDATE agenda_months SET image = ? WHERE year = ? AND month_number = ?');
+        if (!$stmt) return false;
+        $stmt->bind_param('sii', $image, $year, $month);
+        $saved = $stmt->execute();
+        $stmt->close();
+        return $saved;
+    }
+
+    public static function saveNoteImage(int $year, int $month, int $noteIndex, string $image): bool {
+        $entry = self::find($year, $month);
+        if (!$entry || !isset($entry['sections'][$noteIndex])) return false;
+        $sections = $entry['sections'];
+        $sections[$noteIndex]['image'] = $image;
+        return self::saveSections($year, $month, $sections);
     }
 
     /** Allow only basic formatting elements created by the admin editor. */

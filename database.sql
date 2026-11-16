@@ -25,6 +25,20 @@ PREPARE agenda_sections_statement FROM @agenda_sections_migration;
 EXECUTE agenda_sections_statement;
 DEALLOCATE PREPARE agenda_sections_statement;
 
+-- MigraciÃ³n para bases existentes: imagen de portada de cada mes.
+SET @agenda_image_column_exists = (
+    SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'agenda_months' AND COLUMN_NAME = 'image'
+);
+SET @agenda_image_migration = IF(
+    @agenda_image_column_exists = 0,
+    'ALTER TABLE agenda_months ADD COLUMN image VARCHAR(255) NULL DEFAULT NULL',
+    'SELECT 1'
+);
+PREPARE agenda_image_statement FROM @agenda_image_migration;
+EXECUTE agenda_image_statement;
+DEALLOCATE PREPARE agenda_image_statement;
+
 -- Tabla de usuarios
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -74,11 +88,11 @@ CREATE TABLE IF NOT EXISTS agenda_months (
     text_one LONGTEXT NOT NULL,
     text_two LONGTEXT NOT NULL,
     sections_json LONGTEXT NULL,
+    image VARCHAR(255) NULL DEFAULT NULL,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (year, month_number),
     CONSTRAINT chk_agenda_month CHECK (month_number BETWEEN 1 AND 12)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 
 -- Tabla de informes institucionales
 CREATE TABLE IF NOT EXISTS informes (

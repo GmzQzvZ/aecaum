@@ -3,6 +3,13 @@ $months = \Agenda::MONTHS;
 $entry = $agendaEntries[$selectedMonth] ?? null;
 $sections = $entry ? ($entry['sections'] ?? \Agenda::sectionsFromRow($entry)) : [];
 $monthName = $months[$selectedMonth] ?? '';
+$notes = $latestNotes ?? [];
+$olderNotes = $olderNotes ?? [];
+$excerpt = static function (string $text, int $length = 150): string {
+   $plain = trim(preg_replace('/\s+/u', ' ', strip_tags($text)) ?? '');
+   if (function_exists('mb_strlen') && mb_strlen($plain, 'UTF-8') > $length) return mb_substr($plain, 0, $length, 'UTF-8') . '…';
+   return strlen($plain) > $length ? substr($plain, 0, $length) . '…' : $plain;
+};
 ?>
 <!-- breadcrumb-area-start -->
 <div class="tv-breadcrumb-area tv-breadcrumb-overlay tv-breadcrumb-ptb z-index-1 fix p-relative"
@@ -22,35 +29,66 @@ $monthName = $months[$selectedMonth] ?? '';
 
 <section class="institutional-agenda">
    <div class="container">
-      <div class="agenda-month-label"><?= htmlspecialchars($monthName) ?></div>
-      <div class="agenda-layout">
-         <?php if (!$entry): ?>
-            <article class="agenda-content agenda-empty">Todavía no hay contenido publicado para <?= htmlspecialchars($monthName) ?>.</article>
-         <?php else: ?>
-            <?php $renderedSections = 0; foreach ($sections as $section): ?>
-               <?php if (trim((string) ($section['title'] ?? '')) === '' && trim(strip_tags((string) ($section['text'] ?? ''))) === '') continue; ?>
-               <?php if ($renderedSections > 0): ?><hr class="agenda-section-divider"><?php endif; ?>
-               <article class="agenda-content agenda-section-item">
-                  <span class="agenda-eyebrow">Agenda Mensual</span>
-                  <?php if (!empty($section['title'])): ?><h<?= $renderedSections === 0 ? '1' : '2' ?> class="agenda-entry-title"><?= nl2br(htmlspecialchars($section['title'], ENT_QUOTES, 'UTF-8')) ?></h<?= $renderedSections === 0 ? '1' : '2' ?>><?php endif; ?>
-                  <?php if (!empty($section['text'])): ?><div class="agenda-copy"><?= \Agenda::renderFormatted($section['text']) ?></div><?php endif; ?>
-               </article>
-            <?php $renderedSections++; endforeach; ?>
-         <?php endif; ?>
-         <aside class="agenda-index" aria-label="Índice de meses">
-            <h2>Nuestro Año</h2>
-            <nav aria-label="Meses del año">
-               <?php foreach ($agendaEntries as $number => $_entry): ?>
-                  <?php $name = $months[$number] ?? ''; ?>
-                  <a href="<?= APP_URL ?>/agenda?month=<?= $number ?>" class="<?= $number === $selectedMonth ? 'is-active' : '' ?>" <?= $number === $selectedMonth ? 'aria-current="page"' : '' ?>>
-                     <?= htmlspecialchars($name) ?>
-                  </a>
+      <?php if ($selectedNote): ?>
+         <?php $noteImage = !empty($selectedNote['image']) ? $selectedNote['image'] : 'assets/img/blog/blog-list-thum-1.png'; ?>
+         <article class="agenda-note-detail">
+            <a class="agenda-note-back" href="<?= APP_URL ?>/agenda?year=<?= (int) $selectedYear ?>&amp;month=<?= (int) $selectedMonth ?>"><i class="ti ti-arrow-left" aria-hidden="true"></i> Volver</a>
+            <span class="agenda-note-date"><i class="ti ti-calendar-event" aria-hidden="true"></i> <?= htmlspecialchars(date('j', strtotime($entry['updated_at'] ?? 'now')) . ' de ' . $monthName, ENT_QUOTES, 'UTF-8') ?></span>
+            <?php if ($noteImage): ?><img class="agenda-note-detail-image" src="<?= APP_URL ?>/<?= htmlspecialchars($noteImage, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($selectedNote['title'] ?? '', ENT_QUOTES, 'UTF-8') ?>"><?php endif; ?>
+            <h1><?= nl2br(htmlspecialchars($selectedNote['title'] ?? '', ENT_QUOTES, 'UTF-8')) ?></h1>
+            <div class="agenda-copy"><?= \Agenda::renderFormatted($selectedNote['text'] ?? '') ?></div>
+         </article>
+      <?php else: ?>
+      <?php if ($notes): ?>
+         <section class="monthly-news">
+            <header class="monthly-news-heading"><div><span class="monthly-news-eyebrow">Agenda Mensual</span><h2>La Cámara en Acción</h2></div><?php if ($olderNotes): ?><button class="agenda-see-all" type="button" id="agenda-see-all" aria-expanded="false" aria-controls="agenda-older-notes">Ver todo <i class="ti ti-arrow-right" aria-hidden="true"></i></button><?php endif; ?></header>
+            <div class="row g-3">
+               <?php foreach ($notes as $note):
+                  $noteTitle = trim((string) ($note['title'] ?? '')) ?: 'Novedad';
+                  $noteImage = !empty($note['image']) ? $note['image'] : 'assets/img/blog/blog-list-thum-1.png';
+                  $noteMonth = $months[(int) $note['month_number']] ?? '';
+                  $noteDate = strtotime($note['created_at'] ?? '') ?: time();
+                  $noteUrl = APP_URL . '/agenda?year=' . (int) $note['year'] . '&month=' . (int) $note['month_number'] . '&note=' . (int) $note['section_index'];
+               ?>
+                  <div class="col-lg-4 col-md-6"><article class="agenda-news-card h-100">
+                     <a class="agenda-news-image-link" href="<?= htmlspecialchars($noteUrl, ENT_QUOTES, 'UTF-8') ?>"><img src="<?= APP_URL ?>/<?= htmlspecialchars(ltrim($noteImage, '/'), ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($noteTitle, ENT_QUOTES, 'UTF-8') ?>" loading="lazy"></a>
+                     <div class="agenda-news-copy"><h3><?= htmlspecialchars($noteTitle, ENT_QUOTES, 'UTF-8') ?></h3><p><?= htmlspecialchars($excerpt((string) ($note['text'] ?? '')), ENT_QUOTES, 'UTF-8') ?></p><footer><span><i class="ti ti-calendar-event" aria-hidden="true"></i> <?= htmlspecialchars(date('j', $noteDate) . ' de ' . $noteMonth, ENT_QUOTES, 'UTF-8') ?></span><a href="<?= htmlspecialchars($noteUrl, ENT_QUOTES, 'UTF-8') ?>">Ver más...</a></footer></div>
+                  </article></div>
                <?php endforeach; ?>
-            </nav>
-         </aside>
-      </div>
+            </div>
+            <?php if ($olderNotes): ?><div class="row g-3 agenda-older-notes" id="agenda-older-notes" hidden>
+               <?php foreach ($olderNotes as $note):
+                  $noteTitle = trim((string) ($note['title'] ?? '')) ?: 'Novedad';
+                  $noteImage = !empty($note['image']) ? $note['image'] : 'assets/img/blog/blog-list-thum-1.png';
+                  $noteMonth = $months[(int) $note['month_number']] ?? '';
+                  $noteDate = strtotime($note['created_at'] ?? '') ?: time();
+                  $noteUrl = APP_URL . '/agenda?year=' . (int) $note['year'] . '&month=' . (int) $note['month_number'] . '&note=' . (int) $note['section_index'];
+               ?>
+                  <div class="col-lg-4 col-md-6"><article class="agenda-news-card h-100">
+                     <a class="agenda-news-image-link" href="<?= htmlspecialchars($noteUrl, ENT_QUOTES, 'UTF-8') ?>"><img src="<?= APP_URL ?>/<?= htmlspecialchars(ltrim($noteImage, '/'), ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($noteTitle, ENT_QUOTES, 'UTF-8') ?>" loading="lazy"></a>
+                     <div class="agenda-news-copy"><h3><?= htmlspecialchars($noteTitle, ENT_QUOTES, 'UTF-8') ?></h3><p><?= htmlspecialchars($excerpt((string) ($note['text'] ?? '')), ENT_QUOTES, 'UTF-8') ?></p><footer><span><i class="ti ti-calendar-event" aria-hidden="true"></i> <?= htmlspecialchars(date('j', $noteDate) . ' de ' . $noteMonth, ENT_QUOTES, 'UTF-8') ?></span><a href="<?= htmlspecialchars($noteUrl, ENT_QUOTES, 'UTF-8') ?>">Ver más...</a></footer></div>
+                  </article></div>
+               <?php endforeach; ?>
+            </div><?php endif; ?>
+         </section>
+      <?php else: ?><p class="agenda-empty">Todavía no hay notas publicadas.</p>
+      <?php endif; ?>
+      <?php endif; ?>
    </div>
 </section>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+   const toggle = document.getElementById('agenda-see-all');
+   const olderNotes = document.getElementById('agenda-older-notes');
+   if (!toggle || !olderNotes) return;
+   toggle.addEventListener('click', function () {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      olderNotes.hidden = expanded;
+      toggle.innerHTML = expanded ? 'Ver todo <i class="ti ti-arrow-right" aria-hidden="true"></i>' : 'Ver menos <i class="ti ti-arrow-up" aria-hidden="true"></i>';
+   });
+});
+</script>
 
 <style>
 /* ==========================================================================
@@ -64,6 +102,11 @@ $monthName = $months[$selectedMonth] ?? '';
 .institutional-agenda > .container {
   max-width: 1140px;
 }
+
+/* En la vista de agenda se presentan las notas en tarjetas, sin el texto largo ni el índice lateral. */
+.institutional-agenda .agenda-layout { display: none; }
+.institutional-agenda .agenda-month-label { margin-bottom: 18px; }
+.institutional-agenda .monthly-news { margin-top: 0; padding-top: 0; border-top: 0; }
 
 /* Etiqueta del mes */
 .agenda-month-label {
@@ -276,4 +319,31 @@ $monthName = $months[$selectedMonth] ?? '';
     gap: 8px;
   }
 }
+
+  .monthly-news{grid-column:1 / -1;margin-top:30px;padding-top:24px;border-top:1px solid #e3edf2}
+  .monthly-news-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:22px}
+  .monthly-news-eyebrow{display:block;margin-bottom:5px;color:#05a9e0;font-size:14px}
+  .monthly-news-heading h2{margin:0;color:#0b477d;font-size:30px;line-height:1.2;font-weight:700}
+  .monthly-news-all{color:#0b477d;font-size:13px}
+  .agenda-news-card{display:flex;flex-direction:column;overflow:hidden;border-radius:12px 3px 12px 3px;background:#eaf7fc}
+  .agenda-news-image-link{display:block;height:190px;overflow:hidden;background:#e0edf2}
+  .agenda-news-image-link img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .3s}
+  .agenda-news-card:hover .agenda-news-image-link img{transform:scale(1.035)}
+  .agenda-news-copy{display:flex;flex:1;flex-direction:column;padding:16px 17px 13px}
+  .agenda-news-copy h3{display:-webkit-box;overflow:hidden;-webkit-line-clamp:2;-webkit-box-orient:vertical;min-height:38px;margin:0 0 8px;color:#06477e;font-size:15px;font-weight:700;line-height:1.3}
+  .agenda-news-copy p{display:-webkit-box;overflow:hidden;-webkit-line-clamp:4;-webkit-box-orient:vertical;min-height:58px;margin:0 0 10px;color:#78909d;font-size:12px;line-height:1.4}
+  .agenda-news-copy footer{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;padding-top:9px;border-top:1px solid #b8d7e4;color:#758d99;font-size:11px}
+  .agenda-news-copy footer a{color:#009fe3;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap}
+  .agenda-note-detail{max-width:900px;margin:0 auto;padding:0 0 10px}
+  .agenda-note-back{display:block;margin:0 0 7px;color:#0b3978;font-size:13px;font-weight:600;text-decoration:none}
+  .agenda-note-date{display:block;margin-bottom:24px;color:#758d99;font-size:12px}
+  .agenda-note-detail-image{display:block;width:100%;height:auto;max-height:480px;margin:0 auto 22px;border-radius:15px 2px 15px 2px;object-fit:cover}
+  .agenda-note-detail h1{max-width:700px;margin:0 auto 20px;color:#0b477d;font-size:30px;line-height:1.2;font-weight:700;text-align:center}
+  .agenda-note-detail .agenda-copy{color:#78909d;font-size:14px;line-height:1.5}
+  .agenda-note-detail .agenda-copy p{margin-bottom:14px}
+  .agenda-note-detail .agenda-copy strong,.agenda-note-detail .agenda-copy b{color:#0b477d}
+  .agenda-see-all{display:inline-flex;align-items:center;gap:8px;padding:0;border:0;background:none;color:#0b3978;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+  .agenda-see-all:hover{color:#009fe3}
+  .agenda-older-notes{margin-top:0}
+@media(max-width:767px){.monthly-news-heading h2{font-size:25px}.agenda-news-image-link{height:210px}.agenda-news-copy h3{font-size:16px}.agenda-news-copy p{font-size:13px;min-height:0}.agenda-note-detail-image{max-height:320px}.agenda-note-detail h1{font-size:25px}}
 </style>

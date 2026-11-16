@@ -13,6 +13,8 @@
 
    <?php if ($success === 'index_created'): ?>
       <div class="alert-success"><i class="ti ti-circle-check"></i> Índice creado exitosamente.</div><?php endif; ?>
+   <?php if ($success === 'index_updated'): ?>
+      <div class="alert-success"><i class="ti ti-circle-check"></i> Índice mensual actualizado.</div><?php endif; ?>
    <?php if ($success === 'index_deleted'): ?>
       <div class="alert-success"><i class="ti ti-circle-check"></i> Índice eliminado correctamente.</div><?php endif; ?>
    <?php if ($error): ?>
@@ -36,6 +38,14 @@
                   <div style="padding: 15px;">
                      <h4 style="margin: 0 0 10px 0; color: #0a3a78;"><?= htmlspecialchars($index['title']) ?></h4>
 
+                     <button type="button" class="btn-primary-sm" data-edit-index
+                        data-id="<?= (int) $index['id'] ?>"
+                        data-title="<?= htmlspecialchars($index['title'], ENT_QUOTES, 'UTF-8') ?>"
+                        data-month="<?= htmlspecialchars($index['month'], ENT_QUOTES, 'UTF-8') ?>"
+                        data-year="<?= (int) $index['year'] ?>">
+                        <i class="ti ti-edit"></i> Editar índice mensual
+                     </button>
+
                      <form method="POST" action="<?= APP_URL ?>/admin/indices" style="display:inline;"
                         onsubmit="return confirm('¿Eliminar índice <?= htmlspecialchars($index['title']) ?>?')">
                         <input type="hidden" name="action" value="delete_index">
@@ -49,6 +59,39 @@
       <?php endif; ?>
    </div>
 </div>
+
+<div class="modal-overlay" id="modal-edit-index" onclick="if(event.target===this)this.classList.remove('show')">
+   <div class="modal-box">
+      <h4><i class="ti ti-edit"></i> Editar índice mensual</h4>
+      <form method="POST" action="<?= APP_URL ?>/admin/indices" enctype="multipart/form-data">
+         <input type="hidden" name="action" value="update_index"><input type="hidden" name="index_id" id="edit-index-id">
+         <div class="form-group"><label>Título *</label><input type="text" name="title" id="edit-index-title" required maxlength="255"></div>
+         <div class="form-row">
+            <div class="form-group"><label>Mes *</label><select name="month" id="edit-index-month" required>
+               <?php foreach (['enero'=>'Enero','febrero'=>'Febrero','marzo'=>'Marzo','abril'=>'Abril','mayo'=>'Mayo','junio'=>'Junio','julio'=>'Julio','agosto'=>'Agosto','septiembre'=>'Septiembre','octubre'=>'Octubre','noviembre'=>'Noviembre','diciembre'=>'Diciembre'] as $value => $label): ?><option value="<?= $value ?>"><?= $label ?></option><?php endforeach; ?>
+            </select></div>
+            <div class="form-group"><label>Año *</label><input type="number" name="year" id="edit-index-year" min="2000" max="2100" required></div>
+         </div>
+         <p style="color:#64748b;font-size:13px;">Dejá vacío un archivo para conservar el actual.</p>
+         <div class="form-group"><label>Imagen Servicio Última Milla</label><input type="file" name="image" accept="image/jpeg,image/png,image/webp"></div>
+         <div class="form-row"><div class="form-group"><label>Imagen Servicios Postales</label><input type="file" name="image2" accept="image/jpeg,image/png,image/webp"></div><div class="form-group"><label>Imagen Porcentajes</label><input type="file" name="image3" accept="image/jpeg,image/png,image/webp"></div></div>
+         <div class="form-group"><label>Informe Completo (PDF)</label><input type="file" name="informe" accept="application/pdf"></div>
+         <div class="form-group"><label>Informe Mensual (PDF)</label><input type="file" name="informe_mensual" accept="application/pdf"></div>
+         <div style="display:flex;gap:12px;margin-top:8px;"><button type="submit" class="btn-primary-sm"><i class="ti ti-device-floppy"></i> Guardar cambios</button><button type="button" class="btn-primary-sm" style="background:#6b7280;" onclick="document.getElementById('modal-edit-index').classList.remove('show')">Cancelar</button></div>
+      </form>
+   </div>
+</div>
+<script>
+document.querySelectorAll('[data-edit-index]').forEach(function (button) {
+   button.addEventListener('click', function () {
+      document.getElementById('edit-index-id').value = button.dataset.id;
+      document.getElementById('edit-index-title').value = button.dataset.title;
+      document.getElementById('edit-index-month').value = button.dataset.month;
+      document.getElementById('edit-index-year').value = button.dataset.year;
+      document.getElementById('modal-edit-index').classList.add('show');
+   });
+});
+</script>
 
 <!-- Modal: Crear índice -->
 <div class="modal-overlay" id="modal-create-index" onclick="if(event.target===this)this.classList.remove('show')">

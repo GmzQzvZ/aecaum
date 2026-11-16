@@ -342,7 +342,7 @@
                                     <img loading="lazy" src="assets/img/project/logistica.png"
                                         alt="Logística Internacional">
                                     <span class="icon"><a class="course-link" data-course-id="course1"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Logística Internacional</h3>
@@ -355,7 +355,7 @@
                                     <img loading="lazy" src="assets/img/project/Gestion.png"
                                         alt="Gestión de la Última Milla">
                                     <span class="icon"><a class="course-link" data-course-id="course3"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Gestión de la Última Milla</h3>
@@ -367,7 +367,7 @@
                                 <div class="single-project-item mb-30">
                                     <img loading="lazy" src="assets/img/project/fullfilment.png" alt="Fulfillment">
                                     <span class="icon"><a class="course-link" data-course-id="course2"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Fulfillment</h3>
@@ -380,7 +380,7 @@
                                     <img loading="lazy" src="assets/img/project/ecommerce.jpeg"
                                         alt="Introducción al eCommerce">
                                     <span class="icon"><a class="course-link" data-course-id="course4"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Introducción al eCommerce</h3>
@@ -393,7 +393,7 @@
                                     <img loading="lazy" src="assets/img/project/tecnologia.jpeg"
                                         alt="Tecnología en Logística">
                                     <span class="icon"><a class="course-link" data-course-id="course5"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Tecnología en Logística</h3>
@@ -406,7 +406,7 @@
                                     <img loading="lazy" src="assets/img/project/integracion.jpeg"
                                         alt="Integración y Diseño de Procesos">
                                     <span class="icon"><a class="course-link" data-course-id="course6"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Integración y Diseño de Procesos</h3>
@@ -419,7 +419,7 @@
                                     <img loading="lazy" src="assets/img/project/inteligencia.jpeg"
                                         alt="Inteligencia Artificial">
                                     <span class="icon"><a class="course-link" data-course-id="course7"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Inteligencia Artificial</h3>
@@ -432,7 +432,7 @@
                                     <img loading="lazy" src="assets/img/project/estudio.jpeg"
                                         alt="Estudio e Investigación">
                                     <span class="icon"><a class="course-link" data-course-id="course8"
-                                            href="<?= APP_URL ?>/blog-details"><i
+                                            href="<?= APP_URL ?>/capacitaciones"><i
                                                 class="ti ti-arrow-right"></i></a></span>
                                     <div class="single-project-content">
                                         <h3>Estudio e Investigación</h3>
@@ -453,7 +453,7 @@
             <div class="row">
                 <div class="col-12 text-center mt-30">
                     <div class="service-bottom-text">
-                        <p>Los cursos son <a href="<?= APP_URL ?>/blog-details">gratuitos </a>para nuestros socios y
+                        <p>Los cursos son <a href="<?= APP_URL ?>/capacitaciones">gratuitos </a>para nuestros socios y
                             arancelados para
                             terceros</p>
                     </div>
@@ -462,7 +462,7 @@
             <div class="row">
                 <div class="col-12 text-center mt-30 ">
                     <div class="tv-fade-anim" data-fade-from="top" data-ease="bounce" data-delay=".5">
-                        <a href="<?= APP_URL ?>/blog-details" class="tv-btn-primary">
+                        <a href="<?= APP_URL ?>/capacitaciones" class="tv-btn-primary">
                             <span class="btn-wrap">
                                 <span class="btn-text1">Ver todos los cursos</span>
                                 <span class="btn-text2">Ver todos los cursos</span>
@@ -537,12 +537,12 @@
                 // bind click on course links: save selection and navigate
                 document.querySelectorAll('.tv-project-slider .course-link').forEach(function (el) {
                     el.addEventListener('click', function (e) {
-                        // store selected course id so blog-details can load it
+                        // store selected course id so capacitaciones can load it
                         var cid = el.dataset.courseId;
                         if (cid) {
                             try { localStorage.setItem('selectedCourse', cid); } catch (err) { /* ignore */ }
                         }
-                        // allow normal navigation to blog-details
+                        // allow normal navigation to capacitaciones
                     });
                 });
             }

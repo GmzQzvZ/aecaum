@@ -7953,11 +7953,11 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   .tv-header-logo {
     --tv-logo-width: 260px;
     max-width: 600px;
-    margin-left: -250px;
+    margin-left: 0;
   }
 
   .tv-header-logo-img {
-    margin-left: -115px !important;
+    margin-left: 0 !important;
   }
 }
 
@@ -7968,7 +7968,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    margin-left: -75px;
+    margin-left: 0 !important;
   }
 }
 
@@ -7979,7 +7979,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    margin-left: -80px;
+    margin-left: 0 !important;
   }
 }
 
@@ -7990,7 +7990,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    margin-left: -85px;
+    margin-left: 0 !important;
   }
 }
 
@@ -8001,7 +8001,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    margin-left: -90px;
+    margin-left: 0 !important;
   }
 }
 
@@ -8012,7 +8012,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    margin-left: -65px;
+    margin-left: 0 !important;
   }
 }
 
@@ -8024,7 +8024,7 @@ only screen and (min-width: 992px) and (max-width: 1199px) {
   }
 
   .tv-header-logo-img {
-    margin-left: -15px;
+    margin-left: 0 !important;
   }
 
   .tv-header-right-action {

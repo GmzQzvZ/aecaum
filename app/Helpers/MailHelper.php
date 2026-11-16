@@ -47,8 +47,11 @@ class MailHelper {
             // Contenido
             $mail->isHTML(true);
             $mail->Subject = $subject;
-            $mail->Body    = $body;
-            $mail->AltBody = strip_tags($body); // versión texto plano como fallback
+            $siteUrl = defined('APP_URL') ? APP_URL : '#';
+            $safeSiteUrl = htmlspecialchars($siteUrl, ENT_QUOTES, 'UTF-8');
+            $returnLink = "<div style='max-width:600px;margin:0 auto;padding:16px 20px;text-align:center;font-family:Arial,sans-serif;'><a href='{$safeSiteUrl}' style='color:#0a3a78;font-size:14px;font-weight:600;text-decoration:none;'>Volver a la página de AECAUM</a></div>";
+            $mail->Body    = $body . $returnLink;
+            $mail->AltBody = strip_tags($body . '<p>Volver a la página de AECAUM: ' . $safeSiteUrl . '</p>'); // versión texto plano como fallback
             $mail->CharSet = 'UTF-8';
 
             $mail->send();

@@ -22,6 +22,12 @@ class PageController extends BaseController {
                 ? $currentMonth
                 : (int) (array_key_last($entries) ?: $currentMonth);
         }
+        $selectedEntry = $entries[$requestedMonth] ?? null;
+        $noteIndex = (int) $this->query('note', '-1');
+        $selectedNote = ($selectedEntry && isset($selectedEntry['sections'][$noteIndex]))
+            ? $selectedEntry['sections'][$noteIndex]
+            : null;
+        $allNotes = \Agenda::allNotes();
 
         $this->render('pages/agenda', [
             'pageTitle'       => 'Agenda Institucional | AECAUM',
@@ -30,6 +36,10 @@ class PageController extends BaseController {
             'agendaYears'     => $years,
             'selectedYear'    => $requestedYear,
             'selectedMonth'   => $requestedMonth,
+            'selectedNote'    => $selectedNote,
+            'selectedNoteIndex' => $noteIndex,
+            'latestNotes' => array_slice($allNotes, 0, 3),
+            'olderNotes' => array_slice($allNotes, 3),
         ]);
     }
 
@@ -69,24 +79,24 @@ class PageController extends BaseController {
                     ]);
 
                     if ($ok) {
-                        $copyRecipients = [];
+                        $copyRecipients = [
+                            'lroqueiro.secretaria@correos.org.ar',
+                            'aeca@correos.org.ar',
+                        ];
 
                         if (defined('CONTACT_COPY_EMAILS') && !empty(CONTACT_COPY_EMAILS)) {
-                            $copyRecipients = preg_split('/[;,]/', CONTACT_COPY_EMAILS, -1, PREG_SPLIT_NO_EMPTY);
-                            $copyRecipients = array_map('trim', $copyRecipients);
-                            $copyRecipients = array_values(array_filter($copyRecipients, fn($email) => filter_var($email, FILTER_VALIDATE_EMAIL)));
+                            $configuredCopyRecipients = preg_split('/[;,]/', CONTACT_COPY_EMAILS, -1, PREG_SPLIT_NO_EMPTY);
+                            $configuredCopyRecipients = array_map('trim', $configuredCopyRecipients);
+                            $copyRecipients = array_merge($copyRecipients, $configuredCopyRecipients);
                         }
-
-                        if (empty($copyRecipients) && defined('MAIL_FROM') && !empty(MAIL_FROM)) {
-                            $copyRecipients[] = MAIL_FROM;
-                        }
+                        $copyRecipients = array_values(array_unique(array_filter($copyRecipients, fn($email) => filter_var($email, FILTER_VALIDATE_EMAIL))));
 
                         if (!empty($copyRecipients)) {
                             $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
                             $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
                             $safeMessage = nl2br(htmlspecialchars($message, ENT_QUOTES, 'UTF-8'));
 
-                            $subject = 'Nuevo mensaje de contacto — AECAUM';
+                            $subject = 'Nuevo mensaje de contacto — AECA Última Milla';
                             $body = "
                                 <div style='font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
                                     <div style='background: #0a3a78; padding: 30px; text-align: center;'>

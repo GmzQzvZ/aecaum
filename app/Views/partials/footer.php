@@ -5,7 +5,7 @@
         <!-- newsletter-section-start -->
         <?php
         $currentUri = $_SERVER['REQUEST_URI'] ?? '';
-        $isBlogDetails = (strpos($currentUri, 'blog-details') !== false);
+        $isBlogDetails = (strpos($currentUri, '/capacitaciones') !== false || strpos($currentUri, 'blog-details') !== false);
         if (empty($hideNewsletter) && !$isBlogDetails):
             ?>
             <div class="nl-section">

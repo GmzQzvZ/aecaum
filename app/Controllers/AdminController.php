@@ -14,6 +14,11 @@ class AdminController extends BaseController {
         }
 
         if ($this->isPost() && ($_POST['action'] ?? '') === 'save_agenda_month') {
+            // PHP empties both superglobals when the request exceeds post_max_size.
+            if (empty($_POST) && empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
+                $this->redirect('admin/agenda?month=' . (int) ($_GET['month'] ?? 1) . '&error=upload_too_large');
+                return;
+            }
             $years = \Agenda::years();
             $year = $years ? max($years) : (int) date('Y');
             $month = (int) ($_POST['month_number'] ?? 0);
@@ -21,8 +26,54 @@ class AdminController extends BaseController {
                 $this->redirect('admin/agenda?error=invalid_selection');
                 return;
             }
-            $ok = \Agenda::saveSections($year, $month, $_POST['sections'] ?? []);
-            $this->redirect('admin/agenda?month=' . $month . '&' . ($ok ? 'success=agenda_saved' : 'error=save_failed'));
+            $sections = $_POST['sections'] ?? [];
+            $ok = is_array($sections) && \Agenda::saveSections($year, $month, $sections);
+            if (!$ok) {
+                error_log('Agenda saveSections failed: ' . ($GLOBALS['conn']->error ?? 'unknown database error'));
+                $this->redirect('admin/agenda?month=' . $month . '&error=sections_save_failed');
+                return;
+            }
+            $uploadError = '';
+            $noteImages = $_FILES['note_images'] ?? null;
+            if ($ok && $noteImages && is_array($noteImages['name'] ?? null)) {
+                $uploadDir = ROOT_PATH . '/uploads/agenda/';
+                if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true) && !is_dir($uploadDir)) {
+                    $ok = false;
+                    $uploadError = 'No se pudo crear el directorio uploads/agenda.';
+                }
+                $allowed = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+                foreach ($noteImages['name'] as $index => $_name) {
+                    $fileError = (int) ($noteImages['error'][$index] ?? UPLOAD_ERR_NO_FILE);
+                    if ($fileError === UPLOAD_ERR_NO_FILE) continue;
+                    $tmp = $noteImages['tmp_name'][$index] ?? '';
+                    $mime = $fileError === UPLOAD_ERR_OK && is_uploaded_file($tmp) ? (new finfo(FILEINFO_MIME_TYPE))->file($tmp) : '';
+                    if ($fileError !== UPLOAD_ERR_OK || !isset($allowed[$mime])) {
+                        $uploadError = $this->agendaUploadError($fileError, $mime, (int) ($noteImages['size'][$index] ?? 0));
+                        $ok = false;
+                        break;
+                    }
+                    $filename = $year . '_' . $month . '_' . (int) $index . '_' . bin2hex(random_bytes(8)) . '.' . $allowed[$mime];
+                    if (!move_uploaded_file($tmp, $uploadDir . $filename)) {
+                        $uploadError = 'No se pudo mover la imagen al directorio uploads/agenda. Revisá permisos de escritura.';
+                        $ok = false;
+                        break;
+                    }
+                    $persistedIndex = 0;
+                    foreach ($sections as $submittedIndex => $section) {
+                        if (!is_array($section)) continue;
+                        if (trim((string) ($section['title'] ?? '')) === '' && trim(strip_tags((string) ($section['text'] ?? ''))) === '') continue;
+                        if ((string) $submittedIndex === (string) $index) break;
+                        $persistedIndex++;
+                    }
+                    if (!\Agenda::saveNoteImage($year, $month, $persistedIndex, 'uploads/agenda/' . $filename)) {
+                        $uploadError = 'La imagen se cargó, pero no se pudo guardar con la nota en la base de datos.';
+                        $ok = false;
+                        break;
+                    }
+                }
+            }
+            $errorCode = $uploadError !== '' ? 'error=upload_failed&reason=' . rawurlencode($uploadError) : 'error=save_failed';
+            $this->redirect('admin/agenda?month=' . $month . '&' . ($ok ? 'success=agenda_saved' : $errorCode));
             return;
         }
 
@@ -42,6 +93,15 @@ class AdminController extends BaseController {
             'success'     => $this->query('success'),
             'error'       => $this->query('error'),
         ], 'panel');
+    }
+
+    private function agendaUploadError(int $error, string $mime, int $size): string {
+        if ($error === UPLOAD_ERR_INI_SIZE || $error === UPLOAD_ERR_FORM_SIZE) return 'PHP rechazó la imagen por superar upload_max_filesize o post_max_size.';
+        if ($error === UPLOAD_ERR_PARTIAL) return 'La imagen llegó incompleta; intentá cargarla nuevamente.';
+        if ($error === UPLOAD_ERR_NO_TMP_DIR || $error === UPLOAD_ERR_CANT_WRITE) return 'PHP no pudo guardar el archivo temporal; revisá la configuración de cargas y permisos.';
+        if ($error !== UPLOAD_ERR_OK) return 'PHP rechazó la imagen (código de carga ' . $error . ').';
+        if (!in_array($mime, ['image/jpeg', 'image/png', 'image/webp'], true)) return 'El archivo no es JPG, PNG o WebP válido.';
+        return 'No se pudo procesar la imagen.';
     }
 
     /** Dashboard principal del admin */
@@ -353,6 +413,73 @@ class AdminController extends BaseController {
                     return;
                 }
                 $this->redirect('admin/indices?error=upload_failed');
+                return;
+            }
+
+            if ($action === 'update_index') {
+                $id = (int) ($_POST['index_id'] ?? 0);
+                $index = $id ? \Index::findById($id) : null;
+                if (!$index) {
+                    $this->redirect('admin/indices?error=index_not_found');
+                    return;
+                }
+
+                $paths = [
+                    'image' => $index['image'],
+                    'image2' => $index['image2'],
+                    'image3' => $index['image3'],
+                    'informe' => $index['informe'],
+                    'informe_mensual' => $index['informe_mensual'],
+                ];
+                $replacedFiles = [];
+                $newFiles = [];
+                $uploadDir = ROOT_PATH . '/uploads/indices/';
+                if (!is_dir($uploadDir)) mkdir($uploadDir, 0755, true);
+                $fileRules = [
+                    'image' => ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'],
+                    'image2' => ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'],
+                    'image3' => ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'],
+                    'informe' => ['application/pdf' => 'pdf'],
+                    'informe_mensual' => ['application/pdf' => 'pdf'],
+                ];
+                foreach ($fileRules as $field => $allowed) {
+                    if (!isset($_FILES[$field]) || $_FILES[$field]['error'] === UPLOAD_ERR_NO_FILE) continue;
+                    $file = $_FILES[$field];
+                    $mime = $file['error'] === UPLOAD_ERR_OK && is_uploaded_file($file['tmp_name'])
+                        ? (new finfo(FILEINFO_MIME_TYPE))->file($file['tmp_name'])
+                        : '';
+                    if ($file['error'] !== UPLOAD_ERR_OK || !isset($allowed[$mime]) || $file['size'] > 15 * 1024 * 1024) {
+                        foreach ($newFiles as $newFile) if (is_file($newFile)) unlink($newFile);
+                        $this->redirect('admin/indices?error=upload_failed');
+                        return;
+                    }
+                    $filename = 'index_' . $id . '_' . $field . '_' . bin2hex(random_bytes(6)) . '.' . $allowed[$mime];
+                    if (!move_uploaded_file($file['tmp_name'], $uploadDir . $filename)) {
+                        foreach ($newFiles as $newFile) if (is_file($newFile)) unlink($newFile);
+                        $this->redirect('admin/indices?error=upload_failed');
+                        return;
+                    }
+                    $newFiles[] = $uploadDir . $filename;
+                    if (!empty($paths[$field])) $replacedFiles[] = ROOT_PATH . '/' . $paths[$field];
+                    $paths[$field] = 'uploads/indices/' . $filename;
+                }
+
+                $ok = \Index::update($id, [
+                    'title' => $this->input('title'),
+                    'image' => $paths['image'],
+                    'image2' => $paths['image2'],
+                    'image3' => $paths['image3'],
+                    'month' => $this->input('month') ?: $index['month'],
+                    'year' => (int) ($_POST['year'] ?? $index['year']),
+                    'informe' => $paths['informe'],
+                    'informe_mensual' => $paths['informe_mensual'],
+                ]);
+                if ($ok) {
+                    foreach ($replacedFiles as $oldFile) if (is_file($oldFile)) unlink($oldFile);
+                } else {
+                    foreach ($newFiles as $newFile) if (is_file($newFile)) unlink($newFile);
+                }
+                $this->redirect('admin/indices?' . ($ok ? 'success=index_updated' : 'error=update_failed'));
                 return;
             }
 

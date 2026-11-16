@@ -53,7 +53,7 @@ class AuthController extends BaseController
                     return;
                 }
 
-                $error = 'Credenciales incorrectas. Verificá tu email y contraseña.';
+                $error = 'Datos incorrectos. Verificá tu email y contraseña.';
             }
         }
 
@@ -115,7 +115,7 @@ class AuthController extends BaseController
                             </div>
                             <div style='padding: 30px;'>
                                 <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Hola <strong style='color: #0a3a78;'>{$user['name']}</strong>,</p>
-                                <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Recibimos una solicitud para restablecer la contraseña de tu cuenta en <strong style='color: #0a3a78;'>ACAEUM</strong>.</p>
+                                <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Recibimos una solicitud para restablecer la contraseña de tu cuenta en <strong style='color: #0a3a78;'>ACAE Última Milla</strong>.</p>
                                 <p style='color: #6d8089; font-size: 16px; line-height: 1.6;'>Hacé clic en el botón para crear una nueva contraseña. El enlace es válido por <strong style='color: #00aae6;'>1 hora</strong>.</p>
                                 <p style='text-align:center;margin:32px 0;'>
                                     <a href='{$resetLink}' style='background:#00aae6;color:#fff;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block;font-size:16px;'>

@@ -34,15 +34,15 @@
                      <div class="col-12">
                         <div class="contact__input-box mb-24">
                            <label for="password" style="display:block;margin-bottom:8px;font-weight:600;">Nueva Contraseña</label>
-                           <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required
-                              style="border:1px solid #ddd;border-radius:6px;width:100%;padding:12px 16px;">
+                           <input type="password" id="password" name="password" placeholder="Mínimo 6 caracteres" required autocomplete="new-password" autocapitalize="none" spellcheck="false"
+                              style="border:1px solid #ddd;border-radius:6px;width:100%;padding:12px 16px;text-transform:none;">
                         </div>
                      </div>
                      <div class="col-12">
                         <div class="contact__input-box mb-24">
                            <label for="confirm_password" style="display:block;margin-bottom:8px;font-weight:600;">Confirmar Contraseña</label>
-                           <input type="password" id="confirm_password" name="confirm_password" placeholder="Repetí tu nueva contraseña" required
-                              style="border:1px solid #ddd;border-radius:6px;width:100%;padding:12px 16px;">
+                           <input type="password" id="confirm_password" name="confirm_password" placeholder="Repetí tu nueva contraseña" required autocomplete="new-password" autocapitalize="none" spellcheck="false"
+                              style="border:1px solid #ddd;border-radius:6px;width:100%;padding:12px 16px;text-transform:none;">
                         </div>
                      </div>
                      <div class="col-12 text-end mb-24">

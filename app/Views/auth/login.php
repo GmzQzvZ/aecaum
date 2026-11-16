@@ -18,15 +18,15 @@
                      <div class="col-xxl-12">
                         <div class="contact__input-box mb-24">
                            <label for="email" style="display:block;margin-bottom:8px;font-weight:600;">Correo Electrónico</label>
-                           <input type="email" id="email" placeholder="Ingresa tu correo" name="email" required
-                              style="border:1px solid #ddd;border-radius:5px;width:100%;padding:12px 16px;">
+                           <input type="email" id="email" placeholder="Ingresa tu correo" name="email" required autocapitalize="none" spellcheck="false" autocomplete="username"
+                              style="border:1px solid #ddd;border-radius:5px;width:100%;padding:12px 16px;text-transform:none;">
                         </div>
                      </div>
                      <div class="col-xxl-12">
                         <div class="contact__input-box mb-24">
                            <label for="password" style="display:block;margin-bottom:8px;font-weight:600;">Contraseña</label>
-                           <input type="password" id="password" placeholder="Ingresa tu contraseña" name="password" required
-                              style="border:1px solid #ddd;border-radius:5px;width:100%;padding:12px 16px;">
+                           <input type="password" id="password" placeholder="Ingresa tu contraseña" name="password" required autocomplete="current-password" autocapitalize="none" spellcheck="false"
+                              style="border:1px solid #ddd;border-radius:5px;width:100%;padding:12px 16px;text-transform:none;">
                         </div>
                      </div>
                      <div class="col-xxl-12 text-end mb-24">

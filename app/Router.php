@@ -66,6 +66,7 @@ $this->match('GET|POST', 'admin/informes/', AdminController::class, 'informes');
         $this->get('project-details',                 PageController::class, 'projectDetails');
         $this->get('team',                            PageController::class, 'team');
         $this->get('blog',                            PageController::class, 'blogList');
+        $this->get('capacitaciones',                  PageController::class, 'blogDetails');
         $this->get('blog-details',                    PageController::class, 'blogDetails');
         $this->get('hackathon',                       PageController::class, 'hackathon');
 

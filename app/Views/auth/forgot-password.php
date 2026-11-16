@@ -25,8 +25,8 @@
                      <div class="col-12">
                         <div class="contact__input-box mb-24">
                            <label for="email" style="display:block;margin-bottom:8px;font-weight:600;">Correo Electrónico</label>
-                           <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required
-                              style="border:1px solid #ddd;border-radius:6px;width:100%;padding:12px 16px;">
+                           <input type="email" id="email" name="email" placeholder="tucorreo@email.com" required autocapitalize="none" spellcheck="false" autocomplete="email"
+                              style="border:1px solid #ddd;border-radius:6px;width:100%;padding:12px 16px;text-transform:none;">
                         </div>
                      </div>
                      <div class="col-12 text-end mb-24">

@@ -6,7 +6,7 @@
                <div class="col-12 d-flex justify-content-between align-items-center gap-2 gap-md-5">
                   <div class="tv-header-logo">
                      <a href="<?= APP_URL ?>/"  >
-                        <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/Logo y fondo.png" alt="AECAUM"
+                        <img loading="lazy" src="<?= ASSETS_URL ?>/img/logo/Logoyfondo.png" alt="AECAUM"
                            class="tv-header-logo-img">
                      </a>
                   </div>
@@ -85,7 +85,7 @@
                   <!-- <li><a href="<?= APP_URL ?>/indices">IMC</a></li> -->
 
                   <li><a href="https://correos.org.ar/newsletters/">Newsletter</a></li>
-                  <li><a href="<?= APP_URL ?>/blog-details">Capacitaciones</a></li>
+                  <li><a href="<?= APP_URL ?>/capacitaciones">Capacitaciones</a></li>
                   <!-- <li>
                      <a href="<?= APP_URL ?>/legislacion/marco-regulatorio">Legislación y asuntos laborales</a>
                      <ul class="submenu">
