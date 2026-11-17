@@ -622,6 +622,123 @@ class AdminController extends BaseController {
         ], 'panel');
     }
 
+    /** Gestión de planillas salariales y acuerdos paritarios. */
+    public function paritarias(): void {
+        requireLogin();
+        if (!hasRole('Superadmin') && !hasRole('admin')) {
+            $this->redirect('dashboard');
+            return;
+        }
+
+        if ($this->isPost()) {
+            if (empty($_POST) && empty($_FILES) && (int) ($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
+                $this->redirect('admin/paritarias?error=upload_too_large');
+                return;
+            }
+            $action = $_POST['action'] ?? '';
+            if ($action === 'create_paritaria') {
+                $title = trim((string) ($_POST['title'] ?? ''));
+                $year = filter_var($_POST['year'] ?? null, FILTER_VALIDATE_INT);
+                $category = (string) ($_POST['category'] ?? '');
+                $categories = ['planillas_salariales', 'acuerdos_paritarios'];
+
+                if ($title === '' || $year === false || $year < 1900 || $year > 9999 || !in_array($category, $categories, true)) {
+                    $this->redirect('admin/paritarias?error=invalid_data');
+                    return;
+                }
+                $filesToUpload = ['document' => $_FILES['document'] ?? null];
+                if ($category === 'acuerdos_paritarios') {
+                    $homologacion = $_FILES['homologacion'] ?? null;
+                    if (!$homologacion || (int) ($homologacion['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE) {
+                        $this->redirect('admin/paritarias?error=homologacion_required');
+                        return;
+                    }
+                    $filesToUpload['homologacion'] = $homologacion;
+                }
+                foreach ($filesToUpload as $uploadedFile) {
+                    if (!$uploadedFile || (int) ($uploadedFile['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_OK) {
+                        $this->redirect('admin/paritarias?error=upload_failed');
+                        return;
+                    }
+                    $tmp = (string) ($uploadedFile['tmp_name'] ?? '');
+                    $mime = is_uploaded_file($tmp) ? (new finfo(FILEINFO_MIME_TYPE))->file($tmp) : false;
+                    if ($mime !== 'application/pdf') {
+                        $this->redirect('admin/paritarias?error=invalid_file');
+                        return;
+                    }
+                }
+
+                $uploadDir = ROOT_PATH . '/uploads/paritarias/';
+                if (!is_dir($uploadDir) && !mkdir($uploadDir, 0755, true) && !is_dir($uploadDir)) {
+                    error_log('Paritaria upload failed: could not create uploads/paritarias.');
+                    $this->redirect('admin/paritarias?error=upload_failed');
+                    return;
+                }
+                $uploadedPaths = [];
+                foreach ($filesToUpload as $field => $uploadedFile) {
+                    $filename = bin2hex(random_bytes(16)) . '.pdf';
+                    $filePath = 'uploads/paritarias/' . $filename;
+                    if (!move_uploaded_file((string) $uploadedFile['tmp_name'], $uploadDir . $filename)) {
+                        foreach ($uploadedPaths as $path) {
+                            if (is_file(ROOT_PATH . '/' . $path) && !unlink(ROOT_PATH . '/' . $path)) {
+                                error_log('Paritaria upload cleanup failed: could not remove ' . $path);
+                            }
+                        }
+                        error_log('Paritaria upload failed: could not move the uploaded PDF.');
+                        $this->redirect('admin/paritarias?error=upload_failed');
+                        return;
+                    }
+                    $uploadedPaths[$field] = $filePath;
+                }
+
+                if (!\Paritaria::create([
+                    'title' => $title,
+                    'year' => $year,
+                    'category' => $category,
+                    'document_path' => $uploadedPaths['document'],
+                    'homologacion_path' => $uploadedPaths['homologacion'] ?? null,
+                ])) {
+                    foreach ($uploadedPaths as $path) {
+                        if (is_file(ROOT_PATH . '/' . $path) && !unlink(ROOT_PATH . '/' . $path)) {
+                            error_log('Paritaria save cleanup failed: could not remove ' . $path);
+                        }
+                    }
+                    error_log('Paritaria create failed: ' . ($GLOBALS['conn']->error ?? 'unknown database error'));
+                    $this->redirect('admin/paritarias?error=save_failed');
+                    return;
+                }
+                $this->redirect('admin/paritarias?success=paritaria_created');
+                return;
+            }
+
+            if ($action === 'delete_paritaria') {
+                $id = (int) ($_POST['paritaria_id'] ?? 0);
+                $document = $id > 0 ? \Paritaria::find($id) : null;
+                if (!$document || !\Paritaria::delete($id)) {
+                    $this->redirect('admin/paritarias?error=delete_failed');
+                    return;
+                }
+                foreach (['document_path', 'homologacion_path'] as $pathField) {
+                    if (empty($document[$pathField])) continue;
+                    $filePath = ROOT_PATH . '/' . $document[$pathField];
+                    if (is_file($filePath) && !unlink($filePath)) {
+                        error_log('Paritaria delete: database row removed, but the file could not be deleted: ' . $filePath);
+                    }
+                }
+                $this->redirect('admin/paritarias?success=paritaria_deleted');
+                return;
+            }
+        }
+
+        $this->render('admin/paritarias', [
+            'pageTitle' => 'Paritarias | Admin AECAUM',
+            'currentUser' => getCurrentUser(),
+            'documents' => \Paritaria::all(),
+            'success' => $this->query('success'),
+            'error' => $this->query('error'),
+        ], 'panel');
+    }
+
     /** Gestión de mensajes de contacto */
 
 }

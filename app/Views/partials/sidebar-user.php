@@ -6,7 +6,7 @@
          <h2>AECAUM</h2>
          <span>Mi Panel</span>
       </div>
-      <button class="toggle-btn"><i class="ti ti-menu-2"></i></button>
+      <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Mostrar menú"><i class="ti ti-menu-2"></i></button>
    </div>
 
    <?php if (!empty($currentUser)): ?>

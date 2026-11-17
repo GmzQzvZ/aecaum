@@ -43,6 +43,68 @@ class PageController extends BaseController {
         ]);
     }
 
+    /** Página pública de paritarias. */
+    public function paritarias(): void {
+        $documentsByYear = [];
+        foreach (\Paritaria::all() as $document) {
+            $documentsByYear[(int) $document['year']][$document['category']][] = $document;
+        }
+
+        $monthNumbers = [
+            'enero' => 1,
+            'febrero' => 2,
+            'marzo' => 3,
+            'abril' => 4,
+            'mayo' => 5,
+            'junio' => 6,
+            'julio' => 7,
+            'agosto' => 8,
+            'septiembre' => 9,
+            'octubre' => 10,
+            'noviembre' => 11,
+            'diciembre' => 12,
+            'setiembre' => 9,
+        ];
+        $periodStartFromTitle = static function (string $title, int $fallbackYear) use ($monthNumbers): ?int {
+            preg_match_all('/\b(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|setiembre|octubre|noviembre|diciembre)\b(?:\s+(\d{4}))?/i', $title, $matches, PREG_SET_ORDER);
+            if (!$matches) {
+                return null;
+            }
+            $startMonth = $monthNumbers[strtolower($matches[0][1])];
+            $startYear = isset($matches[0][2]) ? (int) $matches[0][2] : $fallbackYear;
+            if (isset($matches[1])) {
+                $endMonth = $monthNumbers[strtolower($matches[1][1])];
+                $endYear = isset($matches[1][2]) ? (int) $matches[1][2] : null;
+                if (!isset($matches[0][2]) && $endYear !== null) {
+                    $startYear = $endYear - ($startMonth > $endMonth ? 1 : 0);
+                } elseif ($endYear === null && $startMonth > $endMonth) {
+                    $startYear++;
+                }
+            }
+            return $startYear * 100 + $startMonth;
+        };
+        foreach ($documentsByYear as $year => $categories) {
+            foreach (array_keys($categories) as $category) {
+                usort($documentsByYear[$year][$category], static function (array $left, array $right) use ($periodStartFromTitle): int {
+                    $leftDate = $periodStartFromTitle($left['title'], (int) $left['year']);
+                    $rightDate = $periodStartFromTitle($right['title'], (int) $right['year']);
+                    if ($leftDate !== $rightDate) {
+                        if ($leftDate === null) return 1;
+                        if ($rightDate === null) return -1;
+                        return $rightDate <=> $leftDate;
+                    }
+                    return strcasecmp($left['title'], $right['title']);
+                });
+            }
+        }
+
+        $this->render('pages/paritarias', [
+            'pageTitle'       => 'Paritarias | AECAUM',
+            'pageDescription' => 'Información sobre paritarias de AECAUM.',
+            'documentsByYear' => $documentsByYear,
+        ]);
+    }
+
     public function about(): void {
         $this->render('pages/about', [
             'pageTitle'       => 'Nosotros - Quiénes Somos | AECAUM',
@@ -239,9 +301,9 @@ class PageController extends BaseController {
 
     public function blogDetails(): void {
         $this->render('pages/blog-details', [
-            'pageTitle'       => 'Novedades y Noticias | AECAUM',
-            'pageDescription' => 'Análisis y novedades institucionales sobre el desarrollo de la última milla en Argentina.',
-            'pageKeywords'    => 'articulo aecaum, informe sectorial correo, logistica urbana',
+            'pageTitle'       => 'Capacitaciones | AECAUM',
+            'pageDescription' => 'Programa de capacitación académica de AECAUM y UNDelta para profesionales del ecosistema logístico.',
+            'pageKeywords'    => 'capacitaciones aecaum, diplomatura universitaria, logística, UNDelta',
             'hideNewsletter'  => true,
         ]);
     }

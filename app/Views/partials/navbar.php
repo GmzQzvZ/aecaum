@@ -103,6 +103,7 @@
                         <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
                      </ul>
                   </li>
+                  <li><a href="<?= APP_URL ?>/paritarias">Paritarias</a></li>
                   <!-- <li>
                      <a href="<?= APP_URL ?>/prensa/eventos-institucionales">Prensa y Relaciones Institucionales</a>
                      <ul class="submenu">

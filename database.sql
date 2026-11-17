@@ -104,6 +104,32 @@ CREATE TABLE IF NOT EXISTS informes (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- Documentos de paritarias, agrupados por año y tipo.
+CREATE TABLE IF NOT EXISTS paritarias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    document_path VARCHAR(500) NOT NULL,
+    homologacion_path VARCHAR(500) NULL DEFAULT NULL,
+    year SMALLINT UNSIGNED NOT NULL,
+    category ENUM('planillas_salariales', 'acuerdos_paritarios') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_paritarias_year_category (year, category)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Migración para bases existentes: archivo de homologación de acuerdos paritarios.
+SET @paritaria_homologacion_column_exists = (
+    SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS
+    WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'paritarias' AND COLUMN_NAME = 'homologacion_path'
+);
+SET @paritaria_homologacion_migration = IF(
+    @paritaria_homologacion_column_exists = 0,
+    'ALTER TABLE paritarias ADD COLUMN homologacion_path VARCHAR(500) NULL DEFAULT NULL AFTER document_path',
+    'SELECT 1'
+);
+PREPARE paritaria_homologacion_statement FROM @paritaria_homologacion_migration;
+EXECUTE paritaria_homologacion_statement;
+DEALLOCATE PREPARE paritaria_homologacion_statement;
+
 -- Tabla de permisos de documentos (roles que pueden acceder)
 CREATE TABLE IF NOT EXISTS document_permissions (
     id INT AUTO_INCREMENT PRIMARY KEY,

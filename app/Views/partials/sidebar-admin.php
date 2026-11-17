@@ -7,6 +7,7 @@ elseif (str_starts_with($uri, 'admin/roles'))    $currentSection = 'roles';
 elseif (str_starts_with($uri, 'admin/documentos')) $currentSection = 'documents';
 elseif (str_starts_with($uri, 'admin/indices'))   $currentSection = 'indices';
 elseif (str_starts_with($uri, 'admin/agenda'))    $currentSection = 'agenda';
+elseif (str_starts_with($uri, 'admin/paritarias')) $currentSection = 'paritarias';
 elseif (str_starts_with($uri, 'admin/informes')) $currentSection = 'informes';
 elseif (str_starts_with($uri, 'admin/contacto'))  $currentSection = 'contact';
 elseif (str_starts_with($uri, 'admin'))           $currentSection = 'admin';
@@ -20,7 +21,7 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
          <h2>AECAUM</h2>
          <span>Panel de Administración</span>
       </div>
-      <button class="toggle-btn"><i class="ti ti-menu-2"></i></button>
+      <button class="toggle-btn" type="button" aria-expanded="false" aria-label="Mostrar menú"><i class="ti ti-menu-2"></i></button>
    </div>
 
    <?php if (!empty($currentUser)): ?>
@@ -52,6 +53,9 @@ elseif (str_starts_with($uri, 'dashboard'))       $currentSection = 'dashboard';
       </a>
       <a href="<?= APP_URL ?>/admin/agenda" class="<?= $currentSection === 'agenda' ? 'active' : '' ?>">
          <i class="ti ti-calendar-event"></i> Agenda institucional
+      </a>
+      <a href="<?= APP_URL ?>/admin/paritarias" class="<?= $currentSection === 'paritarias' ? 'active' : '' ?>">
+         <i class="ti ti-file-certificate"></i> Paritarias
       </a>
       <a href="<?= APP_URL ?>/admin/informes" class="<?= $currentSection === 'informes' ? 'active' : '' ?>">
    <i class="ti ti-file-text"></i> Informes

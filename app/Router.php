@@ -39,6 +39,7 @@ class Router {
         $this->get('indices/imc',                     PageController::class, 'indices');
         $this->get('informes-institucionales', PageController::class, 'informesInstitucionales');
         $this->get('agenda', PageController::class, 'agenda');
+        $this->get('paritarias', PageController::class, 'paritarias');
 
         // --- Panel de administración ---
         $this->match('GET|POST', 'admin',             AdminController::class, 'index');
@@ -47,6 +48,7 @@ class Router {
         $this->match('GET|POST', 'admin/documentos',  AdminController::class, 'documents');
         $this->match('GET|POST', 'admin/indices',     AdminController::class, 'indices');
         $this->match('GET|POST', 'admin/agenda',     AdminController::class, 'agenda');
+        $this->match('GET|POST', 'admin/paritarias', AdminController::class, 'paritarias');
         $this->match('GET|POST', 'admin/contacto', AdminController::class, 'contactMessages');
         $this->match('GET|POST', 'admin/contact', AdminController::class, 'contactMessages');
         $this->match('GET|POST', 'admin/informes', AdminController::class, 'informes');
