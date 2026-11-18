@@ -120,17 +120,6 @@ $renderNoteCard = static function (array $note) use ($months, $excerpt): void {
                      <span class="monthly-news-eyebrow">Agenda Mensual</span>
                      <h2>Acciones y proyectos</h2>
                   </div>
-                  <?php if ($olderNotes): ?>
-                     <button
-                        class="agenda-see-all"
-                        type="button"
-                        id="agenda-see-all"
-                        aria-expanded="false"
-                        aria-controls="agenda-older-notes"
-                     >
-                        Ver todo <i class="ti ti-arrow-right" aria-hidden="true"></i>
-                     </button>
-                  <?php endif; ?>
                </header>
 
                <div class="row g-3">
@@ -140,7 +129,7 @@ $renderNoteCard = static function (array $note) use ($months, $excerpt): void {
                </div>
 
                <?php if ($olderNotes): ?>
-                  <div class="row g-3 agenda-older-notes" id="agenda-older-notes" hidden>
+                  <div class="row g-3 agenda-older-notes">
                      <?php foreach ($olderNotes as $note): ?>
                         <?php $renderNoteCard($note); ?>
                      <?php endforeach; ?>
@@ -153,27 +142,6 @@ $renderNoteCard = static function (array $note) use ($months, $excerpt): void {
       <?php endif; ?>
    </div>
 </section>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-   const toggle = document.getElementById('agenda-see-all');
-   const olderNotes = document.getElementById('agenda-older-notes');
-
-   if (!toggle || !olderNotes) {
-      return;
-   }
-
-   toggle.addEventListener('click', function () {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      olderNotes.hidden = expanded;
-      toggle.innerHTML = expanded
-         ? 'Ver todo <i class="ti ti-arrow-right" aria-hidden="true"></i>'
-         : 'Ver menos <i class="ti ti-arrow-up" aria-hidden="true"></i>';
-   });
-});
-</script>
-
 <style>
 /* ==========================================================================
    1. CONTENEDOR PRINCIPAL

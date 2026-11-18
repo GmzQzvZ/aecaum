@@ -168,14 +168,18 @@
                unset($items);
                ?>
                <?php foreach ($grouped as $yearGroup => $items): ?>
-                  <div class="row mt-50">
+                  <?php $yearPanelId = 'indices-year-' . preg_replace('/[^a-zA-Z0-9_-]/', '-', (string) $yearGroup); ?>
+                  <div class="row mt-50 year-accordion">
                      <div class="col-lg-12">
                         <div class="year-group-title">
                            <span class="year-line"></span>
-                           <h3><?= htmlspecialchars($yearGroup) ?></h3>
+                           <button class="year-toggle" type="button" aria-expanded="false" aria-controls="<?= htmlspecialchars($yearPanelId, ENT_QUOTES, 'UTF-8') ?>">
+                              <h3><?= htmlspecialchars($yearGroup) ?></h3>
+                              <i class="ti ti-chevron-down" aria-hidden="true"></i>
+                           </button>
                            <span class="year-line"></span>
                         </div>
-                        <div class="month-cards">
+                        <div class="month-cards" id="<?= htmlspecialchars($yearPanelId, ENT_QUOTES, 'UTF-8') ?>" hidden>
                            <?php foreach ($items as $idx): ?>
                               <?php
                               $downloadUrl = !empty($idx['informe_mensual'])
@@ -231,6 +235,44 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 30px;
+         }
+
+         .year-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 16px;
+            border: 0;
+            border-radius: 8px;
+            background: #f3f8fb;
+            color: #0b3d91;
+            cursor: pointer;
+         }
+
+         .year-toggle h3 {
+            margin: 0;
+         }
+
+         .year-toggle i {
+            font-size: 20px;
+            transition: transform .2s ease;
+         }
+
+         .year-toggle[aria-expanded="true"] i {
+            transform: rotate(180deg);
+         }
+
+         .year-toggle:focus-visible {
+            outline: 3px solid #00a3e0;
+            outline-offset: 3px;
+         }
+
+         .year-group-title:has(.year-toggle[aria-expanded="true"]) {
+            margin-bottom: 20px;
+         }
+
+         .year-group-title:has(.year-toggle[aria-expanded="false"]) {
+            margin-bottom: 0;
          }
 
          .year-group-title h3 {
@@ -387,3 +429,16 @@
             }
          }
       </style>
+      <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.year-toggle').forEach(function (toggle) {
+               toggle.addEventListener('click', function () {
+                  const panel = document.getElementById(toggle.getAttribute('aria-controls'));
+                  if (!panel) return;
+                  const expanded = toggle.getAttribute('aria-expanded') === 'true';
+                  toggle.setAttribute('aria-expanded', String(!expanded));
+                  panel.hidden = expanded;
+               });
+            });
+         });
+      </script>

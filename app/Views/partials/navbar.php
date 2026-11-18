@@ -96,13 +96,8 @@
                         <li><a href="<?= APP_URL ?>/legislacion/novedades-enacom">Novedades ENACOM</a></li>
                      </ul>
                   </li> -->
-                  <li>
-                     <a href="<?= APP_URL ?>/indices">Índices</a>
-                     <ul class="submenu">
-                        <!-- <li><a href="<?= APP_URL ?>/indices">IMC</a></li> -->
-                        <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
-                     </ul>
-                  </li>
+                  <li><a href="<?= APP_URL ?>/indices">Índices</a></li>
+                  <li><a href="<?= APP_URL ?>/informes-institucionales">Informes Institucionales</a></li>
                   <li><a href="<?= APP_URL ?>/paritarias">Paritarias</a></li>
                   <!-- <li>
                      <a href="<?= APP_URL ?>/prensa/eventos-institucionales">Prensa y Relaciones Institucionales</a>
